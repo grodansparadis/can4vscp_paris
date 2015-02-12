@@ -1,0 +1,13 @@
+Paris Relay module
+==================
+
+2015-01-12 AKHE - Fixed register read problem for some registers.
+2015-01-11 AKHE - Fixed missed relay zone/subzone pair (mdf updated)
+2015-01-11 AKHE - Fixed misaligned matrix (was at offset 70 should be 72).
+2015-01-05 AKHE - Fixed problem with info events sending garbage when register 
+					are written.
+Version 0.1.7 2013-07-10 - Bugs in firmware source fixed.
+                            main.h code moved to smartrelay.h
+2012-10-18 AKHE - Fixed paths so code compiles again.
+2012-10-18 AKHE - DM was not feed any events. Fixed.
+2012-04-02 AKHE - Started development from old Paris Module
