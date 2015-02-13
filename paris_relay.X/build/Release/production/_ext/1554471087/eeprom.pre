@@ -1,5 +1,5 @@
 
-# 1 "../../../../../vscp_firmware/pic/common/eeprom.c"
+# 1 "../../vscp_firmware/pic/common/eeprom.c"
 
 # 44 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f2580.h"
 extern volatile unsigned char RXF6SIDH @ 0xD60;
@@ -18712,7 +18712,7 @@ extern void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern void _delay3(unsigned char);
 
-# 34 "../../../../../vscp_firmware/pic/common\inttypes.h"
+# 34 "../../vscp_firmware/pic/common\inttypes.h"
 typedef long long int64_t;
 
 
@@ -18746,7 +18746,7 @@ typedef unsigned short uint16_t;
 
 typedef unsigned char uint8_t;
 
-# 22 "../../../../../vscp_firmware/pic/common/eeprom.c"
+# 22 "../../vscp_firmware/pic/common/eeprom.c"
 void writeEEPROM( uint16_t address, uint8_t data )
 {
 

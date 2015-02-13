@@ -21,7 +21,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS2059 ~T0 @X0 0 e@4082 ]
 "121 C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\timers.h
 [v _WriteTimer0 `(v ~T0 @X0 0 ef1`ui ]
-"306 ../../../../../vscp_firmware/common\vscp_firmware.h
+"306 ../../vscp_firmware/common\vscp_firmware.h
 [v _vscp_timer `Vus ~T0 @X0 0 e ]
 "28387 C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f2580.h
 [s S1768 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -46,7 +46,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1767 . . . . . . . ]
 "28429
 [v _PORTCbits `VS1767 ~T0 @X0 0 e@3970 ]
-"308 ../../../../../vscp_firmware/common\vscp_firmware.h
+"308 ../../vscp_firmware/common\vscp_firmware.h
 [v _vscp_initbtncnt `Vuc ~T0 @X0 0 e ]
 "309
 [v _vscp_statuscnt `Vuc ~T0 @X0 0 e ]
@@ -55,21 +55,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "241 ../smartrelay.h
 [v _init `(v ~T0 @X0 0 ef ]
-"437 ../../../../../vscp_firmware/common\vscp_firmware.h
+"437 ../../vscp_firmware/common\vscp_firmware.h
 [v _vscp_check_pstorage `(uc ~T0 @X0 0 ef ]
 "243 ../smartrelay.h
 [v _init_app_eeprom `(v ~T0 @X0 0 ef ]
 "242
 [v _init_app_ram `(v ~T0 @X0 0 ef ]
-"322 ../../../../../vscp_firmware/common\vscp_firmware.h
+"322 ../../vscp_firmware/common\vscp_firmware.h
 [v _vscp_init `(v ~T0 @X0 0 ef ]
 "300
 [v _vscp_node_state `uc ~T0 @X0 0 e ]
 "297
 [v _vscp_nickname `uc ~T0 @X0 0 e ]
-"24 ../../../../../vscp_firmware/pic/common\eeprom.h
+"24 ../../vscp_firmware/pic/common\eeprom.h
 [v _writeEEPROM `(v ~T0 @X0 0 ef2`us`uc ]
-"211 ../../../../../vscp_firmware/common\vscp_firmware.h
+"211 ../../vscp_firmware/common\vscp_firmware.h
 [s S2106 `uc 1 `uc 1 `us 1 `uc 1 `uc 1 `uc -> 8 `i ]
 [n S2106 _imsg flags priority vscp_class vscp_type oaddr data ]
 "304
@@ -84,7 +84,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _vscp_handleProtocolEvent `(v ~T0 @X0 0 ef ]
 "249 ../smartrelay.h
 [v _doDM `(v ~T0 @X0 0 ef ]
-"328 ../../../../../vscp_firmware/common\vscp_firmware.h
+"328 ../../vscp_firmware/common\vscp_firmware.h
 [v _vscp_error `(v ~T0 @X0 0 ef ]
 "432
 [v _vscp_doOneSecondWork `(v ~T0 @X0 0 ef ]
@@ -172,7 +172,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATCbits `VS1820 ~T0 @X0 0 e@3979 ]
 "144 ../ecan.h
 [v _ECANInitialize `(v ~T0 @X0 0 ef ]
-"23 ../../../../../vscp_firmware/pic/common\eeprom.h
+"23 ../../vscp_firmware/pic/common\eeprom.h
 [v _readEEPROM `(uc ~T0 @X0 0 ef1`us ]
 "601 ../main.c
 [c E15660 0 1 .. ]
@@ -183,7 +183,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SendInformationEvent `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "94 ../main.c
 [v _calculateSetFilterMask `(v ~T0 @X0 0 ef ]
-"236 ../../../../../vscp_firmware/common\vscp_firmware.h
+"236 ../../vscp_firmware/common\vscp_firmware.h
 [s S2107 `uc 1 `uc 1 `us 1 `uc 1 `uc -> 8 `i ]
 [n S2107 _omsg flags priority vscp_class vscp_type data ]
 "305

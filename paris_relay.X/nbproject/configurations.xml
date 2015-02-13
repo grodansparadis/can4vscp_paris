@@ -26,8 +26,8 @@
                    projectFiles="true">
       <itemPath>../main.c</itemPath>
       <itemPath>../ECAN.c</itemPath>
-      <itemPath>../../../../../vscp_firmware/common/vscp_firmware.c</itemPath>
-      <itemPath>../../../../../vscp_firmware/pic/common/eeprom.c</itemPath>
+      <itemPath>../../vscp_firmware/common/vscp_firmware.c</itemPath>
+      <itemPath>../../vscp_firmware/pic/common/eeprom.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -39,6 +39,8 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../</Elem>
+    <Elem>../../vscp_firmware/common</Elem>
+    <Elem>../../vscp_firmware/pic/common</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -79,7 +81,7 @@
         <property key="asmlist" value="true"/>
         <property key="define-macros" value=""/>
         <property key="extra-include-directories"
-                  value="..\;..\..\..\..\..\vscp_firmware\pic\common;..\..\..\..\..\vscp_firmware\common;..\..\..\..\..\vscp_software\src\vscp\common"/>
+                  value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="pro"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>
@@ -246,7 +248,7 @@
         <property key="asmlist" value="true"/>
         <property key="define-macros" value=""/>
         <property key="extra-include-directories"
-                  value="..\;..\..\..\..\..\vscp_firmware\pic\common;..\..\..\..\..\vscp_firmware\common;..\..\..\..\..\vscp_software\src\vscp\common"/>
+                  value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="pro"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>

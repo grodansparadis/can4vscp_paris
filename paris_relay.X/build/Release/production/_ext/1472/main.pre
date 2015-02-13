@@ -18712,7 +18712,7 @@ extern void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern void _delay3(unsigned char);
 
-# 34 "../../../../../vscp_firmware/pic/common\inttypes.h"
+# 34 "../../vscp_firmware/pic/common\inttypes.h"
 typedef long long int64_t;
 
 
@@ -18746,7 +18746,7 @@ typedef unsigned short uint16_t;
 
 typedef unsigned char uint8_t;
 
-# 23 "../../../../../vscp_firmware/pic/common\eeprom.h"
+# 23 "../../vscp_firmware/pic/common\eeprom.h"
 uint8_t readEEPROM( uint16_t address );
 void writeEEPROM( uint16_t address, uint8_t data );
 
@@ -18846,7 +18846,7 @@ void _CANIDToRegs(BYTE* ptr,
 unsigned long val,
 BYTE type );
 
-# 192 "../../../../../vscp_firmware/common\vscp_firmware.h"
+# 192 "../../vscp_firmware/common\vscp_firmware.h"
 struct _imsg {
 
 # 204

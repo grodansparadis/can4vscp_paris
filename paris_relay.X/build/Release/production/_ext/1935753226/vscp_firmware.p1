@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"211 ../../../../../vscp_firmware/common/vscp_firmware.h
+"211 ../../vscp_firmware/common/vscp_firmware.h
 [s S5 `uc 1 `uc 1 `us 1 `uc 1 `uc 1 `uc -> 8 `i ]
 [n S5 _imsg flags priority vscp_class vscp_type oaddr data ]
 "236
@@ -261,7 +261,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;vscp_firmware.h: 666: uint32_t vscp_getFamilyCode(void);
 [; ;vscp_firmware.h: 672: uint32_t vscp_getFamilyType(void);
 [; ;vscp_firmware.h: 680: void vscp_restoreDefaults(void);
-"60 ../../../../../vscp_firmware/common/vscp_firmware.c
+"60 ../../vscp_firmware/common/vscp_firmware.c
 [v _vscp_nickname `uc ~T0 @X0 1 e ]
 [; ;vscp_firmware.c: 60: uint8_t vscp_nickname;
 "62

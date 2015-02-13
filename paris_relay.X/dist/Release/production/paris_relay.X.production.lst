@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 PRO Macro Assembler V1.21 build 54009 
-                                                                                               Tue Jan 27 15:15:02 2015
+                                                                                               Thu Feb 12 23:21:25 2015
 
 Microchip Technology Omniscient Code Generator (PRO mode) build 54009
      1                           	processor	18F2580
@@ -2099,7 +2099,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2091                           
   2092 ;; *************** function _vscp_doOneSecondWork *****************
   2093 ;; Defined at:
-  2094 ;;		line 513 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+  2094 ;;		line 513 in file "../../vscp_firmware/common/vscp_firmware.c"
   2095 ;; Parameters:    Size  Location     Type
   2096 ;;		None
   2097 ;; Auto vars:     Size  Location     Type
@@ -2243,7 +2243,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2234                           
   2235 ;; *************** function _vscp_sendHeartBeat *****************
   2236 ;; Defined at:
-  2237 ;;		line 367 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+  2237 ;;		line 367 in file "../../vscp_firmware/common/vscp_firmware.c"
   2238 ;; Parameters:    Size  Location     Type
   2239 ;;  zone            1    wreg     unsigned char 
   2240 ;;  subzone         1   20[BANK0 ] unsigned char 
@@ -2450,7 +2450,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2440                           
   2441 ;; *************** function _vscp_error *****************
   2442 ;; Defined at:
-  2443 ;;		line 188 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+  2443 ;;		line 188 in file "../../vscp_firmware/common/vscp_firmware.c"
   2444 ;; Parameters:    Size  Location     Type
   2445 ;;		None
   2446 ;; Auto vars:     Size  Location     Type
@@ -4976,7 +4976,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   4961                           
   4962 ;; *************** function _vscp_handleProtocolEvent *****************
   4963 ;; Defined at:
-  4964 ;;		line 782 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+  4964 ;;		line 782 in file "../../vscp_firmware/common/vscp_firmware.c"
   4965 ;; Parameters:    Size  Location     Type
   4966 ;;		None
   4967 ;; Auto vars:     Size  Location     Type
@@ -6443,7 +6443,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6424                           
   6425 ;; *************** function _vscp_writeRegister *****************
   6426 ;; Defined at:
-  6427 ;;		line 675 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+  6427 ;;		line 675 in file "../../vscp_firmware/common/vscp_firmware.c"
   6428 ;; Parameters:    Size  Location     Type
   6429 ;;  reg             1    wreg     unsigned char 
   6430 ;;  value           1   30[BANK0 ] unsigned char 
@@ -6522,7 +6522,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6502                           
   6503 ;; *************** function _vscp_writeStdReg *****************
   6504 ;; Defined at:
-  6505 ;;		line 688 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+  6505 ;;		line 688 in file "../../vscp_firmware/common/vscp_firmware.c"
   6506 ;; Parameters:    Size  Location     Type
   6507 ;;  reg             1    wreg     unsigned char 
   6508 ;;  value           1   14[COMRAM] unsigned char 
@@ -10594,7 +10594,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  10571                           
  10572 ;; *************** function _vscp_readRegister *****************
  10573 ;; Defined at:
- 10574 ;;		line 550 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 10574 ;;		line 550 in file "../../vscp_firmware/common/vscp_firmware.c"
  10575 ;; Parameters:    Size  Location     Type
  10576 ;;  reg             1    wreg     unsigned char 
  10577 ;; Auto vars:     Size  Location     Type
@@ -10670,7 +10670,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  10647                           
  10648 ;; *************** function _vscp_readStdReg *****************
  10649 ;; Defined at:
- 10650 ;;		line 563 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 10650 ;;		line 563 in file "../../vscp_firmware/common/vscp_firmware.c"
  10651 ;; Parameters:    Size  Location     Type
  10652 ;;  reg             1    wreg     unsigned char 
  10653 ;; Auto vars:     Size  Location     Type
@@ -11604,7 +11604,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11581                           
  11582 ;; *************** function _vscp_newNodeOnline *****************
  11583 ;; Defined at:
- 11584 ;;		line 491 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 11584 ;;		line 491 in file "../../vscp_firmware/common/vscp_firmware.c"
  11585 ;; Parameters:    Size  Location     Type
  11586 ;;		None
  11587 ;; Auto vars:     Size  Location     Type
@@ -11702,7 +11702,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11678                           
  11679 ;; *************** function _vscp_handleDropNickname *****************
  11680 ;; Defined at:
- 11681 ;;		line 427 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 11681 ;;		line 427 in file "../../vscp_firmware/common/vscp_firmware.c"
  11682 ;; Parameters:    Size  Location     Type
  11683 ;;		None
  11684 ;; Auto vars:     Size  Location     Type
@@ -11807,7 +11807,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11783                           
  11784 ;; *************** function _vscp_init *****************
  11785 ;; Defined at:
- 11786 ;;		line 114 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 11786 ;;		line 114 in file "../../vscp_firmware/common/vscp_firmware.c"
  11787 ;; Parameters:    Size  Location     Type
  11788 ;;		None
  11789 ;; Auto vars:     Size  Location     Type
@@ -12011,7 +12011,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11987                           
  11988 ;; *************** function _vscp_handleSetNickname *****************
  11989 ;; Defined at:
- 11990 ;;		line 411 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 11990 ;;		line 411 in file "../../vscp_firmware/common/vscp_firmware.c"
  11991 ;; Parameters:    Size  Location     Type
  11992 ;;		None
  11993 ;; Auto vars:     Size  Location     Type
@@ -12096,7 +12096,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12072                           
  12073 ;; *************** function _vscp_handleHeartbeat *****************
  12074 ;; Defined at:
- 12075 ;;		line 385 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 12075 ;;		line 385 in file "../../vscp_firmware/common/vscp_firmware.c"
  12076 ;; Parameters:    Size  Location     Type
  12077 ;;		None
  12078 ;; Auto vars:     Size  Location     Type
@@ -12359,7 +12359,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12335                           
  12336 ;; *************** function _vscp_handleProbeState *****************
  12337 ;; Defined at:
- 12338 ;;		line 197 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 12338 ;;		line 197 in file "../../vscp_firmware/common/vscp_firmware.c"
  12339 ;; Parameters:    Size  Location     Type
  12340 ;;		None
  12341 ;; Auto vars:     Size  Location     Type
@@ -12642,7 +12642,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12617                           
  12618 ;; *************** function _vscp_goActiveState *****************
  12619 ;; Defined at:
- 12620 ;;		line 347 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 12620 ;;		line 347 in file "../../vscp_firmware/common/vscp_firmware.c"
  12621 ;; Parameters:    Size  Location     Type
  12622 ;;		None
  12623 ;; Auto vars:     Size  Location     Type
@@ -12734,7 +12734,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12708                           
  12709 ;; *************** function _vscp_sendEvent *****************
  12710 ;; Defined at:
- 12711 ;;		line 1272 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 12711 ;;		line 1272 in file "../../vscp_firmware/common/vscp_firmware.c"
  12712 ;; Parameters:    Size  Location     Type
  12713 ;;		None
  12714 ;; Auto vars:     Size  Location     Type
@@ -13677,7 +13677,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  13649                           
  13650 ;; *************** function _vscp_getEvent *****************
  13651 ;; Defined at:
- 13652 ;;		line 1292 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 13652 ;;		line 1292 in file "../../vscp_firmware/common/vscp_firmware.c"
  13653 ;; Parameters:    Size  Location     Type
  13654 ;;		None
  13655 ;; Auto vars:     Size  Location     Type
@@ -14988,7 +14988,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  14957                           
  14958 ;; *************** function _vscp_check_pstorage *****************
  14959 ;; Defined at:
- 14960 ;;		line 163 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+ 14960 ;;		line 163 in file "../../vscp_firmware/common/vscp_firmware.c"
  14961 ;; Parameters:    Size  Location     Type
  14962 ;;		None
  14963 ;; Auto vars:     Size  Location     Type
@@ -15356,7 +15356,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  15325                           
  15326 ;; *************** function _writeEEPROM *****************
  15327 ;; Defined at:
- 15328 ;;		line 23 in file "../../../../../vscp_firmware/pic/common/eeprom.c"
+ 15328 ;;		line 23 in file "../../vscp_firmware/pic/common/eeprom.c"
  15329 ;; Parameters:    Size  Location     Type
  15330 ;;  address         2    7[COMRAM] unsigned short 
  15331 ;;  data            1    9[COMRAM] unsigned char 
@@ -16555,7 +16555,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  16514                           
  16515 ;; *************** function _readEEPROM *****************
  16516 ;; Defined at:
- 16517 ;;		line 92 in file "../../../../../vscp_firmware/pic/common/eeprom.c"
+ 16517 ;;		line 92 in file "../../vscp_firmware/pic/common/eeprom.c"
  16518 ;; Parameters:    Size  Location     Type
  16519 ;;  address         2    7[COMRAM] unsigned short 
  16520 ;; Auto vars:     Size  Location     Type
@@ -17925,7 +17925,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
-Symbol Table                                                                                   Tue Jan 27 15:15:02 2015
+Symbol Table                                                                                   Thu Feb 12 23:21:25 2015
 
                       doActionToggle@val 00CA                  __end_of_vscp_readAppReg 3806  
                   __end_of_sendVSCPFrame 3750             ?_vscp_writeNicknamePermanent 0001  

@@ -2,7 +2,7 @@
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F2580 ]
-"601 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"601 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [e E15660 _BOOL `uc
 FALSE 0
 TRUE 1
@@ -38,7 +38,7 @@ ECAN_OP_MODE_LOOP 64
 ECAN_OP_MODE_LISTEN 96
 ECAN_OP_MODE_CONFIG 128
 ]
-"171 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/ECAN.c
+"171 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [e E16337 _ECAN_OP_MODE `uc
 ECAN_OP_MODE_BITS 224
 ECAN_OP_MODE_NORMAL 0
@@ -115,7 +115,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v _writeEEPROM writeEEPROM `(v  1 e 0 0 ]
 "92
 [v _readEEPROM readEEPROM `(uc  1 e 1 0 ]
-"168 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/ECAN.c
+"168 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [v _ECANInitialize ECANInitialize `(v  1 e 0 0 ]
 "617
 [v _ECANSendMessage ECANSendMessage `(E15660  1 e 1 0 ]
@@ -129,7 +129,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v __RegsToCANID _RegsToCANID `(v  1 e 0 0 ]
 "1207
 [v __ECANPointBuffer _ECANPointBuffer `(*.39uc  1 s 2 _ECANPointBuffer ]
-"134 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"134 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _interrupt_at_low_vector interrupt_at_low_vector `IIL(v  1 e 0 0 ]
 "194
 [v _main main `(v  1 e 0 0 ]
@@ -418,10 +418,10 @@ ECAN_RX_DBL_BUFFERED 128
 `uc 1 b6 1 0 :1:6 
 `uc 1 b7 1 0 :1:7 
 ]
-"56 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/ECAN.c
+"56 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [u S800 . 1 `uc 1 Val 1 0 `S791 1 bits 1 0 ]
 [v __ECANRxFilterHitInfo _ECANRxFilterHitInfo `S800  1 e 1 0 ]
-"99 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"99 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_deviceURL vscp_deviceURL `C[32]uc  1 e 32 0 ]
 "101
 [v _measurement_clock measurement_clock `VEul  1 e 4 0 ]
@@ -829,7 +829,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v _RXM0EXIDM RXM0EXIDM `VEb  1 e 0 @30923 ]
 "38004
 [v _RXM1EXIDEN RXM1EXIDEN `VEb  1 e 0 @30955 ]
-"194 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"194 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _main main `(v  1 e 0 0 ]
 {
 "317
@@ -863,7 +863,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v vscp_sendHeartBeat@subzone subzone `uc  1 p 1 20 ]
 "378
 } 0
-"881 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"881 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_getSubzone vscp_getSubzone `(uc  1 e 1 0 ]
 {
 "883
@@ -878,7 +878,7 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "190
 } 0
-"1601 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"1601 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _doDM doDM `(v  1 e 0 0 ]
 {
 "1606
@@ -1054,7 +1054,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v vscp_writeStdReg@value value `uc  1 p 1 14 ]
 "775
 } 0
-"2483 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"2483 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_restoreDefaults vscp_restoreDefaults `(v  1 e 0 0 ]
 {
 "2486
@@ -1165,7 +1165,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v vscp_readStdReg@reg reg `uc  1 a 1 12 ]
 "668
 } 0
-"2494 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"2494 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_getRegisterPagesUsed vscp_getRegisterPagesUsed `(uc  1 e 1 0 ]
 {
 "2496
@@ -1240,7 +1240,7 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "153
 } 0
-"854 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"854 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_readNicknamePermanent vscp_readNicknamePermanent `(uc  1 e 1 0 ]
 {
 "856
@@ -1255,7 +1255,7 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "404
 } 0
-"2449 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"2449 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_getMatrixInfo vscp_getMatrixInfo `(v  1 e 0 0 ]
 {
 [v vscp_getMatrixInfo@pData pData `*.30uc  1 a 1 0 ]
@@ -1285,7 +1285,7 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "1285
 } 0
-"2508 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"2508 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _sendVSCPFrame sendVSCPFrame `(uc  1 e 1 0 ]
 {
 "2509
@@ -1310,7 +1310,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v sendCANFrame@pdata pdata `*.39uc  1 p 2 59 ]
 "2567
 } 0
-"617 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/ECAN.c
+"617 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [v _ECANSendMessage ECANSendMessage `(E15660  1 e 1 0 ]
 {
 "630
@@ -1381,7 +1381,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v vscp_getEvent@rv rv `uc  1 a 1 43 ]
 "1314
 } 0
-"2532 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"2532 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _getVSCPFrame getVSCPFrame `(uc  1 e 1 0 ]
 {
 [v getVSCPFrame@pvscpclass pvscpclass `*.30us  1 a 1 38 ]
@@ -1408,7 +1408,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v getCANFrame@pdata pdata `*.30uc  1 p 1 26 ]
 "2594
 } 0
-"803 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/ECAN.c
+"803 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [v _ECANReceiveMessage ECANReceiveMessage `(E15660  1 e 1 0 ]
 {
 [v ECANReceiveMessage@id id `*.29ul  1 a 1 19 ]
@@ -1480,7 +1480,7 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "181
 } 0
-"2375 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"2375 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_setControlByte vscp_setControlByte `(v  1 e 0 0 ]
 {
 [v vscp_setControlByte@ctrl ctrl `uc  1 a 1 10 ]
@@ -1513,12 +1513,12 @@ ECAN_RX_DBL_BUFFERED 128
 [v writeEEPROM@data data `uc  1 p 1 9 ]
 "51
 } 0
-"324 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"324 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _init init `(v  1 e 0 0 ]
 {
 "431
 } 0
-"168 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/ECAN.c
+"168 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [v _ECANInitialize ECANInitialize `(v  1 e 0 0 ]
 {
 "500
@@ -1537,7 +1537,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v OpenTimer0@config config `uc  1 a 1 7 ]
 "31
 } 0
-"438 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"438 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _init_app_ram init_app_ram `(v  1 e 0 0 ]
 {
 "439
@@ -1554,7 +1554,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v WriteTimer0@timer0 timer0 `ui  1 p 2 7 ]
 "24
 } 0
-"903 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"903 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_readAppReg vscp_readAppReg `(uc  1 e 1 0 ]
 {
 [v vscp_readAppReg@reg reg `uc  1 a 1 11 ]
@@ -1573,7 +1573,7 @@ ECAN_RX_DBL_BUFFERED 128
 [v readEEPROM@address address `us  1 p 2 7 ]
 "105
 } 0
-"134 C:\Users\grodansparadis\development\vscp_hardware\can4vscp\can4vscp_paris_relaydriver\firmware/main.c
+"134 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _interrupt_at_low_vector interrupt_at_low_vector `IIL(v  1 e 0 0 ]
 {
 "186

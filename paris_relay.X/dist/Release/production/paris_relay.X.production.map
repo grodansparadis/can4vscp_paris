@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.21\dat\en_msgs.txt -cs \
   -h+dist/Release/production\paris_relay.X.production.sym \
   --cmf=dist/Release/production\paris_relay.X.production.cmf -z -Q18F2580 \
-  -oC:\Users\GRODAN~1\AppData\Local\Temp\s63c.6 \
+  -oC:\Users\GRODAN~1\AppData\Local\Temp\s4a4.6 \
   -Mdist/Release/production/paris_relay.X.production.map -E1 -ver=XC8 \
   -ACODE=00h-07FFFh -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
   -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh -AABS1=00h-05FFh \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\GRODAN~1\AppData\Local\Temp\s63c.obj \
+  C:\Users\GRODAN~1\AppData\Local\Temp\s4a4.obj \
   dist/Release/production\paris_relay.X.production.obj 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\GRODAN~1\AppData\Local\Temp\s63c.obj
+C:\Users\GRODAN~1\AppData\Local\Temp\s4a4.obj
                 end_init                             B2       B2        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -1350,7 +1350,7 @@ Total ram usage:        6 bytes
 
  *************** function _vscp_doOneSecondWork *****************
  Defined at:
-		line 513 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 513 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1382,7 +1382,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_sendHeartBeat *****************
  Defined at:
-		line 367 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 367 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
   zone            1    wreg     unsigned char 
   subzone         1   20[BANK0 ] unsigned char 
@@ -1473,7 +1473,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_error *****************
  Defined at:
-		line 188 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 188 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1750,7 +1750,7 @@ Total ram usage:        6 bytes
 
  *************** function _vscp_handleProtocolEvent *****************
  Defined at:
-		line 782 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 782 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1846,7 +1846,7 @@ Total ram usage:        4 bytes
 
  *************** function _vscp_writeRegister *****************
  Defined at:
-		line 675 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 675 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
   reg             1    wreg     unsigned char 
   value           1   30[BANK0 ] unsigned char 
@@ -1878,7 +1878,7 @@ Total ram usage:        2 bytes
 
  *************** function _vscp_writeStdReg *****************
  Defined at:
-		line 688 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 688 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
   reg             1    wreg     unsigned char 
   value           1   14[COMRAM] unsigned char 
@@ -2255,7 +2255,7 @@ Total ram usage:        8 bytes
 
  *************** function _vscp_readRegister *****************
  Defined at:
-		line 550 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 550 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
   reg             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2286,7 +2286,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_readStdReg *****************
  Defined at:
-		line 563 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 563 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
   reg             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2632,7 +2632,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_newNodeOnline *****************
  Defined at:
-		line 491 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 491 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2662,7 +2662,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_handleDropNickname *****************
  Defined at:
-		line 427 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 427 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2693,7 +2693,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_init *****************
  Defined at:
-		line 114 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 114 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2755,7 +2755,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_handleSetNickname *****************
  Defined at:
-		line 411 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 411 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2786,7 +2786,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_handleHeartbeat *****************
  Defined at:
-		line 385 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 385 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2881,7 +2881,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_handleProbeState *****************
  Defined at:
-		line 197 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 197 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2914,7 +2914,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_goActiveState *****************
  Defined at:
-		line 347 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 347 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2945,7 +2945,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_sendEvent *****************
  Defined at:
-		line 1272 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 1272 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3137,7 +3137,7 @@ Total ram usage:       10 bytes
 
  *************** function _vscp_getEvent *****************
  Defined at:
-		line 1292 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 1292 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3364,7 +3364,7 @@ Total ram usage:        6 bytes
 
  *************** function _vscp_check_pstorage *****************
  Defined at:
-		line 163 in file "../../../../../vscp_firmware/common/vscp_firmware.c"
+		line 163 in file "../../vscp_firmware/common/vscp_firmware.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3525,7 +3525,7 @@ Total ram usage:        1 bytes
 
  *************** function _writeEEPROM *****************
  Defined at:
-		line 23 in file "../../../../../vscp_firmware/pic/common/eeprom.c"
+		line 23 in file "../../vscp_firmware/pic/common/eeprom.c"
  Parameters:    Size  Location     Type
   address         2    7[COMRAM] unsigned short 
   data            1    9[COMRAM] unsigned char 
@@ -3784,7 +3784,7 @@ Total ram usage:        2 bytes
 
  *************** function _readEEPROM *****************
  Defined at:
-		line 92 in file "../../../../../vscp_firmware/pic/common/eeprom.c"
+		line 92 in file "../../vscp_firmware/pic/common/eeprom.c"
  Parameters:    Size  Location     Type
   address         2    7[COMRAM] unsigned short 
  Auto vars:     Size  Location     Type
@@ -3950,11 +3950,11 @@ C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
 
 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c estimated size: 18
 
-../../../../../vscp_firmware/pic/common/eeprom.c
+../../vscp_firmware/pic/common/eeprom.c
 		_readEEPROM    		CODE           	3F0C	0000	18
 		_writeEEPROM   		CODE           	3CD4	0000	38
 
-../../../../../vscp_firmware/pic/common/eeprom.c estimated size: 56
+../../vscp_firmware/pic/common/eeprom.c estimated size: 56
 
 ../ECAN.c
 		_ECANReceiveMes		CODE           	2664	0000	526
@@ -3979,7 +3979,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c
 
 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c estimated size: 40
 
-../../../../../vscp_firmware/common/vscp_firmware.c
+../../vscp_firmware/common/vscp_firmware.c
 		_vscp_getEvent 		CODE           	3C36	0000	42
 		_vscp_handleHea		CODE           	3B34	0000	62
 		_vscp_readRegis		CODE           	3E26	0000	26
@@ -3999,7 +3999,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c estimated size
 		_vscp_newNodeOn		CODE           	3C0C	0000	42
 		_vscp_init     		CODE           	3AB0	0000	68
 
-../../../../../vscp_firmware/common/vscp_firmware.c estimated size: 3042
+../../vscp_firmware/common/vscp_firmware.c estimated size: 3042
 
 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0open.c
 		_OpenTimer0    		CODE           	3E08	0000	30
