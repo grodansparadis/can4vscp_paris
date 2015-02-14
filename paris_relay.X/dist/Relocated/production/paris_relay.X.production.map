@@ -3,17 +3,17 @@ Microchip MPLAB XC8 Compiler V1.21 ()
 Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.21\dat\en_msgs.txt -cs \
-  -h+dist/Release/production\paris_relay.X.production.sym \
-  --cmf=dist/Release/production\paris_relay.X.production.cmf -z -Q18F2580 \
-  -oC:\Users\GRODAN~1\AppData\Local\Temp\s4cc.6 \
-  -Mdist/Release/production/paris_relay.X.production.map -E1 -ver=XC8 \
-  -ACODE=00h-07FFFh -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
+  -h+dist/Relocated/production\paris_relay.X.production.sym \
+  --cmf=dist/Relocated/production\paris_relay.X.production.cmf -z -Q18F2580 \
+  -oC:\Users\GRODAN~1\AppData\Local\Temp\s1vs.6 \
+  -Mdist/Relocated/production/paris_relay.X.production.map -E1 -ver=XC8 \
+  -ACODE=0200h-07FFFh -ACONST=0200h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
   -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh -AABS1=00h-05FFh \
   -ABIGRAM=01h-05FFh -ARAM=060h-0FFh,0100h-01FFhx5 -ABANK0=060h-0FFh \
   -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
   -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
   -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
-  -preset_vec=00h,intcode,intcodelo=018h,powerup,init,end_init \
+  -preset_vec=0200h,intcode,intcodelo=0218h,powerup,init,end_init \
   -pramtop=0600h -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST \
   -pconst=CONST -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
   -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F000FFh \
@@ -22,8 +22,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\GRODAN~1\AppData\Local\Temp\s4cc.obj \
-  dist/Release/production\paris_relay.X.production.obj 
+  C:\Users\GRODAN~1\AppData\Local\Temp\s1vs.obj \
+  dist/Relocated/production\paris_relay.X.production.obj 
 
 Object code version is 3.11
 
@@ -35,13 +35,13 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\GRODAN~1\AppData\Local\Temp\s4cc.obj
-                end_init                             B2       B2        4        C       0
-                reset_vec                             0        0        4        0       0
+C:\Users\GRODAN~1\AppData\Local\Temp\s1vs.obj
+                end_init                            2B2      2B2        4      10C       0
+                reset_vec                           200      200        4      100       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/Release/production\paris_relay.X.production.obj
-                intcodelo                            18       18       9A        C       0
+dist/Relocated/production\paris_relay.X.production.obj
+                intcodelo                           218      218       9A      10C       0
                 smallconst                          600      600       22      300       0
                 text77                             3F1E     3F1E       12      311       0
                 text75                             3F0C     3F0C       12      311       0
@@ -128,9 +128,9 @@ dist/Release/production\paris_relay.X.production.obj
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
-                end_init                             B2       B2        4         0
-                intcodelo                            18       18       9A         0
-                reset_vec                             0        0        4         0
+                end_init                            2B2      2B2        4         0
+                intcodelo                           218      218       9A         0
+                reset_vec                           200      200        4         0
                 text77                             3F1E     3F1E       12         0
                 text75                             3F0C     3F0C       12         0
                 text74                             3750     3750       B6         0
@@ -257,10 +257,10 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
-                reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  000058  000059         1       1  COMRAM  
-                intcodelo                      000018  00009E  0000B6         C       0  CODE    
                 bssBANK0                       000060  00008C  0000EC        60       1  BANK0   
+                reset_vec                      000200  000004  000204       100       0  CODE    
+                intcodelo                      000218  00009E  0002B6       10C       0  CODE    
                 smallconst                     000600  000022  000622       300       0  SMALLCON
                 text26                         000622  003974  003F96       311       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
@@ -278,14 +278,15 @@ UNUSED ADDRESS RANGES
         BANK5            000500-0005FF              100
         BIGRAM           000059-00005F                7
                          0000EC-0005FF              514
-        CODE             000004-000017               14
-                         0000B6-0005FF              54A
+        CODE             000204-000217               14
+                         0002B6-0005FF              34A
                          003F96-007FFF             406A
         COMRAM           000059-00005F                7
-        CONST            000004-000017               14
-                         0000B6-0005FF              54A
+        CONST            000204-000217               14
+                         0002B6-0005FF              34A
                          003F96-007FFF             406A
         EEDATA           F00000-F000FF              100
+        FARRAM           000000-000000                1
         MEDIUMCONST      003F96-007FFF             406A
         RAM              0000EC-0005FF              100
         SFR              000D00-000FFF              100
@@ -498,17 +499,17 @@ __HcstackBANK0                           cstackBANK0  000000
 __HcstackCOMRAM                          cstackCOMRAM 000000
 __Hdata                                  data         000000
 __Heeprom_data                           eeprom_data  000000
-__Hend_init                              end_init     0000B6
+__Hend_init                              end_init     0002B6
 __Hfarbss                                farbss       000000
 __Hfardata                               fardata      000000
 __Hibigdata                              ibigdata     000000
 __Hidata                                 idata        000000
 __Hidloc                                 idloc        200008
 __Hifardata                              ifardata     000000
-__Hinit                                  init         0000B2
-__Hintcode                               intcode      000004
+__Hinit                                  init         0002B2
+__Hintcode                               intcode      000204
 __Hintcode_body                          intcode_body 000000
-__Hintcodelo                             intcodelo    0000B2
+__Hintcodelo                             intcodelo    0002B2
 __Hintentry                              intentry     000000
 __Hintret                                intret       000000
 __Hintsave_regs                          intsave_regs 000000
@@ -518,13 +519,13 @@ __HnvFARRAM                              nvFARRAM     000000
 __Hnvbit                                 nvbit        000000
 __Hnvrram                                nvrram       000000
 __Hparam                                 rparam       000000
-__Hpowerup                               powerup      0000B2
+__Hpowerup                               powerup      0002B2
 __Hram                                   ram          000000
 __Hramtop                                ramtop       000600
 __Hrbit                                  rbit         000000
 __Hrbss                                  rbss         000000
 __Hrdata                                 rdata        000000
-__Hreset_vec                             reset_vec    000004
+__Hreset_vec                             reset_vec    000204
 __Hrparam                                rparam       000000
 __Hsfr                                   sfr          000000
 __Hsmallconst                            smallconst   000622
@@ -631,17 +632,17 @@ __LcstackBANK0                           cstackBANK0  000000
 __LcstackCOMRAM                          cstackCOMRAM 000000
 __Ldata                                  data         000000
 __Leeprom_data                           eeprom_data  000000
-__Lend_init                              end_init     0000B2
+__Lend_init                              end_init     0002B2
 __Lfarbss                                farbss       000000
 __Lfardata                               fardata      000000
 __Libigdata                              ibigdata     000000
 __Lidata                                 idata        000000
 __Lidloc                                 idloc        200000
 __Lifardata                              ifardata     000000
-__Linit                                  init         0000B2
-__Lintcode                               intcode      000004
+__Linit                                  init         0002B2
+__Lintcode                               intcode      000204
 __Lintcode_body                          intcode_body 000000
-__Lintcodelo                             intcodelo    000018
+__Lintcodelo                             intcodelo    000218
 __Lintentry                              intentry     000000
 __Lintret                                intret       000000
 __Lintsave_regs                          intsave_regs 000000
@@ -651,13 +652,13 @@ __LnvFARRAM                              nvFARRAM     000000
 __Lnvbit                                 nvbit        000000
 __Lnvrram                                nvrram       000000
 __Lparam                                 rparam       000000
-__Lpowerup                               powerup      0000B2
+__Lpowerup                               powerup      0002B2
 __Lram                                   ram          000000
 __Lramtop                                ramtop       000600
 __Lrbit                                  rbit         000000
 __Lrbss                                  rbss         000000
 __Lrdata                                 rdata        000000
-__Lreset_vec                             reset_vec    000000
+__Lreset_vec                             reset_vec    000200
 __Lrparam                                rparam       000000
 __Lsfr                                   sfr          000000
 __Lsmallconst                            smallconst   000600
@@ -782,7 +783,7 @@ __end_of_getVSCPFrame                    text57       003914
 __end_of_init                            text68       003BB0
 __end_of_init_app_eeprom                 text20       001DE8
 __end_of_init_app_ram                    text72       003256
-__end_of_interrupt_at_low_vector         intcodelo    0000B2
+__end_of_interrupt_at_low_vector         intcodelo    0002B2
 __end_of_main                            text0        003526
 __end_of_readEEPROM                      text75       003F1E
 __end_of_sendCANFrame                    text53       003B34
@@ -842,7 +843,7 @@ __pbssCOMRAM                             bssCOMRAM    000052
 __pcinit                                 cinit        003D42
 __pcstackBANK0                           cstackBANK0  0000B1
 __pcstackCOMRAM                          cstackCOMRAM 000001
-__pintcodelo                             intcodelo    000018
+__pintcodelo                             intcodelo    000218
 __psmallconst                            smallconst   000600
 __ptext0                                 text0        003446
 __ptext1                                 text1        003F88
@@ -1023,7 +1024,7 @@ _hours                                   bssBANK0     000088
 _init                                    text68       003B72
 _init_app_eeprom                         text20       001A72
 _init_app_ram                            text72       003148
-_interrupt_at_low_vector                 intcodelo    000018
+_interrupt_at_low_vector                 intcodelo    000218
 _main                                    text0        003446
 _measurement_clock                       bssBANK0     000080
 _minutes                                 bssBANK0     000089
@@ -1177,7 +1178,7 @@ sendVSCPFrame@priority                   cstackCOMRAM 000043
 sendVSCPFrame@size                       cstackCOMRAM 000044
 sendVSCPFrame@vscpclass                  cstackCOMRAM 00003F
 sendVSCPFrame@vscptype                   cstackCOMRAM 000041
-start                                    init         0000B2
+start                                    init         0002B2
 start_initialization                     cinit        003D42
 vscp_getEvent@rv                         cstackCOMRAM 00002C
 vscp_getGUID@idx                         cstackCOMRAM 00000B
@@ -3932,7 +3933,7 @@ Module		Function		Class		Link	Load	Size
 		_doActionToggle		CODE           	3028	0000	288
 		_doActionStatus		CODE           	3256	0000	268
 		_vscp_readNickn		CODE           	3F68	0000	10
-		_interrupt_at_l		CODE           	0018	0000	154
+		_interrupt_at_l		CODE           	0218	0000	154
 		_doApplicationO		CODE           	2108	0000	754
 		_doActionDisabl		CODE           	398A	0000	108
 		_vscp_getMajorV		CODE           	3F94	0000	2

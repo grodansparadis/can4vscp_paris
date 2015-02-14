@@ -59,7 +59,7 @@ _vscp_readNicknamePermanent: CODE, 16232 0 10
 _vscp_sendHeartBeat: CODE, 15496 0 38
 _ECANInitialize: CODE, 14342 0 150
 _OpenTimer0: CODE, 15880 0 30
-_interrupt_at_low_vector: CODE, 24 0 154
+_interrupt_at_low_vector: CODE, 536 0 154
 _doApplicationOneSecondWork: CODE, 8456 0 754
 i1_WriteTimer0: CODE, 16158 0 18
 _doActionDisable: CODE, 14730 0 108

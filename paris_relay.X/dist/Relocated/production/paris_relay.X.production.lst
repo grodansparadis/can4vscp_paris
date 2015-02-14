@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 PRO Macro Assembler V1.21 build 54009 
-                                                                                               Fri Feb 13 16:23:07 2015
+                                                                                               Fri Feb 13 16:24:53 2015
 
 Microchip Technology Omniscient Code Generator (PRO mode) build 54009
      1                           	processor	18F2580
@@ -16683,175 +16683,175 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  16642 ;;
  16643                           
  16644                           	psect	intcodelo
- 16645  000018                     __pintcodelo:
+ 16645  000218                     __pintcodelo:
  16646                           	opt stack 0
- 16647  000018                     _interrupt_at_low_vector:
+ 16647  000218                     _interrupt_at_low_vector:
  16648                           	opt stack 21
  16649                           
  16650                           ;incstack = 0
- 16651  000018  CFD8 F005          	movff	status,??_interrupt_at_low_vector
- 16652  00001C  CFE8 F006          	movff	wreg,??_interrupt_at_low_vector+1
- 16653  000020  CFE0 F007          	movff	bsr,??_interrupt_at_low_vector+2
- 16654  000024                     
+ 16651  000218  CFD8 F005          	movff	status,??_interrupt_at_low_vector
+ 16652  00021C  CFE8 F006          	movff	wreg,??_interrupt_at_low_vector+1
+ 16653  000220  CFE0 F007          	movff	bsr,??_interrupt_at_low_vector+2
+ 16654  000224                     
  16655                           ;main.c: 141: if ( INTCONbits.TMR0IF ) {
- 16656  000024  A4F2               	btfss	intcon,2,c	;volatile
- 16657  000026  D001               	goto	i1u782_21
- 16658  000028  D001               	goto	i1u782_20
- 16659  00002A                     i1u782_21:
- 16660  00002A  D03C               	goto	i1l143
- 16661  00002C                     i1u782_20:
- 16662  00002C                     
+ 16656  000224  A4F2               	btfss	intcon,2,c	;volatile
+ 16657  000226  D001               	goto	i1u782_21
+ 16658  000228  D001               	goto	i1u782_20
+ 16659  00022A                     i1u782_21:
+ 16660  00022A  D03C               	goto	i1l143
+ 16661  00022C                     i1u782_20:
+ 16662  00022C                     
  16663                           ;main.c: 144: WriteTimer0(0xfb1d);
- 16664  00002C  0EFB               	movlw	251
- 16665  00002E  6E02               	movwf	?i1_WriteTimer0+1,c
- 16666  000030  0E1D               	movlw	29
- 16667  000032  6E01               	movwf	?i1_WriteTimer0,c
- 16668  000034  EC8F  F01F         	call	i1_WriteTimer0	;wreg free
- 16669  000038                     
+ 16664  00022C  0EFB               	movlw	251
+ 16665  00022E  6E02               	movwf	?i1_WriteTimer0+1,c
+ 16666  000230  0E1D               	movlw	29
+ 16667  000232  6E01               	movwf	?i1_WriteTimer0,c
+ 16668  000234  EC8F  F01F         	call	i1_WriteTimer0	;wreg free
+ 16669  000238                     
  16670                           ;main.c: 146: vscp_timer++;
- 16671  000038  0100               	movlb	0	; () banked
- 16672  00003A  4B86               	infsnz	_vscp_timer& (0+255),f,b	;volatile
- 16673  00003C  2B87               	incf	(_vscp_timer+1)& (0+255),f,b	;volatile
- 16674  00003E                     
+ 16671  000238  0100               	movlb	0	; () banked
+ 16672  00023A  4B86               	infsnz	_vscp_timer& (0+255),f,b	;volatile
+ 16673  00023C  2B87               	incf	(_vscp_timer+1)& (0+255),f,b	;volatile
+ 16674  00023E                     
  16675                           ; BSR set to: 0
  16676                           ;main.c: 147: measurement_clock++;
- 16677  00003E  0E01               	movlw	1
- 16678  000040  2780               	addwf	_measurement_clock& (0+255),f,b	;volatile
- 16679  000042  0E00               	movlw	0
- 16680  000044  2381               	addwfc	(_measurement_clock+1)& (0+255),f,b	;volatile
- 16681  000046  0E00               	movlw	0
- 16682  000048  2382               	addwfc	(_measurement_clock+2)& (0+255),f,b	;volatile
- 16683  00004A  0E00               	movlw	0
- 16684  00004C  2383               	addwfc	(_measurement_clock+3)& (0+255),f,b	;volatile
- 16685  00004E                     
+ 16677  00023E  0E01               	movlw	1
+ 16678  000240  2780               	addwf	_measurement_clock& (0+255),f,b	;volatile
+ 16679  000242  0E00               	movlw	0
+ 16680  000244  2381               	addwfc	(_measurement_clock+1)& (0+255),f,b	;volatile
+ 16681  000246  0E00               	movlw	0
+ 16682  000248  2382               	addwfc	(_measurement_clock+2)& (0+255),f,b	;volatile
+ 16683  00024A  0E00               	movlw	0
+ 16684  00024C  2383               	addwfc	(_measurement_clock+3)& (0+255),f,b	;volatile
+ 16685  00024E                     
  16686                           ; BSR set to: 0
  16687                           ;main.c: 150: if ( PORTCbits.RC0 ) {
- 16688  00004E  A082               	btfss	3970,0,c	;volatile
- 16689  000050  D001               	goto	i1u783_21
- 16690  000052  D001               	goto	i1u783_20
- 16691  000054                     i1u783_21:
- 16692  000054  D002               	goto	i1l7083
- 16693  000056                     i1u783_20:
- 16694  000056                     
+ 16688  00024E  A082               	btfss	3970,0,c	;volatile
+ 16689  000250  D001               	goto	i1u783_21
+ 16690  000252  D001               	goto	i1u783_20
+ 16691  000254                     i1u783_21:
+ 16692  000254  D002               	goto	i1l7083
+ 16693  000256                     i1u783_20:
+ 16694  000256                     
  16695                           ; BSR set to: 0
  16696                           ;main.c: 151: vscp_initbtncnt = 0;
- 16697  000056  6B8F               	clrf	_vscp_initbtncnt& (0+255),b	;volatile
+ 16697  000256  6B8F               	clrf	_vscp_initbtncnt& (0+255),b	;volatile
  16698                           
  16699                           ;main.c: 152: } else {
- 16700  000058  D001               	goto	i1l135
- 16701  00005A                     i1l7083:
+ 16700  000258  D001               	goto	i1l135
+ 16701  00025A                     i1l7083:
  16702                           
  16703                           ; BSR set to: 0
  16704                           ;main.c: 154: vscp_initbtncnt++;
- 16705  00005A  2B8F               	incf	_vscp_initbtncnt& (0+255),f,b	;volatile
- 16706  00005C                     i1l135:
+ 16705  00025A  2B8F               	incf	_vscp_initbtncnt& (0+255),f,b	;volatile
+ 16706  00025C                     i1l135:
  16707                           
  16708                           ; BSR set to: 0
  16709                           ;main.c: 155: }
  16710                           ;main.c: 158: vscp_statuscnt++;
- 16711  00005C  2A58               	incf	_vscp_statuscnt,f,c	;volatile
- 16712  00005E                     
+ 16711  00025C  2A58               	incf	_vscp_statuscnt,f,c	;volatile
+ 16712  00025E                     
  16713                           ; BSR set to: 0
  16714                           ;main.c: 159: if ( ( 0x02 == vscp_initledfunc ) &&
  16715                           ;main.c: 160: ( vscp_statuscnt > 100 ) ) {
- 16716  00005E  5056               	movf	_vscp_initledfunc,w,c
- 16717  000060  0A02               	xorlw	2
- 16718  000062  A4D8               	btfss	status,2,c
- 16719  000064  D001               	goto	i1u784_21
- 16720  000066  D001               	goto	i1u784_20
- 16721  000068                     i1u784_21:
- 16722  000068  D00E               	goto	i1l7093
- 16723  00006A                     i1u784_20:
- 16724  00006A                     
+ 16716  00025E  5056               	movf	_vscp_initledfunc,w,c
+ 16717  000260  0A02               	xorlw	2
+ 16718  000262  A4D8               	btfss	status,2,c
+ 16719  000264  D001               	goto	i1u784_21
+ 16720  000266  D001               	goto	i1u784_20
+ 16721  000268                     i1u784_21:
+ 16722  000268  D00E               	goto	i1l7093
+ 16723  00026A                     i1u784_20:
+ 16724  00026A                     
  16725                           ; BSR set to: 0
- 16726  00006A  0E64               	movlw	100
- 16727  00006C  6458               	cpfsgt	_vscp_statuscnt,c	;volatile
- 16728  00006E  D001               	goto	i1u785_21
- 16729  000070  D001               	goto	i1u785_20
- 16730  000072                     i1u785_21:
- 16731  000072  D009               	goto	i1l7093
- 16732  000074                     i1u785_20:
- 16733  000074                     
+ 16726  00026A  0E64               	movlw	100
+ 16727  00026C  6458               	cpfsgt	_vscp_statuscnt,c	;volatile
+ 16728  00026E  D001               	goto	i1u785_21
+ 16729  000270  D001               	goto	i1u785_20
+ 16730  000272                     i1u785_21:
+ 16731  000272  D009               	goto	i1l7093
+ 16732  000274                     i1u785_20:
+ 16733  000274                     
  16734                           ; BSR set to: 0
  16735                           ;main.c: 162: if ( PORTCbits.RC1 ) {
- 16736  000074  A282               	btfss	3970,1,c	;volatile
- 16737  000076  D001               	goto	i1u786_21
- 16738  000078  D001               	goto	i1u786_20
- 16739  00007A                     i1u786_21:
- 16740  00007A  D002               	goto	i1l137
- 16741  00007C                     i1u786_20:
- 16742  00007C                     
+ 16736  000274  A282               	btfss	3970,1,c	;volatile
+ 16737  000276  D001               	goto	i1u786_21
+ 16738  000278  D001               	goto	i1u786_20
+ 16739  00027A                     i1u786_21:
+ 16740  00027A  D002               	goto	i1l137
+ 16741  00027C                     i1u786_20:
+ 16742  00027C                     
  16743                           ; BSR set to: 0
  16744                           ;main.c: 163: PORTCbits.RC1 = 0;
- 16745  00007C  9282               	bcf	3970,1,c	;volatile
+ 16745  00027C  9282               	bcf	3970,1,c	;volatile
  16746                           
  16747                           ;main.c: 164: }
- 16748  00007E  D001               	goto	i1l138
- 16749  000080                     i1l137:
+ 16748  00027E  D001               	goto	i1l138
+ 16749  000280                     i1l137:
  16750                           
  16751                           ; BSR set to: 0
  16752                           ;main.c: 165: else {
  16753                           ;main.c: 166: PORTCbits.RC1 = 1;
- 16754  000080  8282               	bsf	3970,1,c	;volatile
- 16755  000082                     i1l138:
+ 16754  000280  8282               	bsf	3970,1,c	;volatile
+ 16755  000282                     i1l138:
  16756                           
  16757                           ; BSR set to: 0
  16758                           ;main.c: 167: }
  16759                           ;main.c: 169: vscp_statuscnt = 0;
- 16760  000082  6A58               	clrf	_vscp_statuscnt,c	;volatile
+ 16760  000282  6A58               	clrf	_vscp_statuscnt,c	;volatile
  16761                           
  16762                           ;main.c: 171: }
- 16763  000084  D00E               	goto	i1l139
- 16764  000086                     i1l7093:
+ 16763  000284  D00E               	goto	i1l139
+ 16764  000286                     i1l7093:
  16765                           
  16766                           ; BSR set to: 0
  16767                           ;main.c: 172: else if (0x01 == vscp_initledfunc) {
- 16768  000086  0456               	decf	_vscp_initledfunc,w,c
- 16769  000088  A4D8               	btfss	status,2,c
- 16770  00008A  D001               	goto	i1u787_21
- 16771  00008C  D001               	goto	i1u787_20
- 16772  00008E                     i1u787_21:
- 16773  00008E  D003               	goto	i1l140
- 16774  000090                     i1u787_20:
- 16775  000090                     
+ 16768  000286  0456               	decf	_vscp_initledfunc,w,c
+ 16769  000288  A4D8               	btfss	status,2,c
+ 16770  00028A  D001               	goto	i1u787_21
+ 16771  00028C  D001               	goto	i1u787_20
+ 16772  00028E                     i1u787_21:
+ 16773  00028E  D003               	goto	i1l140
+ 16774  000290                     i1u787_20:
+ 16775  000290                     
  16776                           ; BSR set to: 0
  16777                           ;main.c: 173: PORTCbits.RC1 = 1;
- 16778  000090  8282               	bsf	3970,1,c	;volatile
+ 16778  000290  8282               	bsf	3970,1,c	;volatile
  16779                           
  16780                           ;main.c: 174: vscp_statuscnt = 0;
- 16781  000092  6A58               	clrf	_vscp_statuscnt,c	;volatile
+ 16781  000292  6A58               	clrf	_vscp_statuscnt,c	;volatile
  16782                           
  16783                           ;main.c: 175: }
- 16784  000094  D006               	goto	i1l139
- 16785  000096                     i1l140:
+ 16784  000294  D006               	goto	i1l139
+ 16785  000296                     i1l140:
  16786                           
  16787                           ; BSR set to: 0
  16788                           ;main.c: 176: else if (0x00 == vscp_initledfunc) {
- 16789  000096  6656               	tstfsz	_vscp_initledfunc,c
- 16790  000098  D001               	goto	i1u788_21
- 16791  00009A  D001               	goto	i1u788_20
- 16792  00009C                     i1u788_21:
- 16793  00009C  D002               	goto	i1l139
- 16794  00009E                     i1u788_20:
- 16795  00009E                     
+ 16789  000296  6656               	tstfsz	_vscp_initledfunc,c
+ 16790  000298  D001               	goto	i1u788_21
+ 16791  00029A  D001               	goto	i1u788_20
+ 16792  00029C                     i1u788_21:
+ 16793  00029C  D002               	goto	i1l139
+ 16794  00029E                     i1u788_20:
+ 16795  00029E                     
  16796                           ; BSR set to: 0
  16797                           ;main.c: 177: PORTCbits.RC1 = 0;
- 16798  00009E  9282               	bcf	3970,1,c	;volatile
+ 16798  00029E  9282               	bcf	3970,1,c	;volatile
  16799                           
  16800                           ;main.c: 178: vscp_statuscnt = 0;
- 16801  0000A0  6A58               	clrf	_vscp_statuscnt,c	;volatile
- 16802  0000A2                     i1l139:
+ 16801  0002A0  6A58               	clrf	_vscp_statuscnt,c	;volatile
+ 16802  0002A2                     i1l139:
  16803                           
  16804                           ; BSR set to: 0
  16805                           ;main.c: 179: }
  16806                           ;main.c: 181: INTCONbits.TMR0IF = 0;
- 16807  0000A2  94F2               	bcf	intcon,2,c	;volatile
- 16808  0000A4                     i1l143:
- 16809  0000A4  C007  FFE0         	movff	??_interrupt_at_low_vector+2,bsr
- 16810  0000A8  C006  FFE8         	movff	??_interrupt_at_low_vector+1,wreg
- 16811  0000AC  C005  FFD8         	movff	??_interrupt_at_low_vector,status
- 16812  0000B0  0010               	retfie	
- 16813  0000B2                     __end_of_interrupt_at_low_vector:
+ 16807  0002A2  94F2               	bcf	intcon,2,c	;volatile
+ 16808  0002A4                     i1l143:
+ 16809  0002A4  C007  FFE0         	movff	??_interrupt_at_low_vector+2,bsr
+ 16810  0002A8  C006  FFE8         	movff	??_interrupt_at_low_vector+1,wreg
+ 16811  0002AC  C005  FFD8         	movff	??_interrupt_at_low_vector,status
+ 16812  0002B0  0010               	retfie	
+ 16813  0002B2                     __end_of_interrupt_at_low_vector:
  16814                           	opt stack 0
  16815                           tblptru	equ	0xFF8
  16816                           tblptrh	equ	0xFF7
@@ -17925,7 +17925,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
-Symbol Table                                                                                   Fri Feb 13 16:23:07 2015
+Symbol Table                                                                                   Fri Feb 13 16:24:53 2015
 
                       doActionToggle@val 00CA                  __end_of_vscp_readAppReg 3806  
                   __end_of_sendVSCPFrame 3750             ?_vscp_writeNicknamePermanent 0001  
@@ -18130,7 +18130,7 @@ Symbol Table                                                                    
                     i1WriteTimer0@timer0 0001                         _vscp_writeAppReg 0622  
                             _vscp_minute 0090                              _vscp_second 0095  
                                    prodh 000FF4                                     prodl 000FF3  
-                                   start 00B2                     doActionPulse@dmflags 000F  
+                                   start 02B2                     doActionPulse@dmflags 000F  
           __size_of_vscp_doOneSecondWork 004E                        vscp_getUserID@idx 000B  
                   __size_of_vscp_setGUID 0022                         _vscp_writeStdReg 2A42  
                         _doActionDisable 398A                              _writeEEPROM 3CD4  
@@ -18194,10 +18194,10 @@ Symbol Table                                                                    
                                   u11195 2BC4                                    u12315 3538  
                                   u13204 3040                                    u13205 303C  
                                   u10695 2F12                                    u12954 2410  
-                                  u12955 240C                                    i1l140 0096  
-                                  i1l135 005C                                    i1l143 00A4  
-                                  i1l137 0080                                    i1l138 0082  
-                                  i1l139 00A2                          sendCANFrame@dlc 003B  
+                                  u12955 240C                                    i1l140 0296  
+                                  i1l135 025C                                    i1l143 02A4  
+                                  i1l137 0280                                    i1l138 0282  
+                                  i1l139 02A2                          sendCANFrame@dlc 003B  
                                   _MSEL0 000DF0                                    _MSEL1 000DF1  
                                   _MSEL2 000DF2                                    _IRXIF 007D27  
                                   _TMR0H 000FD7                                    _TMR0L 000FD6  
@@ -18218,7 +18218,7 @@ Symbol Table                                                                    
                    _ECANSetOperationMode 3E70                          __initialization 3D42  
                            __end_of_doDM 2108                             __end_of_main 3526  
                            __end_of_init 3BB0                         ?_vscp_readAppReg 0001  
-                _interrupt_at_low_vector 0018                           doDM@class_mask 00D2  
+                _interrupt_at_low_vector 0218                           doDM@class_mask 00D2  
                          __CFG_OSC$HSPLL 000000                        ??_ECANSendMessage 001A  
                          ?i1_WriteTimer0 0001                                   ??_doDM 00CD  
                        ?_vscp_readStdReg 0001                    getVSCPFrame@pvscptype 001E  
@@ -18236,14 +18236,14 @@ Symbol Table                                                                    
                                  _EECON2 000FA7                                   _CIOCON 000F73  
                           doDM@type_mask 00D5                       vscp_writeStdReg@rv 001F  
                           ?_init_app_ram 0001                                   _MDSEL0 007BBE  
-                                 _MDSEL1 007BBF                                   i1l7071 0024  
-                                 i1l7081 0056                                   i1l7073 002C  
-                             _OpenTimer0 3E08                                   i1l7091 007C  
-                                 i1l7083 005A                                   i1l7075 0038  
-                                 i1l7093 0086                                   i1l7085 005E  
-                                 i1l7077 003E                                   i1l7095 0090  
-                                 i1l7087 006A                                   i1l7079 004E  
-                                 i1l7097 009E                                   i1l7089 0074  
+                                 _MDSEL1 007BBF                                   i1l7071 0224  
+                                 i1l7081 0256                                   i1l7073 022C  
+                             _OpenTimer0 3E08                                   i1l7091 027C  
+                                 i1l7083 025A                                   i1l7075 0238  
+                                 i1l7093 0286                                   i1l7085 025E  
+                                 i1l7077 023E                                   i1l7095 0290  
+                                 i1l7087 026A                                   i1l7079 024E  
+                                 i1l7097 029E                                   i1l7089 0274  
                         _init_app_eeprom 1A72                                   _RXB0IF 007D20  
                                  _RXB1IF 007D21                  __end_of_doActionDisable 39F6  
                                  _RXF1EN 006EA1                   ECANReceiveMessage@data 000F  
@@ -18305,7 +18305,7 @@ Symbol Table                                                                    
                     vscp_writeStdReg@idx 001D                      vscp_writeStdReg@reg 0020  
            __end_of_vscp_doOneSecondWork 3AB0              ?_vscp_readNicknamePermanent 0001  
                   sendVSCPFrame@vscptype 0041                            ??_doActionOff 00C7  
-        __end_of_interrupt_at_low_vector 00B2                        sendCANFrame@pdata 003C  
+        __end_of_interrupt_at_low_vector 02B2                        sendCANFrame@pdata 003C  
                   _vscp_handleProbeState 35E0                                  _RXB0CON 000F60  
                                 _RXB1CON 000F50                                  _RXB0FUL 007B07  
                        __ECANPointBuffer 3914               __end_of_vscp_getMatrixInfo 3DEA  
@@ -18427,7 +18427,7 @@ Symbol Table                                                                    
                         ?_doActionStatus 0051                 __size_of_doActionDisable 006C  
                                ?___lbmod 0008                      ?_vscp_getMatrixInfo 0001  
                 calculateSetFilterMask@i 0043                  calculateSetFilterMask@j 0042  
-                        vscp_getGUID@idx 000B                              __pintcodelo 0018  
+                        vscp_getGUID@idx 000B                              __pintcodelo 0218  
                            ??_doActionOn 00C7                    ?_vscp_handleHeartbeat 0001  
        vscp_handleProtocolEvent@len_1278 00E1               vscp_setManufacturerId@data 000B  
                            _sendCANFrame 3AF4                              __smallconst 0600  
@@ -18444,14 +18444,14 @@ Symbol Table                                                                    
                                _LATBbits 000F8A                     _vscp_getMinorVersion 3F92  
                                _LATCbits 000F8B                                _sendTimer 0055  
                      __end_of_doActionOn 2664                   __end_of_ECANInitialize 389C  
-                               _PIR2bits 000FA1                                 i1u782_20 002C  
-                               i1u782_21 002A                                 i1u783_20 0056  
-                               i1u783_21 0054                                 i1u784_20 006A  
-                               i1u784_21 0068                                 i1u785_20 0074  
-                               i1u785_21 0072                                 i1u786_20 007C  
-                               i1u786_21 007A                                 i1u787_20 0090  
-                               i1u787_21 008E                                 i1u788_20 009E  
-                               i1u788_21 009C                         ECANSendMessage@i 0034  
+                               _PIR2bits 000FA1                                 i1u782_20 022C  
+                               i1u782_21 022A                                 i1u783_20 0256  
+                               i1u783_21 0254                                 i1u784_20 026A  
+                               i1u784_21 0268                                 i1u785_20 0274  
+                               i1u785_21 0272                                 i1u786_20 027C  
+                               i1u786_21 027A                                 i1u787_20 0290  
+                               i1u787_21 028E                                 i1u788_20 029E  
+                               i1u788_21 029C                         ECANSendMessage@i 0034  
                        ECANSendMessage@j 002F                    __end_of_vscp_getEvent 3C60  
                                _RXF0EIDH 000F02                                 _RXF0EIDL 000F03  
                                _RXB0OVFL 007BA7                                 _RXF1EIDH 000F06  

@@ -79,7 +79,7 @@
       </makeCustomizationType>
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
-        <property key="define-macros" value=""/>
+        <property key="define-macros" value="ENABLE_WRITE_2PROTECTED_LOCATIONS;RELEASE"/>
         <property key="extra-include-directories"
                   value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>
@@ -246,7 +246,7 @@
       </makeCustomizationType>
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
-        <property key="define-macros" value=""/>
+        <property key="define-macros" value="ENABLE_WRITE_2PROTECTED_LOCATIONS;RELEASE"/>
         <property key="extra-include-directories"
                   value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>

@@ -28,7 +28,7 @@ _doActionToggle 3028 0 CODE 0
 _main 3446 0 CODE 0
 __end_of_doDM 2108 0 CODE 0
 _init 3B72 0 CODE 0
-start B2 0 CODE 0
+start 2B2 0 CODE 0
 vscp_getManufacturerId@idx B 0 COMRAM 1
 __size_of_vscp_getSubzone 0 0 ABS 0
 __size_of_vscp_getZone 0 0 ABS 0
@@ -83,7 +83,7 @@ OpenTimer0@config 8 0 COMRAM 1
 __end_of_vscp_readRegister 3E40 0 CODE 0
 __size_of_init 0 0 ABS 0
 _calculateSetFilterMask 1606 0 CODE 0
-_interrupt_at_low_vector 18 0 CODE 0
+_interrupt_at_low_vector 218 0 CODE 0
 _vscp_handleDropNickname 3BB0 0 CODE 0
 __Hconfig 30000E 0 CONFIG 0
 __Lconfig 300000 0 CONFIG 0
@@ -179,8 +179,8 @@ __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
 __size_of_calculateSetFilterMask 0 0 ABS 0
-__Hintcode 4 0 CODE 0
-__Lintcode 4 0 CODE 0
+__Hintcode 204 0 CODE 0
+__Lintcode 204 0 CODE 0
 __Hfardata 0 0 FARRAM 0
 __Lfardata 0 0 FARRAM 0
 _vscp_getEvent 3C36 0 CODE 0
@@ -251,18 +251,18 @@ __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
 __size_of_vscp_setGUID 0 0 ABS 0
 _vscp_sendEvent 3CAE 0 CODE 0
-__Hinit B2 0 CODE 0
-__Linit B2 0 CODE 0
-__Hintcodelo B2 0 CODE 0
+__Hinit 2B2 0 CODE 0
+__Linit 2B2 0 CODE 0
+__Hintcodelo 2B2 0 CODE 0
 _vscp_imsg 96 0 BANK0 1
 sendVSCPFrame@size 44 0 COMRAM 1
-__Lintcodelo 18 0 CODE 0
+__Lintcodelo 218 0 CODE 0
 __end_of_getCANFrame 3C0C 0 CODE 0
 __Hrbss 0 0 COMRAM 1
 __end_of_main 3526 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 ?_vscp_writeRegister CF 0 BANK0 1
-__pintcodelo 18 0 CODE 0
+__pintcodelo 218 0 CODE 0
 _vscp_handleHeartbeat 3B34 0 CODE 0
 __size_of_ECANSetOperationMode 0 0 ABS 0
 __size_of_vscp_sendHeartBeat 0 0 ABS 0
@@ -358,8 +358,8 @@ _relay_pulse_timer 70 0 BANK0 1
 __Lbank4 0 0 ABS 0
 __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
-__Hpowerup B2 0 CODE 0
-__Lpowerup B2 0 CODE 0
+__Hpowerup 2B2 0 CODE 0
+__Lpowerup 2B2 0 CODE 0
 _vscp_hour 8E 0 BANK0 1
 __size_of_doActionStatus 0 0 ABS 0
 doActionOff@arg 51 0 COMRAM 1
@@ -775,7 +775,7 @@ __CFG_BORV$3 0 0 ABS 0
 __Htext77 0 0 ABS 0
 __Htext58 0 0 ABS 0
 __Htext39 0 0 ABS 0
-__end_of_interrupt_at_low_vector B2 0 CODE 0
+__end_of_interrupt_at_low_vector 2B2 0 CODE 0
 _vscp_getGUID 3EB0 0 CODE 0
 __Ltext77 0 0 ABS 0
 __Ltext58 0 0 ABS 0
@@ -807,8 +807,8 @@ _RXF1EIDH F06 0 ABS 0
 _RXM0EIDH F1A 0 ABS 0
 _RXM1EIDH F1E 0 ABS 0
 __ptext69 3806 0 CODE 0
-__Hend_init B6 0 CODE 0
-__Lend_init B2 0 CODE 0
+__Hend_init 2B6 0 CODE 0
+__Lend_init 2B2 0 CODE 0
 vscp_setSegmentCRC@crc B 0 COMRAM 1
 _vscp_setGUID 3DA8 0 CODE 0
 __ECANPointBuffer 3914 0 CODE 0
@@ -842,8 +842,8 @@ __size_of_vscp_getMDF_URL 0 0 ABS 0
 calculateSetFilterMask@mask 36 0 COMRAM 1
 __ECANPointBuffer@pt C 0 COMRAM 1
 ECANReceiveMessage@dataLen 10 0 COMRAM 1
-__Hreset_vec 4 0 CODE 0
-__Lreset_vec 0 0 CODE 0
+__Hreset_vec 204 0 CODE 0
+__Lreset_vec 200 0 CODE 0
 doDM@class_filter D0 0 BANK0 1
 doActionOff@dmflags C9 0 BANK0 1
 _RXB0OVFL 7BA7 0 ABS 0
@@ -943,8 +943,8 @@ vscp_writeStdReg@idx_1269 1E 0 COMRAM 1
 __end_of_ECANSendMessage 2D74 0 CODE 0
 __end_of_vscp_getGUID 3EC4 0 CODE 0
 %segments
-reset_vec 0 3 CODE 0 0
-intcodelo 18 B5 CODE 18 0
+reset_vec 200 203 CODE 200 0
+intcodelo 218 2B5 CODE 218 0
 smallconst 600 621 SMALLCONST 600 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
@@ -952,9 +952,9 @@ cstackCOMRAM 1 58 COMRAM 1 1
 bssBANK0 60 EB BANK0 60 1
 text26 622 3F95 CODE 622 0
 %locals
-dist/Release/production\paris_relay.X.production.obj
+dist/Relocated/production\paris_relay.X.production.obj
 C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f2580.h
-C:\Users\GRODAN~1\AppData\Local\Temp\s4cc.
+C:\Users\GRODAN~1\AppData\Local\Temp\s1vs.
 3048 3D42 0 CODE 0
 3049 3D46 0 CODE 0
 3051 3D48 0 CODE 0
@@ -2396,31 +2396,31 @@ C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
 104 3F1A 0 CODE 0
 105 3F1C 0 CODE 0
 ../main.c
-141 24 0 CODE 0
-144 2C 0 CODE 0
-146 38 0 CODE 0
-147 3E 0 CODE 0
-150 4E 0 CODE 0
-151 56 0 CODE 0
-152 58 0 CODE 0
-154 5A 0 CODE 0
-158 5C 0 CODE 0
-160 5E 0 CODE 0
-162 74 0 CODE 0
-163 7C 0 CODE 0
-164 7E 0 CODE 0
-166 80 0 CODE 0
-169 82 0 CODE 0
-171 84 0 CODE 0
-172 86 0 CODE 0
-173 90 0 CODE 0
-174 92 0 CODE 0
-175 94 0 CODE 0
-176 96 0 CODE 0
-177 9E 0 CODE 0
-178 A0 0 CODE 0
-181 A2 0 CODE 0
-186 A4 0 CODE 0
+141 224 0 CODE 0
+144 22C 0 CODE 0
+146 238 0 CODE 0
+147 23E 0 CODE 0
+150 24E 0 CODE 0
+151 256 0 CODE 0
+152 258 0 CODE 0
+154 25A 0 CODE 0
+158 25C 0 CODE 0
+160 25E 0 CODE 0
+162 274 0 CODE 0
+163 27C 0 CODE 0
+164 27E 0 CODE 0
+166 280 0 CODE 0
+169 282 0 CODE 0
+171 284 0 CODE 0
+172 286 0 CODE 0
+173 290 0 CODE 0
+174 292 0 CODE 0
+175 294 0 CODE 0
+176 296 0 CODE 0
+177 29E 0 CODE 0
+178 2A0 0 CODE 0
+181 2A2 0 CODE 0
+186 2A4 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
 20 3F1E 0 CODE 0
 22 3F26 0 CODE 0
