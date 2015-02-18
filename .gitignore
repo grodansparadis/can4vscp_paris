@@ -30,3 +30,5 @@
 /test/flilter_test/*.suo
 /test/flilter_test/flilter_test/*.user
 /test/flilter_test/ipch/flilter_test-f4697474/*.ipch
+/paris_relay.X/build/Debug/production/_ext/1472/*.p1
+/paris_relay.X/build/Debug/production/_ext/1472/*.d
