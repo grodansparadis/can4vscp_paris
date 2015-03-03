@@ -132,11 +132,6 @@ uint16_t relay_protection_timer[8];
 
 void interrupt low_priority  interrupt_at_low_vector( void )
 {
-    //unsigned short tval0, tval1;
-    //char *p;
-
-    //tval0 += 1;
-
     // Clock
     if ( INTCONbits.TMR0IF ) { // If a Timer0 Interrupt, Then...
 
@@ -144,6 +139,7 @@ void interrupt low_priority  interrupt_at_low_vector( void )
         WriteTimer0(TIMER0_RELOAD_VALUE);
         
         vscp_timer++;
+        vscp_configtimer++;
         measurement_clock++;
 
         // Check for init button
