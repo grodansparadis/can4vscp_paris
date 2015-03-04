@@ -188,7 +188,7 @@ void interrupt low_priority  interrupt_at_low_vector( void )
 
 void main()
 {
-    init(); // Initialize Microcontroller
+    init(); // Initialize Micro controller
 
     // Check VSCP persistent storage and
     // restore if needed
@@ -196,7 +196,7 @@ void main()
 
         // Spoiled or not initialized - reinitialize
         init_app_eeprom();
-        init_app_ram();     // Needed becuse some ram positions
+        init_app_ram();     // Needed because some ram positions
                             // are initialized from EEPROM
 
     }
