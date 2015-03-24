@@ -5,8 +5,8 @@
  * 	2005-03-16
  * 	akhe@eurosource.se
  *
- *  Copyright (C) 1995-2013 Ake Hedman, Grodans Paradis AB
- *                          <akhe@grodansparadis.com>
+ *  Copyright (C) 1995-2015 Ake Hedman, Grodans Paradis AB
+ *  <akhe@grodansparadis.com>
  *
  * This software is provided 'as-is', without any express or implied
  * warranty.  In no event will the authors be held liable for any damages
@@ -36,7 +36,7 @@
 // Firmware version
 
 #define FIRMWARE_MAJOR_VERSION		1
-#define FIRMWARE_MINOR_VERSION		0
+#define FIRMWARE_MINOR_VERSION		1
 #define FIRMWARE_SUB_MINOR_VERSION	0
 
 
@@ -45,7 +45,8 @@
 /*
 
  History updated in HISTORY.txt instead.
- * 
+
+Version 1.0.1 2015-03-15 - Relocated version.
 Version 0.1.5 2007-02-27 - Fixed register write offset problem.
 						   Added zone/subzone data.
 						   Temp. interval was at same EEPROM index - fixed.

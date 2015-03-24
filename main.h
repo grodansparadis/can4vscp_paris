@@ -41,7 +41,7 @@
 
 #define VSCP_EEPROM_NICKNAME				0x01	// Persistant nickname id storage
 #define VSCP_EEPROM_SEGMENT_CRC				0x02	// Persistant segment crc storage
-#define VSCP_EEPROM_CONTROL                 0x03	// Persistant control byte
+#define VSCP_EEPROM_CONTROL                             0x03	// Persistant control byte
 
 #define VSCP_EEPROM_REG_USERID				0x04
 #define VSCP_EEPROM_REG_USERID1				0x05
@@ -69,8 +69,8 @@
 #define VSCP_EEPROM_REG_DEVICE_URL		0x21	// Start of Device URL storage
                                                 // 		0x21 - 0x40
 
-#define VSCP_EEPROM_END                 0x41	// marks end of VSCP EEPROM usage
-                                                //   (next free position)
+#define VSCP_EEPROM_END                         0x41	// marks end of VSCP EEPROM usage
+                                                        //   (next free position)
 
 // Function Prototypes
 

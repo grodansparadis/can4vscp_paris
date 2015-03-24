@@ -1,0 +1,4028 @@
+Microchip MPLAB XC8 Compiler V1.21 ()
+
+Linker command line:
+
+--edf=C:\Program Files (x86)\Microchip\xc8\v1.21\dat\en_msgs.txt -cs \
+  -h+dist/Release/debug\paris_relay.X.debug.sym \
+  --cmf=dist/Release/debug\paris_relay.X.debug.cmf -z -Q18F2580 \
+  -oC:\Users\GRODAN~1\AppData\Local\Temp\s3lk.6 \
+  -Mdist/Release/debug/paris_relay.X.debug.map -E1 -ver=XC8 \
+  -ACODE=072h-07CFFh -ACONST=072h-07CFFh -ASMALLCONST=0600h-06FFhx119 \
+  -AMEDIUMCONST=0600h-07CFFh -ACOMRAM=01h-05Fh -AABS1=00h-05EEh \
+  -ABIGRAM=01h-05EEh -ARAM=060h-0FFh,0100h-01FFhx4,0500h-05EEh \
+  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
+  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05EEh \
+  -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFBh \
+  -preset_vec=00h,intcode,intcodelo=018h,powerup,init,end_init \
+  -pramtop=0600h -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST \
+  -pconst=CONST -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
+  -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F000FFh \
+  -peeprom_data=EEDATA \
+  -prdata=COMRAM,nvrram=COMRAM,nvbit=COMRAM,rbss=COMRAM,rbit=COMRAM \
+  -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
+  -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
+  -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
+  C:\Users\GRODAN~1\AppData\Local\Temp\s3lk.obj \
+  dist/Release/debug\paris_relay.X.debug.obj \
+  C:\Program Files (x86)\Microchip\xc8\v1.21\lib\pic18-trace-obj.lib 
+
+Object code version is 3.11
+
+Machine type is 18F2580
+
+Call graph: (short form)
+
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\GRODAN~1\AppData\Local\Temp\s3lk.obj
+                end_init                             B6       B6        4        C       0
+                reset_vec                             0        0        6        0       0
+                idloc                            200000   200000        8   200000       0
+                config                           300000   300000        E   300000       0
+dist/Release/debug\paris_relay.X.debug.obj
+                intcodelo                            18       18       9E        C       0
+                smallconst                          600      600       22      300       0
+                text77                             3F14     3F14       12      311       0
+                text75                             3F02     3F02       12      311       0
+                text74                             372E     372E       B6      311       0
+                text73                             3EF0     3EF0       12      311       0
+                text72                             3126     3126      10E      311       0
+                text71                             3DE6     3DE6       1E      311       0
+                text70                             3E66     3E66       18      311       0
+                text69                             37E4     37E4       96      311       0
+                text68                             3B50     3B50       3E      311       0
+                text67                             3CB2     3CB2       26      311       0
+                text66                             3EDE     3EDE       12      311       0
+                text65                             3F58     3F58        A      311       0
+                text64                             3ECC     3ECC       12      311       0
+                text63                             3EBA     3EBA       12      311       0
+                text62                             3CFC     3CFC       24      311       0
+                text61                             38F2     38F2       76      311       0
+                text60                             2D52     2D52      164      311       0
+                text59                             2642     2642      20E      311       0
+                text58                             3BBE     3BBE       2C      311       0
+                text57                             387A     387A       78      311       0
+                text56                             3C14     3C14       2A      311       0
+                text55                             2EB6     2EB6      150      311       0
+                text54                             2BE8     2BE8      16A      311       0
+                text53                             3AD2     3AD2       40      311       0
+                text52                             3678     3678       B6      311       0
+                text51                             3C8C     3C8C       26      311       0
+                text50                             3DC8     3DC8       1E      311       0
+                text49                             35BE     35BE       BA      311       0
+                text48                             3E4E     3E4E       18      311       0
+                text47                             3DA8     3DA8       20      311       0
+                text46                             3B12     3B12       3E      311       0
+                text45                             3CD8     3CD8       24      311       0
+                text44                             3F4E     3F4E        A      311       0
+                text43                             3A8E     3A8E       44      311       0
+                text42                             3B8E     3B8E       30      311       0
+                text41                             3BEA     3BEA       2A      311       0
+                text40                             3F7A     3F7A        2      311       0
+                text39                             3F78     3F78        2      311       0
+                text38                             3F76     3F76        2      311       0
+                text37                             3EA6     3EA6       14      311       0
+                text36                             3E36     3E36       18      311       0
+                text35                             3E92     3E92       14      311       0
+                text34                             3E7E     3E7E       14      311       0
+                text33                             3F74     3F74        2      311       0
+                text32                             3F72     3F72        2      311       0
+                text31                             3F70     3F70        2      311       0
+                text30                             3340     3340       E4      311       0
+                text29                             3E04     3E04       1A      311       0
+                text28                             39D4     39D4       6C      311       0
+                text27                             15EC     15EC      46C      311       0
+                text26                              622      622      9AE      311       0
+                text25                             3D86     3D86       22      311       0
+                text24                             3D64     3D64       22      311       0
+                text23                             3E1E     3E1E       18      311       0
+                text22                             3F44     3F44        A      311       0
+                text21                             3F3A     3F3A        A      311       0
+                text20                             1A58     1A58      376      311       0
+                text19                             3F62     3F62        8      311       0
+                text18                             2A20     2A20      1C8      311       0
+                text17                             3D42     3D42       22      311       0
+                text16                             3C3E     3C3E       28      311       0
+                text15                              FD0      FD0      61C      311       0
+                text14                             3504     3504       BA      311       0
+                text13                             23D8     23D8      26A      311       0
+                text12                             2850     2850      1D0      311       0
+                text11                             3234     3234      10C      311       0
+                text10                             3968     3968       6C      311       0
+                text9                              3006     3006      120      311       0
+                text8                              1DCE     1DCE      318      311       0
+                text7                              3F6A     3F6A        4      311       0
+                text6                              3F30     3F30        A      311       0
+                text5                              3F26     3F26        A      311       0
+                text4                              3C66     3C66       26      311       0
+                text3                              3A40     3A40       4E      311       0
+                text2                              20E6     20E6      2F2      311       0
+                text1                              3F6E     3F6E        2      311       0
+                text0                              3424     3424       E0      311       0
+                cstackCOMRAM                          1        1       51        1       1
+                cstackBANK0                          B6       B6       3B       60       1
+                bssBANK0                             60       60       56       60       1
+                bssCOMRAM                            52       52        7        1       1
+                cinit                              3D20     3D20       22      311       0
+                nvBANK0                              F1       F1        1       60       1
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\lib\pic18-trace-obj.lib
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CODE           
+                end_init                             B6       B6        4         0
+                intcodelo                            18       18       9E         0
+                reset_vec                             0        0        6         0
+                text77                             3F14     3F14       12         0
+                text75                             3F02     3F02       12         0
+                text74                             372E     372E       B6         0
+                text73                             3EF0     3EF0       12         0
+                text72                             3126     3126      10E         0
+                text71                             3DE6     3DE6       1E         0
+                text70                             3E66     3E66       18         0
+                text69                             37E4     37E4       96         0
+                text68                             3B50     3B50       3E         0
+                text67                             3CB2     3CB2       26         0
+                text66                             3EDE     3EDE       12         0
+                text65                             3F58     3F58        A         0
+                text64                             3ECC     3ECC       12         0
+                text63                             3EBA     3EBA       12         0
+                text62                             3CFC     3CFC       24         0
+                text61                             38F2     38F2       76         0
+                text60                             2D52     2D52      164         0
+                text59                             2642     2642      20E         0
+                text58                             3BBE     3BBE       2C         0
+                text57                             387A     387A       78         0
+                text56                             3C14     3C14       2A         0
+                text55                             2EB6     2EB6      150         0
+                text54                             2BE8     2BE8      16A         0
+                text53                             3AD2     3AD2       40         0
+                text52                             3678     3678       B6         0
+                text51                             3C8C     3C8C       26         0
+                text50                             3DC8     3DC8       1E         0
+                text49                             35BE     35BE       BA         0
+                text48                             3E4E     3E4E       18         0
+                text47                             3DA8     3DA8       20         0
+                text46                             3B12     3B12       3E         0
+                text45                             3CD8     3CD8       24         0
+                text44                             3F4E     3F4E        A         0
+                text43                             3A8E     3A8E       44         0
+                text42                             3B8E     3B8E       30         0
+                text41                             3BEA     3BEA       2A         0
+                text40                             3F7A     3F7A        2         0
+                text39                             3F78     3F78        2         0
+                text38                             3F76     3F76        2         0
+                text37                             3EA6     3EA6       14         0
+                text36                             3E36     3E36       18         0
+                text35                             3E92     3E92       14         0
+                text34                             3E7E     3E7E       14         0
+                text33                             3F74     3F74        2         0
+                text32                             3F72     3F72        2         0
+                text31                             3F70     3F70        2         0
+                text30                             3340     3340       E4         0
+                text29                             3E04     3E04       1A         0
+                text28                             39D4     39D4       6C         0
+                text27                             15EC     15EC      46C         0
+                text26                              622      622      9AE         0
+                text25                             3D86     3D86       22         0
+                text24                             3D64     3D64       22         0
+                text23                             3E1E     3E1E       18         0
+                text22                             3F44     3F44        A         0
+                text21                             3F3A     3F3A        A         0
+                text20                             1A58     1A58      376         0
+                text19                             3F62     3F62        8         0
+                text18                             2A20     2A20      1C8         0
+                text17                             3D42     3D42       22         0
+                text16                             3C3E     3C3E       28         0
+                text15                              FD0      FD0      61C         0
+                text14                             3504     3504       BA         0
+                text13                             23D8     23D8      26A         0
+                text12                             2850     2850      1D0         0
+                text11                             3234     3234      10C         0
+                text10                             3968     3968       6C         0
+                text9                              3006     3006      120         0
+                text8                              1DCE     1DCE      318         0
+                text7                              3F6A     3F6A        4         0
+                text6                              3F30     3F30        A         0
+                text5                              3F26     3F26        A         0
+                text4                              3C66     3C66       26         0
+                text3                              3A40     3A40       4E         0
+                text2                              20E6     20E6      2F2         0
+                text1                              3F6E     3F6E        2         0
+                text0                              3424     3424       E0         0
+                cinit                              3D20     3D20       22         0
+
+        CLASS   CONST          
+
+        CLASS   SMALLCONST     
+                smallconst                          600      600       22         0
+
+        CLASS   MEDIUMCONST    
+
+        CLASS   COMRAM         
+                cstackCOMRAM                          1        1       51         1
+                bssCOMRAM                            52       52        7         1
+
+        CLASS   ABS1           
+
+        CLASS   BIGRAM         
+
+        CLASS   RAM            
+
+        CLASS   BANK0          
+                cstackBANK0                          B6       B6       3B         1
+                bssBANK0                             60       60       56         1
+                nvBANK0                              F1       F1        1         1
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   BANK4          
+
+        CLASS   BANK5          
+
+        CLASS   SFR            
+
+        CLASS   FARRAM         
+
+        CLASS   CONFIG         
+                config                           300000   300000        E         0
+
+        CLASS   IDLOC          
+                idloc                            200000   200000        8         0
+
+        CLASS   EEDATA         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
+
+                reset_vec                      000000  000006  000006         0       0  CODE    
+                cstackCOMRAM                   000001  000058  000059         1       1  COMRAM  
+                intcodelo                      000018  0000A2  0000BA         C       0  CODE    
+                bssBANK0                       000060  000092  0000F2        60       1  BANK0   
+                smallconst                     000600  000022  000622       300       0  SMALLCON
+                text26                         000622  00395A  003F7C       311       0  CODE    
+                idloc                          200000  000008  200008    200000       0  IDLOC   
+                config                         300000  00000E  30000E    300000       0  CONFIG  
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            0000F2-0000FF                E
+        BANK1            000100-0001FF              100
+        BANK2            000200-0002FF              100
+        BANK3            000300-0003FF              100
+        BANK4            000400-0004FF              100
+        BANK5            000500-0005EE               EF
+        BIGRAM           000059-00005F                7
+                         0000F2-0005EE              4FD
+        CODE             0000BA-0005FF              546
+                         003F7C-007CFF             3D84
+        COMRAM           000059-00005F                7
+        CONST            0000BA-0005FF              546
+                         003F7C-007CFF             3D84
+        EEDATA           F00000-F000FF              100
+        MEDIUMCONST      003F7C-007CFF             3D84
+        RAM              0000F2-0005EE              100
+        SFR              000D00-000F9B              100
+                         000F9D-000FD3               37
+                         000FD5-000FDA                6
+                         000FE0-000FE2                3
+                         000FE8-000FEA                3
+                         000FF0-000FFB                C
+        SMALLCONST       003F7C-007CFF              100
+
+                                  Symbol Table
+
+?_ECANReceiveMessage                     cstackCOMRAM 00000F
+?_ECANSendMessage                        cstackCOMRAM 000012
+?_SendInformationEvent                   cstackBANK0  0000CA
+?_WriteTimer0                            cstackCOMRAM 000008
+?__CANIDToRegs                           cstackCOMRAM 000008
+?__ECANPointBuffer                       cstackCOMRAM 000008
+?__RegsToCANID                           cstackCOMRAM 000008
+?___lbmod                                cstackCOMRAM 000008
+?_doActionDisable                        cstackCOMRAM 00000B
+?_doActionOff                            cstackCOMRAM 000051
+?_doActionOn                             cstackCOMRAM 000051
+?_doActionPulse                          cstackCOMRAM 00000B
+?_doActionStatus                         cstackCOMRAM 000051
+?_doActionToggle                         cstackCOMRAM 000051
+?_getCANFrame                            cstackCOMRAM 00001A
+?_getVSCPFrame                           cstackCOMRAM 00001E
+?_readEEPROM                             cstackCOMRAM 000008
+?_sendCANFrame                           cstackCOMRAM 000037
+?_sendVSCPFrame                          cstackCOMRAM 00003F
+?_vscp_getFamilyCode                     cstackCOMRAM 000008
+?_vscp_getFamilyType                     cstackCOMRAM 000008
+?_vscp_sendHeartBeat                     cstackBANK0  0000CA
+?_vscp_setGUID                           cstackCOMRAM 00000B
+?_vscp_setManufacturerId                 cstackCOMRAM 00000B
+?_vscp_setUserID                         cstackCOMRAM 00000B
+?_vscp_writeAppReg                       cstackCOMRAM 000051
+?_vscp_writeRegister                     cstackBANK0  0000D4
+?_vscp_writeStdReg                       cstackCOMRAM 00000F
+?_writeEEPROM                            cstackCOMRAM 000008
+?i1_WriteTimer0                          cstackCOMRAM 000001
+ECANReceiveMessage@data                  cstackCOMRAM 00000F
+ECANReceiveMessage@dataLen               cstackCOMRAM 000010
+ECANReceiveMessage@i                     cstackCOMRAM 000015
+ECANReceiveMessage@id                    cstackCOMRAM 000014
+ECANReceiveMessage@mode                  cstackCOMRAM 000016
+ECANReceiveMessage@msgFlags              cstackCOMRAM 000011
+ECANReceiveMessage@ptr                   cstackCOMRAM 000018
+ECANReceiveMessage@savedPtr              cstackCOMRAM 000012
+ECANReceiveMessage@temp                  cstackCOMRAM 000017
+ECANSendMessage@buffers                  cstackCOMRAM 00002E
+ECANSendMessage@data                     cstackCOMRAM 000016
+ECANSendMessage@dataLen                  cstackCOMRAM 000018
+ECANSendMessage@i                        cstackCOMRAM 000034
+ECANSendMessage@id                       cstackCOMRAM 000012
+ECANSendMessage@j                        cstackCOMRAM 00002F
+ECANSendMessage@mode                     cstackCOMRAM 00002D
+ECANSendMessage@msgFlags                 cstackCOMRAM 000019
+ECANSendMessage@pb                       cstackCOMRAM 00001B
+ECANSendMessage@ptr                      cstackCOMRAM 000035
+ECANSendMessage@temp                     cstackCOMRAM 000033
+ECANSendMessage@tempBSEL0                cstackCOMRAM 000030
+ECANSendMessage@tempPtr                  cstackCOMRAM 000031
+ECANSetOperationMode@mode                cstackCOMRAM 000008
+OpenTimer0@config                        cstackCOMRAM 000008
+SendInformationEvent@data                cstackCOMRAM 00004D
+SendInformationEvent@eventClass          cstackBANK0  0000CA
+SendInformationEvent@eventTypeId         cstackBANK0  0000CB
+SendInformationEvent@idx                 cstackCOMRAM 000050
+WriteTimer0@timer                        cstackCOMRAM 00000A
+WriteTimer0@timer0                       cstackCOMRAM 000008
+_B0CON                                   (abs)        000E20
+_B0RXFUL                                 (abs)        007107
+_B0TXEN                                  (abs)        006FC2
+_B1CON                                   (abs)        000E30
+_B1RXFUL                                 (abs)        007187
+_B1TXEN                                  (abs)        006FC3
+_B2CON                                   (abs)        000E40
+_B2RXFUL                                 (abs)        007207
+_B2TXEN                                  (abs)        006FC4
+_B3CON                                   (abs)        000E50
+_B3RXFUL                                 (abs)        007287
+_B3TXEN                                  (abs)        006FC5
+_B4CON                                   (abs)        000E60
+_B4RXFUL                                 (abs)        007307
+_B4TXEN                                  (abs)        006FC6
+_B5CON                                   (abs)        000E70
+_B5RXFUL                                 (abs)        007387
+_B5TXEN                                  (abs)        006FC7
+_BRGCON1                                 (abs)        000F70
+_BRGCON2                                 (abs)        000F71
+_BRGCON3                                 (abs)        000F72
+_BSEL0                                   (abs)        000DF8
+_CANCON                                  (abs)        000F6F
+_CIOCON                                  (abs)        000F73
+_ECANCON                                 (abs)        000F77
+_ECANInitialize                          text69       0037E4
+_ECANReceiveMessage                      text59       002642
+_ECANSendMessage                         text54       002BE8
+_ECANSetOperationMode                    text70       003E66
+_EEADR                                   (abs)        000FA9
+_EECON1bits                              (abs)        000FA6
+_EECON2                                  (abs)        000FA7
+_EEDATA                                  (abs)        000FA8
+_FIFOEMPTY                               (abs)        007BA7
+_INTCONbits                              (abs)        000FF2
+_IRXIF                                   (abs)        007D27
+_LATBbits                                (abs)        000F8A
+_LATCbits                                (abs)        000F8B
+_MDSEL0                                  (abs)        007BBE
+_MDSEL1                                  (abs)        007BBF
+_MSEL0                                   (abs)        000DF0
+_MSEL1                                   (abs)        000DF1
+_MSEL2                                   (abs)        000DF2
+_OpenTimer0                              text71       003DE6
+_PIR2bits                                (abs)        000FA1
+_PORTA                                   (abs)        000F80
+_PORTB                                   (abs)        000F81
+_PORTC                                   (abs)        000F82
+_PORTCbits                               (abs)        000F82
+_RXB0CON                                 (abs)        000F60
+_RXB0FILHIT0                             (abs)        007B00
+_RXB0FUL                                 (abs)        007B07
+_RXB0IF                                  (abs)        007D20
+_RXB0OVFL                                (abs)        007BA7
+_RXB1CON                                 (abs)        000F50
+_RXB1CONbits                             (abs)        000F50
+_RXB1IF                                  (abs)        007D21
+_RXB1OVFL                                (abs)        007BA6
+_RXF0EIDH                                (abs)        000F02
+_RXF0EIDL                                (abs)        000F03
+_RXF0SIDH                                (abs)        000F00
+_RXF0SIDL                                (abs)        000F01
+_RXF1EIDH                                (abs)        000F06
+_RXF1EIDL                                (abs)        000F07
+_RXF1EN                                  (abs)        006EA1
+_RXF1SIDH                                (abs)        000F04
+_RXF1SIDL                                (abs)        000F05
+_RXFBCON0                                (abs)        000DE0
+_RXFBCON1                                (abs)        000DE1
+_RXFBCON2                                (abs)        000DE2
+_RXFBCON3                                (abs)        000DE3
+_RXFBCON4                                (abs)        000DE4
+_RXFBCON5                                (abs)        000DE5
+_RXFBCON6                                (abs)        000DE6
+_RXFBCON7                                (abs)        000DE7
+_RXFCON0                                 (abs)        000DD4
+_RXFCON1                                 (abs)        000DD5
+_RXM0EIDH                                (abs)        000F1A
+_RXM0EIDL                                (abs)        000F1B
+_RXM0EXIDM                               (abs)        0078CB
+_RXM0SIDH                                (abs)        000F18
+_RXM0SIDL                                (abs)        000F19
+_RXM1EIDH                                (abs)        000F1E
+_RXM1EIDL                                (abs)        000F1F
+_RXM1EXIDEN                              (abs)        0078EB
+_RXM1SIDH                                (abs)        000F1C
+_RXM1SIDL                                (abs)        000F1D
+_SendInformationEvent                    text28       0039D4
+_T0CON                                   (abs)        000FD5
+_T0CONbits                               (abs)        000FD5
+_TMR0H                                   (abs)        000FD7
+_TMR0L                                   (abs)        000FD6
+_TRISA                                   (abs)        000F92
+_TRISB                                   (abs)        000F93
+_TRISC                                   (abs)        000F94
+_TXB0CON                                 (abs)        000F40
+_TXB1CON                                 (abs)        000F30
+_TXB2CON                                 (abs)        000F20
+_WriteTimer0                             text73       003EF0
+__CANIDToRegs                            text55       002EB6
+__CANIDToRegs@Value                      cstackCOMRAM 000011
+__CANIDToRegs@ptr                        cstackCOMRAM 000008
+__CANIDToRegs@type                       cstackCOMRAM 00000E
+__CANIDToRegs@val                        cstackCOMRAM 00000A
+__CFG_BBSIZ$2048                         (abs)        000000
+__CFG_BOREN$BOACTIVE                     (abs)        000000
+__CFG_BORV$3                             (abs)        000000
+__CFG_CPB$ON                             (abs)        000000
+__CFG_EBTR0$OFF                          (abs)        000000
+__CFG_EBTR1$OFF                          (abs)        000000
+__CFG_EBTR2$OFF                          (abs)        000000
+__CFG_EBTR3$OFF                          (abs)        000000
+__CFG_EBTRB$OFF                          (abs)        000000
+__CFG_LVP$ON                             (abs)        000000
+__CFG_OSC$HSPLL                          (abs)        000000
+__CFG_STVREN$ON                          (abs)        000000
+__CFG_WDT$ON                             (abs)        000000
+__CFG_WDTPS$128                          (abs)        000000
+__CFG_WRTD$OFF                           (abs)        000000
+__ECANPointBuffer                        text61       0038F2
+__ECANPointBuffer@b                      cstackCOMRAM 00000B
+__ECANPointBuffer@pt                     cstackCOMRAM 00000C
+__ECANRxFilterHitInfo                    bssCOMRAM    000054
+__HRAM                                   (abs)        000000
+__Habs1                                  abs1         000000
+__Hbank0                                 bank0        000000
+__Hbank1                                 bank1        000000
+__Hbank2                                 bank2        000000
+__Hbank3                                 bank3        000000
+__Hbank4                                 bank4        000000
+__Hbank5                                 bank5        000000
+__Hbigbss                                bigbss       000000
+__Hbigdata                               bigdata      000000
+__Hbigram                                bigram       000000
+__Hbss                                   bss          000000
+__HbssBANK0                              bssBANK0     000000
+__HbssCOMRAM                             bssCOMRAM    000000
+__Hcinit                                 cinit        000000
+__Hclrtext                               clrtext      000000
+__Hcomram                                comram       000000
+__Hconfig                                config       30000E
+__Hconst                                 const        000000
+__HcstackBANK0                           cstackBANK0  000000
+__HcstackCOMRAM                          cstackCOMRAM 000000
+__Hdata                                  data         000000
+__Heeprom_data                           eeprom_data  000000
+__Hend_init                              end_init     0000BA
+__Hfarbss                                farbss       000000
+__Hfardata                               fardata      000000
+__Hibigdata                              ibigdata     000000
+__Hidata                                 idata        000000
+__Hidloc                                 idloc        200008
+__Hifardata                              ifardata     000000
+__Hinit                                  init         0000B6
+__Hintcode                               intcode      000006
+__Hintcode_body                          intcode_body 000000
+__Hintcodelo                             intcodelo    0000B6
+__Hintentry                              intentry     000000
+__Hintret                                intret       000000
+__Hintsave_regs                          intsave_regs 000000
+__Hirdata                                irdata       000000
+__Hmediumconst                           mediumconst  000000
+__HnvBANK0                               nvBANK0      000000
+__HnvFARRAM                              nvFARRAM     000000
+__Hnvbit                                 nvbit        000000
+__Hnvrram                                nvrram       000000
+__Hparam                                 rparam       000000
+__Hpowerup                               powerup      0000B6
+__Hram                                   ram          000000
+__Hramtop                                ramtop       000600
+__Hrbit                                  rbit         000000
+__Hrbss                                  rbss         000000
+__Hrdata                                 rdata        000000
+__Hreset_vec                             reset_vec    000006
+__Hrparam                                rparam       000000
+__Hsfr                                   sfr          000000
+__Hsmallconst                            smallconst   000622
+__Hstruct                                struct       000000
+__Htemp                                  temp         000000
+__Htext                                  text         000000
+__Htext0                                 text0        000000
+__Htext1                                 text1        000000
+__Htext10                                text10       000000
+__Htext11                                text11       000000
+__Htext12                                text12       000000
+__Htext13                                text13       000000
+__Htext14                                text14       000000
+__Htext15                                text15       000000
+__Htext16                                text16       000000
+__Htext17                                text17       000000
+__Htext18                                text18       000000
+__Htext19                                text19       000000
+__Htext2                                 text2        000000
+__Htext20                                text20       000000
+__Htext21                                text21       000000
+__Htext22                                text22       000000
+__Htext23                                text23       000000
+__Htext24                                text24       000000
+__Htext25                                text25       000000
+__Htext26                                text26       000000
+__Htext27                                text27       000000
+__Htext28                                text28       000000
+__Htext29                                text29       000000
+__Htext3                                 text3        000000
+__Htext30                                text30       000000
+__Htext31                                text31       000000
+__Htext32                                text32       000000
+__Htext33                                text33       000000
+__Htext34                                text34       000000
+__Htext35                                text35       000000
+__Htext36                                text36       000000
+__Htext37                                text37       000000
+__Htext38                                text38       000000
+__Htext39                                text39       000000
+__Htext4                                 text4        000000
+__Htext40                                text40       000000
+__Htext41                                text41       000000
+__Htext42                                text42       000000
+__Htext43                                text43       000000
+__Htext44                                text44       000000
+__Htext45                                text45       000000
+__Htext46                                text46       000000
+__Htext47                                text47       000000
+__Htext48                                text48       000000
+__Htext49                                text49       000000
+__Htext5                                 text5        000000
+__Htext50                                text50       000000
+__Htext51                                text51       000000
+__Htext52                                text52       000000
+__Htext53                                text53       000000
+__Htext54                                text54       000000
+__Htext55                                text55       000000
+__Htext56                                text56       000000
+__Htext57                                text57       000000
+__Htext58                                text58       000000
+__Htext59                                text59       000000
+__Htext6                                 text6        000000
+__Htext60                                text60       000000
+__Htext61                                text61       000000
+__Htext62                                text62       000000
+__Htext63                                text63       000000
+__Htext64                                text64       000000
+__Htext65                                text65       000000
+__Htext66                                text66       000000
+__Htext67                                text67       000000
+__Htext68                                text68       000000
+__Htext69                                text69       000000
+__Htext7                                 text7        000000
+__Htext70                                text70       000000
+__Htext71                                text71       000000
+__Htext72                                text72       000000
+__Htext73                                text73       000000
+__Htext74                                text74       000000
+__Htext75                                text75       000000
+__Htext77                                text77       000000
+__Htext8                                 text8        000000
+__Htext9                                 text9        000000
+__IT_INT_MASK                            bssBANK0     000088
+__IT_SAVE_BSR                            bssBANK0     000089
+__IT_SAVE_STATUS                         bssBANK0     00008A
+__IT_SAVE_WREG                           bssBANK0     00008B
+__LRAM                                   (abs)        000001
+__Labs1                                  abs1         000000
+__Lbank0                                 bank0        000000
+__Lbank1                                 bank1        000000
+__Lbank2                                 bank2        000000
+__Lbank3                                 bank3        000000
+__Lbank4                                 bank4        000000
+__Lbank5                                 bank5        000000
+__Lbigbss                                bigbss       000000
+__Lbigdata                               bigdata      000000
+__Lbigram                                bigram       000000
+__Lbss                                   bss          000000
+__LbssBANK0                              bssBANK0     000000
+__LbssCOMRAM                             bssCOMRAM    000000
+__Lcinit                                 cinit        000000
+__Lclrtext                               clrtext      000000
+__Lcomram                                comram       000000
+__Lconfig                                config       300000
+__Lconst                                 const        000000
+__LcstackBANK0                           cstackBANK0  000000
+__LcstackCOMRAM                          cstackCOMRAM 000000
+__Ldata                                  data         000000
+__Leeprom_data                           eeprom_data  000000
+__Lend_init                              end_init     0000B6
+__Lfarbss                                farbss       000000
+__Lfardata                               fardata      000000
+__Libigdata                              ibigdata     000000
+__Lidata                                 idata        000000
+__Lidloc                                 idloc        200000
+__Lifardata                              ifardata     000000
+__Linit                                  init         0000B6
+__Lintcode                               intcode      000006
+__Lintcode_body                          intcode_body 000000
+__Lintcodelo                             intcodelo    000018
+__Lintentry                              intentry     000000
+__Lintret                                intret       000000
+__Lintsave_regs                          intsave_regs 000000
+__Lirdata                                irdata       000000
+__Lmediumconst                           mediumconst  000000
+__LnvBANK0                               nvBANK0      000000
+__LnvFARRAM                              nvFARRAM     000000
+__Lnvbit                                 nvbit        000000
+__Lnvrram                                nvrram       000000
+__Lparam                                 rparam       000000
+__Lpowerup                               powerup      0000B6
+__Lram                                   ram          000000
+__Lramtop                                ramtop       000600
+__Lrbit                                  rbit         000000
+__Lrbss                                  rbss         000000
+__Lrdata                                 rdata        000000
+__Lreset_vec                             reset_vec    000000
+__Lrparam                                rparam       000000
+__Lsfr                                   sfr          000000
+__Lsmallconst                            smallconst   000600
+__Lstruct                                struct       000000
+__Ltemp                                  temp         000000
+__Ltext                                  text         000000
+__Ltext0                                 text0        000000
+__Ltext1                                 text1        000000
+__Ltext10                                text10       000000
+__Ltext11                                text11       000000
+__Ltext12                                text12       000000
+__Ltext13                                text13       000000
+__Ltext14                                text14       000000
+__Ltext15                                text15       000000
+__Ltext16                                text16       000000
+__Ltext17                                text17       000000
+__Ltext18                                text18       000000
+__Ltext19                                text19       000000
+__Ltext2                                 text2        000000
+__Ltext20                                text20       000000
+__Ltext21                                text21       000000
+__Ltext22                                text22       000000
+__Ltext23                                text23       000000
+__Ltext24                                text24       000000
+__Ltext25                                text25       000000
+__Ltext26                                text26       000000
+__Ltext27                                text27       000000
+__Ltext28                                text28       000000
+__Ltext29                                text29       000000
+__Ltext3                                 text3        000000
+__Ltext30                                text30       000000
+__Ltext31                                text31       000000
+__Ltext32                                text32       000000
+__Ltext33                                text33       000000
+__Ltext34                                text34       000000
+__Ltext35                                text35       000000
+__Ltext36                                text36       000000
+__Ltext37                                text37       000000
+__Ltext38                                text38       000000
+__Ltext39                                text39       000000
+__Ltext4                                 text4        000000
+__Ltext40                                text40       000000
+__Ltext41                                text41       000000
+__Ltext42                                text42       000000
+__Ltext43                                text43       000000
+__Ltext44                                text44       000000
+__Ltext45                                text45       000000
+__Ltext46                                text46       000000
+__Ltext47                                text47       000000
+__Ltext48                                text48       000000
+__Ltext49                                text49       000000
+__Ltext5                                 text5        000000
+__Ltext50                                text50       000000
+__Ltext51                                text51       000000
+__Ltext52                                text52       000000
+__Ltext53                                text53       000000
+__Ltext54                                text54       000000
+__Ltext55                                text55       000000
+__Ltext56                                text56       000000
+__Ltext57                                text57       000000
+__Ltext58                                text58       000000
+__Ltext59                                text59       000000
+__Ltext6                                 text6        000000
+__Ltext60                                text60       000000
+__Ltext61                                text61       000000
+__Ltext62                                text62       000000
+__Ltext63                                text63       000000
+__Ltext64                                text64       000000
+__Ltext65                                text65       000000
+__Ltext66                                text66       000000
+__Ltext67                                text67       000000
+__Ltext68                                text68       000000
+__Ltext69                                text69       000000
+__Ltext7                                 text7        000000
+__Ltext70                                text70       000000
+__Ltext71                                text71       000000
+__Ltext72                                text72       000000
+__Ltext73                                text73       000000
+__Ltext74                                text74       000000
+__Ltext75                                text75       000000
+__Ltext77                                text77       000000
+__Ltext8                                 text8        000000
+__Ltext9                                 text9        000000
+__RegsToCANID                            text60       002D52
+__RegsToCANID@Value                      cstackCOMRAM 00000E
+__RegsToCANID@ptr                        cstackCOMRAM 000008
+__RegsToCANID@type                       cstackCOMRAM 00000B
+__RegsToCANID@val                        cstackCOMRAM 00000A
+__S0                                     (abs)        30000E
+__S1                                     (abs)        0000F2
+___DCByte                                bssBANK0     00008C
+___DCDelay                               nvBANK0      0000F1
+___IT                                    (abs)        000101
+___lbmod                                 text16       003C3E
+___lbmod@counter                         cstackCOMRAM 00000A
+___lbmod@dividend                        cstackCOMRAM 000009
+___lbmod@divisor                         cstackCOMRAM 000008
+___lbmod@rem                             cstackCOMRAM 00000B
+__accesstop                              (abs)        000060
+__activetblptr                           (abs)        000002
+__end_of_ECANInitialize                  text69       00387A
+__end_of_ECANReceiveMessage              text59       002850
+__end_of_ECANSendMessage                 text54       002D52
+__end_of_ECANSetOperationMode            text70       003E7E
+__end_of_OpenTimer0                      text71       003E04
+__end_of_SendInformationEvent            text28       003A40
+__end_of_WriteTimer0                     text73       003F02
+__end_of__CANIDToRegs                    text55       003006
+__end_of__ECANPointBuffer                text61       003968
+__end_of__RegsToCANID                    text60       002EB6
+__end_of___lbmod                         text16       003C66
+__end_of__initialization                 cinit        003D38
+__end_of_calculateSetFilterMask          text27       001A58
+__end_of_doActionDisable                 text10       0039D4
+__end_of_doActionOff                     text14       0035BE
+__end_of_doActionOn                      text13       002642
+__end_of_doActionPulse                   text12       002A20
+__end_of_doActionStatus                  text11       003340
+__end_of_doActionToggle                  text9        003126
+__end_of_doApplicationOneSecondWork      text2        0023D8
+__end_of_doDM                            text8        0020E6
+__end_of_doWork                          text1        003F70
+__end_of_getCANFrame                     text58       003BEA
+__end_of_getVSCPFrame                    text57       0038F2
+__end_of_init                            text68       003B8E
+__end_of_init_app_eeprom                 text20       001DCE
+__end_of_init_app_ram                    text72       003234
+__end_of_interrupt_at_low_vector         intcodelo    0000B6
+__end_of_main                            text0        003504
+__end_of_readEEPROM                      text75       003F14
+__end_of_sendCANFrame                    text53       003B12
+__end_of_sendVSCPFrame                   text52       00372E
+__end_of_vscp_check_pstorage             text62       003D20
+__end_of_vscp_deviceURL                  smallconst   000620
+__end_of_vscp_doOneSecondWork            text3        003A8E
+__end_of_vscp_error                      text7        003F6E
+__end_of_vscp_getBootLoaderAlgorithm     text33       003F76
+__end_of_vscp_getBufferSize              text32       003F74
+__end_of_vscp_getEvent                   text56       003C3E
+__end_of_vscp_getFamilyCode              text22       003F4E
+__end_of_vscp_getFamilyType              text21       003F44
+__end_of_vscp_getGUID                    text37       003EBA
+__end_of_vscp_getMDF_URL                 text36       003E4E
+__end_of_vscp_getMajorVersion            text40       003F7C
+__end_of_vscp_getManufacturerId          text34       003E92
+__end_of_vscp_getMatrixInfo              text47       003DC8
+__end_of_vscp_getMinorVersion            text39       003F7A
+__end_of_vscp_getRegisterPagesUsed       text31       003F72
+__end_of_vscp_getSegmentCRC              text65       003F62
+__end_of_vscp_getSubMinorVersion         text38       003F78
+__end_of_vscp_getSubzone                 text5        003F30
+__end_of_vscp_getUserID                  text35       003EA6
+__end_of_vscp_getZone                    text6        003F3A
+__end_of_vscp_goActiveState              text50       003DE6
+__end_of_vscp_goBootloaderMode           text48       003E66
+__end_of_vscp_handleDropNickname         text42       003BBE
+__end_of_vscp_handleHeartbeat            text46       003B50
+__end_of_vscp_handleProbeState           text49       003678
+__end_of_vscp_handleProtocolEvent        text15       0015EC
+__end_of_vscp_handleSetNickname          text45       003CFC
+__end_of_vscp_init                       text43       003AD2
+__end_of_vscp_newNodeOnline              text41       003C14
+__end_of_vscp_readAppReg                 text74       0037E4
+__end_of_vscp_readNicknamePermanent      text44       003F58
+__end_of_vscp_readRegister               text29       003E1E
+__end_of_vscp_readStdReg                 text30       003424
+__end_of_vscp_restoreDefaults            text19       003F6A
+__end_of_vscp_sendEvent                  text51       003CB2
+__end_of_vscp_sendHeartBeat              text4        003C8C
+__end_of_vscp_setControlByte             text63       003ECC
+__end_of_vscp_setGUID                    text25       003DA8
+__end_of_vscp_setManufacturerId          text24       003D86
+__end_of_vscp_setSegmentCRC              text64       003EDE
+__end_of_vscp_setUserID                  text23       003E36
+__end_of_vscp_writeAppReg                text26       000FD0
+__end_of_vscp_writeNicknamePermanent     text66       003EF0
+__end_of_vscp_writeRegister              text17       003D64
+__end_of_vscp_writeStdReg                text18       002BE8
+__end_of_writeEEPROM                     text67       003CD8
+__end_ofi1_WriteTimer0                   text77       003F26
+__initialization                         cinit        003D20
+__mediumconst                            mediumconst  000000
+__pbssBANK0                              bssBANK0     000060
+__pbssCOMRAM                             bssCOMRAM    000052
+__pcinit                                 cinit        003D20
+__pcstackBANK0                           cstackBANK0  0000B6
+__pcstackCOMRAM                          cstackCOMRAM 000001
+__pintcodelo                             intcodelo    000018
+__pnvBANK0                               nvBANK0      0000F1
+__psmallconst                            smallconst   000600
+__ptext0                                 text0        003424
+__ptext1                                 text1        003F6E
+__ptext10                                text10       003968
+__ptext11                                text11       003234
+__ptext12                                text12       002850
+__ptext13                                text13       0023D8
+__ptext14                                text14       003504
+__ptext15                                text15       000FD0
+__ptext16                                text16       003C3E
+__ptext17                                text17       003D42
+__ptext18                                text18       002A20
+__ptext19                                text19       003F62
+__ptext2                                 text2        0020E6
+__ptext20                                text20       001A58
+__ptext21                                text21       003F3A
+__ptext22                                text22       003F44
+__ptext23                                text23       003E1E
+__ptext24                                text24       003D64
+__ptext25                                text25       003D86
+__ptext26                                text26       000622
+__ptext27                                text27       0015EC
+__ptext28                                text28       0039D4
+__ptext29                                text29       003E04
+__ptext3                                 text3        003A40
+__ptext30                                text30       003340
+__ptext31                                text31       003F70
+__ptext32                                text32       003F72
+__ptext33                                text33       003F74
+__ptext34                                text34       003E7E
+__ptext35                                text35       003E92
+__ptext36                                text36       003E36
+__ptext37                                text37       003EA6
+__ptext38                                text38       003F76
+__ptext39                                text39       003F78
+__ptext4                                 text4        003C66
+__ptext40                                text40       003F7A
+__ptext41                                text41       003BEA
+__ptext42                                text42       003B8E
+__ptext43                                text43       003A8E
+__ptext44                                text44       003F4E
+__ptext45                                text45       003CD8
+__ptext46                                text46       003B12
+__ptext47                                text47       003DA8
+__ptext48                                text48       003E4E
+__ptext49                                text49       0035BE
+__ptext5                                 text5        003F26
+__ptext50                                text50       003DC8
+__ptext51                                text51       003C8C
+__ptext52                                text52       003678
+__ptext53                                text53       003AD2
+__ptext54                                text54       002BE8
+__ptext55                                text55       002EB6
+__ptext56                                text56       003C14
+__ptext57                                text57       00387A
+__ptext58                                text58       003BBE
+__ptext59                                text59       002642
+__ptext6                                 text6        003F30
+__ptext60                                text60       002D52
+__ptext61                                text61       0038F2
+__ptext62                                text62       003CFC
+__ptext63                                text63       003EBA
+__ptext64                                text64       003ECC
+__ptext65                                text65       003F58
+__ptext66                                text66       003EDE
+__ptext67                                text67       003CB2
+__ptext68                                text68       003B50
+__ptext69                                text69       0037E4
+__ptext7                                 text7        003F6A
+__ptext70                                text70       003E66
+__ptext71                                text71       003DE6
+__ptext72                                text72       003126
+__ptext73                                text73       003EF0
+__ptext74                                text74       00372E
+__ptext75                                text75       003F02
+__ptext77                                text77       003F14
+__ptext8                                 text8        001DCE
+__ptext9                                 text9        003006
+__ramtop                                 ramtop       000600
+__size_of_ECANInitialize                 (abs)        000000
+__size_of_ECANReceiveMessage             (abs)        000000
+__size_of_ECANSendMessage                (abs)        000000
+__size_of_ECANSetOperationMode           (abs)        000000
+__size_of_OpenTimer0                     (abs)        000000
+__size_of_SendInformationEvent           (abs)        000000
+__size_of_WriteTimer0                    (abs)        000000
+__size_of__CANIDToRegs                   (abs)        000000
+__size_of__ECANPointBuffer               (abs)        000000
+__size_of__RegsToCANID                   (abs)        000000
+__size_of___lbmod                        (abs)        000000
+__size_of_calculateSetFilterMask         (abs)        000000
+__size_of_doActionDisable                (abs)        000000
+__size_of_doActionOff                    (abs)        000000
+__size_of_doActionOn                     (abs)        000000
+__size_of_doActionPulse                  (abs)        000000
+__size_of_doActionStatus                 (abs)        000000
+__size_of_doActionToggle                 (abs)        000000
+__size_of_doApplicationOneSecondWork     (abs)        000000
+__size_of_doDM                           (abs)        000000
+__size_of_doWork                         (abs)        000000
+__size_of_getCANFrame                    (abs)        000000
+__size_of_getVSCPFrame                   (abs)        000000
+__size_of_init                           (abs)        000000
+__size_of_init_app_eeprom                (abs)        000000
+__size_of_init_app_ram                   (abs)        000000
+__size_of_interrupt_at_low_vector        (abs)        000000
+__size_of_main                           (abs)        000000
+__size_of_readEEPROM                     (abs)        000000
+__size_of_sendCANFrame                   (abs)        000000
+__size_of_sendVSCPFrame                  (abs)        000000
+__size_of_vscp_check_pstorage            (abs)        000000
+__size_of_vscp_doOneSecondWork           (abs)        000000
+__size_of_vscp_error                     (abs)        000000
+__size_of_vscp_getBootLoaderAlgorithm    (abs)        000000
+__size_of_vscp_getBufferSize             (abs)        000000
+__size_of_vscp_getEvent                  (abs)        000000
+__size_of_vscp_getFamilyCode             (abs)        000000
+__size_of_vscp_getFamilyType             (abs)        000000
+__size_of_vscp_getGUID                   (abs)        000000
+__size_of_vscp_getMDF_URL                (abs)        000000
+__size_of_vscp_getMajorVersion           (abs)        000000
+__size_of_vscp_getManufacturerId         (abs)        000000
+__size_of_vscp_getMatrixInfo             (abs)        000000
+__size_of_vscp_getMinorVersion           (abs)        000000
+__size_of_vscp_getRegisterPagesUsed      (abs)        000000
+__size_of_vscp_getSegmentCRC             (abs)        000000
+__size_of_vscp_getSubMinorVersion        (abs)        000000
+__size_of_vscp_getSubzone                (abs)        000000
+__size_of_vscp_getUserID                 (abs)        000000
+__size_of_vscp_getZone                   (abs)        000000
+__size_of_vscp_goActiveState             (abs)        000000
+__size_of_vscp_goBootloaderMode          (abs)        000000
+__size_of_vscp_handleDropNickname        (abs)        000000
+__size_of_vscp_handleHeartbeat           (abs)        000000
+__size_of_vscp_handleProbeState          (abs)        000000
+__size_of_vscp_handleProtocolEvent       (abs)        000000
+__size_of_vscp_handleSetNickname         (abs)        000000
+__size_of_vscp_init                      (abs)        000000
+__size_of_vscp_newNodeOnline             (abs)        000000
+__size_of_vscp_readAppReg                (abs)        000000
+__size_of_vscp_readNicknamePermanent     (abs)        000000
+__size_of_vscp_readRegister              (abs)        000000
+__size_of_vscp_readStdReg                (abs)        000000
+__size_of_vscp_restoreDefaults           (abs)        000000
+__size_of_vscp_sendEvent                 (abs)        000000
+__size_of_vscp_sendHeartBeat             (abs)        000000
+__size_of_vscp_setControlByte            (abs)        000000
+__size_of_vscp_setGUID                   (abs)        000000
+__size_of_vscp_setManufacturerId         (abs)        000000
+__size_of_vscp_setSegmentCRC             (abs)        000000
+__size_of_vscp_setUserID                 (abs)        000000
+__size_of_vscp_writeAppReg               (abs)        000000
+__size_of_vscp_writeNicknamePermanent    (abs)        000000
+__size_of_vscp_writeRegister             (abs)        000000
+__size_of_vscp_writeStdReg               (abs)        000000
+__size_of_writeEEPROM                    (abs)        000000
+__size_ofi1_WriteTimer0                  (abs)        000000
+__smallconst                             smallconst   000600
+_calculateSetFilterMask                  text27       0015EC
+_doActionDisable                         text10       003968
+_doActionOff                             text14       003504
+_doActionOn                              text13       0023D8
+_doActionPulse                           text12       002850
+_doActionStatus                          text11       003234
+_doActionToggle                          text9        003006
+_doApplicationOneSecondWork              text2        0020E6
+_doDM                                    text8        001DCE
+_doDM$2154                               cstackBANK0  0000DB
+_doDM$2155                               cstackBANK0  0000DC
+_doDM$2156                               cstackBANK0  0000DD
+_doDM$2157                               cstackBANK0  0000DE
+_doDM$2158                               cstackBANK0  0000DF
+_doDM$2159                               cstackBANK0  0000E0
+_doWork                                  text1        003F6E
+_getCANFrame                             text58       003BBE
+_getVSCPFrame                            text57       00387A
+_hours                                   bssBANK0     00008D
+_init                                    text68       003B50
+_init_app_eeprom                         text20       001A58
+_init_app_ram                            text72       003126
+_interrupt_at_low_vector                 intcodelo    000018
+_main                                    text0        003424
+_measurement_clock                       bssBANK0     000080
+_minutes                                 bssBANK0     00008E
+_readEEPROM                              text75       003F02
+_relay_protection_timer                  bssBANK0     000060
+_relay_pulse_flags                       bssBANK0     00008F
+_relay_pulse_timer                       bssBANK0     000070
+_seconds                                 bssBANK0     000090
+_sendCANFrame                            text53       003AD2
+_sendTimer                               bssCOMRAM    000055
+_sendVSCPFrame                           text52       003678
+_vscp_alarmstatus                        bssBANK0     000091
+_vscp_check_pstorage                     text62       003CFC
+_vscp_configtimer                        bssBANK0     000084
+_vscp_deviceURL                          smallconst   000600
+_vscp_doOneSecondWork                    text3        003A40
+_vscp_error                              text7        003F6A
+_vscp_getBootLoaderAlgorithm             text33       003F74
+_vscp_getBufferSize                      text32       003F72
+_vscp_getEvent                           text56       003C14
+_vscp_getFamilyCode                      text22       003F44
+_vscp_getFamilyType                      text21       003F3A
+_vscp_getGUID                            text37       003EA6
+_vscp_getMDF_URL                         text36       003E36
+_vscp_getMajorVersion                    text40       003F7A
+_vscp_getManufacturerId                  text34       003E7E
+_vscp_getMatrixInfo                      text47       003DA8
+_vscp_getMinorVersion                    text39       003F78
+_vscp_getRegisterPagesUsed               text31       003F70
+_vscp_getSegmentCRC                      text65       003F58
+_vscp_getSubMinorVersion                 text38       003F76
+_vscp_getSubzone                         text5        003F26
+_vscp_getUserID                          text35       003E92
+_vscp_getZone                            text6        003F30
+_vscp_goActiveState                      text50       003DC8
+_vscp_goBootloaderMode                   text48       003E4E
+_vscp_guid_reset                         bssBANK0     000092
+_vscp_handleDropNickname                 text42       003B8E
+_vscp_handleHeartbeat                    text46       003B12
+_vscp_handleProbeState                   text49       0035BE
+_vscp_handleProtocolEvent                text15       000FD0
+_vscp_handleSetNickname                  text45       003CD8
+_vscp_hour                               bssBANK0     000093
+_vscp_imsg                               bssBANK0     00009B
+_vscp_init                               text43       003A8E
+_vscp_initbtncnt                         bssBANK0     000094
+_vscp_initledfunc                        bssCOMRAM    000056
+_vscp_minute                             bssBANK0     000095
+_vscp_newNodeOnline                      text41       003BEA
+_vscp_nickname                           bssBANK0     000096
+_vscp_node_state                         bssBANK0     000097
+_vscp_node_substate                      bssBANK0     000098
+_vscp_omsg                               bssBANK0     0000A9
+_vscp_page_select                        bssCOMRAM    000052
+_vscp_probe_address                      bssCOMRAM    000057
+_vscp_probe_cnt                          bssBANK0     000099
+_vscp_readAppReg                         text74       00372E
+_vscp_readNicknamePermanent              text44       003F4E
+_vscp_readRegister                       text29       003E04
+_vscp_readStdReg                         text30       003340
+_vscp_restoreDefaults                    text19       003F62
+_vscp_second                             bssBANK0     00009A
+_vscp_sendEvent                          text51       003C8C
+_vscp_sendHeartBeat                      text4        003C66
+_vscp_setControlByte                     text63       003EBA
+_vscp_setGUID                            text25       003D86
+_vscp_setManufacturerId                  text24       003D64
+_vscp_setSegmentCRC                      text64       003ECC
+_vscp_setUserID                          text23       003E1E
+_vscp_statuscnt                          bssCOMRAM    000058
+_vscp_timer                              bssBANK0     000086
+_vscp_writeAppReg                        text26       000622
+_vscp_writeNicknamePermanent             text66       003EDE
+_vscp_writeRegister                      text17       003D42
+_vscp_writeStdReg                        text18       002A20
+_writeEEPROM                             text67       003CB2
+calculateSetFilterMask@filter            cstackCOMRAM 00003A
+calculateSetFilterMask@i                 cstackCOMRAM 000043
+calculateSetFilterMask@j                 cstackCOMRAM 000042
+calculateSetFilterMask@lastOID           cstackCOMRAM 000035
+calculateSetFilterMask@mask              cstackCOMRAM 000036
+calculateSetFilterMask@rowfilter         cstackCOMRAM 00003E
+calculateSetFilterMask@rowmask           cstackCOMRAM 000031
+doActionDisable@arg                      cstackCOMRAM 00000B
+doActionDisable@dmflags                  cstackCOMRAM 00000E
+doActionDisable@i                        cstackCOMRAM 000010
+doActionDisable@val                      cstackCOMRAM 00000F
+doActionOff@arg                          cstackCOMRAM 000051
+doActionOff@dmflags                      cstackBANK0  0000CE
+doActionOff@i                            cstackBANK0  0000D0
+doActionOff@val                          cstackBANK0  0000CF
+doActionOn@arg                           cstackCOMRAM 000051
+doActionOn@dmflags                       cstackBANK0  0000CF
+doActionOn@i                             cstackBANK0  0000D1
+doActionOn@val                           cstackBANK0  0000D0
+doActionPulse@arg                        cstackCOMRAM 00000B
+doActionPulse@dmflags                    cstackCOMRAM 00000F
+doActionPulse@i                          cstackCOMRAM 000011
+doActionPulse@val                        cstackCOMRAM 000010
+doActionStatus@arg                       cstackCOMRAM 000051
+doActionStatus@bOn                       cstackBANK0  0000CF
+doActionStatus@dmflags                   cstackBANK0  0000CE
+doActionStatus@i                         cstackBANK0  0000D1
+doActionStatus@val                       cstackBANK0  0000D0
+doActionToggle@arg                       cstackCOMRAM 000051
+doActionToggle@bOn                       cstackBANK0  0000D0
+doActionToggle@dmflags                   cstackBANK0  0000CE
+doActionToggle@i                         cstackBANK0  0000D1
+doActionToggle@val                       cstackBANK0  0000CF
+doApplicationOneSecondWork@bOn           cstackBANK0  0000D4
+doApplicationOneSecondWork@ctrlreg       cstackBANK0  0000D5
+doApplicationOneSecondWork@i             cstackBANK0  0000D6
+doDM@class_filter                        cstackBANK0  0000D5
+doDM@class_mask                          cstackBANK0  0000D7
+doDM@dmflags                             cstackBANK0  0000E1
+doDM@i                                   cstackBANK0  0000E2
+doDM@type_filter                         cstackBANK0  0000D9
+doDM@type_mask                           cstackBANK0  0000DA
+end_of_initialization                    cinit        003D38
+getCANFrame@flags                        cstackCOMRAM 00001D
+getCANFrame@pdata                        cstackCOMRAM 00001B
+getCANFrame@pdlc                         cstackCOMRAM 00001A
+getCANFrame@pid                          cstackCOMRAM 00001C
+getVSCPFrame@id                          cstackCOMRAM 000028
+getVSCPFrame@pData                       cstackCOMRAM 000022
+getVSCPFrame@pNodeId                     cstackCOMRAM 00001F
+getVSCPFrame@pPriority                   cstackCOMRAM 000020
+getVSCPFrame@pSize                       cstackCOMRAM 000021
+getVSCPFrame@pvscpclass                  cstackCOMRAM 000027
+getVSCPFrame@pvscptype                   cstackCOMRAM 00001E
+i1WriteTimer0@timer                      cstackCOMRAM 000003
+i1WriteTimer0@timer0                     cstackCOMRAM 000001
+i1_WriteTimer0                           text77       003F14
+init_app_eeprom@i                        cstackCOMRAM 00000D
+init_app_eeprom@j                        cstackCOMRAM 00000E
+init_app_ram@i                           cstackCOMRAM 00000D
+intlevel0                                text         000000
+intlevel1                                text         000000
+intlevel2                                text         000000
+intlevel3                                text         000000
+readEEPROM@address                       cstackCOMRAM 000008
+readEEPROM@data                          cstackCOMRAM 00000A
+sendCANFrame@dlc                         cstackCOMRAM 00003B
+sendCANFrame@id                          cstackCOMRAM 000037
+sendCANFrame@pdata                       cstackCOMRAM 00003C
+sendCANFrame@rv                          cstackCOMRAM 00003E
+sendVSCPFrame@id                         cstackCOMRAM 000047
+sendVSCPFrame@nodeid                     cstackCOMRAM 000042
+sendVSCPFrame@pData                      cstackCOMRAM 000045
+sendVSCPFrame@priority                   cstackCOMRAM 000043
+sendVSCPFrame@size                       cstackCOMRAM 000044
+sendVSCPFrame@vscpclass                  cstackCOMRAM 00003F
+sendVSCPFrame@vscptype                   cstackCOMRAM 000041
+start                                    init         0000B6
+start_initialization                     cinit        003D20
+vscp_getEvent@rv                         cstackCOMRAM 00002C
+vscp_getGUID@idx                         cstackCOMRAM 00000B
+vscp_getMDF_URL@idx                      cstackCOMRAM 000009
+vscp_getManufacturerId@idx               cstackCOMRAM 00000B
+vscp_getMatrixInfo@i                     cstackCOMRAM 000008
+vscp_getUserID@idx                       cstackCOMRAM 00000B
+vscp_goBootloaderMode@algorithm          cstackCOMRAM 00000B
+vscp_handleDropNickname@bytes            cstackCOMRAM 00000C
+vscp_handleProtocolEvent@byte            cstackBANK0  0000ED
+vscp_handleProtocolEvent@bytes           cstackBANK0  0000E3
+vscp_handleProtocolEvent@bytes_1286      cstackBANK0  0000EB
+vscp_handleProtocolEvent@bytes_this_time cstackBANK0  0000E7
+vscp_handleProtocolEvent@cb              cstackBANK0  0000E8
+vscp_handleProtocolEvent@i               cstackBANK0  0000EF
+vscp_handleProtocolEvent@i_1278          cstackBANK0  0000EC
+vscp_handleProtocolEvent@i_1281          cstackBANK0  0000EE
+vscp_handleProtocolEvent@i_1289          cstackBANK0  0000E9
+vscp_handleProtocolEvent@j               cstackBANK0  0000F0
+vscp_handleProtocolEvent@k               cstackBANK0  0000EA
+vscp_handleProtocolEvent@len             cstackBANK0  0000E4
+vscp_handleProtocolEvent@len_1280        cstackBANK0  0000E6
+vscp_handleProtocolEvent@offset          cstackBANK0  0000E1
+vscp_handleProtocolEvent@page_save       cstackBANK0  0000DD
+vscp_handleProtocolEvent@page_save_1290  cstackBANK0  0000DF
+vscp_handleProtocolEvent@pos             cstackBANK0  0000E2
+vscp_handleProtocolEvent@pos_1279        cstackBANK0  0000E5
+vscp_readAppReg@reg                      cstackCOMRAM 00000C
+vscp_readAppReg@rv                       cstackCOMRAM 00000B
+vscp_readRegister@reg                    cstackCOMRAM 00000E
+vscp_readStdReg@reg                      cstackCOMRAM 00000D
+vscp_readStdReg@rv                       cstackCOMRAM 00000C
+vscp_sendHeartBeat@subzone               cstackBANK0  0000CA
+vscp_sendHeartBeat@zone                  cstackCOMRAM 00004C
+vscp_setControlByte@ctrl                 cstackCOMRAM 00000B
+vscp_setGUID@data                        cstackCOMRAM 00000B
+vscp_setGUID@idx                         cstackCOMRAM 00000C
+vscp_setManufacturerId@data              cstackCOMRAM 00000B
+vscp_setManufacturerId@idx               cstackCOMRAM 00000C
+vscp_setSegmentCRC@crc                   cstackCOMRAM 00000B
+vscp_setUserID@data                      cstackCOMRAM 00000B
+vscp_setUserID@idx                       cstackCOMRAM 00000C
+vscp_writeAppReg@bInfoEvent              cstackBANK0  0000CF
+vscp_writeAppReg@bOn                     cstackBANK0  0000D1
+vscp_writeAppReg@reg                     cstackBANK0  0000D3
+vscp_writeAppReg@rv                      cstackBANK0  0000D2
+vscp_writeAppReg@val                     cstackCOMRAM 000051
+vscp_writeAppReg@val_678                 cstackBANK0  0000D0
+vscp_writeNicknamePermanent@nickname     cstackCOMRAM 00000B
+vscp_writeRegister@reg                   cstackBANK0  0000D5
+vscp_writeRegister@value                 cstackBANK0  0000D4
+vscp_writeStdReg@code                    cstackCOMRAM 000015
+vscp_writeStdReg@code_1270               cstackCOMRAM 000019
+vscp_writeStdReg@idx                     cstackCOMRAM 00001D
+vscp_writeStdReg@idx_1271                cstackCOMRAM 00001E
+vscp_writeStdReg@reg                     cstackCOMRAM 000020
+vscp_writeStdReg@rv                      cstackCOMRAM 00001F
+vscp_writeStdReg@value                   cstackCOMRAM 00000F
+writeEEPROM@address                      cstackCOMRAM 000008
+writeEEPROM@data                         cstackCOMRAM 00000A
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 190 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels required when called:   10
+ This function calls:
+		_init
+		_vscp_check_pstorage
+		_init_app_eeprom
+		_init_app_ram
+		_vscp_init
+		_writeEEPROM
+		_vscp_getEvent
+		_vscp_goActiveState
+		_vscp_handleProbeState
+		_vscp_handleProtocolEvent
+		_doDM
+		_vscp_error
+		_vscp_doOneSecondWork
+		_doApplicationOneSecondWork
+		_doWork
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _doWork *****************
+ Defined at:
+		line 887 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _doApplicationOneSecondWork *****************
+ Defined at:
+		line 592 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  i               1   32[BANK0 ] unsigned char 
+  ctrlreg         1   31[BANK0 ] unsigned char 
+  bOn             1   30[BANK0 ] enum E15660
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0
+      Temps:          0       3       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_readEEPROM
+		_doActionOff
+		_SendInformationEvent
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_doOneSecondWork *****************
+ Defined at:
+		line 516 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_vscp_getZone
+		_vscp_getSubzone
+		_vscp_sendHeartBeat
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_sendHeartBeat *****************
+ Defined at:
+		line 370 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+  zone            1    wreg     unsigned char 
+  subzone         1   20[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  zone            1   75[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       1       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       1       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_vscp_sendEvent
+ This function is called by:
+		_vscp_doOneSecondWork
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getSubzone *****************
+ Defined at:
+		line 876 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_doOneSecondWork
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getZone *****************
+ Defined at:
+		line 867 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_doOneSecondWork
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_error *****************
+ Defined at:
+		line 191 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _doDM *****************
+ Defined at:
+		line 1596 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  class_mask      2   33[BANK0 ] unsigned short 
+  class_filter    2   31[BANK0 ] unsigned short 
+  i               1   44[BANK0 ] unsigned char 
+  dmflags         1   43[BANK0 ] unsigned char 
+  type_mask       1   36[BANK0 ] unsigned char 
+  type_filter     1   35[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0      14       0       0       0       0       0
+      Temps:          0       3       0       0       0       0       0
+      Totals:         0      17       0       0       0       0       0
+Total ram usage:       17 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_readEEPROM
+		_doActionOff
+		_doActionOn
+		_doActionPulse
+		_doActionStatus
+		_doActionDisable
+		_doActionToggle
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _doActionToggle *****************
+ Defined at:
+		line 2088 in file "../main.c"
+ Parameters:    Size  Location     Type
+  dmflags         1    wreg     unsigned char 
+  arg             1   80[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dmflags         1   24[BANK0 ] unsigned char 
+  i               1   27[BANK0 ] unsigned char 
+  bOn             1   26[BANK0 ] enum E15660
+  val             1   25[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0
+      Totals:         1       6       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_readEEPROM
+		_SendInformationEvent
+ This function is called by:
+		_doDM
+ This function uses a non-reentrant model
+
+
+ *************** function _doActionDisable *****************
+ Defined at:
+		line 2058 in file "../main.c"
+ Parameters:    Size  Location     Type
+  dmflags         1    wreg     unsigned char 
+  arg             1   10[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dmflags         1   13[COMRAM] unsigned char 
+  i               1   15[COMRAM] unsigned char 
+  val             1   14[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0
+      Totals:         6       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+		_readEEPROM
+ This function is called by:
+		_doDM
+ This function uses a non-reentrant model
+
+
+ *************** function _doActionStatus *****************
+ Defined at:
+		line 1969 in file "../main.c"
+ Parameters:    Size  Location     Type
+  dmflags         1    wreg     unsigned char 
+  arg             1   80[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dmflags         1   24[BANK0 ] unsigned char 
+  i               1   27[BANK0 ] unsigned char 
+  val             1   26[BANK0 ] unsigned char 
+  bOn             1   25[BANK0 ] enum E15660
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0
+      Totals:         1       6       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_readEEPROM
+		_SendInformationEvent
+ This function is called by:
+		_doDM
+ This function uses a non-reentrant model
+
+
+ *************** function _doActionPulse *****************
+ Defined at:
+		line 1878 in file "../main.c"
+ Parameters:    Size  Location     Type
+  dmflags         1    wreg     unsigned char 
+  arg             1   10[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dmflags         1   14[COMRAM] unsigned char 
+  i               1   16[COMRAM] unsigned char 
+  val             1   15[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0
+      Temps:          3       0       0       0       0       0       0
+      Totals:         7       0       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_doDM
+ This function uses a non-reentrant model
+
+
+ *************** function _doActionOn *****************
+ Defined at:
+		line 1690 in file "../main.c"
+ Parameters:    Size  Location     Type
+  dmflags         1    wreg     unsigned char 
+  arg             1   80[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dmflags         1   25[BANK0 ] unsigned char 
+  i               1   27[BANK0 ] unsigned char 
+  val             1   26[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0
+      Temps:          0       3       0       0       0       0       0
+      Totals:         1       6       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_readEEPROM
+		_SendInformationEvent
+ This function is called by:
+		_doDM
+ This function uses a non-reentrant model
+
+
+ *************** function _doActionOff *****************
+ Defined at:
+		line 1805 in file "../main.c"
+ Parameters:    Size  Location     Type
+  dmflags         1    wreg     unsigned char 
+  arg             1   80[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dmflags         1   24[BANK0 ] unsigned char 
+  i               1   26[BANK0 ] unsigned char 
+  val             1   25[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0
+      Totals:         1       5       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_readEEPROM
+		_SendInformationEvent
+ This function is called by:
+		_doApplicationOneSecondWork
+		_doDM
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_handleProtocolEvent *****************
+ Defined at:
+		line 786 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  bytes           1   45[BANK0 ] unsigned char 
+  page_save       2   41[BANK0 ] unsigned short 
+  i               1   51[BANK0 ] unsigned char 
+  page_save       2   39[BANK0 ] unsigned short 
+  byte            1   55[BANK0 ] unsigned char 
+  bytes           1   53[BANK0 ] unsigned char 
+  cb              1   50[BANK0 ] unsigned char 
+  bytes_this_t    1   49[BANK0 ] unsigned char 
+  j               1   58[BANK0 ] unsigned char 
+  i               1   56[BANK0 ] unsigned char 
+  k               1   52[BANK0 ] unsigned char 
+  i               1   54[BANK0 ] unsigned char 
+  len             1   48[BANK0 ] unsigned char 
+  pos             1   47[BANK0 ] unsigned char 
+  i               1   57[BANK0 ] unsigned char 
+  len             1   46[BANK0 ] unsigned char 
+  pos             1   44[BANK0 ] unsigned char 
+  offset          1   43[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0      20       0       0       0       0       0
+      Temps:          0       7       0       0       0       0       0
+      Totals:         0      27       0       0       0       0       0
+Total ram usage:       27 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    9
+ This function calls:
+		_vscp_init
+		_vscp_readAppReg
+		_vscp_writeAppReg
+		_vscp_sendEvent
+		_vscp_getGUID
+		_vscp_getMDF_URL
+		_vscp_goBootloaderMode
+		_vscp_getMatrixInfo
+		_vscp_handleHeartbeat
+		_vscp_handleSetNickname
+		_vscp_handleDropNickname
+		_vscp_newNodeOnline
+		_vscp_readRegister
+		_vscp_readStdReg
+		_vscp_writeRegister
+		_vscp_writeStdReg
+		___lbmod
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function ___lbmod *****************
+ Defined at:
+		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c"
+ Parameters:    Size  Location     Type
+  dividend        1    wreg     unsigned char 
+  divisor         1    7[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  dividend        1    8[COMRAM] unsigned char 
+  rem             1   10[COMRAM] unsigned char 
+  counter         1    9[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_writeRegister *****************
+ Defined at:
+		line 678 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+  reg             1    wreg     unsigned char 
+  value           1   30[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  reg             1   31[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       1       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_vscp_writeAppReg
+		_vscp_writeStdReg
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_writeStdReg *****************
+ Defined at:
+		line 691 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+  reg             1    wreg     unsigned char 
+  value           1   14[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  reg             1   31[COMRAM] unsigned char 
+  code            4   24[COMRAM] unsigned long 
+  idx             1   29[COMRAM] unsigned char 
+  code            4   20[COMRAM] unsigned long 
+  idx             1   28[COMRAM] unsigned char 
+  rv              1   30[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:        12       0       0       0       0       0       0
+      Temps:          5       0       0       0       0       0       0
+      Totals:        18       0       0       0       0       0       0
+Total ram usage:       18 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_vscp_setGUID
+		_vscp_setManufacturerId
+		_vscp_getGUID
+		_vscp_getUserID
+		_vscp_setUserID
+		_vscp_getManufacturerId
+		_vscp_getFamilyCode
+		_vscp_getFamilyType
+		_vscp_restoreDefaults
+ This function is called by:
+		_vscp_writeRegister
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_restoreDefaults *****************
+ Defined at:
+		line 2471 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_init_app_eeprom
+		_init_app_ram
+ This function is called by:
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _init_app_eeprom *****************
+ Defined at:
+		line 480 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  j               1   13[COMRAM] unsigned char 
+  i               1   12[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_main
+		_vscp_restoreDefaults
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getFamilyType *****************
+ Defined at:
+		line 2463 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  4    7[COMRAM] unsigned long 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         4       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getFamilyCode *****************
+ Defined at:
+		line 2454 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  4    7[COMRAM] unsigned long 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         4       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_setUserID *****************
+ Defined at:
+		line 2286 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+  data            1   10[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   11[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_setManufacturerId *****************
+ Defined at:
+		line 820 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+  data            1   10[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   11[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_setGUID *****************
+ Defined at:
+		line 808 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+  data            1   10[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   11[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_writeAppReg *****************
+ Defined at:
+		line 971 in file "../main.c"
+ Parameters:    Size  Location     Type
+  reg             1    wreg     unsigned char 
+  val             1   80[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  reg             1   29[BANK0 ] unsigned char 
+  val             1   26[BANK0 ] unsigned char 
+  rv              1   28[BANK0 ] unsigned char 
+  bOn             1   27[BANK0 ] enum E15660
+  bInfoEvent      1   25[BANK0 ] enum E15660
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         1       0       0       0       0       0       0
+      Locals:         0       5       0       0       0       0       0
+      Temps:          0       3       0       0       0       0       0
+      Totals:         1       8       0       0       0       0       0
+Total ram usage:        9 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_writeEEPROM
+		_readEEPROM
+		_SendInformationEvent
+		_calculateSetFilterMask
+ This function is called by:
+		_vscp_writeRegister
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _calculateSetFilterMask *****************
+ Defined at:
+		line 2592 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  rowfilter       4   61[COMRAM] unsigned long 
+  filter          4   57[COMRAM] unsigned long 
+  mask            4   53[COMRAM] unsigned long 
+  rowmask         4   48[COMRAM] unsigned long 
+  i               1   66[COMRAM] unsigned char 
+  j               1   65[COMRAM] unsigned char 
+  lastOID         1   52[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:        19       0       0       0       0       0       0
+      Temps:         31       0       0       0       0       0       0
+      Totals:        50       0       0       0       0       0       0
+Total ram usage:       50 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+		_ECANSetOperationMode
+		__CANIDToRegs
+ This function is called by:
+		_vscp_writeAppReg
+ This function uses a non-reentrant model
+
+
+ *************** function _SendInformationEvent *****************
+ Defined at:
+		line 1564 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+  eventClass      1   20[BANK0 ] unsigned char 
+  eventTypeId     1   21[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   79[COMRAM] unsigned char 
+  data            3   76[COMRAM] unsigned char [3]
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       2       0       0       0       0       0
+      Locals:         4       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0
+      Totals:         6       2       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_readEEPROM
+		_sendVSCPFrame
+ This function is called by:
+		_doApplicationOneSecondWork
+		_vscp_writeAppReg
+		_doActionOn
+		_doActionOff
+		_doActionStatus
+		_doActionToggle
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_readRegister *****************
+ Defined at:
+		line 553 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+  reg             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  reg             1   13[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_vscp_readAppReg
+		_vscp_readStdReg
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_readStdReg *****************
+ Defined at:
+		line 566 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+  reg             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  reg             1   12[COMRAM] unsigned char 
+  rv              1   11[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_vscp_getMajorVersion
+		_vscp_getMinorVersion
+		_vscp_getSubMinorVersion
+		_vscp_getGUID
+		_vscp_getMDF_URL
+		_vscp_getUserID
+		_vscp_getManufacturerId
+		_vscp_getBootLoaderAlgorithm
+		_vscp_getBufferSize
+		_vscp_getRegisterPagesUsed
+ This function is called by:
+		_vscp_readRegister
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getRegisterPagesUsed *****************
+ Defined at:
+		line 2482 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getBufferSize *****************
+ Defined at:
+		line 2315 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getBootLoaderAlgorithm *****************
+ Defined at:
+		line 2306 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getManufacturerId *****************
+ Defined at:
+		line 2297 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_readStdReg
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getUserID *****************
+ Defined at:
+		line 2277 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_readStdReg
+		_vscp_writeStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getMDF_URL *****************
+ Defined at:
+		line 2268 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1    8[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, tblptrl, tblptrh, tblptru
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getGUID *****************
+ Defined at:
+		line 2256 in file "../main.c"
+ Parameters:    Size  Location     Type
+  idx             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  idx             1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_readStdReg
+		_vscp_writeStdReg
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getSubMinorVersion *****************
+ Defined at:
+		line 2245 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getMinorVersion *****************
+ Defined at:
+		line 2236 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getMajorVersion *****************
+ Defined at:
+		line 2227 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_readStdReg
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_newNodeOnline *****************
+ Defined at:
+		line 494 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_vscp_sendEvent
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_handleDropNickname *****************
+ Defined at:
+		line 430 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  bytes           1   11[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_vscp_init
+		_vscp_writeNicknamePermanent
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_init *****************
+ Defined at:
+		line 117 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_vscp_readNicknamePermanent
+ This function is called by:
+		_main
+		_vscp_handleDropNickname
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_readNicknamePermanent *****************
+ Defined at:
+		line 849 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_init
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_handleSetNickname *****************
+ Defined at:
+		line 414 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_vscp_writeNicknamePermanent
+		_vscp_setSegmentCRC
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_handleHeartbeat *****************
+ Defined at:
+		line 388 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_vscp_writeNicknamePermanent
+		_vscp_getSegmentCRC
+		_vscp_setSegmentCRC
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getMatrixInfo *****************
+ Defined at:
+		line 2437 in file "../main.c"
+ Parameters:    Size  Location     Type
+  pData           1    wreg     PTR unsigned char 
+		 -> vscp_omsg(13), 
+ Auto vars:     Size  Location     Type
+  pData           1    0[COMRAM] PTR unsigned char 
+		 -> vscp_omsg(13), 
+  i               1    7[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_goBootloaderMode *****************
+ Defined at:
+		line 2421 in file "../main.c"
+ Parameters:    Size  Location     Type
+  algorithm       1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  algorithm       1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_handleProbeState *****************
+ Defined at:
+		line 200 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_vscp_goActiveState
+		_vscp_writeNicknamePermanent
+		_vscp_sendEvent
+		_vscp_setSegmentCRC
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_goActiveState *****************
+ Defined at:
+		line 350 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_vscp_sendEvent
+ This function is called by:
+		_main
+		_vscp_handleProbeState
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_sendEvent *****************
+ Defined at:
+		line 1270 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  rv              1    0        unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_sendVSCPFrame
+ This function is called by:
+		_vscp_handleProbeState
+		_vscp_goActiveState
+		_vscp_sendHeartBeat
+		_vscp_newNodeOnline
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _sendVSCPFrame *****************
+ Defined at:
+		line 2496 in file "../main.c"
+ Parameters:    Size  Location     Type
+  vscpclass       2   62[COMRAM] unsigned short 
+  vscptype        1   64[COMRAM] unsigned char 
+  nodeid          1   65[COMRAM] unsigned char 
+  priority        1   66[COMRAM] unsigned char 
+  size            1   67[COMRAM] unsigned char 
+  pData           2   68[COMRAM] PTR unsigned char 
+		 -> SendInformationEvent@data(3), vscp_omsg(13), 
+ Auto vars:     Size  Location     Type
+  id              4   70[COMRAM] unsigned long 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         8       0       0       0       0       0       0
+      Locals:         4       0       0       0       0       0       0
+      Temps:          0      20       0       0       0       0       0
+      Totals:        12      20       0       0       0       0       0
+Total ram usage:       32 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_sendCANFrame
+ This function is called by:
+		_SendInformationEvent
+		_vscp_sendEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _sendCANFrame *****************
+ Defined at:
+		line 2541 in file "../main.c"
+ Parameters:    Size  Location     Type
+  id              4   54[COMRAM] unsigned long 
+  dlc             1   58[COMRAM] unsigned char 
+  pdata           2   59[COMRAM] PTR unsigned char 
+		 -> SendInformationEvent@data(3), vscp_omsg(13), 
+ Auto vars:     Size  Location     Type
+  rv              1   61[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         7       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         8       0       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_ECANSendMessage
+ This function is called by:
+		_sendVSCPFrame
+ This function uses a non-reentrant model
+
+
+ *************** function _ECANSendMessage *****************
+ Defined at:
+		line 617 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+  id              4   17[COMRAM] unsigned long 
+  data            2   21[COMRAM] PTR unsigned char 
+		 -> SendInformationEvent@data(3), vscp_omsg(13), 
+  dataLen         1   23[COMRAM] unsigned char 
+  msgFlags        1   24[COMRAM] enum E16315
+ Auto vars:     Size  Location     Type
+  pb             18   26[COMRAM] PTR unsigned char [9]
+		 -> TXB2CON(1), TXB1CON(1), TXB0CON(1), B5CON(1), 
+		 -> B4CON(1), B3CON(1), B2CON(1), B1CON(1), 
+		 -> B0CON(1), 
+  ptr             2   52[COMRAM] PTR unsigned char 
+		 -> TXB2CON(1), TXB1CON(1), TXB0CON(1), B5CON(1), 
+		 -> B4CON(1), B3CON(1), B2CON(1), B1CON(1), 
+		 -> B0CON(1), 
+  tempPtr         2   48[COMRAM] PTR unsigned char 
+		 -> TXB2CON(1), TXB1CON(1), TXB0CON(1), B5CON(1), 
+		 -> B4CON(1), B3CON(1), B2CON(1), B1CON(1), 
+		 -> B0CON(1), 
+  i               1   51[COMRAM] unsigned char 
+  temp            1   50[COMRAM] unsigned char 
+  tempBSEL0       1   47[COMRAM] struct .
+  j               1   46[COMRAM] unsigned char 
+  buffers         1   45[COMRAM] unsigned char 
+  mode            1   44[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      enum E15660
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         8       0       0       0       0       0       0
+      Locals:        28       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0
+      Totals:        37       0       0       0       0       0       0
+Total ram usage:       37 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		__CANIDToRegs
+ This function is called by:
+		_sendCANFrame
+ This function uses a non-reentrant model
+
+
+ *************** function __CANIDToRegs *****************
+ Defined at:
+		line 1099 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+  ptr             2    7[COMRAM] PTR unsigned char 
+		 -> TXB2CON(1), TXB1CON(1), TXB0CON(1), B5CON(1), 
+		 -> B4CON(1), B3CON(1), B2CON(1), B1CON(1), 
+		 -> B0CON(1), RXF1SIDH(1), RXM1SIDH(1), 
+  val             4    9[COMRAM] unsigned long 
+  type            1   13[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  Value           1   16[COMRAM] PTR struct _CAN_MESSAGE_
+		 -> _CANIDToRegs@val(4), 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         7       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0
+      Totals:        10       0       0       0       0       0       0
+Total ram usage:       10 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_calculateSetFilterMask
+		_ECANSendMessage
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getEvent *****************
+ Defined at:
+		line 1290 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  rv              1   43[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_getVSCPFrame
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _getVSCPFrame *****************
+ Defined at:
+		line 2520 in file "../main.c"
+ Parameters:    Size  Location     Type
+  pvscpclass      1    wreg     PTR unsigned short 
+		 -> vscp_imsg(14), 
+  pvscptype       1   29[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  pNodeId         1   30[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  pPriority       1   31[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  pSize           1   32[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  pData           1   33[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+ Auto vars:     Size  Location     Type
+  pvscpclass      1   38[COMRAM] PTR unsigned short 
+		 -> vscp_imsg(14), 
+  id              4   39[COMRAM] unsigned long 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         5       0       0       0       0       0       0
+      Locals:         5       0       0       0       0       0       0
+      Temps:          4       0       0       0       0       0       0
+      Totals:        14       0       0       0       0       0       0
+Total ram usage:       14 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_getCANFrame
+ This function is called by:
+		_vscp_getEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _getCANFrame *****************
+ Defined at:
+		line 2562 in file "../main.c"
+ Parameters:    Size  Location     Type
+  pid             1    wreg     PTR unsigned long 
+		 -> getVSCPFrame@id(4), 
+  pdlc            1   25[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  pdata           1   26[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+ Auto vars:     Size  Location     Type
+  pid             1   27[COMRAM] PTR unsigned long 
+		 -> getVSCPFrame@id(4), 
+  flags           1   28[COMRAM] enum E16358
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         2       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_ECANReceiveMessage
+ This function is called by:
+		_getVSCPFrame
+ This function uses a non-reentrant model
+
+
+ *************** function _ECANReceiveMessage *****************
+ Defined at:
+		line 803 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+  id              1    wreg     PTR unsigned long 
+		 -> getVSCPFrame@id(4), 
+  data            1   14[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  dataLen         1   15[COMRAM] PTR unsigned char 
+		 -> vscp_imsg(14), 
+  msgFlags        1   16[COMRAM] PTR enum E16333
+		 -> getCANFrame@flags(1), 
+ Auto vars:     Size  Location     Type
+  id              1   19[COMRAM] PTR unsigned long 
+		 -> getVSCPFrame@id(4), 
+  ptr             2   23[COMRAM] PTR unsigned char 
+		 -> B5CON(1), B4CON(1), B3CON(1), B2CON(1), 
+		 -> B1CON(1), B0CON(1), RXB1CON(1), RXB0CON(1), 
+  savedPtr        2   17[COMRAM] PTR unsigned char 
+		 -> B5CON(1), B4CON(1), B3CON(1), B2CON(1), 
+		 -> B1CON(1), B0CON(1), RXB1CON(1), RXB0CON(1), 
+  temp            1   22[COMRAM] struct .
+  mode            1   21[COMRAM] unsigned char 
+  i               1   20[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      enum E15660
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         3       0       0       0       0       0       0
+      Locals:         8       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:        11       0       0       0       0       0       0
+Total ram usage:       11 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		__ECANPointBuffer
+		__RegsToCANID
+ This function is called by:
+		_getCANFrame
+ This function uses a non-reentrant model
+
+
+ *************** function __RegsToCANID *****************
+ Defined at:
+		line 1156 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+  ptr             2    7[COMRAM] PTR unsigned char 
+		 -> B5CON(1), B4CON(1), B3CON(1), B2CON(1), 
+		 -> B1CON(1), B0CON(1), RXB1CON(1), RXB0CON(1), 
+  val             1    9[COMRAM] PTR unsigned long 
+		 -> getVSCPFrame@id(4), 
+  type            1   10[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  Value           1   13[COMRAM] PTR struct _CAN_MESSAGE_
+		 -> getVSCPFrame@id(4), 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         4       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0
+      Totals:         7       0       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_ECANReceiveMessage
+ This function uses a non-reentrant model
+
+
+ *************** function __ECANPointBuffer *****************
+ Defined at:
+		line 1207 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+  b               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  b               1   10[COMRAM] unsigned char 
+  pt              2   11[COMRAM] PTR unsigned char 
+		 -> B5CON(1), B4CON(1), B3CON(1), B2CON(1), 
+		 -> B1CON(1), B0CON(1), RXB1CON(1), RXB0CON(1), 
+ Return value:  Size  Location     Type
+                  2    7[COMRAM] PTR unsigned char 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         3       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         6       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_ECANReceiveMessage
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_check_pstorage *****************
+ Defined at:
+		line 166 in file "../../vscp_firmware/common/vscp_firmware.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_vscp_writeNicknamePermanent
+		_vscp_getSegmentCRC
+		_vscp_setSegmentCRC
+		_vscp_setControlByte
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_setControlByte *****************
+ Defined at:
+		line 2361 in file "../main.c"
+ Parameters:    Size  Location     Type
+  ctrl            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  ctrl            1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_check_pstorage
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_setSegmentCRC *****************
+ Defined at:
+		line 2352 in file "../main.c"
+ Parameters:    Size  Location     Type
+  crc             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  crc             1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_check_pstorage
+		_vscp_handleProbeState
+		_vscp_handleHeartbeat
+		_vscp_handleSetNickname
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_getSegmentCRC *****************
+ Defined at:
+		line 2343 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_check_pstorage
+		_vscp_handleHeartbeat
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_writeNicknamePermanent *****************
+ Defined at:
+		line 858 in file "../main.c"
+ Parameters:    Size  Location     Type
+  nickname        1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  nickname        1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_writeEEPROM
+ This function is called by:
+		_vscp_check_pstorage
+		_vscp_handleProbeState
+		_vscp_handleHeartbeat
+		_vscp_handleSetNickname
+		_vscp_handleDropNickname
+ This function uses a non-reentrant model
+
+
+ *************** function _writeEEPROM *****************
+ Defined at:
+		line 23 in file "../../vscp_firmware/pic/common/eeprom.c"
+ Parameters:    Size  Location     Type
+  address         2    7[COMRAM] unsigned short 
+  data            1    9[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         3       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+		_init_app_eeprom
+		_vscp_setGUID
+		_vscp_setManufacturerId
+		_vscp_writeNicknamePermanent
+		_vscp_writeAppReg
+		_doActionDisable
+		_vscp_setUserID
+		_vscp_setSegmentCRC
+		_vscp_setControlByte
+		_vscp_goBootloaderMode
+ This function uses a non-reentrant model
+
+
+ *************** function _init *****************
+ Defined at:
+		line 320 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_WriteTimer0
+		_init_app_ram
+		_OpenTimer0
+		_ECANInitialize
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ECANInitialize *****************
+ Defined at:
+		line 168 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_ECANSetOperationMode
+ This function is called by:
+		_init
+ This function uses a non-reentrant model
+
+
+ *************** function _ECANSetOperationMode *****************
+ Defined at:
+		line 1012 in file "../ECAN.c"
+ Parameters:    Size  Location     Type
+  mode            1    wreg     enum E16346
+ Auto vars:     Size  Location     Type
+  mode            1    7[COMRAM] enum E16346
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_calculateSetFilterMask
+		_ECANInitialize
+ This function uses a non-reentrant model
+
+
+ *************** function _OpenTimer0 *****************
+ Defined at:
+		line 19 in file "C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0open.c"
+ Parameters:    Size  Location     Type
+  config          1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  config          1    7[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_init
+ This function uses a non-reentrant model
+
+
+ *************** function _init_app_ram *****************
+ Defined at:
+		line 434 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  i               1   12[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_main
+		_init
+		_vscp_restoreDefaults
+ This function uses a non-reentrant model
+
+
+ *************** function _WriteTimer0 *****************
+ Defined at:
+		line 17 in file "C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c"
+ Parameters:    Size  Location     Type
+  timer0          2    7[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  timer           2    9[COMRAM] struct Timers
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         2       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_init
+ This function uses a non-reentrant model
+
+
+ *************** function _vscp_readAppReg *****************
+ Defined at:
+		line 898 in file "../main.c"
+ Parameters:    Size  Location     Type
+  reg             1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  reg             1   11[COMRAM] unsigned char 
+  rv              1   10[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_readEEPROM
+ This function is called by:
+		_vscp_readRegister
+		_vscp_handleProtocolEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _readEEPROM *****************
+ Defined at:
+		line 92 in file "../../vscp_firmware/pic/common/eeprom.c"
+ Parameters:    Size  Location     Type
+  address         2    7[COMRAM] unsigned short 
+ Auto vars:     Size  Location     Type
+  data            1    9[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         2       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_init_app_ram
+		_doApplicationOneSecondWork
+		_vscp_readNicknamePermanent
+		_vscp_getZone
+		_vscp_getSubzone
+		_vscp_readAppReg
+		_vscp_writeAppReg
+		_SendInformationEvent
+		_doDM
+		_doActionOn
+		_doActionOff
+		_doActionPulse
+		_doActionStatus
+		_doActionDisable
+		_doActionToggle
+		_vscp_getGUID
+		_vscp_getUserID
+		_vscp_getManufacturerId
+		_vscp_getSegmentCRC
+		_calculateSetFilterMask
+ This function uses a non-reentrant model
+
+
+ *************** function _interrupt_at_low_vector *****************
+ Defined at:
+		line 134 in file "../main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          3       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		i1_WriteTimer0
+ This function is called by:
+		Interrupt level 1
+ This function uses a non-reentrant model
+
+
+ *************** function i1_WriteTimer0 *****************
+ Defined at:
+		line 17 in file "C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c"
+ Parameters:    Size  Location     Type
+  timer0          2    0[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  WriteTimer0     2    2[COMRAM] struct Timers
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+      Params:         2       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_interrupt_at_low_vector
+ This function uses a non-reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+../main.c
+		_vscp_getBootLo		CODE           	3F74	0000	2
+		_vscp_getZone  		CODE           	3F30	0000	10
+		_init          		CODE           	3B50	0000	62
+		_vscp_setManufa		CODE           	3D64	0000	34
+		_doDM          		CODE           	1DCE	0000	792
+		_vscp_setGUID  		CODE           	3D86	0000	34
+		_SendInformatio		CODE           	39D4	0000	108
+		_getVSCPFrame  		CODE           	387A	0000	120
+		_vscp_setContro		CODE           	3EBA	0000	18
+		_vscp_getUserID		CODE           	3E92	0000	20
+		_doWork        		CODE           	3F6E	0000	2
+		_vscp_getSegmen		CODE           	3F58	0000	10
+		_vscp_restoreDe		CODE           	3F62	0000	8
+		_vscp_readAppRe		CODE           	372E	0000	182
+		_vscp_getFamily		CODE           	3F44	0000	10
+		_doActionOn    		CODE           	23D8	0000	618
+		_vscp_setUserID		CODE           	3E1E	0000	24
+		_getCANFrame   		CODE           	3BBE	0000	44
+		_main          		CODE           	3424	0000	224
+		_doActionOff   		CODE           	3504	0000	186
+		_calculateSetFi		CODE           	15EC	0000	1132
+		_vscp_getRegist		CODE           	3F70	0000	2
+		_vscp_setSegmen		CODE           	3ECC	0000	18
+		_sendVSCPFrame 		CODE           	3678	0000	182
+		_vscp_getMDF_UR		CODE           	3E36	0000	24
+		_init_app_eepro		CODE           	1A58	0000	886
+		_doActionPulse 		CODE           	2850	0000	464
+		_sendCANFrame  		CODE           	3AD2	0000	64
+		_vscp_writeAppR		CODE           	0622	0000	2478
+		_vscp_getFamily		CODE           	3F3A	0000	10
+		_vscp_getBuffer		CODE           	3F72	0000	2
+		_vscp_getSubzon		CODE           	3F26	0000	10
+		_vscp_getMatrix		CODE           	3DA8	0000	32
+		_vscp_goBootloa		CODE           	3E4E	0000	24
+		_doActionToggle		CODE           	3006	0000	288
+		_doActionStatus		CODE           	3234	0000	268
+		_vscp_readNickn		CODE           	3F4E	0000	10
+		_interrupt_at_l		CODE           	0018	0000	158
+		_doApplicationO		CODE           	20E6	0000	754
+		_doActionDisabl		CODE           	3968	0000	108
+		_vscp_getMajorV		CODE           	3F7A	0000	2
+		_vscp_getMinorV		CODE           	3F78	0000	2
+		_vscp_writeNick		CODE           	3EDE	0000	18
+		_init_app_ram  		CODE           	3126	0000	270
+		_vscp_getManufa		CODE           	3E7E	0000	20
+		_vscp_getSubMin		CODE           	3F76	0000	2
+		_vscp_getGUID  		CODE           	3EA6	0000	20
+
+../main.c estimated size: 9756
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
+		_WriteTimer0   		CODE           	3EF0	0000	18
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c estimated size: 18
+
+../../vscp_firmware/pic/common/eeprom.c
+		_readEEPROM    		CODE           	3F02	0000	18
+		_writeEEPROM   		CODE           	3CB2	0000	38
+
+../../vscp_firmware/pic/common/eeprom.c estimated size: 56
+
+../ECAN.c
+		_ECANReceiveMes		CODE           	2642	0000	526
+		__RegsToCANID  		CODE           	2D52	0000	356
+		__ECANPointBuff		CODE           	38F2	0000	118
+		_ECANInitialize		CODE           	37E4	0000	150
+		__CANIDToRegs  		CODE           	2EB6	0000	336
+		_ECANSetOperati		CODE           	3E66	0000	24
+		_ECANSendMessag		CODE           	2BE8	0000	362
+
+../ECAN.c estimated size: 1872
+
+shared
+		_vscp_deviceURL		SMALLCONST     	0600	0000	32
+		__initializatio		CODE           	3D20	0000	24
+		i1_WriteTimer0 		CODE           	3F14	0000	18
+
+shared estimated size: 74
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c
+		___lbmod       		CODE           	3C3E	0000	40
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c estimated size: 40
+
+../../vscp_firmware/common/vscp_firmware.c
+		_vscp_getEvent 		CODE           	3C14	0000	42
+		_vscp_handleHea		CODE           	3B12	0000	62
+		_vscp_readRegis		CODE           	3E04	0000	26
+		_vscp_writeRegi		CODE           	3D42	0000	34
+		_vscp_error    		CODE           	3F6A	0000	4
+		_vscp_readStdRe		CODE           	3340	0000	228
+		_vscp_goActiveS		CODE           	3DC8	0000	30
+		_vscp_doOneSeco		CODE           	3A40	0000	78
+		_vscp_sendEvent		CODE           	3C8C	0000	38
+		_vscp_check_pst		CODE           	3CFC	0000	36
+		_vscp_writeStdR		CODE           	2A20	0000	456
+		_vscp_handlePro		CODE           	0FD0	0000	1564
+		_vscp_handleDro		CODE           	3B8E	0000	48
+		_vscp_handleSet		CODE           	3CD8	0000	36
+		_vscp_handlePro		CODE           	35BE	0000	186
+		_vscp_sendHeart		CODE           	3C66	0000	38
+		_vscp_newNodeOn		CODE           	3BEA	0000	42
+		_vscp_init     		CODE           	3A8E	0000	68
+
+../../vscp_firmware/common/vscp_firmware.c estimated size: 3016
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0open.c
+		_OpenTimer0    		CODE           	3DE6	0000	30
+
+C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0open.c estimated size: 30
+

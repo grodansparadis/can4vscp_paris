@@ -30,6 +30,9 @@
  * ******************************************************************************
  */
 
+#include "vscp_compiler.h"
+#include "vscp_projdefs.h"
+
 #include <p18cxxx.h>
 #include <timers.h>
 #include <delays.h>
@@ -84,10 +87,7 @@
 #endif
 
 // Startup code from c018.c
-void _startup(void);
-
-// ISR Routines
-void isr_low(void);
+//void _startup(void);
 
 // Calculate and st required filter and mask
 // for the current decision matrix
@@ -125,7 +125,7 @@ uint16_t relay_protection_timer[8];
 //////////////////////////////////////////////////////////////////////////////
 
 #ifdef RELOCATE
-#pragma code low_vector = 0x208
+//#pragma code low_vector = 0x208
 #else
 //#pragma code low_vector = 0x08
 #endif
@@ -210,7 +210,7 @@ void main()
         if ( ( vscp_initbtncnt > 250 ) &&
                 ( VSCP_STATE_INIT != vscp_node_state ) ) {
 
-            // Init button pressed
+            // Init. button pressed
             vscp_nickname = VSCP_ADDRESS_FREE;
             writeEEPROM( VSCP_EEPROM_NICKNAME, VSCP_ADDRESS_FREE );
             vscp_init();
@@ -271,7 +271,7 @@ void main()
 
         }
 
-        // do a meaurement if needed
+        // do a measurement if needed
         if ( measurement_clock > 1000 ) {
 
             measurement_clock = 0;
@@ -478,7 +478,6 @@ void init_app_ram( void )
 
 void init_app_eeprom(void)
 {
-
     unsigned char i, j;
 
     writeEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE, 0 );
@@ -1595,7 +1594,6 @@ void SendInformationEvent( unsigned char idx,
 
 void doDM(void)
 {
-
     unsigned char i;
     unsigned char dmflags;
     unsigned short class_filter;
@@ -1605,8 +1603,6 @@ void doDM(void)
 
     // Don't deal with the protocol functionality
     if ( VSCP_CLASS1_PROTOCOL == vscp_imsg.vscp_class ) return;
-    RELAY0 = 1;
-
 
     for (i = 0; i < DESCION_MATRIX_ROWS; i++) {
 
@@ -1615,16 +1611,12 @@ void doDM(void)
 
         // Is the DM row enabled?
         if ( dmflags & VSCP_DM_FLAG_ENABLED ) {
-                            RELAY1 = 1;
-
 
             // Should the originating id be checked and if so is it the same?
             if ( ( dmflags & VSCP_DM_FLAG_CHECK_OADDR ) &&
                     ( vscp_imsg.oaddr != readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) ) ) ) {
                 continue;
             }
-                                            RELAY2 = 1;
-
 
             // Check if zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
@@ -1634,9 +1626,7 @@ void doDM(void)
                     }
                 }
             }
-                                                            RELAY3 = 1;
-
-
+            
             class_filter = ( dmflags & VSCP_DM_FLAG_CLASS_FILTER)*256 +
                     readEEPROM( VSCP_EEPROM_END +
                     REG_DESCION_MATRIX +
@@ -2427,8 +2417,10 @@ uint8_t vscp_getSubzone( void )
 // vscp_goBootloaderMode
 //
 
-void vscp_goBootloaderMode(void)
+void vscp_goBootloaderMode( uint8_t algorithm )
 {
+    if ( VSCP_BOOTLOADER_PIC1 != algorithm  ) return;
+
     // OK, We should enter boot loader mode
     // 	First, activate bootloader mode
     writeEEPROM(VSCP_EEPROM_BOOTLOADER_FLAG, VSCP_BOOT_FLAG);
@@ -2448,7 +2440,7 @@ void vscp_getMatrixInfo(char *pData)
     vscp_omsg.data[ 0 ] = 7; // Matrix is seven rows
     vscp_omsg.data[ 1 ] = 72; // Matrix start offset
 
-    // The resr set to zero no paging
+    // The rest set to zero no paging
     for ( i = 2; i < 8; i++ ) {
         vscp_omsg.data[ i ] = 0;
     }
@@ -2505,7 +2497,7 @@ int8_t sendVSCPFrame( uint16_t vscpclass,
     uint32_t id = ( (uint32_t)priority << 26 ) |
                     ( (uint32_t)vscpclass << 16 ) |
                     ( (uint32_t)vscptype << 8 ) |
-                    nodeid; // nodeaddress (our address)
+                    nodeid; // node address (our address)
 
     if ( !sendCANFrame( id, size, pData ) ) {
         return FALSE;
@@ -2675,22 +2667,22 @@ void calculateSetFilterMask( void )
                 mask &= ~0xff;
             }
 
-            if ( i ) {
+            if (i) {
                 // If the current OID is different than the previous
                 // we accept all
-				for (j=0; j<8; j++ ) {
-					if ( (lastOID>>i & 1 )
-                        != (readEEPROM( VSCP_EEPROM_END + 8*i )>>i & 1) ) {
-						mask &= (1<<i);
-					}
-				}
+                for (j = 0; j < 8; j++) {
+                    if ((lastOID >> i & 1)
+                            != (readEEPROM(VSCP_EEPROM_END + 8 * i) >> i & 1)) {
+                        mask &= (1 << i);
+                    }
+                }
 
-                lastOID = readEEPROM( VSCP_EEPROM_END + 8*i );
+                lastOID = readEEPROM(VSCP_EEPROM_END + 8 * i);
 
-            }
+            } 
             else {
                 // First round we just store the OID
-                lastOID = readEEPROM( VSCP_EEPROM_END + 8*i );
+                lastOID = readEEPROM(VSCP_EEPROM_END + 8 * i);
             }
 
         }
