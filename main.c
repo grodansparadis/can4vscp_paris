@@ -1626,6 +1626,15 @@ void doDM(void)
                     }
                 }
             }
+
+            // Check if subzone should match and if so if it match
+            if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
+                if ( 255 != pEvent->pdata[ 1 ] ) {
+                    if ( vscp_imsg.data[ 1 ] != m_registers[ SIM_USER0_REG_SUBZONE ] ) {
+                        continue;
+                    }
+                }
+            }
             
             class_filter = ( dmflags & VSCP_DM_FLAG_CLASS_FILTER)*256 +
                     readEEPROM( VSCP_EEPROM_END +
