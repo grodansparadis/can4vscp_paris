@@ -1629,8 +1629,8 @@ void doDM(void)
 
             // Check if subzone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
-                if ( 255 != pEvent->pdata[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != m_registers[ SIM_USER0_REG_SUBZONE ] ) {
+                if ( 255 != vscp_imsg.data[ 1 ] ) {
+                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE ) ) {
                         continue;
                     }
                 }

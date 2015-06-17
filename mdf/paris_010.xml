@@ -5,7 +5,7 @@
 	<name>Paris Relay controller</name>
 	<model>B</model>
 	<version>0.1.1</version>
-	<changed>2015-01-26</changed>
+	<changed>2015-04-22</changed>
 	<description lang="en">
 		With this VSCP module it is possible to control up to seven relays or similar devices. 
 	</description>
