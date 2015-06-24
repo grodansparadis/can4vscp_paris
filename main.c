@@ -953,6 +953,7 @@ uint8_t vscp_readAppReg(uint8_t reg)
                 break;
         }
     }
+    
     // Read all other registers including DM
     else if ( ( reg >= REG_RELAY0_CONTROL ) &&
         (reg < (REG_DESCION_MATRIX + DESCION_MATRIX_ROWS * 8 ) ) ) {
@@ -1198,6 +1199,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB ) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB );
                 }
+                else {
+                    channel_pulse_flags &= 0b11111110; // Disable pulse output
+                    RELAY0 = 0; // End with off
+                    bOn = FALSE;
+                }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 0 ] =
@@ -1220,6 +1226,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                     relay_pulse_timer[ 1 ] =
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB);
+                }
+                else {
+                    channel_pulse_flags &= 0b11111101; // Disable pulse output
+                    RELAY1 = 0; // End with off
+                    bOn = FALSE;
                 }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
@@ -1244,6 +1255,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB);
                 }
+                else {
+                    channel_pulse_flags &= 0b11111011; // Disable pulse output
+                    RELAY2 = 0; // End with off
+                    bOn = FALSE;
+                }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 2 ] =
@@ -1266,6 +1282,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                     relay_pulse_timer[ 3 ] =
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB);
+                }
+                else {
+                    channel_pulse_flags &= 0b11110111; // Disable pulse output
+                    RELAY3 = 0; // End with off
+                    bOn = FALSE;
                 }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
@@ -1290,6 +1311,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB);
                 }
+                else {
+                    channel_pulse_flags &= 0b11101111; // Disable pulse output
+                    RELAY4 = 0; // End with off
+                    bOn = FALSE;
+                }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 4 ] =
@@ -1313,6 +1339,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB);
                 }
+                else {
+                    channel_pulse_flags &= 0b11011111; // Disable pulse output
+                    RELAY5 = 0; // End with off
+                    bOn = FALSE;
+                }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 5 ] =
@@ -1335,6 +1366,11 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                     relay_pulse_timer[ 6 ] =
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB) * 256 +
                                     readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB);
+                }
+                else {
+                    channel_pulse_flags &= 0b10111111; // Disable pulse output
+                    RELAY3 = 0; // End with off
+                    bOn = FALSE;
                 }
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
@@ -2571,7 +2607,7 @@ int8_t getCANFrame(uint32_t *pid, uint8_t *pdlc, uint8_t *pdata)
 {
     ECAN_RX_MSG_FLAGS flags;
 
-    // Dont read in new event if there already is a event
+    // Don't read in new event if there already is a event
     // in the input buffer
     if (vscp_imsg.flags & VSCP_VALID_MSG) return FALSE;
 
