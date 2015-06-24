@@ -36,7 +36,6 @@
 #include <p18cxxx.h>
 #include <timers.h>
 #include <delays.h>
-#include <eeprom.h>
 #include <inttypes.h>
 #include <ecan.h>
 #include <vscp_firmware.h>
@@ -212,7 +211,7 @@ void main()
 
             // Init. button pressed
             vscp_nickname = VSCP_ADDRESS_FREE;
-            writeEEPROM( VSCP_EEPROM_NICKNAME, VSCP_ADDRESS_FREE );
+            eeprom_write( VSCP_EEPROM_NICKNAME, VSCP_ADDRESS_FREE );
             vscp_init();
             
         }
@@ -451,20 +450,20 @@ void init_app_ram( void )
     for ( i=0; i<7; i++ ) {
 
         // Init pulsed relays
-        if ( readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) &
+        if ( eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) &
                                 RELAY_CONTROLBIT_PULSE ) {
 
             relay_pulse_flags |= (1<<i); // Enable pulse output
             relay_pulse_timer[ i ] =
-                readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB + i ) * 256 +
-                readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB + i );
+                eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB + i ) * 256 +
+                eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB + i );
         }
 
         // Init protection timers
-        if ( readEEPROM(VSCP_EEPROM_END + REG_RELAY5_CONTROL + i ) & RELAY_CONTROLBIT_PROTECTION) {
+        if ( eeprom_read(VSCP_EEPROM_END + REG_RELAY5_CONTROL + i ) & RELAY_CONTROLBIT_PROTECTION) {
             relay_protection_timer[ i ] =
-                readEEPROM(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB + i ) * 256 +
-                readEEPROM(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB + i );
+                eeprom_read(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB + i ) * 256 +
+                eeprom_read(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB + i );
         }
 
     }
@@ -480,105 +479,105 @@ void init_app_eeprom(void)
 {
     unsigned char i, j;
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY_SUBZONE, 0 );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_CONTROL,
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_CONTROL,
                     RELAY_CONTROLBIT_ONEVENT |
                     RELAY_CONTROLBIT_OFFEVENT |
                     RELAY_CONTROLBIT_ENABLED );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_LSB, 0  );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_LSB, 0  );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_MSB, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_MSB, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_LSB, 0 );
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY1_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY2_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY3_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY4_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY5_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY6_SUBZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY7_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY0_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY1_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY2_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY3_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY4_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY5_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY6_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_RELAY7_SUBZONE, 0 );
 
     // * * * Decision Matrix * * *
     // All elements disabled.
     for ( i = 0; i < DESCION_MATRIX_ROWS; i++ ) {
         for ( j = 0; j < 8; j++ ) {
-            writeEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + i * 8 + j, 0 );
+            eeprom_write( VSCP_EEPROM_END + REG_DESCION_MATRIX + i * 8 + j, 0 );
         }
     }
 
@@ -598,7 +597,7 @@ void doApplicationOneSecondWork(void)
     for ( i = 0; i < 8; i++ ) {
 
         // Get control register for this relay
-        ctrlreg = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+        ctrlreg = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
 
         // If not enabled check next
         if ( !( ctrlreg & RELAY_CONTROLBIT_ENABLED ) ) continue;
@@ -611,7 +610,7 @@ void doApplicationOneSecondWork(void)
 
             // Check if its time to act on protection time
             if ( !relay_protection_timer[ i ] &&
-                    ( readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) &
+                    ( eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) &
                                     RELAY_CONTROLBIT_PROTECTION ) ) {
 
                 // Yes - its time to protect this relay
@@ -628,8 +627,8 @@ void doApplicationOneSecondWork(void)
         else {
             // Reload protection timer
             relay_protection_timer[ i ] =
-                    readEEPROM(VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB + i ) * 256 +
-                    readEEPROM(VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB + i );
+                    eeprom_read(VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB + i ) * 256 +
+                    eeprom_read(VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB + i );
         }
 
         // * * * Pulsed relays * * *
@@ -718,18 +717,18 @@ void doApplicationOneSecondWork(void)
 
                     // Reload pulse timer
                     relay_pulse_timer[ i ] =
-                            readEEPROM( VSCP_EEPROM_END +
+                            eeprom_read( VSCP_EEPROM_END +
                                             REG_RELAY0_PULSE_TIME_MSB + 2*i ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END +
+                            eeprom_read( VSCP_EEPROM_END +
                                             REG_RELAY0_PULSE_TIME_LSB + 2*i );
 
                     if ( bOn ) {
 
                         // Reload protection timer
-                        if ( readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) & RELAY_CONTROLBIT_PROTECTION ) {
+                        if ( eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) & RELAY_CONTROLBIT_PROTECTION ) {
                             relay_protection_timer[ i ] =
-                                readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB + 2*i ) * 256 +
-                                readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB + 2*i );
+                                eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB + 2*i ) * 256 +
+                                eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB + 2*i );
                         }
 
                         if ( ctrlreg & RELAY_CONTROLBIT_ONEVENT ) {
@@ -761,8 +760,8 @@ void doApplicationOneSecondWork(void)
             else {
                 // Reload the pulse timer
                 relay_pulse_timer[ 0 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB + 2*i ) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB + 2*i );
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB + 2*i ) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB + 2*i );
             }
 
         } // Pulse bit
@@ -807,7 +806,7 @@ unsigned char getSubMinorVersion()
 
 void vscp_setGUID(uint8_t idx, uint8_t data ) {
     if ( idx>15 ) return;
-    writeEEPROM(VSCP_EEPROM_REG_GUID + idx, data);
+    eeprom_write(VSCP_EEPROM_REG_GUID + idx, data);
 }
 #endif
 
@@ -819,7 +818,7 @@ void vscp_setGUID(uint8_t idx, uint8_t data ) {
 
 void vscp_setManufacturerId( uint8_t idx, uint8_t data ) {
     if ( idx>7 ) return;
-    writeEEPROM(VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx, data);
+    eeprom_write(VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx, data);
 }
 #endif
 
@@ -847,7 +846,7 @@ unsigned char getBufferSize(void)
 
 uint8_t vscp_readNicknamePermanent(void)
 {
-    return readEEPROM( VSCP_EEPROM_NICKNAME );
+    return eeprom_read( VSCP_EEPROM_NICKNAME );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -856,7 +855,7 @@ uint8_t vscp_readNicknamePermanent(void)
 
 void vscp_writeNicknamePermanent(uint8_t nickname)
 {
-    writeEEPROM( VSCP_EEPROM_NICKNAME, nickname );
+    eeprom_write( VSCP_EEPROM_NICKNAME, nickname );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -865,7 +864,7 @@ void vscp_writeNicknamePermanent(uint8_t nickname)
 
 uint8_t vscp_getZone(void)
 {
-    return readEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE );
+    return eeprom_read( VSCP_EEPROM_END + REG_RELAY_ZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -874,7 +873,7 @@ uint8_t vscp_getZone(void)
 
 uint8_t vscp_getSubzone(void)
 {
-    return readEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE );
+    return eeprom_read( VSCP_EEPROM_END + REG_RELAY_SUBZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -902,11 +901,11 @@ uint8_t vscp_readAppReg(uint8_t reg)
 
     // Zone
     if ( reg == 0x00 ) {
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_ZONE);
+        rv = eeprom_read(VSCP_EEPROM_END + REG_RELAY_ZONE);
 	}
     // SubZone
 	else if ( reg == 0x01 ) {
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_SUBZONE);
+        rv = eeprom_read(VSCP_EEPROM_END + REG_RELAY_SUBZONE);
 	}
     else if ( (reg >= REG_RELAY0_STATE) && (reg < REG_RELAY0_CONTROL) ) {
 
@@ -957,7 +956,7 @@ uint8_t vscp_readAppReg(uint8_t reg)
     // Read all other registers including DM
     else if ( ( reg >= REG_RELAY0_CONTROL ) &&
         (reg < (REG_DESCION_MATRIX + DESCION_MATRIX_ROWS * 8 ) ) ) {
-        rv = readEEPROM( VSCP_EEPROM_END + reg );
+        rv = eeprom_read( VSCP_EEPROM_END + reg );
     }
 
     return rv;
@@ -978,18 +977,18 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
 	// Zone
     if ( reg == REG_RELAY_ZONE ) {
-		writeEEPROM(VSCP_EEPROM_END + REG_RELAY_ZONE, val);
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_ZONE);
+		eeprom_write(VSCP_EEPROM_END + REG_RELAY_ZONE, val);
+        rv = eeprom_read(VSCP_EEPROM_END + REG_RELAY_ZONE);
 	}
 	else if ( reg == REG_RELAY_SUBZONE ) {
         // SubZone
-        writeEEPROM(VSCP_EEPROM_END + REG_RELAY_SUBZONE, val);
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_SUBZONE);
+        eeprom_write(VSCP_EEPROM_END + REG_RELAY_SUBZONE, val);
+        rv = eeprom_read(VSCP_EEPROM_END + REG_RELAY_SUBZONE);
 	}
     // Relay Status registers?
     else if ( (reg >= REG_RELAY0_STATE) && (reg <= REG_RELAY7_STATE) ) {
 
-        if ( readEEPROM( VSCP_EEPROM_END +
+        if ( eeprom_read( VSCP_EEPROM_END +
                             REG_RELAY0_CONTROL + reg - 2 ) &
                             RELAY_CONTROLBIT_ENABLED ) {
 
@@ -1007,10 +1006,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         bOn = TRUE;
 
                         // If needed - Update protection timer
-                        if ( readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL ) & RELAY_CONTROLBIT_PROTECTION ) {
+                        if ( eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL ) & RELAY_CONTROLBIT_PROTECTION ) {
                             relay_protection_timer[ 0 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
                         }
 
                     }
@@ -1032,10 +1031,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         rv = RELAY1;
                         bOn = TRUE;
 
-                        if (readEEPROM(VSCP_EEPROM_END + REG_RELAY1_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                        if (eeprom_read(VSCP_EEPROM_END + REG_RELAY1_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                             relay_protection_timer[ 1 ] =
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB) * 256 +
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB);
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB) * 256 +
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB);
                         }
 
                     }
@@ -1057,10 +1056,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         rv = RELAY2;
                         bOn = TRUE;
 
-                        if ( readEEPROM(VSCP_EEPROM_END + REG_RELAY2_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                        if ( eeprom_read(VSCP_EEPROM_END + REG_RELAY2_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                             relay_protection_timer[ 2 ] =
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB) * 256 +
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB);
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB) * 256 +
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB);
                         }
 
                     }
@@ -1083,10 +1082,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         rv = RELAY3;
                         bOn = TRUE;
 
-                        if (readEEPROM(VSCP_EEPROM_END + REG_RELAY3_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                        if (eeprom_read(VSCP_EEPROM_END + REG_RELAY3_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                             relay_protection_timer[ 3 ] =
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB) * 256 +
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB);
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB) * 256 +
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB);
                         }
 
                     }
@@ -1109,10 +1108,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         rv = RELAY4;
                         bOn = TRUE;
 
-                        if (readEEPROM(VSCP_EEPROM_END + REG_RELAY4_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                        if (eeprom_read(VSCP_EEPROM_END + REG_RELAY4_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                             relay_protection_timer[ 4 ] =
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB) * 256 +
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB);
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB) * 256 +
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB);
                         }
 
                     }
@@ -1135,10 +1134,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         rv = RELAY5;
                         bOn = TRUE;
 
-                        if (readEEPROM(VSCP_EEPROM_END + REG_RELAY5_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                        if (eeprom_read(VSCP_EEPROM_END + REG_RELAY5_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                             relay_protection_timer[ 5 ] =
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB) * 256 +
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB);
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB) * 256 +
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB);
                         }
 
                     }
@@ -1160,10 +1159,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                         rv = RELAY6;
                         bOn = TRUE;
 
-                        if (readEEPROM(VSCP_EEPROM_END + REG_RELAY6_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                        if (eeprom_read(VSCP_EEPROM_END + REG_RELAY6_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                             relay_protection_timer[ 6 ] =
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB) * 256 +
-                                    readEEPROM(VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB);
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB) * 256 +
+                                    eeprom_read(VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB);
                         }
 
                     }
@@ -1186,8 +1185,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
             case REG_RELAY0_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
 
@@ -1196,8 +1195,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x01; // Enable pulse output
                     relay_pulse_timer[ 0 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB ) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB );
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB ) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB );
                 }
                 else {
                     channel_pulse_flags &= 0b11111110; // Disable pulse output
@@ -1207,15 +1206,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 0 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case REG_RELAY1_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
 
@@ -1224,8 +1223,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x02; // Enable pulse output
                     relay_pulse_timer[ 1 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB);
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB);
                 }
                 else {
                     channel_pulse_flags &= 0b11111101; // Disable pulse output
@@ -1235,15 +1234,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 1 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case REG_RELAY2_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
 
@@ -1252,8 +1251,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x04; // Enable pulse output
                     relay_pulse_timer[ 2 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB);
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB);
                 }
                 else {
                     channel_pulse_flags &= 0b11111011; // Disable pulse output
@@ -1263,15 +1262,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 2 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case REG_RELAY3_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
 
@@ -1280,8 +1279,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x08; // Enable pulse output
                     relay_pulse_timer[ 3 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB);
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB);
                 }
                 else {
                     channel_pulse_flags &= 0b11110111; // Disable pulse output
@@ -1291,15 +1290,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 3 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case REG_RELAY4_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
 
@@ -1308,8 +1307,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x10; // Enable pulse output
                     relay_pulse_timer[ 4 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB);
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB);
                 }
                 else {
                     channel_pulse_flags &= 0b11101111; // Disable pulse output
@@ -1319,15 +1318,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 4 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case REG_RELAY5_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
 
@@ -1336,8 +1335,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x20; // Enable pulse output
                     relay_pulse_timer[ 5 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB);
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB);
                 }
                 else {
                     channel_pulse_flags &= 0b11011111; // Disable pulse output
@@ -1347,15 +1346,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 5 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case REG_RELAY6_CONTROL:
 
-                writeEEPROM( VSCP_EEPROM_END + reg, val );
-                rv = readEEPROM( VSCP_EEPROM_END + reg );
+                eeprom_write( VSCP_EEPROM_END + reg, val );
+                rv = eeprom_read( VSCP_EEPROM_END + reg );
 
                 if ( val & RELAY_CONTROLBIT_PULSE ) {
                     
@@ -1364,8 +1363,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                     relay_pulse_flags |= 0x40; // Enable pulse output
                     relay_pulse_timer[ 6 ] =
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB) * 256 +
-                                    readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB);
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB) * 256 +
+                                    eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB);
                 }
                 else {
                     channel_pulse_flags &= 0b10111111; // Disable pulse output
@@ -1375,8 +1374,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
                 if ( val & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 6 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB );
                 }
                 break;
 
@@ -1388,8 +1387,8 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                     (reg <= REG_RELAY7_PULSE_TIME_LSB ) ) {
 
         // Write to EEPROM
-        writeEEPROM( VSCP_EEPROM_END + reg, val );
-        rv = readEEPROM( VSCP_EEPROM_END + reg );
+        eeprom_write( VSCP_EEPROM_END + reg, val );
+        rv = eeprom_read( VSCP_EEPROM_END + reg );
 
         // We let the defaault take care of the MSB's
         // and give some special treatment to the LSB's
@@ -1397,50 +1396,50 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
             case REG_RELAY0_PULSE_TIME_LSB:
                 relay_pulse_timer[ 0 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY1_PULSE_TIME_LSB:
                 relay_pulse_timer[ 1 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY2_PULSE_TIME_LSB:
                 relay_pulse_timer[ 2 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY3_PULSE_TIME_LSB:
                 relay_pulse_timer[ 3 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY4_PULSE_TIME_LSB:
                 relay_pulse_timer[ 4 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY5_PULSE_TIME_LSB:
                 relay_pulse_timer[ 5 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY6_PULSE_TIME_LSB:
                 relay_pulse_timer[ 6 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB);
                 break;
 
             case REG_RELAY7_PULSE_TIME_LSB:
                 relay_pulse_timer[ 7 ] =
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_MSB) * 256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_LSB);
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_MSB) * 256 +
+                    eeprom_read( VSCP_EEPROM_END + REG_RELAY7_PULSE_TIME_LSB);
                 break;
 
             default:
@@ -1453,57 +1452,57 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                 ( reg <= REG_RELAY7_PROTECTION_TIME_LSB ) ) {
 
         // Write to EEPROM
-        writeEEPROM( VSCP_EEPROM_END + reg, val );
-        rv = readEEPROM( VSCP_EEPROM_END + reg );
+        eeprom_write( VSCP_EEPROM_END + reg, val );
+        rv = eeprom_read( VSCP_EEPROM_END + reg );
         
         switch ( reg ) {
 
             case REG_RELAY0_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 0 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY1_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 1 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY2_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 2 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY3_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 3 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY4_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 4 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY5_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 5 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY6_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 6 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB );
                 break;
 
             case REG_RELAY7_PROTECTION_TIME_LSB:
                 relay_protection_timer[ 7 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY7_PROTECTION_TIME_LSB );
                 break;
 
             default:
@@ -1515,15 +1514,15 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
     else if ( (reg >= REG_RELAY0_ZONE ) && (reg <= REG_RELAY7_SUBZONE) ) {
 
         // Write to EEPROM
-        writeEEPROM( VSCP_EEPROM_END + reg, val );
-        rv = readEEPROM( VSCP_EEPROM_END + reg );
+        eeprom_write( VSCP_EEPROM_END + reg, val );
+        rv = eeprom_read( VSCP_EEPROM_END + reg );
 
     }
     else if ( (reg >= REG_DESCION_MATRIX) &&
             (reg < (REG_DESCION_MATRIX + DESCION_MATRIX_ROWS * 8)) ) {
-        writeEEPROM( VSCP_EEPROM_END + reg, val );
+        eeprom_write( VSCP_EEPROM_END + reg, val );
         calculateSetFilterMask();  // Calculate new hardware filter
-        rv = readEEPROM( VSCP_EEPROM_END + reg );
+        rv = eeprom_read( VSCP_EEPROM_END + reg );
     }
 
     // --------------------------------------------------------------------------
@@ -1533,7 +1532,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
     if ( bInfoEvent ) {
 
         unsigned char val;
-        val = readEEPROM( VSCP_EEPROM_END + 
+        val = eeprom_read( VSCP_EEPROM_END + 
                             REG_RELAY0_CONTROL + (reg - REG_RELAY0_STATE) );
 
         if ( bOn ) {
@@ -1606,14 +1605,14 @@ void SendInformationEvent( unsigned char idx,
     vscp_omsg.vscp_type = eventTypeId;
 
     vscp_omsg.data[ 0 ] = idx; // Register
-    vscp_omsg.data[ 1 ] = readEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE);
-    vscp_omsg.data[ 2 ] = readEEPROM( VSCP_EEPROM_END + REG_RELAY1_SUBZONE + idx );
+    vscp_omsg.data[ 1 ] = eeprom_read( VSCP_EEPROM_END + REG_RELAY_SUBZONE);
+    vscp_omsg.data[ 2 ] = eeprom_read( VSCP_EEPROM_END + REG_RELAY1_SUBZONE + idx );
 
     vscp_sendEvent(); // Send data
 */
     data[ 0 ] = idx; // Register
-    data[ 1 ] = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_ZONE + 2*idx );
-    data[ 2 ] = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_SUBZONE + 2*idx );
+    data[ 1 ] = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_ZONE + 2*idx );
+    data[ 2 ] = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_SUBZONE + 2*idx );
     sendVSCPFrame( eventClass,
                     eventTypeId,
                     vscp_nickname,
@@ -1643,21 +1642,21 @@ void doDM(void)
     for (i = 0; i < DESCION_MATRIX_ROWS; i++) {
 
         // Get DM flags for this row
-        dmflags = readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + 1 + (8 * i) );
+        dmflags = eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + 1 + (8 * i) );
 
         // Is the DM row enabled?
         if ( dmflags & VSCP_DM_FLAG_ENABLED ) {
 
             // Should the originating id be checked and if so is it the same?
             if ( ( dmflags & VSCP_DM_FLAG_CHECK_OADDR ) &&
-                    ( vscp_imsg.oaddr != readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) ) ) ) {
+                    ( vscp_imsg.oaddr != eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) ) ) ) {
                 continue;
             }
 
             // Check if zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE ) ) {
+                    if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END + REG_RELAY_ZONE ) ) {
                         continue;
                     }
                 }
@@ -1666,27 +1665,27 @@ void doDM(void)
             // Check if subzone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE ) ) {
+                    if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END + REG_RELAY_SUBZONE ) ) {
                         continue;
                     }
                 }
             }
             
             class_filter = ( dmflags & VSCP_DM_FLAG_CLASS_FILTER)*256 +
-                    readEEPROM( VSCP_EEPROM_END +
+                    eeprom_read( VSCP_EEPROM_END +
                     REG_DESCION_MATRIX +
                     (8 * i) +
                     VSCP_DM_POS_CLASSFILTER);
             class_mask = ( dmflags & VSCP_DM_FLAG_CLASS_MASK)*256 +
-                    readEEPROM( VSCP_EEPROM_END +
+                    eeprom_read( VSCP_EEPROM_END +
                     REG_DESCION_MATRIX +
                     (8 * i) +
                     VSCP_DM_POS_CLASSMASK);
-            type_filter = readEEPROM( VSCP_EEPROM_END +
+            type_filter = eeprom_read( VSCP_EEPROM_END +
                     REG_DESCION_MATRIX +
                     (8 * i) +
                     VSCP_DM_POS_TYPEFILTER);
-            type_mask = readEEPROM( VSCP_EEPROM_END +
+            type_mask = eeprom_read( VSCP_EEPROM_END +
                     REG_DESCION_MATRIX +
                     (8 * i) +
                     VSCP_DM_POS_TYPEMASK);
@@ -1695,30 +1694,30 @@ void doDM(void)
                     !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
 
                 // OK Trigger this action
-                switch ( readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTION ) ) {
+                switch ( eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTION ) ) {
 
                     case ACTION_ON: // Enable relays in arg. bitarry
-                        doActionOn( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        doActionOn( dmflags, eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_OFF: // Disable relays in arg. bitarry
-                        doActionOff( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        doActionOff( dmflags, eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_PULSE: // Pulse relays in arg. bitarry, zone, subzone
-                        doActionPulse( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        doActionPulse( dmflags, eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_STATUS: // Send status for all relays
-                        doActionStatus( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        doActionStatus( dmflags, eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_DISABLE: // Disable realys in bitarray
-                        doActionDisable( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        doActionDisable( dmflags, eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_TOGGLE: // Toggle relay(s)
-                        doActionToggle( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        doActionToggle( dmflags, eeprom_read( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                 } // case
@@ -1744,14 +1743,14 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
 
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
-            if ( vscp_imsg.data[ 2 ] != readEEPROM( VSCP_EEPROM_END +
+            if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
                     REG_RELAY1_SUBZONE +
                     i ) ) {
                 continue;
             }
         }
 
-        val = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
 
         // Do nothing if disabled
         if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
@@ -1761,70 +1760,70 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
             case 0:
                 RELAY0 = 1;
 
-                if (readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL ) & RELAY_CONTROLBIT_PROTECTION ) {
+                if (eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL ) & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 0 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case 1:
                 RELAY1 = 1;
 
-                if (readEEPROM( VSCP_EEPROM_END + REG_RELAY1_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
+                if (eeprom_read( VSCP_EEPROM_END + REG_RELAY1_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 1 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case 2:
                 RELAY2 = 1;
 
-                if (readEEPROM( VSCP_EEPROM_END + REG_RELAY2_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
+                if (eeprom_read( VSCP_EEPROM_END + REG_RELAY2_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 2 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case 3:
                 RELAY3 = 1;
 
-                if ( readEEPROM( VSCP_EEPROM_END + REG_RELAY3_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
+                if ( eeprom_read( VSCP_EEPROM_END + REG_RELAY3_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 3 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case 4:
                 RELAY4 = 1;
 
-                if (readEEPROM( VSCP_EEPROM_END + REG_RELAY4_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
+                if (eeprom_read( VSCP_EEPROM_END + REG_RELAY4_CONTROL) & RELAY_CONTROLBIT_PROTECTION ) {
                     relay_protection_timer[ 4 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case 5:
                 RELAY5 = 1;
 
-                if (readEEPROM( VSCP_EEPROM_END + REG_RELAY5_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                if (eeprom_read( VSCP_EEPROM_END + REG_RELAY5_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                     relay_protection_timer[ 5 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_LSB );
                 }
                 break;
 
             case 6:
                 RELAY6 = 1;
 
-                if ( readEEPROM( VSCP_EEPROM_END + REG_RELAY6_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
+                if ( eeprom_read( VSCP_EEPROM_END + REG_RELAY6_CONTROL) & RELAY_CONTROLBIT_PROTECTION) {
                     relay_protection_timer[ 6 ] =
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB ) * 256 +
-                            readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB );
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_MSB ) * 256 +
+                            eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PROTECTION_TIME_LSB );
                 }
                 break;
 
@@ -1859,14 +1858,14 @@ void doActionOff( unsigned char dmflags, unsigned char arg )
 
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
-            if ( vscp_imsg.data[ 2 ] != readEEPROM(VSCP_EEPROM_END +
+            if ( vscp_imsg.data[ 2 ] != eeprom_read(VSCP_EEPROM_END +
                     REG_RELAY1_SUBZONE +
                     i ) ) {
                 continue;
             }
         }
 
-        val = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
 
         // Do nothing if disabled
         if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
@@ -1932,14 +1931,14 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
 
         // Check if subzone should match and if so if it match
         if (dmflags & VSCP_DM_FLAG_CHECK_SUBZONE) {
-            if ( vscp_imsg.data[ 2 ] != readEEPROM( VSCP_EEPROM_END +
+            if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
                     REG_RELAY1_SUBZONE +
                     i ) ) {
                 continue;
             }
         }
 
-        val = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
 
         // Do nothing if disabled
         if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
@@ -1950,56 +1949,56 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
                 RELAY0 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x01; // Enable pulse output
                 relay_pulse_timer[ 0 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB );
                 break;
 
             case 1:
                 RELAY1 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x02; // Enable pulse output
                 relay_pulse_timer[ 1 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY1_PULSE_TIME_LSB );
                 break;
 
             case 2:
                 RELAY2 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x04; // Enable pulse output
                 relay_pulse_timer[ 2 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB );
                 break;
 
             case 3:
                 RELAY3 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x08; // Enable pulse output
                 relay_pulse_timer[ 3 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB );
                 break;
 
             case 4:
                 RELAY4 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x10; // Enable pulse output
                 relay_pulse_timer[ 4 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB );
                 break;
 
             case 5:
                 RELAY5 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x20; // Enable pulse output
                 relay_pulse_timer[ 5 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB );
                 break;
 
             case 6:
                 RELAY6 = 0; // Start out at a known state
                 relay_pulse_flags |= 0x40; // Enable pulse output
                 relay_pulse_timer[ 6 ] =
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB ) * 256 +
-                        readEEPROM( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB );
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_MSB ) * 256 +
+                        eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB );
                 break;
 
         }
@@ -2024,14 +2023,14 @@ void doActionStatus(unsigned char dmflags, unsigned char arg)
 
         // Check if subzone should match and if so if it match
         if (dmflags & VSCP_DM_FLAG_CHECK_SUBZONE) {
-            if (vscp_imsg.data[ 2 ] != readEEPROM( VSCP_EEPROM_END +
+            if (vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
                     REG_RELAY1_SUBZONE +
                     i ) ) {
                 continue;
             }
         }
 
-        val = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
 
         switch (i) {
 
@@ -2112,15 +2111,15 @@ void doActionDisable(unsigned char dmflags, unsigned char arg)
 
         // Check if subzone should match and if so if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE) {
-            if ( vscp_imsg.data[ 2 ] != readEEPROM( VSCP_EEPROM_END +
+            if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
                     REG_RELAY1_SUBZONE +
                     i ) ) {
                 continue;
             }
         }
 
-        val = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
-        writeEEPROM( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i, val & ~RELAY_CONTROLBIT_ENABLED );
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+        eeprom_write( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i, val & ~RELAY_CONTROLBIT_ENABLED );
     }
 
 }
@@ -2143,14 +2142,14 @@ void doActionToggle( unsigned char dmflags, unsigned char arg )
 
         // Check if subzone should match and if so if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
-            if ( vscp_imsg.data[ 2 ] != readEEPROM( VSCP_EEPROM_END +
+            if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
                     REG_RELAY1_SUBZONE +
                     i ) ) {
                 continue;
             }
         }
 
-        val = readEEPROM(VSCP_EEPROM_END + REG_RELAY0_CONTROL + i);
+        val = eeprom_read(VSCP_EEPROM_END + REG_RELAY0_CONTROL + i);
 
         switch ( i ) {
 
@@ -2299,7 +2298,7 @@ unsigned char vscp_getSubMinorVersion()
 
 uint8_t vscp_getGUID(uint8_t idx)
 {
-    return readEEPROM( VSCP_EEPROM_REG_GUID + idx );
+    return eeprom_read( VSCP_EEPROM_REG_GUID + idx );
 }
 
 
@@ -2320,7 +2319,7 @@ uint8_t vscp_getMDF_URL(uint8_t idx)
 
 uint8_t vscp_getUserID(uint8_t idx)
 {
-    return readEEPROM( VSCP_EEPROM_REG_USERID + idx );
+    return eeprom_read( VSCP_EEPROM_REG_USERID + idx );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2329,7 +2328,7 @@ uint8_t vscp_getUserID(uint8_t idx)
 
 void vscp_setUserID(uint8_t idx, uint8_t data)
 {
-    writeEEPROM( idx + VSCP_EEPROM_REG_USERID, data );
+    eeprom_write( idx + VSCP_EEPROM_REG_USERID, data );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2340,7 +2339,7 @@ void vscp_setUserID(uint8_t idx, uint8_t data)
 
 uint8_t vscp_getManufacturerId(uint8_t idx)
 {
-    return readEEPROM( VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx );
+    return eeprom_read( VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2368,7 +2367,7 @@ uint8_t vscp_getBufferSize(void)
 
 uint8_t vscp_getNickname(void)
 {
-    return readEEPROM(VSCP_EEPROM_NICKNAME);
+    return eeprom_read(VSCP_EEPROM_NICKNAME);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2377,7 +2376,7 @@ uint8_t vscp_getNickname(void)
 
 void vscp_setNickname(uint8_t nickname)
 {
-    writeEEPROM(VSCP_EEPROM_NICKNAME, nickname);
+    eeprom_write(VSCP_EEPROM_NICKNAME, nickname);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2386,7 +2385,7 @@ void vscp_setNickname(uint8_t nickname)
 
 uint8_t vscp_getSegmentCRC(void)
 {
-    return readEEPROM( VSCP_EEPROM_SEGMENT_CRC );
+    return eeprom_read( VSCP_EEPROM_SEGMENT_CRC );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2395,7 +2394,7 @@ uint8_t vscp_getSegmentCRC(void)
 
 void vscp_setSegmentCRC(uint8_t crc)
 {
-    writeEEPROM( VSCP_EEPROM_SEGMENT_CRC, crc );
+    eeprom_write( VSCP_EEPROM_SEGMENT_CRC, crc );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2404,7 +2403,7 @@ void vscp_setSegmentCRC(uint8_t crc)
 
 void vscp_setControlByte(uint8_t ctrl)
 {
-    writeEEPROM(VSCP_EEPROM_CONTROL, ctrl);
+    eeprom_write(VSCP_EEPROM_CONTROL, ctrl);
 }
 
 
@@ -2414,7 +2413,7 @@ void vscp_setControlByte(uint8_t ctrl)
 
 uint8_t vscp_getControlByte(void)
 {
-    return readEEPROM(VSCP_EEPROM_CONTROL);
+    return eeprom_read(VSCP_EEPROM_CONTROL);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2445,7 +2444,7 @@ void vscp_getEmbeddedMdfInfo(void)
 
 uint8_t vscp_getZone( void )
 {
-        return readEEPROM( VSCP_EEPROM_END + EEPROM_ZONE );
+        return eeprom_read( VSCP_EEPROM_END + EEPROM_ZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2454,7 +2453,7 @@ uint8_t vscp_getZone( void )
 
 uint8_t vscp_getSubzone( void )
 {
-        return readEEPROM( VSCP_EEPROM_END + EEPROM_SUBZONE );
+        return eeprom_read( VSCP_EEPROM_END + EEPROM_SUBZONE );
 }
  */
 
@@ -2468,7 +2467,7 @@ void vscp_goBootloaderMode( uint8_t algorithm )
 
     // OK, We should enter boot loader mode
     // 	First, activate bootloader mode
-    writeEEPROM(VSCP_EEPROM_BOOTLOADER_FLAG, VSCP_BOOT_FLAG);
+    eeprom_write(VSCP_EEPROM_BOOTLOADER_FLAG, VSCP_BOOT_FLAG);
 
     // Reset processor
     Reset();
@@ -2648,7 +2647,7 @@ void calculateSetFilterMask( void )
     for ( i=0; i < DESCION_MATRIX_ROWS; i++ ) {
 
         // No need to check not active DM rows
-        if ( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 0x80 ) {
+        if ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x80 ) {
 
             // build the mask
             // ==============
@@ -2659,28 +2658,28 @@ void calculateSetFilterMask( void )
 
             rowmask =
                     // Bit 9 of class mask
-                    ( (uint32_t)( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 2 ) << 23 ) |
+                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 2 ) << 23 ) |
                     // Rest of class mask
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 2 ) << 16 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 2 ) << 16 ) |
                     // Type mask
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 4 ) << 8 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 4 ) << 8 ) |
 					// OID  - handle later
 					0xff;
-                    /*( ( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 )*/;   // Hardcoded bit
+                    /*( ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 )*/;   // Hardcoded bit
 
             // build the filter
             // ================
 
             rowfilter =
                     // Bit 9 of class filter
-                    ( (uint32_t)( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 1 ) << 24 ) |
+                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 1 ) << 24 ) |
                     // Rest of class filter
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 3 ) << 16 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 3 ) << 16 ) |
                     // Type filter
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 5 ) << 8 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 5 ) << 8 ) |
                     // OID Mask cleard if not same OID for all or one or more
                     // rows don't have OID check flag set.
-                    readEEPROM( VSCP_EEPROM_END + 8*i );
+                    eeprom_read( VSCP_EEPROM_END + 8*i );
 
             if ( 0 == i ) filter = rowfilter;   // Hack for first iteration loop
 
@@ -2705,7 +2704,7 @@ void calculateSetFilterMask( void )
             filter &= rowfilter;
 
             // Not check OID?
-            if ( !readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 0x40 ) {
+            if ( !eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x40 ) {
                 // No should not be checked for this position
                 // This mean that we can't filter on a specific OID
                 // so mask must be a don't care
@@ -2717,17 +2716,17 @@ void calculateSetFilterMask( void )
                 // we accept all
                 for (j = 0; j < 8; j++) {
                     if ((lastOID >> i & 1)
-                            != (readEEPROM(VSCP_EEPROM_END + 8 * i) >> i & 1)) {
+                            != (eeprom_read(VSCP_EEPROM_END + 8 * i) >> i & 1)) {
                         mask &= (1 << i);
                     }
                 }
 
-                lastOID = readEEPROM(VSCP_EEPROM_END + 8 * i);
+                lastOID = eeprom_read(VSCP_EEPROM_END + 8 * i);
 
             } 
             else {
                 // First round we just store the OID
-                lastOID = readEEPROM(VSCP_EEPROM_END + 8 * i);
+                lastOID = eeprom_read(VSCP_EEPROM_END + 8 * i);
             }
 
         }
