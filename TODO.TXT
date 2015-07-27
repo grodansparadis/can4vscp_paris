@@ -1,3 +1,5 @@
 - set alarm bits
 - Add status message sent on configurable even intervals.
 - Check that pulse output can be disabled.
+- Test zone handling in DM
+- Remove subzone test in action.
