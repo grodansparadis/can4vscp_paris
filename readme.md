@@ -7,12 +7,11 @@ on a Microchip 18F PIC device.
 
 Version 0.04 2015-08-16
 
-Kelvin NTC is describe <a href="http://www.grodansparadis.com/paris/paris.html">here</a> and can be 
+Kelvin NTC is described <a href="http://www.grodansparadis.com/paris/paris.html">here</a> and can be 
 bought <a href="http://www.frogshop.se/index.php?route=product/product&path=59&product_id=105">here</a>
 
 
-Steps you should go through to adopt this file for your own VSCP project.
-=========================================================================
+<h3>Steps you should go through to adopt this file for your own VSCP project.</h3>
 
 1.) The frequency for your system may be different. This will affect the CAN bit rate settings
 which are defined in the biginning of the can18f.c file. Here you also find the filter/mask 
@@ -36,16 +35,8 @@ id in any way you like.
 In addition to this you may use different pins for the INIT button (RC0 today) and the 
 status LED (RC1) today. Changes affect the main interrupt vector.
 
-
-Available builds
-================
-- kelvin_sht_458i.mcw is for a special 18F485 board *with* ICD2 support.
-- kelvin_sht_458.mcw is for 18F485 board *with* bootloader.
-- kelvin_sht_258i.mcw is for tke Levin board *with* ICD2 support.
-- kelvin_sht_258.mcw is for tke Levin board *with* bootloader.
-
 VSCP (Very Simple Control Protocol) 
 http://www.vscp.org
 
-akhe@eurosource.se
+akhe@grodansparadis.com
 
