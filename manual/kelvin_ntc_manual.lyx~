@@ -1,0 +1,9407 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Kelvin NTC10KA
+\end_layout
+
+\begin_layout Author
+Smart VSCP NTC10KA temperature controller
+\end_layout
+
+\begin_layout Date
+Reversion 1.3 - 2013-11-08
+\end_layout
+
+\begin_layout Abstract
+Kelvin NTC10KA is a temperature module that connects to a CAN4VSCP bus and
+ can sense one internal and up to five external NTC temperature sensors.
+ The module can be attached to a standard DIN Rail or be mounted directly
+ on a wall (ordered separately).
+ The module fully adopts to the CAN4VSCP specification and can be powered
+ directly over the bus with a 9 - 28VDC power source.
+ It has a rich register set for configuration and many information events
+ defined.
+ It also have a decision matrix for easy dynamic event handling.
+ 
+\end_layout
+
+\begin_layout Title
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../../../can4vscp_paris_relaydriver/manual/images/automation_company.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Grodans Paradis AB
+\end_layout
+
+\begin_layout Author
+Brattbergavägen 17
+\end_layout
+
+\begin_layout Author
+820 50 LOS
+\end_layout
+
+\begin_layout Author
+SWEDEN
+\end_layout
+
+\begin_layout Author
+web: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.auto.grodansparadis.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+email: 
+\begin_inset CommandInset href
+LatexCommand href
+target "info@grodansparadis.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+phone: +46 8 40011835 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Copyright © 2011-2012, Grodans Paradis AB, All rights reserved
+\end_layout
+
+\begin_layout Title
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../../../can4vscp_paris_relaydriver/manual/images/pbfree.png
+	width 2cm
+
+\end_inset
+
+ All boards produced by 
+\emph on
+Grodans Paradis AB
+\emph default
+ are ROHS compliant.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Disclaimer: © 2011-2012 Grodans Paradis AB.
+ All rights reserved.
+ Grodans Paradis AB®, logo and combinations thereof, are registered trademarks
+ of Grodans Paradis AB.
+ Other terms and product names may be trademarks of others.
+ The information in this document is provided in connection with Grodans
+ Paradis AB products.
+ No license, express or implied or otherwise, to any intellectual property
+ right is granted by this document or in connection with the sale of Grodans
+ Paradis AB products.
+ Neither the whole nor any part of the information contained in or the product
+ described in this document may be adapted or reproduced in any material
+ from except with the prior written permission of the copyright holder.
+ The product described in this document is subject to continuous development
+ and improvements.
+ All particulars of the product and its use contained in this document are
+ given by Grodans Paradis AB in good faith.
+ However all warranties implied or expressed including but not limited to
+ implied warranties of merchantability or fitness for purpose are excluded.
+ This document is intended only to assist the reader in the use of the product.
+ Grodans Paradis AB.
+ shall not be liable for any loss or damage arising from the use of any
+ information in this document or any error or omission in such information
+ or any incorrect use of the product.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Kelvin NTC10KA - Temperature measurement module
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Most current information
+\end_layout
+
+\begin_layout Standard
+You can find the most current information about the Kelvin NTC10KA module
+ at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.auto.grodansparadis.com/kelvin_ntc/kelvin_ntc.html"
+
+\end_inset
+
+.
+ On the site you can also find links to the latest firmware and 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Module Description File
+\end_layout
+
+\end_inset
+
+Module Description File (MDF
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+MDF
+\end_layout
+
+\end_inset
+
+) for the device as well as schematics and recipes for its use.
+ This information is of course pointed to from the MDF file which you can
+ locate from the module itself reading it's standard registers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/kelvinntc10ka1.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Kelvin NTC10KA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The raw facts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Supply voltage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9-28VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PCB Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+42 mm x 72mm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power requirements
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Communication
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VSCP4CAN (CAN), 125kbps
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measurement points
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 (one on board, five external)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The raw facts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hardware
+\end_layout
+
+\end_inset
+
+Hardware
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/schema_kevin_ntc_rev_b.png
+	width 10cm
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Schema
+\end_layout
+
+\end_inset
+
+Schema for the Kelvin NTC10KA module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+key positions
+\end_layout
+
+\end_inset
+
+key positions on the module is outlined in the figure below
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/board.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Road map to module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cable and 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+connectors
+\end_layout
+
+\end_inset
+
+connectors
+\end_layout
+
+\begin_layout Standard
+The unit is powered over the CAN4VSCP bus.
+ The CAN4VSCP normally uses 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+CAT5 or better 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+twisted pair cable
+\end_layout
+
+\end_inset
+
+twisted pair cable.
+ You can use other cables if you which.
+ The important thing is that the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANH
+\end_layout
+
+\end_inset
+
+CANH and CANL
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANL
+\end_layout
+
+\end_inset
+
+ signals uses a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+twisted cable
+\end_layout
+
+\end_inset
+
+twisted cable.
+ For connectors you can use RJ10
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ10
+\end_layout
+
+\end_inset
+
+, RJ11
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ11
+\end_layout
+
+\end_inset
+
+, RJ12
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ12
+\end_layout
+
+\end_inset
+
+ or the most common RJ45
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ45
+\end_layout
+
+\end_inset
+
+ connectors.
+ There are different versions 
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ-XX
+\end_layout
+
+\end_inset
+
+RJ-XX pin-out 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:RJ-XX-pin-out"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pin 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Patch Cable wire color 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+T568B
+\end_layout
+
+\end_inset
+
+T568B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++9-28V DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orange/White 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++9-28V DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orange
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 2 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++9-28V DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Green/White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 3 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CANH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Blue
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 4 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CANL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Blue/White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 5 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Green
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown/White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+RJ-XX pin-out 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+RJ-11/12/45 pin-out
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/akhe/development/vscp_hardware/can4vscp/can4vscp_paris_relaydriver/manual/images/rj45.jpg
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ-45 pin out
+\end_layout
+
+\end_inset
+
+RJ-45 pin out
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Always use a pair of wires for CANH/CANL fort best noise immunity.
+ If the EIA/TIA 56B standard is used this condition will be satisfied.
+ This is good as most Ethernet networks already is wired this way.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Cable length
+\end_layout
+
+\end_inset
+
+Cable length
+\end_layout
+
+\begin_layout Standard
+CAN4VSCP always communicate with 125kbps.
+ This means that if you use a good quality cable it can be up to a maximum
+ of 500 meters using AWG24
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+AWG24
+\end_layout
+
+\end_inset
+
+ or similar (CAT5
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+) .
+ Actual length depend on the environment and other parameters.
+ Drops
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Drops
+\end_layout
+
+\end_inset
+
+ with a maximum length of 24 meters can be taken from this cable and the
+ sum of all drops must not exceed a total of 120 meters.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../../../can4vscp_paris_relaydriver/manual/images/drops.jpg
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+CAN4VSCP bus with drops and terminations
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+terminations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Termination
+\end_layout
+
+\begin_layout Standard
+The CAN4VSCP bus, as all CAN
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAN
+\end_layout
+
+\end_inset
+
+ based networks, should be terminated
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+terminated
+\end_layout
+
+\end_inset
+
+ with a 120 ohms resistor between CANH
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANH
+\end_layout
+
+\end_inset
+
+ and CANL
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANL
+\end_layout
+
+\end_inset
+
+ at both ends of the cable.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../../../can4vscp_paris_relaydriver/manual/images/CAN_Termination.gif
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Termination
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Termination
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you use CAT5
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+ this termination
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+termination
+\end_layout
+
+\end_inset
+
+ should be placed between the blue - blue/white cables at both end of your
+ bus.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+On the board there is a jumper for an 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+on-board terminator
+\end_layout
+
+\end_inset
+
+on-board terminator.
+
+\emph default
+ See figure above.
+\end_layout
+
+\begin_layout Subsubsection
+Why are terminators required? 
+\end_layout
+
+\begin_layout Standard
+Terminators
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Terminators
+\end_layout
+
+\end_inset
+
+ are needed to cancel signal echos in the cable.
+ In short you get less noice in the cable if you use them.
+ It is recommended to use them even if at 125 kbit it is possible that your
+ bus will work anyway.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Daisy chain
+\end_layout
+
+\end_inset
+
+Daisy chain connector
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+daisy chain
+\end_layout
+
+\end_inset
+
+daisy chain connector is a pin-header that can be used as an easy way to
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+daisy chain
+\end_layout
+
+\end_inset
+
+daisy chain several modules in a cabinet or similar.
+ You just connect the modules together with a simple cable.
+ The pin-out is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Daisyconnector.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Daisy chain connector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Use a twisted cable for CANH/CANL and don't have a cable between mocules
+ that is less then 30 centimeters.
+\end_layout
+
+\begin_layout Subsection
+Power
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Power
+\end_layout
+
+\end_inset
+
+ the module
+\end_layout
+
+\begin_layout Standard
+You normally power the module through the RJ45
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ45
+\end_layout
+
+\end_inset
+
+ connector over the CAN4VSCP bus.
+ See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:RJ-XX-pin-out"
+
+\end_inset
+
+ for a description of which pins to use for power
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+power
+\end_layout
+
+\end_inset
+
+ and ground.
+ The voltage
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+voltage
+\end_layout
+
+\end_inset
+
+ range is +9VDC - 28VDC.
+ The current
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+current
+\end_layout
+
+\end_inset
+
+ need depend on how many modules you want to power.
+\end_layout
+
+\begin_layout Standard
+An alternative way to power the module is through the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+daisy chain
+\end_layout
+
+\end_inset
+
+daisy chain connector described above.
+ Just connect +9V - 28V to it's pin 1 and ground to pin 4.
+ Needless to say you can't have power supplied by the CAN4VSCP bus at the
+ same time.
+\end_layout
+
+\begin_layout Subsection
+Best practice
+\end_layout
+
+\begin_layout Standard
+Even if it is possible to have cable lengths up to 500 meters it is better
+ to stay at shorter distances to have some margins.
+ Here are some guidelines for a reliable set up
+\end_layout
+
+\begin_layout Itemize
+Total cable length of 300m, stub cables count double their length in that
+ total.
+\end_layout
+
+\begin_layout Itemize
+Nodes count as 6m in that total.
+ 
+\end_layout
+
+\begin_layout Itemize
+Never less than 30cm of cable between nodes, nor between a stub connection
+ and a node.
+ 
+\end_layout
+
+\begin_layout Itemize
+No more than 50 nodes connected.
+\end_layout
+
+\begin_layout Standard
+Following this best practice you will have a setup that will work reliable
+ even in harsh environments.
+\end_layout
+
+\begin_layout Section
+Installing
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Installing
+\end_layout
+
+\end_inset
+
+ the module
+\end_layout
+
+\begin_layout Standard
+Connect the module to the CAN4VSCP bus.
+ The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+red led
+\end_layout
+
+\end_inset
+
+red led on the module should light up indicating that the device is powered.
+ If this is the first time you start up the module the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+green lamp
+\end_layout
+
+\end_inset
+
+green lamp next to the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+initializing button
+\end_layout
+
+\end_inset
+
+initializing button will start to blink.
+ This means that the module is trying to negotiate a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+nickname address
+\end_layout
+
+\end_inset
+
+nickname address with the rest of the modules on the bus.
+ When it found a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+free nickname
+\end_layout
+
+\end_inset
+
+free nickname the green led will light steady.
+ If the green led does not start to blink press the initialization button
+ until it does.
+ Now your module is ready to use.
+\end_layout
+
+\begin_layout Subsection
+Termination block pin-out
+\end_layout
+
+\begin_layout Standard
+The individual positions for the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+twelve position termination block
+\end_layout
+
+\end_inset
+
+twelve position termination block is numbered from the left (looking into
+ it) as in the figure below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/terminationblock.png
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Pin-out
+\end_layout
+
+\end_inset
+
+Pin-out for 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+termination block
+\end_layout
+
+\end_inset
+
+termination block
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Position
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ground
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature sensor 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature sensor 2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature sensor 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature sensor 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature sensor 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Pin-out
+\end_layout
+
+\end_inset
+
+Pin-out for 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+termination block
+\end_layout
+
+\end_inset
+
+termination block
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Connecting external sensors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/termistor.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Thermistor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Five external NTC sensor can be connected to the Kelvin NTC10KA module.
+ It is recommended to use NTC thermistors with 10K @ 25 °C types for best
+ result.
+ There are sensors available for all kinds of temperature measurement needs.
+ You need the B value or Steinhart constants from the sensors datasheet
+ or the to be able to use it with the Kelvin NTC10KA module.
+\end_layout
+
+\begin_layout Standard
+The main advantage for a NTC sensor is that it is low cost.
+ You can get it from anywhere and you can get it in any type and dimension.
+ NTC resistor is also not sensitive to cable length.
+ Using a CAT-5e cable (4 pairs with AWG 24) we will experience something
+ like 9.38 ohms/100m which will not effect a 10K NTC thermistor that much.
+\end_layout
+
+\begin_layout Standard
+Connect the thermistor to the Kelvin NTC10KA by connecting it to +5VDC and
+ to one of the temperature inputs.
+ A thermistor is not subject to polarity considerations so you can connect
+ it in any way you want.
+ You need to setup the B value for the sensor to get correct temperature
+ measurements.
+\end_layout
+
+\begin_layout Section
+Measure Temperature
+\end_layout
+
+\begin_layout Standard
+If you want to measure a temperature, for a rrom for example you will soon
+ realize that temperature measurements ha smore to it then just hook up
+ a sensor and measure the temperature.
+ Look at this picture
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/tempdiff.jpg
+	width 12cm
+
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each of the sensors shows a different temperature even when the sensor are
+ on the same desk.
+ If you walk around in the room things will be even more complex.
+ Three sensors of the same type but on different height will show different
+ results.
+ 
+\end_layout
+
+\begin_layout Standard
+The readings from the sensors of the Kelvin NTC module is given with two
+ decimals.
+ Does that mean we have 0.01°C precision? Unfortuantely no! The thermistor
+ has error and the analog reading circuitry (ADC) has error.
+\end_layout
+
+\begin_layout Standard
+We can approximate the expected error by first taking into account the thermisto
+r resistance error.
+ The thermistor is correct to 1%, which means that at 25°C it can read 10,100
+ to 9900 ohms.
+ At around 25°C a difference of 450 ohms represents 1°C so 1% error means
+ about +-0.25°C (you may be able to calibrate this away by determining the
+ resistance of the thermistor in a 0°C ice bath and removing any offset).
+ You can also spring for a 0.1% thermistor which will reduce the possible
+ resistance error down to +-0.03°C
+\end_layout
+
+\begin_layout Standard
+Then there is the error of the ADC, for every bit that it is wrong the resistanc
+e (around 25°C) can be off by about 50 ohms.
+ This isn't too bad, and is a smaller error than the thermistor error itself
+ +-(0.1°C) but there is no way to calibrate it 'away' - a higher precision
+ ADC (12-16 bits instead of 10) will give you more precise readings
+\end_layout
+
+\begin_layout Standard
+In general, we think thermistors are higher precision than thermocouples,
+ or most low cost digital sensors, but you will not get better than +-0.1°C
+ accuracy on an Arduino with a 1% thermistor and we would suggest assuming
+ no better than +-0.5°C.
+\end_layout
+
+\begin_layout Standard
+You will in addition to this notice that the on-oard sensor will show a
+ temperature that is higher then what you should expect, The same is if
+ you connect a sensor directly to the board.
+ This is due to the fact that the electronics on the board generate heat.
+ This heat flows very well through the copper of the board giving faulty
+ readings.
+ The solution is to take away a degree or two from the reading.
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Updating firmware
+\end_layout
+
+\end_inset
+
+Updating firmware
+\end_layout
+
+\begin_layout Standard
+There is two ways you can use to update the firmware of the module.
+ You can program the device using the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+programming socket
+\end_layout
+
+\end_inset
+
+programming socket on board or you can use 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP Works
+\end_layout
+
+\end_inset
+
+VSCP Works to 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+remotely program
+\end_layout
+
+\end_inset
+
+remotely program the device.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Update firmware
+\end_layout
+
+\end_inset
+
+Update firmware using the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICP connector
+\end_layout
+
+\end_inset
+
+ICP connector
+\end_layout
+
+\begin_layout Standard
+The firmware
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+firmware
+\end_layout
+
+\end_inset
+
+ of a circuit equipped with a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Microchip microprocessor
+\end_layout
+
+\end_inset
+
+Microchip microprocessor usually can be programmed in circuit.
+ That is when it is mounted on a printed circuit board.
+ This is also true for the Paris relay module which have the programming
+ connector on-board (J3).
+ If you have a programmer for Microchip processors (
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Real ICE
+\end_layout
+
+\end_inset
+
+Real ICE
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICD-2
+\end_layout
+
+\end_inset
+
+ICD-2, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICD-3
+\end_layout
+
+\end_inset
+
+ICD-3, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+PICKIT-2
+\end_layout
+
+\end_inset
+
+PICKIT-2, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+PICKIT3
+\end_layout
+
+\end_inset
+
+PICKIT3 or other) you can program your own firmware
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+firmware
+\end_layout
+
+\end_inset
+
+ or the latest 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+official firmware
+\end_layout
+
+\end_inset
+
+official firmware into the module using MPLAB
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+MPLAB
+\end_layout
+
+\end_inset
+
+ or similar tools.
+ You can always find a link to the latest firmware on the Kelvin NTC10KA
+ module home page (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.auto.grodansparadis.comkelvin_ntc/kelvin_ntc.html"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Update firmware
+\end_layout
+
+\end_inset
+
+Update firmware with VSCP Works
+\end_layout
+
+\begin_layout Standard
+When a module is installed in a remote location or if you don't have a Microchip
+ programmer you can program the module using the built in boot-loader
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+boot-loader
+\end_layout
+
+\end_inset
+
+.
+ This can be done with 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP Works
+\end_layout
+
+\end_inset
+
+VSCP Works a program that can be run on the Windows or the Linux platform
+ and can perform and can perform different maintenance
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+maintenance
+\end_layout
+
+\end_inset
+
+, configuration
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+configuration
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+status checks
+\end_layout
+
+\end_inset
+
+status checks of VSCP modules.
+ If you have not installed the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP & Friends package
+\end_layout
+
+\end_inset
+
+VSCP & Friends package it is time to do so now.
+ You can always find the latest version on the VSCP projects download page
+ (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://vscp.org/downloads.php"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+boot loader
+\end_layout
+
+\end_inset
+
+boot loader process using 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP Works
+\end_layout
+
+\end_inset
+
+VSCP Works is described in section 16.4 of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP specification
+\end_layout
+
+\end_inset
+
+VSCP specification.
+ The Paris relay module uses the 
+\emph on
+PIC1
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+PIC1
+\end_layout
+
+\end_inset
+
+
+\emph default
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+boot loader
+\end_layout
+
+\end_inset
+
+boot loader.
+\end_layout
+
+\begin_layout Section
+Configure
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Configure
+\end_layout
+
+\end_inset
+
+ the module?
+\end_layout
+
+\begin_layout Standard
+You configure a VSCP module by writing content into the modules registers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+registers
+\end_layout
+
+\end_inset
+
+.
+ You can do this manually or with the wizard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+wizard
+\end_layout
+
+\end_inset
+
+ available in 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP works
+\end_layout
+
+\end_inset
+
+VSCP works.
+ Using the wizard is absolutely the easiest way to use.
+\end_layout
+
+\begin_layout Subsection
+Zone
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Zone
+\end_layout
+
+\end_inset
+
+/
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+sub-zone
+\end_layout
+
+\end_inset
+
+sub-zone
+\end_layout
+
+\begin_layout Standard
+You should always plan your overall structure.
+ The zone and the sub-zone registers found in the first two register positions
+ can help you here.
+ Think of a zone as a house, floor plan or similar and sub-zone as a room
+ or a location.
+ Note that this is not an address.
+ It's a way to group functionality together.
+ 
+\end_layout
+
+\begin_layout Subsection
+Enter sensor data.
+\end_layout
+
+\begin_layout Standard
+The Kelvin NTC10KA module uses the B constant to calculate the temperature
+ for the sensor you connect to it.
+ You enter this value in registers 38-39 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:B-constant-registers"
+
+\end_inset
+
+).
+ You find this value in the datasheet for you sensor.
+ 
+\end_layout
+
+\begin_layout Standard
+The formula used to calculate the temperature from a thermistors resistance
+ is give as
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{T}$
+\end_inset
+
+= a + b ln(R) + c ln
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+(R)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+T = Degrees kelvin.
+\end_layout
+
+\begin_layout Standard
+R = Resistance of thermistor.
+\end_layout
+
+\begin_layout Standard
+a,b.c = Curve-fitting constants.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This the Steinhart Hart equation.
+ We get a simpler formula by setting
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a = (
+\begin_inset Formula $\frac{1}{T}$
+\end_inset
+
+) − (
+\begin_inset Formula $\frac{1}{B}$
+\end_inset
+
+) ln(R
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Standard
+b = 
+\begin_inset Formula $\frac{1}{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c = 0
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and get
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+T = 
+\begin_inset Formula $\frac{B}{ln(\frac{R}{r\infty})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+T = Degrees kelvin.
+\end_layout
+
+\begin_layout Standard
+r
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset Formula $\infty$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ = R
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+e
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+-
+\begin_inset Formula $\frac{B}{T0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+B = curve fitting parameter
+\end_layout
+
+\begin_layout Standard
+R
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+ is thermistor resistance at T
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+.
+ This is usually taken as the resistance at 25 C.
+ Note that the Kelvin temperature should be used in the formula.
+ 
+\end_layout
+
+\begin_layout Standard
+The later formula is used for the sensors on the Kelvin NTC10KA board.
+ When you enter the B value you should use a 25 - x value.
+ Depending on the range you need in your setup you choose x.
+ Typically 100, 85 or 50.
+\end_layout
+
+\begin_layout Standard
+It is now possible also to use the Steinhart Hart equation instead of just
+ the B-value.
+\end_layout
+
+\begin_layout Subsection
+Internal temperature sensor
+\end_layout
+
+\begin_layout Subsubsection
+The thermistors
+\end_layout
+
+\begin_layout Standard
+Many people unfairly regard thermistors as inaccurate sensors.
+ This may have been true in the past, when thermistors had 5% tolerances
+ at best.
+ For extreme accuracy the RTD is still the best choice, but modern thermistors
+ are not far behind.
+ Thermistors with 0.1 °C accuracy are now widely available and at very reasonable
+ costs.
+ They have a fast response time and a greater output per °C than RTDs.
+\end_layout
+
+\begin_layout Standard
+As with RTDs, thermistors also exploit the fact that a material’s resistance
+ changes with temperature.
+ However, the majority of thermistors employ a metallic oxide and have a
+ negative temperature coefficient (NTC).
+ Thermistors provide relatively high accuracy (0.1 to 1.5 °C) but only operate
+ over a limited temperature range: -100 to 300 °C.
+ Furthermore, no single thermistor will cover this range and a lack of standards
+ means it is often necessary to buy the sensor and measuring equipment together.
+ The thermistor’s response is non-linear and, as with RTDs, we must avoid
+ providing too large an excitation current through the thermistor because
+ of self-heating.
+\end_layout
+
+\begin_layout Standard
+Connection to instruments is a simple 2-wire configuration, as — unlike
+ RTDs — we do not need to compensate for lead resistances: this is small
+ compared to the thermistor’s resistance (typically between 1 and 100KΩ).
+\end_layout
+
+\begin_layout Standard
+Thermistors, because of their high sensitivity, are ideal for detecting
+ small changes in temperature - especially when it is the change and not
+ the absolute value that is important.
+\end_layout
+
+\begin_layout Subsubsection
+Data for the internal sensor
+\end_layout
+
+\begin_layout Standard
+The internal temperature sensor used on the Kelvin NTC10KA is the NCP21XV103J03R
+A.
+ Data for this sensor is as follows
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Time constant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10 s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+25/100
+\end_layout
+
+\end_inset
+
+- value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3944K
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature range
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-40...+125ºC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resistance tolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\pm$
+\end_inset
+
+5 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resistance @ 25ºC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10 Kohm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Max effect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+210 @ 25ºC mW
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+25/50
+\end_layout
+
+\end_inset
+
+- value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3900
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+25/85
+\end_layout
+
+\end_inset
+
+- value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3934 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+25/100
+\end_layout
+
+\end_inset
+
+- value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3944K 
+\begin_inset Formula $\pm$
+\end_inset
+
+3%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Max error (B
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+25/100
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.8 (%/C)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+External sensors
+\end_layout
+
+\begin_layout Standard
+When you choose an external sensor to connect to the Kelvin NTC10KA you
+ get the best result if you choose one with a resistance of 10K at 25 degrees
+ Celsius.
+ You can easily find thermistors of any type, prize and size in this range.
+ In our web shop 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://shop.grodansparadis.com"
+
+\end_inset
+
+ you can find two types at the time this document is written.
+ One with accuracy around 
+\begin_inset Formula $\pm$
+\end_inset
+
+0.2ºC and one with accuracy +-0.6ºC.
+ 
+\end_layout
+
+\begin_layout Standard
+For the length of the cable 100 meters should be OK for most types.
+ If you use CAT5e cable you will have a resistance of ~8.42 ohms per 100
+ meters.
+ This will add something around 1% to the temperature error reading at high
+ temperatures.
+ For room and environment temperature measurements (-25 -- +25) 1000 meters
+ would give the same error.
+ 
+\end_layout
+
+\begin_layout Standard
+To calculate constants this on-line calculator is very useful 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.thinksrs.com/downloads/programs/Therm%20Calc/NTCCalibrator/NTCcalculato
+r.htm
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Temperature readings
+\end_layout
+
+\begin_layout Standard
+You can get the temperature from a sensor by reading the temperature registers
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Temperature-registers"
+
+\end_inset
+
+) or listening for temperature events from the module.
+ The later must be setup for all but for sensor 0 which by default will
+ send out it’s temperature with 30 seconds interval.
+\end_layout
+
+\begin_layout Subsubsection
+Read temperature registers.
+\end_layout
+
+\begin_layout Standard
+The temperature registers is located in pairs (Most significant byte followed
+ my the least significant byte) at register positions 8-19 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Temperature-registers"
+
+\end_inset
+
+) and they can be read to get the current temperature for each sensor.
+ The temperature is stored as a 16-bit two complement of a normalized temperatur
+e.
+ This means you have to divide the read temperature by 100 to get the temperatur
+e value.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To get the temperature and calculate the temperature for a specific sensor.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Read MSB register.
+ Read LSB register.
+\end_layout
+
+\begin_layout Enumerate
+Calculate the 16-bit twos complement as MSB reading * 256 + LSB reading.
+\end_layout
+
+\begin_layout Enumerate
+If the most significant bit is 
+\series bold
+not
+\series default
+ set (Equal or less then 32767) this is a positive temperature.
+ Divide by 100 and you have the temperature.
+ 
+\end_layout
+
+\begin_layout Enumerate
+If the most significant bit 
+\series bold
+is
+\series default
+ set (Greater than 32767) this is a negative temperature.
+ Now invert the result (the bits are inverted; 0 becomes 1, and 1 becomes
+ 0) and add one to the result.
+ Dive by 100 and you have the temperature.
+\end_layout
+
+\begin_layout Subsubsection
+Temperature events.
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Temperature-events."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To set up temperature events you set the interval you want to get them in
+ the interval registers (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Report-interval-registers"
+
+\end_inset
+
+).
+ This value is in seconds.
+ Setting to a zero value disable temperature measurement events.
+ After setting the register you will get temperature events on the bus with
+ the interval you choose.
+ The format for the events are described here 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Temperature-event"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The measurement format can be strange at first but it is really simple when
+ you understand it.
+ We take some examples 
+\end_layout
+
+\begin_layout Paragraph
+Example: A negative temperature in Celsius from sensor 1
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Example:-A-negative"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The data part of the event will be
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130 (0x82)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 (0x02)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255 (0xF0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+216 (0x60)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Byte 0: Normalized integer, Celsius, Sensor 1
+\end_layout
+
+\begin_layout Enumerate
+Byte 1: Decimal point should be shifted two steps to the left.
+\end_layout
+
+\begin_layout Enumerate
+Byte 2/3: Bit 16 is a one meaning it's a negative number.
+ Temperature is a two complement number.
+ 0xF060 = 0b1111000001100000.
+ Invert which give 0b0000111110011111 add one which give 0b0000111110100000
+ = 4000.
+ Divide by 100 gives 40.00 The read temperature is -40.00 ºC.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example: A positive temperature in Celsius from sensor 1
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Example:-A-positive"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The data part of the event will be
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130 (0x82)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 (0x02)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+46 (0x2E)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+224 (0xE0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Byte 0: Normalized integer, Celsius, Sensor 1
+\end_layout
+
+\begin_layout Enumerate
+Byte 1: Decimal point should be shifted two steps to the left.
+\end_layout
+
+\begin_layout Enumerate
+Byte 2/3: Bit 16 is zero meaning it's a positive number.
+ 0x2EE0 = 12000.
+ Divide by 100 gives 120.00.
+ The temperature is 120.00 ºC.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example: A negative temperature in Fahrenheit from sensor 5
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Example:-A-negative-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The data part of the event will be
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+249 (0xF9)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 (0x02)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255 (0xFF)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+118 (0x76)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Byte 0: Normalized integer, Fahrenheit, Sensor 5
+\end_layout
+
+\begin_layout Enumerate
+Byte 1: Decimal point should be shifted two steps to the left.
+\end_layout
+
+\begin_layout Enumerate
+Byte 2/3: Bit 16 is a one meaning it's a negative number.
+ Temperature is a two complement number.
+ 0xFF76 = 0b1111111101110110.
+ Invert which give 0b0000000010001001 add one which give 0b0000000010001010
+ = 138.
+ Divide by 100 gives 1.38 The read temperature is -1.38 ºF.
+\end_layout
+
+\begin_layout Subsection
+Alarm
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm
+\end_layout
+
+\end_inset
+
+ events
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Alarm-event"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The module can send alarm events if the temperature for a sensor goes below
+ or above a certain temperature.
+ When an alarm occurs a bit is set in the alarm register which is located
+ in register position 128.
+ You can always read this register to see if the module have sent out and
+ alarm events.
+ When you read the register the alarm bits will be cleared.
+\end_layout
+
+\begin_layout Standard
+The alarm register bits will not be cleared when an alarm condition s cleared.
+ This is because it should be possible to detect that an alarm condition
+ have occurred even later.
+\end_layout
+
+\begin_layout Standard
+For low alarms to be sent bit 3 in the temperature sensor control register
+ must be set.
+ For high alarms to be sent bit 4 in the temperature sensor control register
+ must be set.
+ See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Low temperature alarm
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Low-temperature-alarm"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You set the low alarm point in registers 50-58 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+).
+ An alarm is sent when the temperature goes below this point and the low
+ alarm bit is set in the alarm register.
+ The hysteresis register at 110-115 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+) controls when a low alarm condition should be considered to be cleared.
+ The default is five degrees.
+ This means that if you have a low alarm point set to 0 degrees and use
+ the default for hysteresis the alarm condition is over when the temperature
+ raise above low alarm point + 5 = 0 + 5 = 5 degrees.
+ Now if the temperature goes below the low set point again a new alarm event
+ will be sent.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+High temperature alarm
+\end_layout
+
+\begin_layout Standard
+You set the high alarm point in registers 62-73 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+).
+ An alarm is sent when the temperature goes above this point and the high
+ alarm bit is set in the alarm register.
+ The hysteresis register at 110-115 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+) controls when a high alarm condition should be considered to be cleared.
+ The default is five degrees.
+ This means that if you have a high alarm point set to 20 degrees and use
+ the default for hysteresis the alarm condition is over when the temperature
+ goes below the high alarm point - 5 = 20 - 5 = 15 degrees.
+ Now if the temperature goes above the set point again a new alarm event
+ will be sent.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+TurnOn Event
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+TurnOff event
+\end_layout
+
+\end_inset
+
+TurnOn/TurnOff events instead of alarm events.
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TurnOn/TurnOff-events-instead"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The module can send TurnOff/TurnOn events if the temperature for a sensor
+ goes below or above a certain temperature and bit 5 is set (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+).
+ The alarm register at position 128 position works the same way as for alarm
+ events as described above.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Example: Using the events to build a thermostat.
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Using-the-events"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can use the Kelvin NTC10KA together with the Paris relay module (see
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://auto.grodansparadis.com/paris/paris.html"
+
+\end_inset
+
+) or some other VSCP module to build a device that controls the temperature
+ in a room.
+ Suppose that you control a relay with the Paris relay module which in turn
+ controls a heat source.
+ If ON the temperature in the room will increase.
+ If OFF the temperature in the room will decrease.
+ 
+\end_layout
+
+\begin_layout Standard
+You program the decision matrix on the Paris relay module to turn on the
+ heater when a TurnOn event is received (set up a zone/sub-zone for the
+ room) and turn it off when a TurnOff event is received.
+ You now program your Kelvin NTC10KA module so that it sends TurnOn/TunrOff
+ events instead of alarm (bit 5 set in the control register for the sensor
+ you want to use (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+).
+ Clear bit 6 in the control register to get a TurnOn at the low set point
+ and a TurnOff at the high set point.
+ If you used a cooler instead of a heater you could have bit 6 set to have
+ the opposite behavior.
+ 
+\end_layout
+
+\begin_layout Standard
+Set the temperature that you want to have as your low point in the low set
+ point register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+).
+ Set the high temperature in the high temperature set point register (see
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+).
+ To control a room temperature a low value at 20 degrees and a high value
+ at 22 degrees can be OK.
+ Now set the hysteresis value (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+).
+ For the 22/20 setting 1 degree might be OK.
+ Now When the temp goes below 20 degrees a TurnOn event will be sent starting
+ the heater.
+ The temperature will raise in the room and at 20 + hysteresis = 20 + 1
+ the low temperature alarm condition is over ( an new TurnOn would have
+ been sent if the temperature went below 20 again) and as the temperature
+ raise above 22 a TurnOff will be sent and the heater will be tuned off.
+ Now the temperature will go down.
+ And at 22 - hysteresis = 22 -1 the high temperature alarms condition is
+ over.
+ This way the temperature will be held between 20-22 degrees.
+\end_layout
+
+\begin_layout Standard
+Note that with a to high hysteresis things can go strange.
+ In the above example imagine a hysteresis set to 10.
+ The heater will be started when the temperature goes below 20 degrees.
+ The alarm condition will not be cleared until 20 + hysteresis = 20 + 10
+ = 30 degrees is reached but as the high set point is at 22 this will never
+ be reached.
+ At 22 degrees a TurnOff event will be sent turning of the heater.
+ Now when the temperature goes below 20 degrees no TurnOn event will be
+ sent because the low alarm condition is still set resulting in that the
+ heater never goes on again.
+ To prevent a total lockup a write to the sensors low/high set point or
+ hysteresis reset both alarm conditions for a sensor.
+\end_layout
+
+\begin_layout Subsection
+Max/Min temperature readings
+\end_layout
+
+\begin_layout Standard
+In registers 86-97 you can get the min temperature ever read by each sensor.
+ In register 98-109 you can get the max temperature ever read by each sensor.
+ Each value is stored in pairs.
+ Most significant byte in the first byte of the pair and least significant
+ byte in the second.
+ The number is the current temperature * 100.
+ 
+\end_layout
+
+\begin_layout Standard
+To reset the min/max value for a sensor write any value to one of it's register.
+\end_layout
+
+\begin_layout Section
+Registers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Registers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All VSCP modules have a set of 8-bit registers defined.
+ Some of them (register 128-255) are predefined and the information in them
+ are the same for all VSCP modules.
+ See the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP specification
+\end_layout
+
+\end_inset
+
+VSCP specification for a description of their content (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sourceforge.net/projects/m2m/files/VSCP%20Specification/"
+
+\end_inset
+
+).
+ The lower 128 register positions are used for module specific registers.
+ It is normally here you find registers with which you configure your module.
+ You can also find registers where you typically can read 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+status information
+\end_layout
+
+\end_inset
+
+status information such as measurement data from the module.
+\end_layout
+
+\begin_layout Standard
+Below is a description of the registers on the Kelvin NTC10KA module.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Zone registers
+\end_layout
+
+\end_inset
+
+Zone registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Zone-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:0
+\series default
+(0x00) - Zone.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:1
+\series default
+(0x01) - Sub-zone.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Control Registers
+\end_layout
+
+\end_inset
+
+Control registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Control-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:2
+\series default
+(0x02) - Control byte for sensor 0.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:3
+\series default
+(0x03) - Control byte for sensor 1.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:4
+\series default
+(0x04) - Control byte for sensor 2.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:5
+\series default
+(0x05) - Control byte for sensor 3.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:6
+\series default
+(0x06) - Control byte for sensor 4.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:7
+\series default
+(0x07) - Control byte for sensor 5.
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 0,1
+\series default
+ - Temperature unit 
+\end_layout
+
+\begin_layout Verse
+00 - Kelvin.
+ 
+\end_layout
+
+\begin_layout Verse
+01 - Celsius (default).
+ 
+\end_layout
+
+\begin_layout Verse
+10 - Fahrenheit.
+ 
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 2
+\series default
+ - Set to 0 to use B constant.
+ Set to 1 to use full Steinhart–Hart equation with A/B/C calibration valus.
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 3
+\series default
+ - Enable low alarm if set to one.
+ 
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 4
+\series default
+ - Enable high alarm if set to one.
+ 
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 5
+\series default
+ - Send TurnOn/TurnOff events instead of Alarm if set to one.
+ 
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 6
+\series default
+ - Controls when TurnOn/TurnOff events will be sent if activated.
+ 
+\end_layout
+
+\begin_layout Verse
+0 - TurnOn event is sent when low temperature is reached as set in low temperatu
+re alarm register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+).
+ TurnOff event is sent when high temperature is reached as set in high temperatu
+re alarm register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Verse
+1 - TurnOff event is sent when low temperature is reached as set in low
+ temperature alarm register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+).
+ TurnOn event is sent when high temperature is reached as set in high temperatur
+e alarm register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Verse
+The hysteresis value (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+) will effect TurnOn/TurnOff events The temperature must go above or below
+ the hysteresis value before a new event will be sent out.
+ 
+\end_layout
+
+\begin_layout Verse
+
+\series bold
+Bit 7
+\series default
+ - If this bit is set Alarm events will be sent continuous with a one second
+ interval until the alarm register is read or the temperature goes to a
+ non alarm state (with hysteresis taken into account see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-temperature-alarm"
+
+\end_inset
+
+).
+ TurnOn/TurnOff events will not be affected by a cleared alarm register
+ and will be sent until this bit is cleared or the temperature goes to a
+ non alarm state (with hysteresis taken into account see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TurnOn/TurnOff-events-instead"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Temperature
+\end_layout
+
+\end_inset
+
+Temperature registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Temperature-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:8
+\series default
+(0x08) - Temperature sensor 0 MSB (on board sensor).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:9
+\series default
+(0x09) - Temperature sensor 0 LSB (on board sensor).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:10
+\series default
+(0x0A) - Temperature sensor 1 MSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:11
+\series default
+(0x0B) - Temperature sensor 1 LSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:12
+\series default
+(0x0C) - Temperature sensor 2 MSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:13
+\series default
+(0x0D) - Temperature sensor 2 LSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:14
+\series default
+(0x0E) - Temperature sensor 3 MSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:15
+\series default
+(0x0F) - Temperature sensor 3 LSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:16
+\series default
+(0x10) - Temperature sensor 4 MSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:17
+\series default
+(0x11) - Temperature sensor 4 LSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:18
+\series default
+(0x12) - Temperature sensor 5 MSB
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:19
+\series default
+(0x13) - Temperature sensor 5 LSB
+\end_layout
+
+\begin_layout Standard
+The value is stored as a twos complement number as temperature * 100.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Report Interval
+\end_layout
+
+\end_inset
+
+Report interval registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Report-interval-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:
+\series default
+20(0x14) - Report interval for sensor 0 in seconds (Set to zero for no report).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:
+\series default
+21(0x15) - Report interval for sensor 1 in seconds (Set to zero for no report).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:
+\series default
+22(0x16) - Report interval for sensor 2 in seconds (Set to zero for no report).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:
+\series default
+23(0x17) - Report interval for sensor 3 in seconds (Set to zero for no report).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:
+\series default
+24(0x18) - Report interval for sensor 4 in seconds (Set to zero for no report).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:
+\series default
+25(0x19) - Report interval for sensor 5 in seconds (Set to zero for no report).
+\end_layout
+
+\begin_layout Subsection
+Reserved registers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 
+\series default
+26(0x1A) - 
+\series bold
+Register 
+\series default
+37(0x25) - Reserved.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+B constant register
+\end_layout
+
+\end_inset
+
+B constant registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:B-constant-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:38
+\series default
+(0x26) - B constant for sensor 0 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:39
+\series default
+(0x27) - B constant for sensor 0 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:40
+\series default
+(0x28) - B constant for sensor 1 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:41
+\series default
+(0x29) - B constant for sensor 1 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:42
+\series default
+(0x2A) - B constant for sensor 2 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:43
+\series default
+(0x2B) - B constant for sensor 2 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:44
+\series default
+(0x2C) - B constant for sensor 3 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:45
+\series default
+(0x2D) - B constant for sensor 3 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:46
+\series default
+(0x2E) - B constant for sensor 4 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:47
+\series default
+(0x2F) - B constant for sensor 4 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:48
+\series default
+(0x30) - B constant for sensor 5 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:49
+\series default
+(0x31) - B constant for sensor 5 LSB.
+\end_layout
+
+\begin_layout Standard
+Used for temperature calculations
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Low alarm registers
+\end_layout
+
+\end_inset
+
+Low alarm registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Low-alarm-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:50
+\series default
+(0x32) - Low alarm set point for sensor 0 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:51
+\series default
+(0x33) - Low alarm set point for sensor 0 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:52
+\series default
+(0x34) - Low alarm set point for sensor 1 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:53
+\series default
+(0x35) - Low alarm set point for sensor 1 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:54
+\series default
+(0x36) - Low alarm set point for sensor 2 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:55
+\series default
+(0x37) - Low alarm set point for sensor 2 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:56
+\series default
+(0x38) - Low alarm set point for sensor 3 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:57
+\series default
+(0x39) - Low alarm set point for sensor 3 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:58
+\series default
+(0x3A) - Low alarm set point for sensor 4 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:59
+\series default
+(0x3B) - Low alarm set point for sensor 4 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:60
+\series default
+(0x3C) - Low alarm set point for sensor 5 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:61
+\series default
+(0x3D) - Low alarm set point for sensor 5 LSB.
+\end_layout
+
+\begin_layout Standard
+Writing any of these registers will reset high/low alarm conditions for
+ that sensor.
+\end_layout
+
+\begin_layout Standard
+The value is stored as a twos complement number as temperature * 100.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+High alarm registers
+\end_layout
+
+\end_inset
+
+High alarm registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:High-alarm-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:62
+\series default
+(0x3E) - High alarm set point for sensor 0 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:63
+\series default
+(0x3F) - High alarm set point for sensor 0 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:64
+\series default
+(0x40) - High alarm set point for sensor 1 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:65
+\series default
+(0x41) - High alarm set point for sensor 1 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:66
+\series default
+(0x42) - High alarm set point for sensor 2 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:67
+\series default
+(0x43) - High alarm set point for sensor 2 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:68
+\series default
+(0x44) - High alarm set point for sensor 3 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:69
+\series default
+(0x45) - High alarm set point for sensor 3 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:70
+\series default
+(0x46) - High alarm set point for sensor 4 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:71
+\series default
+(0x47) - High alarm set point for sensor 4 LSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:72
+\series default
+(0x48) - High alarm set point for sensor 5 MSB.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:73
+\series default
+(0x49) - High alarm set point for sensor 5 LSB.
+\end_layout
+
+\begin_layout Standard
+Writing any of these registers will reset high/low alarm conditions for
+ that sensor.
+\end_layout
+
+\begin_layout Standard
+The value is stored as a twos complement number as temperature * 100.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Sensor zone information registers
+\end_layout
+
+\end_inset
+
+Sensor zone information registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sensor-zone-information"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 74
+\series default
+(0x4A) - Zone for sensor 0 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:75
+\series default
+(0x4B) - Sub-zone for sensor 0 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:76
+\series default
+(0x4C) - Zone for sensor 1 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:77
+\series default
+(0x4D) - Sub-zone for sensor 1 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:78
+\series default
+(0x4E) - Zone for sensor 2 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:79
+\series default
+(0x4F) - Sub-zone for sensor 2 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:80
+\series default
+(0x50) - Zone for sensor 3 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:81
+\series default
+(0x51) - Sub-zone for sensor 3 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:82
+\series default
+(0x52) - Zone for sensor 4 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:83
+\series default
+(0x53) - Sub-zone for sensor 4 alarms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:84
+\series default
+(0x54) - Zone for sensor 4 alarms..
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:85
+\series default
+(0x55) - Sub-zone for sensor 4 alarms.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Sensor absolute low temperature registers
+\end_layout
+
+\end_inset
+
+Sensor absolute low temperature registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sensor-absolut-low"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:86
+\series default
+(0x56) - Absolute low for sensor 0 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:87
+\series default
+(0x57) - Absolute low for sensor 0 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:88
+\series default
+(0x58) - Absolute low for sensor 1 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:89
+\series default
+(0x59) - Absolute low for sensor 1 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:90
+\series default
+(0x5A) - Absolute low for sensor 2 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:91
+\series default
+(0x5B) - Absolute low for sensor 2 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:92
+\series default
+(0x5C) - Absolute low for sensor 3 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:93
+\series default
+(0x5D) - Absolute low for sensor 3 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:94
+\series default
+(0x5E) - Absolute low for sensor 4 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:95
+\series default
+(0x5F) - Absolute low for sensor 4 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:96
+\series default
+(0x60) - Absolute low for sensor 5 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:97
+\series default
+(0x61) - Absolute low for sensor 5 LSB (Write to reset).
+\end_layout
+
+\begin_layout Standard
+The value is stored as a twos complement number as temperature * 100.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Sensor absolute high temperature registers
+\end_layout
+
+\end_inset
+
+Sensor absolute high temperature registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sensor-absolut-high"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:98
+\series default
+(0x62) - Absolute high for sensor 0 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:99
+\series default
+(0x63) - Absolute high for sensor 0 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:100
+\series default
+(0x64) - Absolute high for sensor 1 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:101
+\series default
+(0x65) - Absolute high for sensor 1 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:102
+\series default
+(0x66) - Absolute high for sensor 2 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:103
+\series default
+(0x67) - Absolute high for sensor 2 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:104
+\series default
+(0x68) - Absolute high for sensor 3 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:105
+\series default
+(0x69) - Absolute high for sensor 3 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:106
+\series default
+(0x6A) - Absolute high for sensor 4 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:107
+\series default
+(0x6B) - Absolute high for sensor 4 LSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:108
+\series default
+(0x6C) - Absolute high for sensor 5 MSB (Write to reset).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:109
+\series default
+(0x6D) - Absolute high for sensor 5 LSB (Write to reset).
+\end_layout
+
+\begin_layout Standard
+The value is stored as a twos complement number as temperature * 100.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Sensor hysteresis registers
+\end_layout
+
+\end_inset
+
+Sensor hysteresis registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:110
+\series default
+(0x6E) - Hysteresis in degrees Celsius for sensor 0 (default is 5 degrees).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:111
+\series default
+(0x6F) - Hysteresis in degrees Celsius for sensor 1 (default is 5 degrees).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:112
+\series default
+(0x70) - Hysteresis in degrees Celsius for sensor 2 (default is 5 degrees).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:113
+\series default
+(0x71) - Hysteresis in degrees Celsiusin for sensor 3 (default is 5 degrees).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:114
+\series default
+(0x72) - Hysteresis in degrees Celsius for sensor 4 (default is 5 degrees).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:115
+\series default
+(0x73) - Hysteresis in degrees Celsius for sensor 5 (default is 5 degrees).
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Sensor calibration registers
+\end_layout
+
+\end_inset
+
+Sensor calibration registers
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sensor-calibration-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The value in the calibration register is added to the measured sensor value
+ before it's reported.
+ The calibration value is stored as a two's complement temperature * 100
+ to allow for both positive and negative numbers.
+ So 24.23 degrees is stored as 2423 and so on.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:116
+\series default
+(0x74) - Index into calibration values (0-15).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:117
+\series default
+(0x75) - Sensor calibration values.
+ Twelve values stored MSB byte first, two bytes for each sensor.
+\end_layout
+
+\begin_layout Standard
+To read a value first set the index in register 116 and then read the value
+ in register 117.
+ Sensor values are stored in MSB, LSB order with sensor0, sensor1, sensor2,
+ sensor3,sensor4, sensor5.
+\end_layout
+
+\begin_layout Standard
+To write a calibration value first set the index in register 116 and then
+ write the value in register 117.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Voltage registers
+\end_layout
+
+\end_inset
+
+Voltage
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Voltage-registers"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Voltage used to calulate the temperature for a sensor have effect on
+ the error.
+ The voltage is theoretically 5V but will in reallity be something else
+ but still close to 5V.
+ Theese register can be used to set a calibrated voltage obtained from actual
+ measurements.
+ The value stored in the two registers is the voltage to time 10000.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:11
+\series default
+8(0x76) - MSB of Voltage (Default is 0xC3).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0:11
+\series default
+9(0x77) - LSB of Voltage (Default is 0x50).
+\end_layout
+
+\begin_layout Subsection
+Steinhart-Hart coefficient registers
+\end_layout
+
+\begin_layout Standard
+This is 24 bytes holding the four Steinhart-Hart coefficients stored as
+ floating point values.
+ Each floating point value is 24-bit and stored in big endian order (microchip
+ uses little endian) with a1 in the first position and a4 in the last.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Default values are
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coefficient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.524024725919526e-4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.934722516618191e-4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-7.642331765196044e-6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+All coefficients are 24-bit values (three bytes).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 1:0(0x00) - 1:53(0x35) with low byte first.
+\end_layout
+
+\begin_layout Subsection
+Raw A/D values
+\end_layout
+
+\begin_layout Standard
+Raw A/D values from the temperature sensor network can be read if a user
+ wants to.
+ This can be useful for special nonstandard setups.
+ The A/D converter is a 10-bit converter so the value can be 0-1023 and
+ is stored MSB first in the registers (not in the converter) as all values
+ are stored in VSCP.
+ The registers can only be read, a write is ignored.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 1:54(0x36) - 1:65(0x41) with low byte first.
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm register 
+\end_layout
+
+\end_inset
+
+Alarm register 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Alarm-register"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 0
+\series default
+ - Low Alarm from one or more sensor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 1
+\series default
+ - High Alarm from one or more sensor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 2
+\series default
+ - Reserved.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 3
+\series default
+ - Reserved.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 4
+\series default
+ - Reserved.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 5
+\series default
+ - Reserved.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 6
+\series default
+ - Reserved.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 7
+\series default
+ - Reserved.
+\end_layout
+
+\begin_layout Standard
+Read the register to clear alarm bits.
+ Alarm bits will be set until this register is cleared even if the actual
+ alarm condition is not active anymore.
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Events
+\end_layout
+
+\end_inset
+
+Events
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Temperature event
+\end_layout
+
+\end_inset
+
+Temperature event
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Temperature-event"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If enabled this event is sent periodically for each sensor.
+ The temperature is reported as a normalized integer value by this event.
+ The event frequency is set in register 20-25 (default is one event per
+ 30 seconds) and must be set to a non zero value for it to be sent.
+\end_layout
+
+\begin_layout Standard
+Temperature can be reported in one of three units.
+ Kelvin, Celsius (default) or Fahrenheit as set in register 2-7.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Class: 10(0x0a) Type: 6(0x06)
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Format.
+ See description below.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Always 2 (0x02).
+ Decimal point should be shifted two steps to the left = divide with hundred.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MSB of normalized integer.
+ Two complement number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LSB of normalized integer.
+ Two complement number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Temperature event format
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Format is the measurement data coding format described in part 8 of the
+ VSCP specification.
+\end_layout
+
+\begin_layout Standard
+The normalized integer is stored as a two complement 16-bit integer.
+ To convert
+\end_layout
+
+\begin_layout Enumerate
+Calculate the 16-bit twos complement as MSB byte * 256 + LSB byte.
+\end_layout
+
+\begin_layout Enumerate
+If the most significant bit is 
+\series bold
+not
+\series default
+ set (Equal or less then 32767) this is a positive temperature.
+ Divide by 100 and you have the temperature.
+ 
+\end_layout
+
+\begin_layout Enumerate
+If the most significant bit 
+\series bold
+is
+\series default
+ set (Greater than 32767) this is a negative temperature.
+ Now invert the result (the bits are inverted; 0 becomes 1, and 1 becomes
+ 0) and add one to the result.
+ Dive by 100 and you have the temperature.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bits
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,6,7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 (0b100) - Normalized integer format.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 (0b00) - Kelvin.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 (0b01) – Celsius.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 (0b10) – Fahrenheit.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,1,2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor Index: 
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 (0b000) - Sensor 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 (0b001) - Sensor 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 (0b010) - Sensor 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 (0b011) - Sensor 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 (0b100) - Sensor 4.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 (0b101) - Sensor 5.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Temperature event format description.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To make it simpler to interpret data the three tables below list the format
+ bytes for Kelvin, Celsius and Fahrenheit temperature presentation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Format byte
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+129 (0x81)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130(0x82)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+131(0x83)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+132(0x84)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+133(0x85)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+134(0x86)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Format bytes for Kelvin presentation
+\end_layout
+
+\end_inset
+
+Format bytes for Kelvin presentation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Format byte
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+136(0x88)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+137(0x89)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+138(0x8A)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+139(0x8B)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+140(0x8C)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+141(0x8D)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Format bytes for Celsius presentation
+\end_layout
+
+\end_inset
+
+Format bytes for Celsius presentation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Format byte
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+244 (0xF4)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+245 (0xF5)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+246 (0xF6)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+247 (0xF7)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+248 (0xF8)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+249 (0xF9)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Format bytes for Fahrenheit presentation
+\end_layout
+
+\end_inset
+
+Format bytes for Fahrenheit presentation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm Event
+\end_layout
+
+\end_inset
+
+Alarm Event
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Alarm-Event"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If enabled the event is sent when a temperature sensor goes below a low
+ alarm set point (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+) or a high alarm set point (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+).
+ The hysteresis registers is used so after an alarm event has been sent
+ a new alarm event is not sent until the temperature goes below/above the
+ value set in the hysteresis register.
+ A read of the alarm register will reset the alarm status and alarm events
+ will not be sent out again until the the temperature changed with the hysteresi
+s amount.
+\end_layout
+
+\begin_layout Paragraph
+Class: 0x001 Type: 0x02
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Index
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sub-zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Temperature event format
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Index is 0 for Sensor 0.
+ 1 for Sensor 1, 2 for Sensor 2.
+ 3 for Sensor 3.
+ 4 for Sensor 4.
+ 5 for Sensor 5.
+ 
+\end_layout
+
+\begin_layout Standard
+Zone and sub-zone is the modules setting (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Zone-registers"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+TurnOn Event
+\end_layout
+
+\end_inset
+
+TurnOn Event
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TurnOn-Event"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If enabled the event (Bit 5 in control register must be set (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+)) is sent when the temperature goes below or above the low(see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+)/high(see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+) alarm setpoints.
+ Settings in the control register bit 6 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+) decides which of the TurnOn/TurnOff event that is sent.
+ The hysteresis setting (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+) tells how much a temperature must raise or fall below the alarm set point
+ before a new event will be sent.
+\end_layout
+
+\begin_layout Paragraph*
+Class: 30 (0x1E) Type: 5 (0x05)
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Index
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sub-zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Temperature event format
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Index is 0 for Sensor 0.
+ 1 for Sensor 1, 2 for Sensor 2.
+ 3 for Sensor 3.
+ 4 for Sensor 4.
+ 5 for Sensor 5.
+ 
+\end_layout
+
+\begin_layout Standard
+Zone information is fetched from sensor zone register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-zone-information"
+
+\end_inset
+
+) if it contains a value that is not zero.
+ If it has a zero value the module zone will be used (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Zone-registers"
+
+\end_inset
+
+) instead.
+\end_layout
+
+\begin_layout Standard
+Sub-zone information is fetched from sensor sub-zone register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-zone-information"
+
+\end_inset
+
+) if it contains a value that is not zero.
+ If it has a zero value the module sub-zone will be used (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Zone-registers"
+
+\end_inset
+
+) instead..
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+TurnOff Event
+\end_layout
+
+\end_inset
+
+TurnOff Event
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TurnOff-Event"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If enabled the event (Bit 5 in control register must be set (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+)) is sent when the temperature goes below or above the low(see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Low-alarm-registers"
+
+\end_inset
+
+)/high(see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:High-alarm-registers"
+
+\end_inset
+
+) alarm setpoints.
+ Settings in the control register bit 6 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Control-registers"
+
+\end_inset
+
+) decides which of the TurnOn/TurnOff event that is sent.
+ The hysteresis setting (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-hysteresis-registers"
+
+\end_inset
+
+) tells how much a temperature must raise or fall below the alarm set point
+ before a new event will be sent.
+\end_layout
+
+\begin_layout Paragraph
+Class: 30 (0x1E) Type: 6 (0x06)
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Index
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sub-zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Temperature event format
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Index is 0 for Sensor 0.
+ 1 for Sensor 1, 2 for Sensor 2.
+ 3 for Sensor 3.
+ 4 for Sensor 4.
+ 5 for Sensor 5.
+ 
+\end_layout
+
+\begin_layout Standard
+Zone information is fetched from sensor zone register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-zone-information"
+
+\end_inset
+
+) if it contains a value that is not zero.
+ If it has a zero value the module zone will be used (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Zone-registers"
+
+\end_inset
+
+) instead.
+\end_layout
+
+\begin_layout Standard
+Sub-zone information is fetched from sensor sub-zone register (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sensor-zone-information"
+
+\end_inset
+
+) if it contains a value that is not zero.
+ If it has a zero value the module sub-zone will be used (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Zone-registers"
+
+\end_inset
+
+) instead.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Sync Event
+\end_layout
+
+\end_inset
+
+Sync Event (Incoming event).
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sync-Event"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If a SYNC event is received by the module it will check the zone/subzone
+ parameters of the event and send out temperature measurement events for
+ all sensors that match.
+ This can be a handy feature to use of one want syncronized data from several
+ sources.
+\end_layout
+
+\begin_layout Paragraph
+Class: 30 (0x1E) Type: 26 (0x1A)
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Index
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sub-zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Temperature event format
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Index is not used.
+\end_layout
+
+\begin_layout Section
+Where can I find the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+source code
+\end_layout
+
+\end_inset
+
+source code?
+\end_layout
+
+\begin_layout Standard
+Most VSCP modules from Grodans Paradis AB is 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Open hardware
+\end_layout
+
+\end_inset
+
+Open hardware/
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Open source
+\end_layout
+
+\end_inset
+
+Open source meaning that both the hardware information as well as the source
+ code is available.
+ This means that you can modify the source code and /or the hardware to
+ your specific needs if you want.
+ 
+\end_layout
+
+\begin_layout Section
+Appendix A - 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Mandatory VSCP registers
+\end_layout
+
+\end_inset
+
+Mandatory VSCP registers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.70
+\backslash
+textwidth}{!}{%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="31" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Address 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Access Mode 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0×00 – 0x7f 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+— 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Device specific.
+ 
+\emph on
+Unimplemented registers should return zero.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128/0×80 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm status register
+\end_layout
+
+\end_inset
+
+Alarm status register content (!= 0 indicates alarm).
+ Condition is reset by a read operation.
+ The bits represent different alarm conditions.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+129/0×81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VSCP Major version number this device is constructed for.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130/0×82 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VSCP Minor version number this device is constructed for.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+131/0×83 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Node control flags 
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start-up control 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start-up control 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r/w control of registers below 0×80.
+ (1 means write enabled) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+132/0×84 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 0 – Client settable node id byte 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+133/0×85 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 1 – Client settable node id byte 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+134/0×86 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 2 – Client settable node id byte 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+135/0×87 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 3 – Client settable node id byte 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+136/0×88 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 4 – Client settable node id byte 4.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+137/0×89 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+138/0x8a 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+139/0x8b 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+140/0x8c 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+141/0x8d 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+142/0x8e 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+143/0x8f 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+144/0×90 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+145/0×91 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nickname id for node if assigned or 0xff if no nickname id assigned.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+146/0×92 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Page select register MSB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+147/0×93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Page Select register LSB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+148/0×94 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firmware major version number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+149/0×95 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firmware minor version number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150/0×96 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firmware sub minor version number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+151/0×97 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Boot loader algorithm
+\end_layout
+
+\end_inset
+
+Boot loader algorithm used.
+ 0Xff for no boot loader support.
+ Codes for algorithms are specified here VSCP_event_class_000 for Type =
+ 12 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+152/0×98 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer size.
+ The value here gives an indication for clients that want to talk to this
+ node if it can support the larger mid level Level I control events which
+ has the full GUID.
+ If set to 0 the default size should used.
+ That is 8 bytes for Level I and 512-25 for Level II.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+153/0×99 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of register pages used.
+ If not implemented one page is assumed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+154/0x9A-207/0xcf 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+— 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved for future use.
+ Return zero.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+208/0xd0-223/0xdf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128-bit (16-byte) globally unique ID (GUID
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+GUID
+\end_layout
+
+\end_inset
+
+) identifier for the device.
+ This identifier uniquely identifies the device throughout the world and
+ can give additional information on where driver and driver information
+ can be found for the device.
+ MSB for the identifier is stored first (in 0xd0).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+224/0xe0-255/0xff
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Module Description File
+\end_layout
+
+\end_inset
+
+Module Description File URL.
+ A zero terminates the ASCII string if not exactly 32 bytes long.
+ The URL points to a file that gives further information about where drivers
+ for different environments are located.
+ Can be returned as a zero string for devices with low memory.
+ It is recommended that unimplemented registers read as oxff.
+ For a node with an embedded MDF return a zero string.
+ The CLASS1.PROTOCOL, Type=34/35 can then be used to get the information
+ if available.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+VSCP mandatory registers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

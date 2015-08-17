@@ -1,0 +1,180 @@
+Kelvin NTC10A
+=============
+
+0 - Zone for module
+1 - Subzone for module
+2 - Control byte for sensor 0
+	Bit 0,1 - Temperature unit
+		00 - Kelvin.
+		01 - Celsius (default).
+		10 - Fahrenheit.
+	Bit 2 - Temp model
+		0 - Use B constant/a,b,c formula.
+		1 - Use lookup table.
+	Bit 3 - Enable low alarm.
+	Bit 4 - Enable high alarm.
+	Bit 5 - Send ON/OFF events instead of Alarm
+	Bit 6 - on/off event usage
+			0 - TurnOn event is sent when low temp is reached. TurnOff event
+				when high temp. is reached.
+			1 - TurnOff event is sent when low temp is reached. TurnOff event
+				is sent when high temp. is reached.
+	Bit 7 - Enable temperature events.
+3 - Control byte for sensor 1
+4 - Control byte for sensor 2
+5 - Control byte for sensor 3
+6 - Control byte for sensor 4
+7 - Control byte for sensor 5
+8 - Temperature sensor 0 MSB (on board sensor)
+9 - Temperature sensor 0 LSB (on board sensor)
+10 - Temperature sensor 1 MSB
+11 - Temperature sensor 1 LSB
+12 - Temperature sensor 2 MSB
+13 - Temperature sensor 2 LSB
+14 - Temperature sensor 3 MSB
+15 - Temperature sensor 3 LSB
+16 - Temperature sensor 4 MSB
+17 - Temperature sensor 4 LSB
+18 - Temperature sensor 5 MSB
+19 - Temperature sensor 5 LSB
+20 - Report interval for sensor 0 in seconds. (Set to zero for no report)
+21 - Report interval for sensor 1 in seconds. (Set to zero for no report)
+22 - Report interval for sensor 2 in seconds. (Set to zero for no report)
+23 - Report interval for sensor 3 in seconds. (Set to zero for no report)
+24 - Report interval for sensor 4 in seconds. (Set to zero for no report)
+25 - Report interval for sensor 5 in seconds. (Set to zero for no report)
+
+26 - Resistance table value for sensor 0
+		2 x 34 enteries (-40 - +125 )
+27 - Index to table value for sensor 0
+28 - Resistance table value for sensor 1
+29 - Index to table value for sensor 1
+30 - Resistance table value for sensor 2
+31 - Index to table value for sensor 2
+32 - Resistance table value for sensor 3
+33 - Index to table value for sensor 3
+34 - Resistance table value for sensor 4
+35 - Index to table value for sensor 4
+36 - Resistance table value for sensor 5
+37 - Index to table value for sensor 5
+
+can also hold a, b and c constants.
+
+38 - B constant for sensor 0 MSB
+39 - B constant for sensor 0 LSB
+40 - B constant for sensor 1 MSB
+41 - B constant for sensor 1 LSB
+42 - B constant for sensor 2 MSB
+43 - B constant for sensor 2 LSB
+44 - B constant for sensor 3 MSB
+45 - B constant for sensor 3 LSB
+46 - B constant for sensor 4 MSB
+47 - B constant for sensor 4 LSB
+48 - B constant for sensor 5 MSB
+49 - B constant for sensor 5 LSB
+50 - Low alarm temperature Sensor 0 MSB
+51 - Low alarm temperature Sensor 0 LSB
+52 - Low alarm temperature Sensor 1 MSB
+53 - Low alarm temperature Sensor 1 LSB
+54 - Low alarm temperature Sensor 2 MSB
+55 - Low alarm temperature Sensor 2 LSB
+56 - Low alarm temperature Sensor 3 MSB
+57 - Low alarm temperature Sensor 3 LSB
+58 - Low alarm temperature Sensor 4 MSB
+59 - Low alarm temperature Sensor 4 LSB
+60 - Low alarm temperature Sensor 5 MSB
+61 - Low alarm temperature Sensor 5 LSB
+62 - High alarm temperature Sensor 0 MSB
+63 - High alarm temperature Sensor 0 LSB
+64 - High alarm temperature Sensor 1 MSB
+65 - High alarm temperature Sensor 1 LSB
+66 - High alarm temperature Sensor 2 MSB
+67 - High alarm temperature Sensor 2 LSB
+68 - High alarm temperature Sensor 3 MSB
+69 - High alarm temperature Sensor 3 LSB
+70 - High alarm temperature Sensor 4 MSB
+71 - High alarm temperature Sensor 4 LSB
+72 - High alarm temperature Sensor 5 MSB
+73 - High alarm temperature Sensor 5 LSB
+74 - Hysteresis low temperature for sensor 0
+75 - Hysteresis low temperature for sensor 1
+76 - Hysteresis low temperature for sensor 2
+77 - Hysteresis low temperature for sensor 3
+78 - Hysteresis low temperature for sensor 4
+79 - Hysteresis low temperature for sensor 5
+80 - Hysteresis high temperature for sensor 0
+81 - Hysteresis high temperature for sensor 1
+82 - Hysteresis high temperature for sensor 2
+83 - Hysteresis high temperature for sensor 3
+84 - Hysteresis high temperature for sensor 4
+85 - Hysteresis high temperature for sensor 5
+
+86 - Zone form sensor 0 alarms.
+87 - Subzone for sensor 0 alarms.
+88 - Zone form sensor 1 alarms.
+89 - Subzone for sensor 1 alarms.
+90 - Zone form sensor 2 alarms.
+91 - Subzone for sensor 2 alarms.
+92 - Zone form sensor 3 alarms.
+93 - Subzone for sensor 3 alarms.
+94 - Zone form sensor 4 alarms.
+95 - Subzone for sensor 4 alarms.
+96 - Zone form sensor 5 alarms.
+97 - Subzone for sensor 5 alarms.
+
+98 - Absolut low for sensor 0 MSB. Write to reset.
+99 - Absolut low for sensor 0 LSB. Write to reset.
+100 - Absolut low for sensor 1 MSB. Write to reset.
+101 - Absolut low for sensor 1 LSB. Write to reset.
+102 - Absolut low for sensor 2 MSB. Write to reset.
+103 - Absolut low for sensor 2 LSB. Write to reset.
+104 - Absolut low for sensor 3 MSB. Write to reset.
+105 - Absolut low for sensor 3 LSB. Write to reset.
+106 - Absolut low for sensor 4 MSB. Write to reset.
+107 - Absolut low for sensor 4 LSB. Write to reset.
+108 - Absolut low for sensor 5 MSB. Write to reset.
+109 - Absolut low for sensor 5 LSB. Write to reset.
+110 - Absolut high for sensor 0 MSB. Write to reset.
+111 - Absolut high for sensor 0 LSB. Write to reset.
+112 - Absolut high for sensor 0 MSB. Write to reset.
+113 - Absolut high for sensor 0 LSB. Write to reset.
+114 - Absolut high for sensor 1 MSB. Write to reset.
+115 - Absolut high for sensor 1 LSB. Write to reset.
+116 - Absolut high for sensor 2 MSB. Write to reset.
+117 - Absolut high for sensor 2 LSB. Write to reset.
+118 - Absolut high for sensor 3 MSB. Write to reset.
+119 - Absolut high for sensor 3 LSB. Write to reset.
+120 - Absolut high for sensor 4 MSB. Write to reset.
+121 - Absolut high for sensor 4 LSB. Write to reset.
+122 - Absolut high for sensor 5 MSB. Write to reset.
+123 - Absolut high for sensor 5 LSB. Write to reset.
+
+
+
+Alarm
+=====
+bit 0 - Low Alarm
+bit 1 - High alarm
+
+
+Events
+======
+
+Temperature measurement
+-----------------------
+Class=10, Type=6
+
+Alarm
+-----
+Class=1, Type=2 - Alarm occured
+Sensor index in byte 0 (0-5)
+
+TurnOn
+------
+Class=30, Type=5
+
+TurnOff
+-------
+Class=30, Type=6
+
+

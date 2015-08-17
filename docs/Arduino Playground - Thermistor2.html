@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://playground.arduino.cc/ComponentLib/Thermistor2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Arduino Playground - Thermistor2_files/auth013.js"></script><link rel="stylesheet" type="text/css" href="./Arduino Playground - Thermistor2_files/widget114.css" media="all">
+  <title>Arduino Playground - Thermistor2 </title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://playground.arduino.cc//favicon.png">
+  <link rel="stylesheet" href="./Arduino Playground - Thermistor2_files/arduinoWide_SSO.css" type="text/css">
+  <script type="text/javascript" async="" src="./Arduino Playground - Thermistor2_files/ga.js"></script><script src="./Arduino Playground - Thermistor2_files/sso_bar_js_2.php"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="./Arduino Playground - Thermistor2_files/sso_bar.css">
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22581631-3']);
+    _gaq.push(['_setDomainName', 'arduino.cc']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+<!--HeaderText--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c span.xtra { display:block; }
+
+.sourceblocklink {
+  text-align: right;
+  font-size: smaller;
+}
+.sourceblocktext {
+  padding: 0.5em;
+  color: #000000;
+  background-color: #ffffff;
+}
+.sourceblocktext div {
+  font-family: monospace;
+  font-size: small;
+  line-height: 1;
+  height: 1%;
+}
+.sourceblocktext div.head,
+.sourceblocktext div.foot {
+  font: italic medium serif;
+  padding: 0.5em;
+}
+
+--></style>
+  <link rel="stylesheet" href="./Arduino Playground - Thermistor2_files/wsplus.css" type="text/css">
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://playground.arduino.cc/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name="robots" content="index,follow">
+
+<div style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;" id="_atssh"><iframe id="_atssh992" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;" src="./Arduino Playground - Thermistor2_files/sh114.html"></iframe></div><script type="text/javascript" src="./Arduino Playground - Thermistor2_files/core076.js"></script><script>function notifyScript() {     var evt = document.createEvent("Event");     evt.initEvent("notify", false, false);     if (document.getElementById("addthis-extension-script") == null) {        var d=document.createElement("div"); d.setAttribute("style", "display:none"); d.setAttribute("id", "addthis-extension-script");         if (window._ate)             d.textContent=_ate.pub();         else if(window.addthis_config && addthis_config.pubid)    d.textContent= addthis_config.pubid;        else if(window.addthis_config && addthis_config.username)    d.textContent= addthis_config.username;        else if(window.addthis_pub)    d.textContent= addthis_pub;        else             d.textContent="";         document.body.appendChild(d);     }    document.documentElement.dispatchEvent(evt); }notifyScript()</script></head>
+<body>
+  
+		<div id="ssotoolbar">
+		  <div id="al">
+			<nobr><div id="ssoNavBar"><a class="t0" href="http://arduino.cc/en/">Main Site</a> <a class="t0" href="http://blog.arduino.cc/">Blog</a> <a class="t1" href="http://playground.arduino.cc/">Playground</a> <a class="t0" href="http://arduino.cc/forum/">Forum</a> <a class="t0" href="http://labs.arduino.cc/">Labs</a> <a class="t0" href="http://store.arduino.cc/ww/">Store</a> </div></nobr>
+		  </div>
+		  <div id="ar">
+			<nobr>
+			  <div id="loginInfo"><div class="lo"><a href="https://id.arduino.cc//auth/login/?returnurl=http%3A%2F%2Fplayground.arduino.cc%2FComponentLib%2FThermistor2">Sign in</a> or <a href="https://id.arduino.cc/auth/register/?returnurl=http%3A%2F%2Fplayground.arduino.cc%2FComponentLib%2FThermistor2">Register</a></div></div>
+			</nobr>
+		  </div>
+		</div>
+		<script>ssoGenerateNavigationBar('');</script>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://playground.arduino.cc/"><div id="logo"></div></a> <a href="http://playground.arduino.cc/"><div id="logo_tagline"></div></a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="http://www.google.com/search">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="hidden" name="oe" value="UTF-8">
+    <input type="text" name="q" size="25" maxlength="255" value="">
+    <input type="submit" name="btnG" value="search">
+    <input type="hidden" name="domains" value="http://playground.arduino.cc/">
+    <input type="hidden" name="sitesearch" value="http://playground.arduino.cc/">
+    </form>
+    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav">
+  <p><em>The <a class="wikilink" href="http://playground.arduino.cc//Main/HomePage">playground</a> is a publicly-editable wiki about <a class="urllink" href="http://www.arduino.cc/" rel="nofollow">Arduino</a>.</em>
+</p>
+<p class="vspace"></p><p><br><br>
+<a class="wikilink" href="http://playground.arduino.cc//Main/ManualsAndCurriculum">Manuals and Curriculum</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Learning/Linux">Installing Arduino on Linux</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/ArduinoCoreHardware">Board Setup and Configuration</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/DevelopmentTools">Development Tools</a>
+</p>
+<p class="vspace"></p><p class="sidehead"> <a class="wikilink" href="http://playground.arduino.cc//Main/ArduinoOnOtherAtmelChips">Arduino on other Atmel Chips</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware">Interfacing With Hardware</a>
+</p><ul><li><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware#Output">Output</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware#InputTOC">Input</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware#ui">User Interface</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware#Storage">Storage</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware#Communication">Communication</a> 
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/IntWithHW-PwrSup">Power supplies</a> 
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithHardware#General">General</a> 
+</li></ul><p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/InterfacingWithSoftware">Interfacing with Software</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/GeneralCodeLibrary">User Code Library</a>
+</p><ul><li><a class="wikilink" href="http://playground.arduino.cc//Main/SketchList">Snippets and Sketches</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/LibraryList">Libraries</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/TutorialList">Tutorials</a>
+</li></ul><p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://code.google.com/p/arduino/issues/list" rel="nofollow">Suggestions &amp; Bugs</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/ElectroInfoResources">Electronics Technique</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/Resources">Sources for Electronic Parts</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/SimilarBoards">Related Hardware and Initiatives</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://playground.arduino.cc/Main/People" rel="nofollow">Arduino People/Groups &amp; Sites</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://playground.arduino.cc/Projects/ArduinoUsers" rel="nofollow">Exhibition</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://playground.arduino.cc/Projects/Ideas" rel="nofollow">Project Ideas</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://playground.arduino.cc//Main/Languages">Languages</a>
+</p>
+<p class="vspace"></p><hr>
+<p class="vspace"></p><p class="sidehead"> <a class="wikilink" href="http://playground.arduino.cc//Main/Participate">PARTICIPATE</a>
+</p><ul><li><a class="urllink" href="http://code.google.com/p/arduino/issues/list" rel="nofollow">Suggestions</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/Participate#contribrules">Formatting guidelines</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Site/AllRecentChanges">All recent changes</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//PmWiki/PmWiki">PmWiki</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//Main/WikiSandbox">WikiSandBox training</a>
+</li><li><a class="wikilink" href="http://playground.arduino.cc//PmWiki/BasicEditing">Basic Editing</a>
+</li><li><a class="urllink" href="http://www.pmwiki.org/wiki/Cookbook/CookbookBasics" rel="nofollow">Cookbook (addons)</a>
+</li><li><a class="urllink" href="http://www.pmwiki.org/wiki/PmWiki/DocumentationIndex" rel="nofollow">Documentation index</a>
+<p class="vspace"></p></li><li><a class="urllink" href="http://www.bartoloilliano.com/arduino-tutorial-costruire-un-drone-con-webcam-telecomandato-da-pc-tramite-csharp.html" rel="nofollow">Drone with Arduino</a>
+<p class="vspace"></p></li><li><a class="urllink" href="http://arduinothermostat.blogspot.co.uk/" rel="nofollow">Thermostat with Arduino</a>
+</li></ul><p class="vspace"></p><hr>
+<p style="text-align: right;"> <span style="font-size:83%"><a class="wikilink" href="http://playground.arduino.cc//Site/SideBar?action=edit">edit SideBar</a></span>
+</p>
+
+</div>
+<!--/PageLeftFmt-->
+<!--PageActionFmt-->
+<div id="pageactions">
+  <!--ComponentLib.PageActions--> <!--Site.PageActions-->
+  
+</div>
+<!--/PageActionFmt-->
+<div id="pagetext">
+  <!--PageText-->
+<div id="wikitext">
+<h1>Reading a Thermistor</h1>
+<p>This is a function I wrote to convert the value from an analogRead call of a pin with a thermistor connected to it to a temperature.  Unlike most other programs that use a look-up table, this function utilizes the Steinhart-Hart Thermistor Equation to convert "Thermistor Resistance" to "Temperature in Degrees Kelvin."  I found the equation <a class="urllink" href="http://www.eidusa.com/Electronics_Kits_TEMP_THERMISTOR_1.htm" rel="nofollow">here</a>, but it can also be found at <a class="urllink" href="http://en.wikipedia.org/wiki/Thermistor" rel="nofollow">Wikipedia</a>.
+</p>
+<p class="vspace"></p><p>The more simple program shows how little code is necessary to do the conversion, and how much memory and program space can be saved when compared to a large look-up table.
+</p>
+<p class="vspace"></p><p>The more elaborate program shows the power of the function.  It displays lots of data including the ADC (from 0 to 1023), the voltage on the analog pin (note: ideally, the arduino would be running at 5.0 volts, but my power supply gives it 4.86 volts, so I divide by 4.86.  Look at the code to change that to whatever your power supply is giving), the resistance of the Thermistor, and the temperature in Celsius and Fahrenheit.  It uses the printDouble routine which I found in a forum post <a class="urllink" href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1207226548" rel="nofollow">here</a>.
+</p>
+<p class="vspace"></p><p>I hope this comes in handy for everyone.  Like most of my code, it's freely usable and modifiable, and no credit is needed.  Free, like arduino should be.
+</p>
+<p class="vspace"></p><hr>
+<h1>Navigation</h1>
+<ul><li><a href="http://playground.arduino.cc/ComponentLib/Thermistor2#ThermistorTestSchematic">Thermistor Test Schematic</a>
+</li><li><a href="http://playground.arduino.cc/ComponentLib/Thermistor2#TheSimpleCode">The Simple Code</a>
+</li></ul><p class="vspace"></p><hr>
+<h1><a href="http://playground.arduino.cc/ComponentLib/Thermistor2#ThermistorTestSchematic">#Thermistor Test SchematicThermistor</a> Test Schematic</h1>
+<p>My content 
+</p>
+<p class="vspace"></p><hr>
+<h1><a href="http://playground.arduino.cc/ComponentLib/Thermistor2#TheSimpleCode">#The Simple Code</a> The Simple Code</h1>
+<p>My other <br>multiline <br>content.
+</p>
+<p class="vspace"></p><p>============================================================
+</p><h1>Thermistor Test Schematic</h1>
+<p>============================================================
+</p><pre> (Ground) ---- (10k-Resister) -------|------- (Thermistor) ---- (+5v)
+                                     |
+                                Analog Pin 0
+</pre>
+<p class="vspace"></p><p>============================================================
+</p><h1>The Simple Code</h1>
+<p>============================================================
+
+</p><div class="sourceblock " id="sourceblock1">
+  <div class="sourceblocktext"><div class="c"><span class="br0">[</span>@<br>
+<span class="co2">#include &lt;math.h&gt;</span><br>
+<br>
+<span class="kw4">double</span> Thermister<span class="br0">(</span><span class="kw4">int</span> RawADC<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;<span class="kw4">double</span> Temp<span class="sy0">;</span><br>
+&nbsp;Temp <span class="sy0">=</span> log<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span><span class="nu0">10240000</span><span class="sy0">/</span>RawADC<span class="br0">)</span> <span class="sy0">-</span> <span class="nu0">10000</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Temp <span class="sy0">=</span> <span class="nu0">1</span> <span class="sy0">/</span> <span class="br0">(</span><span class="nu16">0.001129148</span> <span class="sy0">+</span> <span class="br0">(</span><span class="nu16">0.000234125</span> <span class="sy0">+</span> <span class="br0">(</span><span class="nu16">0.0000000876741</span> <span class="sy0">*</span> Temp <span class="sy0">*</span> Temp <span class="br0">)</span><span class="br0">)</span><span class="sy0">*</span> Temp <span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Temp <span class="sy0">=</span> Temp <span class="sy0">-</span> <span class="nu16">273.15</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// Convert Kelvin to Celcius</span><br>
+&nbsp;Temp <span class="sy0">=</span> <span class="br0">(</span>Temp <span class="sy0">*</span> <span class="nu16">9.0</span><span class="br0">)</span><span class="sy0">/</span> <span class="nu16">5.0</span> <span class="sy0">+</span> <span class="nu16">32.0</span><span class="sy0">;</span> <span class="co1">// Convert Celcius to Fahrenheit</span><br>
+&nbsp;<span class="kw1">return</span> Temp<span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">(</span>Thermister<span class="br0">(</span>analogRead<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// display Fahrenheit</span><br>
+&nbsp;delay<span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+@<span class="br0">]</span><br>
+&nbsp;</div></div>
+  <div class="sourceblocklink"><a href="http://playground.arduino.cc//ComponentLib/Thermistor2?action=sourceblock&num=1" type="text/plain">[Get Code]</a></div>
+</div>
+
+<p></p>
+<p class="vspace"></p><p>============================================================
+</p><h1>The Elaborate Code</h1>
+<p>============================================================
+
+</p><div class="sourceblock " id="sourceblock2">
+  <div class="sourceblocktext"><div class="c"><span class="br0">[</span>@<br>
+<span class="co2">#include &lt;math.h&gt;</span><br>
+<span class="co1">//Schematic:</span><br>
+<span class="co1">// [Ground] ---- [10k-Resister] -------|------- [Thermistor] ---- [+5v]</span><br>
+<span class="co1">// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</span><br>
+<span class="co1">// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Analog Pin 0</span><br>
+<br>
+<span class="kw4">double</span> Thermistor<span class="br0">(</span><span class="kw4">int</span> RawADC<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;<span class="co1">// Inputs ADC Value from Thermistor and outputs Temperature in Celsius</span><br>
+&nbsp;<span class="co1">// &nbsp;requires: include &lt;math.h&gt;</span><br>
+&nbsp;<span class="co1">// Utilizes the Steinhart-Hart Thermistor Equation:</span><br>
+&nbsp;<span class="co1">// &nbsp; &nbsp;Temperature in Kelvin = 1 / {A + B[ln(R)] + C[ln(R)]^3}</span><br>
+&nbsp;<span class="co1">// &nbsp; &nbsp;where A = 0.001129148, B = 0.000234125 and C = 8.76741E-08</span><br>
+&nbsp;<span class="kw4">long</span> Resistance<span class="sy0">;</span> &nbsp;<span class="kw4">double</span> Temp<span class="sy0">;</span> &nbsp;<span class="co1">// Dual-Purpose variable to save space.</span><br>
+&nbsp;Resistance<span class="sy0">=</span><span class="br0">(</span><span class="br0">(</span><span class="nu0">10240000</span><span class="sy0">/</span>RawADC<span class="br0">)</span> <span class="sy0">-</span> <span class="nu0">10000</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// Assuming a 10k Thermistor. &nbsp;Calculation is actually: Resistance = (1024 * BalanceResistor/ADC) - BalanceResistor</span><br>
+&nbsp;Temp <span class="sy0">=</span> log<span class="br0">(</span>Resistance<span class="br0">)</span><span class="sy0">;</span> <span class="co1">// Saving the Log(resistance) so not to calculate it 4 times later. // "Temp" means "Temporary" on this line.</span><br>
+&nbsp;Temp <span class="sy0">=</span> <span class="nu0">1</span> <span class="sy0">/</span> <span class="br0">(</span><span class="nu16">0.001129148</span> <span class="sy0">+</span> <span class="br0">(</span><span class="nu16">0.000234125</span> <span class="sy0">*</span> Temp<span class="br0">)</span> <span class="sy0">+</span> <span class="br0">(</span><span class="nu16">0.0000000876741</span> <span class="sy0">*</span> Temp <span class="sy0">*</span> Temp <span class="sy0">*</span> Temp<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; <span class="co1">// Now it means both "Temporary" and "Temperature"</span><br>
+&nbsp;Temp <span class="sy0">=</span> Temp <span class="sy0">-</span> <span class="nu16">273.15</span><span class="sy0">;</span> &nbsp;<span class="co1">// Convert Kelvin to Celsius &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Now it only means "Temperature"</span><br>
+<br>
+&nbsp;<span class="co1">// BEGIN- Remove these lines for the function not to display anything</span><br>
+&nbsp; Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"ADC: "</span><span class="br0">)</span><span class="sy0">;</span> Serial.<span class="me1">print</span><span class="br0">(</span>RawADC<span class="br0">)</span><span class="sy0">;</span> Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"/1024"</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// Print out RAW ADC Number</span><br>
+&nbsp; Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">", Volts: "</span><span class="br0">)</span><span class="sy0">;</span> printDouble<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>RawADC<span class="sy0">*</span><span class="nu16">4.860</span><span class="br0">)</span><span class="sy0">/</span><span class="nu16">1024.0</span><span class="br0">)</span><span class="sy0">,</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; <span class="co1">// 4.860 volts is what my USB Port outputs.</span><br>
+&nbsp; Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">", Resistance: "</span><span class="br0">)</span><span class="sy0">;</span> Serial.<span class="me1">print</span><span class="br0">(</span>Resistance<span class="br0">)</span><span class="sy0">;</span> Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"ohms"</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;<span class="co1">// END- Remove these lines for the function not to display anything</span><br>
+<br>
+&nbsp;<span class="co1">// Uncomment this line for the function to return Fahrenheit instead.</span><br>
+&nbsp;<span class="co1">//Temp = (Temp * 9.0)/ 5.0 + 32.0; // Convert to Fahrenheit</span><br>
+&nbsp;<span class="kw1">return</span> Temp<span class="sy0">;</span> &nbsp;<span class="co1">// Return the Temperature</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> printDouble<span class="br0">(</span><span class="kw4">double</span> val<span class="sy0">,</span> byte precision<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; <span class="co1">// prints val with number of decimal places determine by precision</span><br>
+&nbsp; <span class="co1">// precision is a number from 0 to 6 indicating the desired decimal places</span><br>
+&nbsp; <span class="co1">// example: printDouble(3.1415, 2); // prints 3.14 (two decimal places)</span><br>
+&nbsp; Serial.<span class="me1">print</span> <span class="br0">(</span><span class="kw4">int</span><span class="br0">(</span>val<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">//prints the int part</span><br>
+&nbsp; <span class="kw1">if</span><span class="br0">(</span> precision <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"."</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// print the decimal point</span><br>
+&nbsp; &nbsp; <span class="kw4">unsigned</span> <span class="kw4">long</span> frac<span class="sy0">,</span> mult <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; byte padding <span class="sy0">=</span> precision <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">(</span>precision<span class="sy0">--</span><span class="br0">)</span> mult <span class="sy0">*=</span><span class="nu0">10</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw1">if</span><span class="br0">(</span>val <span class="sy0">&gt;=</span> <span class="nu0">0</span><span class="br0">)</span> frac <span class="sy0">=</span> <span class="br0">(</span>val <span class="sy0">-</span> <span class="kw4">int</span><span class="br0">(</span>val<span class="br0">)</span><span class="br0">)</span> <span class="sy0">*</span> mult<span class="sy0">;</span> <span class="kw1">else</span> frac <span class="sy0">=</span> <span class="br0">(</span><span class="kw4">int</span><span class="br0">(</span>val<span class="br0">)</span> <span class="sy0">-</span> val<span class="br0">)</span> <span class="sy0">*</span> mult<span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw4">unsigned</span> <span class="kw4">long</span> frac1 <span class="sy0">=</span> frac<span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">(</span>frac1 <span class="sy0">/=</span> <span class="nu0">10</span><span class="br0">)</span> padding<span class="sy0">--;</span><br>
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">(</span>padding<span class="sy0">--</span><span class="br0">)</span> Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"0"</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; Serial.<span class="me1">print</span><span class="br0">(</span>frac<span class="sy0">,</span>DEC<span class="br0">)</span> <span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="co2">#define ThermistorPIN 0 &nbsp; // Analog Pin 0</span><br>
+<span class="kw4">double</span> temp<span class="sy0">;</span><br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;temp<span class="sy0">=</span>Thermistor<span class="br0">(</span>analogRead<span class="br0">(</span>ThermistorPIN<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// read ADC and convert it to Celsius</span><br>
+&nbsp;Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">", Celsius: "</span><span class="br0">)</span><span class="sy0">;</span> printDouble<span class="br0">(</span>temp<span class="sy0">,</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; <span class="co1">// display Celsius</span><br>
+&nbsp;temp <span class="sy0">=</span> <span class="br0">(</span>temp <span class="sy0">*</span> <span class="nu16">9.0</span><span class="br0">)</span><span class="sy0">/</span> <span class="nu16">5.0</span> <span class="sy0">+</span> <span class="nu16">32.0</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// converts to Fahrenheit</span><br>
+&nbsp;Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">", Fahrenheit: "</span><span class="br0">)</span><span class="sy0">;</span> printDouble<span class="br0">(</span>temp<span class="sy0">,</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<span class="co1">// display Fahrenheit</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">""</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// End of Line</span><br>
+&nbsp;delay<span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Delay a bit... for fun, and to not Serial.print faster than the serial connection can output</span><br>
+<span class="br0">}</span><br>
+@<span class="br0">]</span><br>
+&nbsp;</div></div>
+  <div class="sourceblocklink"><a href="http://playground.arduino.cc//ComponentLib/Thermistor2?action=sourceblock&num=2" type="text/plain">[Get Code]</a></div>
+</div>
+
+============================================================
+<p></p><h1>The Elaborate Code (cleaned up a bit)</h1>
+<p>============================================================
+</p>
+<p class="vspace"></p><p>I have taken the liberty of cleaning the code up a bit for more modern versions of the arduino core - printDouble() is not necessary. I have also converted all the doubles to floats because the core only works in floats, but honours the completely useless casts to and from doubles. Altogether this saves ~400 bytes and makes it run a bit faster. 
+</p>
+<p class="vspace"></p><p>I hope the comments make it slightly clearer what is going on.
+</p>
+<p class="vspace"></p><p>
+</p><div class="sourceblock " id="sourceblock3">
+  <div class="sourceblocktext"><div class="c"><br>
+<span class="br0">[</span>@<br>
+<br>
+<span class="coMULTI">/*<br>
+&nbsp;* Inputs ADC Value from Thermistor and outputs Temperature in Celsius<br>
+&nbsp;* &nbsp;requires: include &lt;math.h&gt;<br>
+&nbsp;* Utilizes the Steinhart-Hart Thermistor Equation:<br>
+&nbsp;* &nbsp; &nbsp;Temperature in Kelvin = 1 / {A + B[ln(R)] + C[ln(R)]3}<br>
+&nbsp;* &nbsp; &nbsp;where A = 0.001129148, B = 0.000234125 and C = 8.76741E-08<br>
+&nbsp;*<br>
+&nbsp;* These coefficients seem to work fairly universally, which is a bit of a <br>
+&nbsp;* surprise. <br>
+&nbsp;*<br>
+&nbsp;* Schematic:<br>
+&nbsp;* &nbsp; [Ground] -- [10k-pad-resistor] -- | -- [thermistor] --[Vcc (5 or 3.3v)]<br>
+&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |<br>
+&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Analog Pin 0<br>
+&nbsp;*<br>
+&nbsp;* In case it isn't obvious (as it wasn't to me until I thought about it), the analog ports<br>
+&nbsp;* measure the voltage between 0v -&gt; Vcc which for an Arduino is a nominal 5v, but for (say) <br>
+&nbsp;* a JeeNode, is a nominal 3.3v.<br>
+&nbsp;*<br>
+&nbsp;* The resistance calculation uses the ratio of the two resistors, so the voltage<br>
+&nbsp;* specified above is really only required for the debugging that is commented out below<br>
+&nbsp;*<br>
+&nbsp;* Resistance = (1024 * PadResistance/ADC) - PadResistor <br>
+&nbsp;*<br>
+&nbsp;* I have used this successfully with some CH Pipe Sensors (http://www.atcsemitec.co.uk/pdfdocs/ch.pdf)<br>
+&nbsp;* which be obtained from http://www.rapidonline.co.uk.<br>
+&nbsp;*<br>
+&nbsp;*/</span><br>
+<br>
+<span class="co2">#include &lt;math.h&gt;</span><br>
+<br>
+<span class="co2">#define ThermistorPIN 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Analog Pin 0</span><br>
+<br>
+<span class="kw4">float</span> vcc <span class="sy0">=</span> <span class="nu16">4.91</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// only used for display purposes, if used</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// set to the measured Vcc.</span><br>
+<span class="kw4">float</span> pad <span class="sy0">=</span> <span class="nu0">9850</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// balance/pad resistor value, set this to</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// the measured resistance of your pad resistor</span><br>
+<span class="kw4">float</span> thermr <span class="sy0">=</span> <span class="nu0">10000</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// thermistor nominal resistance</span><br>
+<br>
+<span class="kw4">float</span> Thermistor<span class="br0">(</span><span class="kw4">int</span> RawADC<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; <span class="kw4">long</span> Resistance<span class="sy0">;</span> &nbsp;<br>
+&nbsp; <span class="kw4">float</span> Temp<span class="sy0">;</span> &nbsp;<span class="co1">// Dual-Purpose variable to save space.</span><br>
+<br>
+&nbsp; Resistance<span class="sy0">=</span><span class="br0">(</span><span class="br0">(</span><span class="nu0">1024</span> <span class="sy0">*</span> pad <span class="sy0">/</span> RawADC<span class="br0">)</span> <span class="sy0">-</span> pad<span class="br0">)</span><span class="sy0">;</span> <br>
+&nbsp; Temp <span class="sy0">=</span> log<span class="br0">(</span>Resistance<span class="br0">)</span><span class="sy0">;</span> <span class="co1">// Saving the Log(resistance) so not to calculate &nbsp;it 4 times later</span><br>
+&nbsp; Temp <span class="sy0">=</span> <span class="nu0">1</span> <span class="sy0">/</span> <span class="br0">(</span><span class="nu16">0.001129148</span> <span class="sy0">+</span> <span class="br0">(</span><span class="nu16">0.000234125</span> <span class="sy0">*</span> Temp<span class="br0">)</span> <span class="sy0">+</span> <span class="br0">(</span><span class="nu16">0.0000000876741</span> <span class="sy0">*</span> Temp <span class="sy0">*</span> Temp <span class="sy0">*</span> Temp<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; Temp <span class="sy0">=</span> Temp <span class="sy0">-</span> <span class="nu16">273.15</span><span class="sy0">;</span> &nbsp;<span class="co1">// Convert Kelvin to Celsius &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<br>
+&nbsp; <span class="co1">// BEGIN- Remove these lines for the function not to display anything</span><br>
+&nbsp; <span class="co1">//Serial.print("ADC: "); </span><br>
+&nbsp; <span class="co1">//Serial.print(RawADC); </span><br>
+&nbsp; <span class="co1">//Serial.print("/1024"); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Print out RAW ADC Number</span><br>
+&nbsp; <span class="co1">//Serial.print(", vcc: ");</span><br>
+&nbsp; <span class="co1">//Serial.print(vcc,2);</span><br>
+&nbsp; <span class="co1">//Serial.print(", pad: ");</span><br>
+&nbsp; <span class="co1">//Serial.print(pad/1000,3);</span><br>
+&nbsp; <span class="co1">//Serial.print(" Kohms, Volts: "); </span><br>
+&nbsp; <span class="co1">//Serial.print(((RawADC*vcc)/1024.0),3); &nbsp; </span><br>
+&nbsp; <span class="co1">//Serial.print(", Resistance: "); </span><br>
+&nbsp; <span class="co1">//Serial.print(Resistance);</span><br>
+&nbsp; <span class="co1">//Serial.print(" ohms, ");</span><br>
+&nbsp; <span class="co1">// END- Remove these lines for the function not to display anything</span><br>
+<br>
+&nbsp; <span class="co1">// Uncomment this line for the function to return Fahrenheit instead.</span><br>
+&nbsp; <span class="co1">//temp = (Temp * 9.0)/ 5.0 + 32.0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Convert to Fahrenheit</span><br>
+&nbsp; <span class="kw1">return</span> Temp<span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// Return the Temperature</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; <span class="kw4">float</span> temp<span class="sy0">;</span><br>
+&nbsp; temp<span class="sy0">=</span>Thermistor<span class="br0">(</span>analogRead<span class="br0">(</span>ThermistorPIN<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; <span class="co1">// read ADC and &nbsp;convert it to Celsius</span><br>
+&nbsp; Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"Celsius: "</span><span class="br0">)</span><span class="sy0">;</span> <br>
+&nbsp; Serial.<span class="me1">print</span><span class="br0">(</span>temp<span class="sy0">,</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// display Celsius</span><br>
+&nbsp; <span class="co1">//temp = (temp * 9.0)/ 5.0 + 32.0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// converts to &nbsp;Fahrenheit</span><br>
+&nbsp; <span class="co1">//Serial.print(", Fahrenheit: "); </span><br>
+&nbsp; <span class="co1">//Serial.print(temp,1); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // display &nbsp;Fahrenheit</span><br>
+&nbsp; Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">""</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; delay<span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// Delay a bit... </span><br>
+<span class="br0">}</span><br>
+<br>
+@<span class="br0">]</span><br>
+<br>
+&nbsp;</div></div>
+  <div class="sourceblocklink"><a href="http://playground.arduino.cc//ComponentLib/Thermistor2?action=sourceblock&num=3" type="text/plain">[Get Code]</a></div>
+</div>
+
+<p></p>
+<p class="vspace"></p><h1>Another way to get temperature, based on the idea/code above.</h1>
+<p>We have found 10k thermistor and wired it with 10k balance resistor as mentioned above.Our thermistor is episco k164. We have wrote function for temperature reading which covers 3 major temperature scales.
+</p>
+<p class="vspace"></p><p>
+</p><div class="sourceblock " id="sourceblock4">
+  <div class="sourceblocktext"><div class="c"><span class="co2">#include &lt;math.h&gt;</span><br>
+<span class="co1">// enumarating 3 major temperature scales</span><br>
+<span class="kw2">enum</span> <span class="br0">{</span><br>
+&nbsp; T_KELVIN<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">,</span><br>
+&nbsp; T_CELSIUS<span class="sy0">,</span><br>
+&nbsp; T_FAHRENHEIT<br>
+<span class="br0">}</span><span class="sy0">;</span><br>
+<br>
+<span class="co1">// manufacturer data for episco k164 10k thermistor</span><br>
+<span class="co1">// simply delete this if you don't need it</span><br>
+<span class="co1">// or use this idea to define your own thermistors</span><br>
+<span class="co2">#define EPISCO_K164_10k 4300.0f,298.15f,10000.0f &nbsp;// B,T0,R0</span><br>
+<br>
+<span class="co1">// Temperature function outputs float , the actual </span><br>
+<span class="co1">// temperature</span><br>
+<span class="co1">// Temperature function inputs</span><br>
+<span class="co1">// 1.AnalogInputNumber - analog input to read from </span><br>
+<span class="co1">// 2.OuputUnit - output in celsius, kelvin or fahrenheit</span><br>
+<span class="co1">// 3.Thermistor B parameter - found in datasheet </span><br>
+<span class="co1">// 4.Manufacturer T0 parameter - found in datasheet (kelvin)</span><br>
+<span class="co1">// 5. Manufacturer R0 parameter - found in datasheet (ohms)</span><br>
+<span class="co1">// 6. Your balance resistor resistance in ohms &nbsp;</span><br>
+<br>
+<span class="kw4">float</span> Temperature<span class="br0">(</span><span class="kw4">int</span> AnalogInputNumber<span class="sy0">,</span><span class="kw4">int</span> OutputUnit<span class="sy0">,</span><span class="kw4">float</span> B<span class="sy0">,</span><span class="kw4">float</span> T0<span class="sy0">,</span><span class="kw4">float</span> R0<span class="sy0">,</span><span class="kw4">float</span> R_Balance<span class="br0">)</span><br>
+<span class="br0">{</span><br>
+&nbsp; <span class="kw4">float</span> R<span class="sy0">,</span>T<span class="sy0">;</span><br>
+<br>
+&nbsp; R<span class="sy0">=</span><span class="nu17">1024.0f</span><span class="sy0">*</span>R_Balance<span class="sy0">/</span><span class="kw4">float</span><span class="br0">(</span>analogRead<span class="br0">(</span>AnalogInputNumber<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">-</span>R_Balance<span class="sy0">;</span><br>
+&nbsp; T<span class="sy0">=</span><span class="nu17">1.0f</span><span class="sy0">/</span><span class="br0">(</span><span class="nu17">1.0f</span><span class="sy0">/</span>T0<span class="sy0">+</span><span class="br0">(</span><span class="nu17">1.0f</span><span class="sy0">/</span>B<span class="br0">)</span><span class="sy0">*</span>log<span class="br0">(</span>R<span class="sy0">/</span>R0<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span><br>
+<br>
+&nbsp; <span class="kw1">switch</span><span class="br0">(</span>OutputUnit<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">case</span> T_CELSIUS <span class="sy0">:</span><br>
+&nbsp; &nbsp; &nbsp; T<span class="sy0">-=</span><span class="nu17">273.15f</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw2">break</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw1">case</span> T_FAHRENHEIT <span class="sy0">:</span><br>
+&nbsp; &nbsp; &nbsp; T<span class="sy0">=</span><span class="nu17">9.0f</span><span class="sy0">*</span><span class="br0">(</span>T<span class="sy0">-</span><span class="nu17">273.15f</span><span class="br0">)</span><span class="sy0">/</span><span class="nu17">5.0f</span><span class="sy0">+</span><span class="nu17">32.0f</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw2">break</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="kw1">default</span><span class="sy0">:</span><br>
+&nbsp; &nbsp; <span class="kw2">break</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><span class="sy0">;</span><br>
+<br>
+&nbsp; <span class="kw1">return</span> T<span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<span class="co1">// example of use #1</span><br>
+<span class="co1">// reading from analog input 1, using episco k164 definition</span><br>
+<span class="co1">// and 10k balance, getting result in celsius</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+<br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"*************************"</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"10k Balance"</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span>Temperature<span class="br0">(</span><span class="nu0">1</span><span class="sy0">,</span>T_CELSIUS<span class="sy0">,</span>EPISCO_K164_10k<span class="sy0">,</span><span class="nu17">10000.0f</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"*************************"</span><span class="br0">)</span><span class="sy0">;</span><br>
+<br>
+&nbsp;delay<span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="co1">//example of use #2</span><br>
+<span class="co1">// using numbers instead of episco k164 definition</span><br>
+<span class="co1">// this time reading from analog input 2</span><br>
+<span class="co1">// getting result in fahrenheit</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp;Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+<br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"*************************"</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"10k Balance"</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span>Temperature<span class="br0">(</span><span class="nu0">2</span><span class="sy0">,</span>T_FAHRENHEIT<span class="sy0">,</span><span class="nu17">4300.0f</span><span class="sy0">,</span><span class="nu17">298.15f</span><span class="sy0">,</span><span class="nu17">10000.0f</span><span class="sy0">,</span><span class="nu17">10000.0f</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp;Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"*************************"</span><span class="br0">)</span><span class="sy0">;</span><br>
+<br>
+&nbsp;delay<span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+&nbsp;</div></div>
+  <div class="sourceblocklink"><a href="http://playground.arduino.cc//ComponentLib/Thermistor2?action=sourceblock&num=4" type="text/plain">[Get Code]</a></div>
+</div>
+
+<p></p>
+<p class="vspace"></p><p>That's it, Milan Malesevic and Zoran Stupic 2011.
+</p>
+</div>
+
+
+<!-- AddThis Button BEGIN -->       
+<script type="text/javascript">var addthis_language = "en";      
+</script>       
+<div class="addthis_container addthis_toolbox addthis_default_style" addthis:url="http://playground.arduino.cc//ComponentLib/Thermistor2" addthis:title="Arduino Playground">
+<a href="http://www.addthis.com/bookmark.php?v=250&username=arduinoteam" class="addthis_button_compact at300m"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span>Share</a><span class="addthis_separator">|</span><a class="addthis_button_email at300b" target="_blank" title="Email" href="http://playground.arduino.cc/ComponentLib/Thermistor2#"><span class="at16nc at300bs at15nc at15t_email at16t_email"><span class="at_a11y">Share on email</span></span></a><a class="addthis_button_favorites at300b" title="Favorites" href="http://playground.arduino.cc/ComponentLib/Thermistor2#"><span class="at16nc at300bs at15nc at15t_favorites at16t_favorites"><span class="at_a11y">Share on favorites</span></span></a><a class="addthis_button_print at300b" title="Print" href="http://playground.arduino.cc/ComponentLib/Thermistor2#"><span class="at16nc at300bs at15nc at15t_print at16t_print"><span class="at_a11y">Share on print</span></span></a><a class="addthis_button_facebook at300b" title="Facebook" href="http://playground.arduino.cc/ComponentLib/Thermistor2#"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a><a class="addthis_button_twitter at300b" title="Tweet" href="http://playground.arduino.cc/ComponentLib/Thermistor2#"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a><script type="text/javascript" src="./Arduino Playground - Thermistor2_files/addthis_widget.js"></script><div class="atclear"></div></div>       
+<!-- AddThis Button END -->       
+
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+</div>
+<!--/PageFooterFmt-->
+</div>
+
+
+
+<div style="display:none" id="addthis-extension-script">arduinoteam</div></body></html>

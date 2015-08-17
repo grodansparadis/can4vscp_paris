@@ -1,20 +1,14 @@
-Readme file for the Kelvin SHT11 project. This project is also the base for a VSCP implemention
+<h1>Kelvin NTC</h1>
+
+<img src="http://www.frogshop.se/image/cache/data/grodan/kelvinntc10k/kelvin12-500x500.png" />
+
+Readme file for the Kelvin NTC project. This project is also the base for a VSCP implemention
 on a Microchip 18F PIC device.
 
-Version 0.03 2004-12-24
+Version 0.04 2015-08-16
 
-This project ia available in two versions for each processor. One have an "i" at the end meaning that it 
-is for the ICD2 debugger.
-
-Non ICD2 projects are built for use with the bootloader. The bootloader occupies space between 0x000 and 0x1ff. 
-Vectors are relocated to 0x200. This is managed in the linker scripts. Also the C initialization code has 
-been changed to start code at the relocated vector. This also means that the bootloader has to be programmed
-into the chip before the working with the project. It also means that the environment must be configured 
-*not* to erase the chip before programming it.
-
-If no bootloader is required it is OK to use the standard C startup code, a standard linker description. In this 
-case the absolute vector address for the low priority interrup in main.c  must be changed back froo 0x218 to 0x18.
-
+Kelvin NTC is describe <a href="http://www.grodansparadis.com/paris/paris.html">here</a> and can be 
+bought <a href="http://www.frogshop.se/index.php?route=product/product&path=59&product_id=105">here</a>
 
 
 Steps you should go through to adopt this file for your own VSCP project.
