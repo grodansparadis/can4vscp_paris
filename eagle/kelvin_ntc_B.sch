@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -18401,7 +18401,7 @@ Digikey ED2737ND</description>
 <pinref part="IC1" gate="G$1" pin="RA4/T0CKIN"/>
 </segment>
 </net>
-<net name="N$22" class="0">
+<net name="CANH" class="0">
 <segment>
 <wire x1="269.24" y1="243.84" x2="269.24" y2="238.76" width="0.1524" layer="91"/>
 <wire x1="269.24" y1="238.76" x2="261.62" y2="238.76" width="0.1524" layer="91"/>
