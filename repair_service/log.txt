@@ -1,0 +1,8 @@
+
+
+2015-08-20 AKHE
+Card does not send CAN messages. 
+Change tranceiver. Twice.
+Look for solder bridges. None deteted.
+Remove termination resistor. 
+Solution: Pin 8 of MCP2551 is not connected to ground. Grounding it fix it. Possible PCB problem.
