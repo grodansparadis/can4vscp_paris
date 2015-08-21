@@ -1720,7 +1720,7 @@ design rules under a new name.</description>
 <via x="53.18" y="30.54" extent="1-16" drill="0.6" shape="square"/>
 <via x="43.47" y="29.68" extent="1-16" drill="0.6" shape="square"/>
 </signal>
-<signal name="N$22">
+<signal name="CANH">
 <contactref element="R17" pad="1"/>
 <contactref element="J4" pad="2"/>
 <contactref element="IC3" pad="7"/>
@@ -1741,8 +1741,8 @@ design rules under a new name.</description>
 <wire x1="59.53" y1="15.72" x2="59.53" y2="19.66" width="0.254" layer="1"/>
 <wire x1="60.12" y1="15.13" x2="59.53" y2="15.72" width="0.254" layer="1"/>
 <wire x1="41.71" y1="11.19" x2="43.34" y2="11.2" width="0.254" layer="1"/>
-<wire x1="43.34" y1="11.2" x2="45.93" y2="11.23" width="0.254" layer="1"/>
-<wire x1="45.93" y1="11.23" x2="45.93" y2="12.93" width="0.254" layer="1"/>
+<wire x1="43.34" y1="11.2" x2="45.13" y2="11.23" width="0.254" layer="1"/>
+<wire x1="45.13" y1="11.23" x2="45.93" y2="12.93" width="0.254" layer="1"/>
 <wire x1="45.93" y1="12.93" x2="45.945" y2="12.945" width="0.254" layer="1"/>
 <wire x1="41.71" y1="8.95" x2="41.71" y2="11.19" width="0.254" layer="1"/>
 <wire x1="41.62" y1="8.86" x2="41.71" y2="8.95" width="0.254" layer="1"/>
@@ -1755,8 +1755,8 @@ design rules under a new name.</description>
 <contactref element="R17" pad="2"/>
 <contactref element="PAD1" pad="1"/>
 <wire x1="39.37" y1="8.89" x2="40.64" y2="10.16" width="0.1778" layer="1"/>
-<wire x1="40.64" y1="10.16" x2="43.18" y2="12.7" width="0.1778" layer="16"/>
-<wire x1="43.18" y1="12.7" x2="48.26" y2="12.7" width="0.1778" layer="16"/>
+<wire x1="40.64" y1="10.16" x2="42.98" y2="12.6" width="0.1778" layer="16"/>
+<wire x1="42.98" y1="12.6" x2="48.26" y2="12.7" width="0.1778" layer="16"/>
 <wire x1="48.26" y1="12.7" x2="49.53" y2="13.97" width="0.1778" layer="16"/>
 <wire x1="39.72" y1="8.86" x2="39.37" y2="8.89" width="0.1778" layer="1"/>
 <wire x1="49.53" y1="13.97" x2="49.76" y2="14.09" width="0.1778" layer="16"/>

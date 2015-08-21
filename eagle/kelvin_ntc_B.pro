@@ -1,9 +1,9 @@
 EAGLE AutoRouter Statistics:
 
-Job           : C:/Users/akhe/development/vscp_hardware/can4vscp/can4vscp_kelvin/Kelvin_NTC/eagle/kelvin_ntc_B.brd
+Job           : C:/Users/grodansparadis/development/can4vscp_paris/eagle/kelvin_ntc_B.brd
 
-Start at      : 22:14:34 (2014-04-13)
-End at        : 22:14:34 (2014-04-13)
+Start at      : 12:24:58 (2015-08-21)
+End at        : 12:24:59 (2015-08-21)
 Elapsed time  : 00:00:00
 
 Signals       :    36   RoutingGrid: 50 mil  Layers: 2
