@@ -1,0 +1,16 @@
+EAGLE Version 4.13 Copyright (c) 1988-2004 CadSoft
+
+Electrical Rule Check for D:/dev/firmware/pic/relay/eagle/relay_pa2.sch at 2004-12-30 11:39:19 
+
+WARNING: Sheet 1/1: SUPPLY Pin +24V overwritten with +12V
+WARNING: Sheet 1/1: SUPPLY Pin VDD overwritten with +5V
+WARNING: Sheet 1/1: SUPPLY Pin VSS overwritten with GND
+ERROR: Sheet 1/1: no SUPPLY for POWER Pin IC3 VREF
+WARNING: Sheet 1/1: POWER Pin IC1 VSS1 connected to GND
+WARNING: Sheet 1/1: POWER Pin IC1 VSS2 connected to GND
+WARNING: Sheet 1/1: POWER Pin IC1 VDD connected to +5V
+
+Board and schematic are consistent
+
+    1 errors
+    6 warnings
