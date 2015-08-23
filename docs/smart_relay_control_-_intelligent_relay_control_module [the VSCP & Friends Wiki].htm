@@ -1,0 +1,987 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    smart_relay_control_-_intelligent_relay_control_module    [the VSCP &amp; Friends Wiki]
+  </title>
+
+  <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="smart relay control - intelligent relay control module">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.vscp.org/wiki/lib/exe/opensearch.php" title="the VSCP &amp; Friends Wiki">
+<link rel="start" href="http://www.vscp.org/wiki/">
+<link rel="contents" href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module?do=index" title="Sitemap">
+<link rel="alternate" type="application/rss+xml" title="Recent changes" href="http://www.vscp.org/wiki/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="http://www.vscp.org/wiki/feed.php?mode=list&amp;ns=">
+<link rel="edit" title="Edit this page" href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module?do=edit">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module?do=export_xhtml">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module?do=export_raw">
+<link rel="canonical" href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module">
+<link rel="stylesheet" type="text/css" href="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/css.css">
+<script type="text/javascript">/*<![CDATA[*/var NS='';var SIG=' --- //[[akhe@grodansparadis.com|Ake Hedman]] 2015/05/06 13:18//';var JSINFO = {"id":"smart_relay_control_-_intelligent_relay_control_module","namespace":"","plugin_folded":{"hide":"hide","reveal":"reveal"}};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/js.php"></script><style type="text/css" media="screen"><!--/*--><![CDATA[/*><!--*/ .folded.hidden { display: none; } .folder .indicator { visibility: visible; } /*]]>*/--></style>
+
+  <link rel="shortcut icon" href="http://www.vscp.org/wiki/lib/tpl/sidebar/images/favicon.ico">
+
+  </head>
+
+<body class="sidebar sidebar_inside_left">
+<div class="dokuwiki">
+  <div class="notify">Hotfix release available: 2014-09-29d "Hrun".
+          <a href="http://download.dokuwiki.org/">upgrade now!</a> [46.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div>
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="pagename">
+        [[<a href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module?do=backlink" title="Backlinks">smart_relay_control_-_intelligent_relay_control_module</a>]]
+      </div>
+      <div class="logo">
+        <a href="http://www.vscp.org/wiki/doku.php/start" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">the VSCP &amp; Friends Wiki</a>      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+    
+    <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="0" type="hidden"><input value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="recent" type="hidden"><input value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" type="submit"></div></form>        <form action="/wiki/doku.php/start" accept-charset="utf-8" class="search" id="dw__search" method="get" role="search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" type="text"><input value="Search" class="button" title="Search" type="submit"><div style="display: none;" id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/sandbox_central" class="breadcrumbs" title="sandbox_central">sandbox_central</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/sd_secure_memory" class="breadcrumbs" title="sd_secure_memory">sd_secure_memory</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/sensor_sht-11_-_a_simple_pcb_module_for_the_sht-11_temperature_humidity_sensor" class="breadcrumbs" title="sensor_sht-11_-_a_simple_pcb_module_for_the_sht-11_temperature_humidity_sensor">sensor_sht-11_-_a_simple_pcb_module_for_the_sht-11_temperature_humidity_sensor</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/sensor_smt-160_a_simple_pcb_module_for_the_smt-160_temperature_sensor" class="breadcrumbs" title="sensor_smt-160_a_simple_pcb_module_for_the_smt-160_temperature_sensor">sensor_smt-160_a_simple_pcb_module_for_the_smt-160_temperature_sensor</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/serial_bootloader_for_pic18_devices" class="breadcrumbs" title="serial_bootloader_for_pic18_devices">serial_bootloader_for_pic18_devices</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/setting_up_the_linux_vscp_daemon" class="breadcrumbs" title="setting_up_the_linux_vscp_daemon">setting_up_the_linux_vscp_daemon</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/singapore" class="breadcrumbs" title="singapore">singapore</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/setting_up_the_win32_vscp_daemon" class="breadcrumbs" title="setting_up_the_win32_vscp_daemon">setting_up_the_win32_vscp_daemon</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://www.vscp.org/wiki/doku.php/smart_ethernet_i_o_module" class="breadcrumbs" title="smart_ethernet_i_o_module">smart_ethernet_i_o_module</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="http://www.vscp.org/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module" class="breadcrumbs" title="smart_relay_control_-_intelligent_relay_control_module">smart_relay_control_-_intelligent_relay_control_module</a></bdi></span>          </div>
+    
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div id="dw__toc">
+<h3 style="cursor: pointer;" class="toggle open"><strong><span>−</span></strong>Table of Contents</h3>
+<div style="">
+
+<ul style="" aria-expanded="true" class="toc">
+<li class="level1"><div class="li"><a href="#paris_-_smart_relay_control">Paris - Smart Relay Control</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#project_status">Project Status</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#download">Download</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#firmware">Firmware</a></div></li>
+<li class="level2"><div class="li"><a href="#mdf">MDF</a></div></li>
+<li class="level2"><div class="li"><a href="#schematics">Schematics</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#about">About</a></div></li>
+<li class="level1"><div class="li"><a href="#documentation_data">Documentation &amp; Data</a></div></li>
+<li class="level1"><div class="li"><a href="#installing">Installing</a></div></li>
+<li class="level1"><div class="li"><a href="#starting_it_up">Starting it up</a></div></li>
+<li class="level1"><div class="li"><a href="#registers">Registers</a></div></li>
+<li class="level1"><div class="li"><a href="#decision_matrix">Decision Matrix</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#alarm_register">Alarm register</a></div></li>
+<li class="level2"><div class="li"><a href="#events">Events</a></div></li>
+<li class="level2"><div class="li"><a href="#vscp_smart_relay_-_simple_test_program">VSCP Smart Relay - Simple Test program</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#contact_information">Contact Information</a></div></li>
+<li class="level1"><div class="li"><a href="#discussion__section">Discussion</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="paris_-_smart_relay_control">Paris - Smart Relay Control</h1>
+<div class="level1">
+
+<p>
+<a href="http://www.vscp.org/wiki/lib/exe/detail.php/vscp_logo.jpg?id=smart_relay_control_-_intelligent_relay_control_module" class="media" title="vscp_logo.jpg"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/vscp_logo.jpg" class="medialeft" title="vscp_logo.jpg" alt="vscp_logo.jpg" width="150"></a><a href="http://www.vscp.org/wiki/lib/exe/detail.php/camden.jpg?id=smart_relay_control_-_intelligent_relay_control_module" class="media" title="camden.jpg"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/camden.jpg" class="mediaright" title="camden.jpg" alt="camden.jpg" width="121"></a>
+</p>
+
+<p>
+<a href="http://www.vscp.org/wiki/doku.php/vscp_modules" class="wikilink1" title="vscp_modules"> Back to VSCP Modules </a>
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_1"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Paris - Smart Relay Control] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="1-130" type="hidden"><input value="Edit" class="button" title="Paris - Smart Relay Control" type="submit"></div></form></div>
+<h2 class="sectionedit2" id="project_status">Project Status</h2>
+<div class="level2">
+<pre class="code">Current hardware version, through hole: 0.0.5
+Current hardware version, SMD: 0.0.2
+Current firmware version: 0.0.1</pre>
+
+</div>
+<div class="secedit editbutton_section editbutton_2"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Project Status] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="131-282" type="hidden"><input value="Edit" class="button" title="Project Status" type="submit"></div></form></div>
+<h1 class="sectionedit3" id="download">Download</h1>
+<div class="level1">
+
+<p>
+Everything for the project can be downloaded at the following link <br>
+<a href="http://www.dosilos.se/download/hardware/beijing" class="urlextern" title="http://www.dosilos.se/download/hardware/beijing" rel="nofollow">http://www.dosilos.se/download/hardware/beijing</a>
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_3"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Download] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="283-430" type="hidden"><input value="Edit" class="button" title="Download" type="submit"></div></form></div>
+<h2 class="sectionedit4" id="firmware">Firmware</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Version 0.0.1: <a href="http://www.dosilos.se/download/firmware/paris/paris_firmware001.zip" class="urlextern" title="http://www.dosilos.se/download/firmware/paris/paris_firmware001.zip" rel="nofollow">http://www.dosilos.se/download/firmware/paris/paris_firmware001.zip</a></div>
+</li>
+</ul>
+
+</div>
+<div class="secedit editbutton_section editbutton_4"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Firmware] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="431-544" type="hidden"><input value="Edit" class="button" title="Firmware" type="submit"></div></form></div>
+<h2 class="sectionedit5" id="mdf">MDF</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Version 0.0.1: <a href="http://www.eurosource.se/paris_001.xml" class="urlextern" title="http://www.eurosource.se/paris_001.xml" rel="nofollow"> http://www.eurosource.se/paris_001.xml</a></div>
+</li>
+</ul>
+
+</div>
+<div class="secedit editbutton_section editbutton_5"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[MDF] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="545-665" type="hidden"><input value="Edit" class="button" title="MDF" type="submit"></div></form></div>
+<h2 class="sectionedit6" id="schematics">Schematics</h2>
+<div class="level2">
+
+<p>
+Old files are available here <a href="http://www.dosilos.se/download/hardware/paris" class="urlextern" title="http://www.dosilos.se/download/hardware/paris" rel="nofollow">http://www.dosilos.se/download/hardware/paris</a>
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_6"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Schematics] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="666-770" type="hidden"><input value="Edit" class="button" title="Schematics" type="submit"></div></form></div>
+<h3 class="sectionedit7" id="through_hole_version">Through hole version</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> JPEG for schema: <a href="http://www.dosilos.se/download/hardware/paris/paris_sch005.jpg" class="urlextern" title="http://www.dosilos.se/download/hardware/paris/paris_sch005.jpg" rel="nofollow">http://www.dosilos.se/download/hardware/paris/paris_sch005.jpg</a></div>
+</li>
+<li class="level1"><div class="li"> JPEG for Board: <a href="http://www.dosilos.se/download/hardware/paris/paris_brd005.jpg" class="urlextern" title="http://www.dosilos.se/download/hardware/paris/paris_brd005.jpg" rel="nofollow">http://www.dosilos.se/download/hardware/paris/paris_brd005.jpg</a> </div>
+</li>
+</ul>
+
+</div>
+<div class="secedit editbutton_section editbutton_7"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Through hole version] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="771-979" type="hidden"><input value="Edit" class="button" title="Through hole version" type="submit"></div></form></div>
+<h3 class="sectionedit8" id="smd_version">SMD version</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> JPEG for schema: <a href="http://www.dosilos.se/download/hardware/paris/paris_smd_sch002.jpg" class="urlextern" title="http://www.dosilos.se/download/hardware/paris/paris_smd_sch002.jpg" rel="nofollow">http://www.dosilos.se/download/hardware/paris/paris_smd_sch002.jpg</a></div>
+</li>
+<li class="level1"><div class="li"> JPEG for Board: <a href="http://www.dosilos.se/download/hardware/paris/paris_smd_brd002.jpg" class="urlextern" title="http://www.dosilos.se/download/hardware/paris/paris_smd_brd002.jpg" rel="nofollow">http://www.dosilos.se/download/hardware/paris/paris_smd_brd002.jpg</a> </div>
+</li>
+</ul>
+
+</div>
+<div class="secedit editbutton_section editbutton_8"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[SMD version] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="980-1186" type="hidden"><input value="Edit" class="button" title="SMD version" type="submit"></div></form></div>
+<h1 class="sectionedit9" id="about">About</h1>
+<div class="level1">
+
+<p>
+<a href="http://www.vscp.org/wiki/lib/exe/detail.php/paris_small.jpg?id=smart_relay_control_-_intelligent_relay_control_module" class="media" title="paris_small.jpg"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/paris_small.jpg" class="media" alt=""></a>
+</p>
+
+<p>
+The Smart Relay Control  module is an open hardware and software 
+intelligent relay control  module (1-7 relays) for the VSCP (Very Simple
+ Control Protocol) for use over CAN (Controller Area Network). The 
+module is mounted in a DIN norm box with standard one unit width 
+(17.5/32/52.5 mm ).
+</p>
+
+<p>
+The module is built around a Microchip PIC 18F2580 and the code is written in C using the Microchip MCC-18 compiler.
+</p>
+
+<p>
+The Smart Relay Control can be powered with 9-16V DC and draws about 0.15W.
+</p>
+
+<p>
+Smart Relay Control is also available in the form of a bare PCB. 
+Firmware, electronic drawings and PCB layout are freely available and 
+can be freely used in both commercial and non commercial projects.
+</p>
+
+<p>
+The module, the PCB and components for it can be bought at <a href="http://www.eurosource.se/" class="urlextern" title="http://www.eurosource.se" rel="nofollow">http://www.eurosource.se</a>
+</p>
+
+<p>
+Other modules at <a href="http://www.vscp.org/vscp/modules/index.html" class="urlextern" title="http://www.vscp.org/vscp/modules/index.html" rel="nofollow">http://www.vscp.org/vscp/modules/index.html</a>
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_9"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[About] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="1187-2074" type="hidden"><input value="Edit" class="button" title="About" type="submit"></div></form></div>
+<h1 class="sectionedit10" id="documentation_data">Documentation &amp; Data</h1>
+<div class="level1">
+
+</div>
+<div class="secedit editbutton_section editbutton_10"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Documentation &amp; Data] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2075-2112" type="hidden"><input value="Edit" class="button" title="Documentation &amp; Data" type="submit"></div></form></div>
+<h3 class="sectionedit11" id="power">Power</h3>
+<div class="level3">
+
+<p>
+The Smart Relay Control can be powered with 9-16V DC and draws about 0.15W.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_11"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Power] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2113-2205" type="hidden"><input value="Edit" class="button" title="Power" type="submit"></div></form></div>
+<h3 class="sectionedit12" id="enclosure">Enclosure</h3>
+<div class="level3">
+
+<p>
+Material for the box: Polycarbonate (UL 94-V1)
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_12"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Enclosure] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2206-2273" type="hidden"><input value="Edit" class="button" title="Enclosure" type="submit"></div></form></div>
+<h3 class="sectionedit13" id="colour">Colour</h3>
+<div class="level3">
+
+<p>
+Grey
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_13"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Colour] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2274-2296" type="hidden"><input value="Edit" class="button" title="Colour" type="submit"></div></form></div>
+<h3 class="sectionedit14" id="enclosure_class">Enclosure class</h3>
+<div class="level3">
+
+<p>
+IP20
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_14"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Enclosure class] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2297-2328" type="hidden"><input value="Edit" class="button" title="Enclosure class" type="submit"></div></form></div>
+<h3 class="sectionedit15" id="dimensions_for_module">Dimensions for module</h3>
+<div class="level3">
+
+<p>
+B17,7×H89×D59 mm
+</p>
+
+<p>
+Smart Relay Control is also available in the form of a bare PCB for home builders.
+</p>
+
+<p>
+The module, the PCB and components for it can be bought at <a href="http://%20www.dofscandinavia.com" class="urlextern" title="http:// www.dofscandinavia.com" rel="nofollow">http:// www.dofscandinavia.com</a>
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_15"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Dimensions for module] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2329-2559" type="hidden"><input value="Edit" class="button" title="Dimensions for module" type="submit"></div></form></div>
+<h1 class="sectionedit16" id="installing">Installing</h1>
+<div class="level1">
+
+<p>
+The module have screw connections on two sides. One side is for CAN and 
+power (marked “CAN + Power” ) and the other side is for the sensor 
+(marked “sensor”).
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_16"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Installing] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2560-2753" type="hidden"><input value="Edit" class="button" title="Installing" type="submit"></div></form></div>
+<h3 class="sectionedit17" id="connecting_the_module_to_relays">Connecting the module to relays</h3>
+<div class="level3">
+
+<p>
+The module comes in different versions with different width for control of 3 or 7 relays. 
+</p>
+
+<p>
+For a 3 relay module the outputs are arranged as
+</p>
+<div class="table sectionedit18"><table class="inline">
+	<tbody><tr class="row0">
+		<th class="col0"> Relay 1 </th><th class="col1"> Relay 2 </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0"> Common GND </th><th class="col1"> Relay 3 </th>
+	</tr>
+</tbody></table></div>
+
+<p>
+For a 7 relay module the outputs are arranged as
+</p>
+<div class="table sectionedit19"><table class="inline">
+	<tbody><tr class="row0">
+		<th class="col0">Relay 1 </th><th class="col1"> Relay 2 </th><th class="col2"> Relay 4 </th><th class="col3"> Relay 6 </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0">Common GND </th><th class="col1"> Relay 3 </th><th class="col2"> Relay 5 </th><th class="col3"> Relay 7 </th>
+	</tr>
+</tbody></table></div>
+
+<p>
+Connecting CAN and Power
+</p>
+<div class="table sectionedit20"><table class="inline">
+	<tbody><tr class="row0">
+		<th class="col0"> CANH </th><th class="col1"> CANL </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0"> 9-16V DC </th><th class="col1"> GND </th>
+	</tr>
+</tbody></table></div>
+
+<p>
+Attach CANL to the upper right position and CANH to the upper left 
+position. If this is the first or the last module in the chain set the 
+120 ohm terminator (a standard 120 ohms resistor) between CANL and CANH.
+</p>
+
+<p>
+CAT5 twisted pair cable should be used and there should be less than 500
+ meters between the first and the last node. Both ends of the bus should
+ be terminated with a 120 ohm resistor (coupled between CANL and CANH).
+</p>
+
+<p>
+Connect the ground cable from the bus to the ground position in the lower right position.
+</p>
+
+<p>
+and power…
+</p>
+
+<p>
+First you have to decide if the module should be powered from the bus or from a local power source. 
+</p>
+
+<p>
+If powered from the bus just connect the power line to the lower left screw terminal.  Connect ground to lower right position.
+</p>
+
+<p>
+If you have a local DC power source is should be between 9-16V. Connect 
+the positive side to the lower left screw terminal and ground to the 
+lower right screw terminal.
+</p>
+
+<p>
+Depending on which modules you have installed you can power about 50 modules from the bus if 16V/2A is used.
+</p>
+
+<p>
+Your module is now ready for some real work.
+</p>
+
+<p>
+For the seven relay variant power/CAN is on the leftmost screw terminals.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_17"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Connecting the module to relays] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="2754-4350" type="hidden"><input value="Edit" class="button" title="Connecting the module to relays" type="submit"></div></form></div>
+<h1 class="sectionedit21" id="starting_it_up">Starting it up</h1>
+<div class="level1">
+
+<p>
+When the module is first powered up the green lamp starts to blink to 
+indicate that the module is uninitialized. Press the initialization 
+button on the device. The address negotiation now starts. The lamp will 
+stop blinking and light steady when initialized or be turned of if an 
+error occurs
+</p>
+
+<p>
+It is important to understand that VSCP over CAN requires at least two 
+modules on the bus to be working. If you have a computer CAN interface 
+this is counted as one node. The interface should be open and the CAN 
+bitrate set to 500 kbps.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_21"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Starting it up] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="4351-4914" type="hidden"><input value="Edit" class="button" title="Starting it up" type="submit"></div></form></div>
+<h1 class="sectionedit22" id="registers">Registers</h1>
+<div class="level1">
+
+</div>
+
+<h5 id="reserved_registers">Reserved Registers</h5>
+<div class="level5">
+<pre class="code">Register 0(0x00) - Zone.
+Register 1(0x01) - SubZone.</pre>
+
+</div>
+
+<h5 id="relay_status_registers">Relay Status Registers</h5>
+<div class="level5">
+<pre class="code">Register 2(0x02) - Relay 1 Status register. Read/Write
+Register 3(0x03) - Relay 2 Status register. Read/Write
+Register 4(0x04) - Relay 3 Status register. Read/Write
+Register 5(0x05) - Relay 4 Status register. Read/Write
+Register 6(0x06) - Relay 5 Status register. Read/Write
+Register 7(0x07) - Relay 6 Status register. Read/Write
+Register 8(0x08) - Relay 7 Status register. Read/Write
+Register 9(0x09) - Relay 8 Status register. Read/Write</pre>
+
+<p>
+Writing a value to the relay control register will activate/deactivate the relay output.
+</p>
+<ul>
+<li class="level1"><div class="li"> 0 - The relay is inactivated.</div>
+</li>
+<li class="level1"><div class="li"> 1 - The relay is activated.</div>
+</li>
+<li class="level1"><div class="li"> 2 - The relay is pulse activated/deactivated (opposite form rest state). </div>
+</li>
+</ul>
+
+<p>
+Reading  a value from the relay control register is read as a one if the
+ relay is activated and a 0 if the relay is deactivated. 
+</p>
+
+<p>
+When the pulse activation/deactivating is used the actual relay state is
+ read. That is, if a 2 is written to relay 1 a one will be read while 
+the relay is activated, after which a zero will be read.
+</p>
+
+</div>
+
+<h5 id="relay_control_registers">Relay Control Registers</h5>
+<div class="level5">
+<pre class="code">Register 10(0x0A) - Relay 1 Control Register.  Read/Write
+Register 11(0x0B) - Relay 2 Control Register.  Read/Write
+Register 12(0x0C) - Relay 3 Control Register.  Read/Write
+Register 13(0x0D) - Relay 4 Control Register.  Read/Write
+Register 14(0x0E) - Relay 5 Control Register.  Read/Write
+Register 15(0x0F) - Relay 6 Control Register.  Read/Write
+Register 16(0x10) - Relay 7 Control Register.  Read/Write
+Register 17(0x11) - Relay 8 Control Register.  Read/Write</pre>
+
+<p>
+The relay control bits enable/disable intelligent relay functionality:
+</p>
+<ul>
+<li class="level1"><div class="li"> Bit 0 - Reserved</div>
+</li>
+<li class="level1"><div class="li"> Bit 1 - Alarm sent when protection timer triggers if set.</div>
+</li>
+<li class="level1"><div class="li"> Bit 2 - Protection timer enable.</div>
+</li>
+<li class="level1"><div class="li"> Bit 3 - Send On event when relay goes to active state.</div>
+</li>
+<li class="level1"><div class="li"> Bit 4 - Send Off event when relay goes to inactive state.</div>
+</li>
+<li class="level1"><div class="li"> Bit 5 - Send Started event when relay goes to active state.</div>
+</li>
+<li class="level1"><div class="li"> Bit 6 - Send Stopped event when relay goes to active state.</div>
+</li>
+<li class="level1"><div class="li"> Bit 7 - If set to one the relay is enabled. </div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="relay_pulse_time_registers">Relay Pulse time Registers</h5>
+<div class="level5">
+<pre class="code">Register 18(0x12) - On/off pulse time Relay 1 (seconds) MSB. Read/Write
+Register 19(0x13) - On/off pulse time Relay 1 (seconds) LSB. Read/Write
+Register 20(0x14) - On/off pulse time Relay 2 (seconds) MSB. Read/Write
+Register 21(0x15) - On/off pulse time Relay 2 (seconds) LSB. Read/Write
+Register 22(0x16) - On/off pulse time Relay 3 (seconds) MSB. Read/Write
+Register 23(0x17) - On/off pulse time Relay 3 (seconds) LSB. Read/Write
+Register 24(0x18) - On/off pulse time Relay 4 (seconds) MSB. Read/Write
+Register 25(x019) - On/off pulse time Relay 4 (seconds) LSB. Read/Write  
+Register 26(0x1A) - On/off pulse time Relay 5 (seconds) MSB. Read/Write
+Register 27(0x1B) - On/off pulse time Relay 5 (seconds) LSB. Read/Write
+Register 28(0x1C) - On/off pulse time Relay 6 (seconds) MSB. Read/Write
+Register 29(0x1D) - On/off pulse time Relay 6 (seconds) LSB. Read/Write
+Register 30(0x1E) - On/off pulse time Relay 7 (seconds) MSB. Read/Write
+Register 31(0x1F) - On/off pulse time Relay 7 (seconds) LSB. Read/Write
+Register 32(0x20) – On/off pulse time Relay 8 (seconds) MSB. Read/Write
+Register 33(0x21) – On/off pulse time Relay 8 (seconds) LSB. Read/Write </pre>
+
+<p>
+This is the pulse time for the each relay expressed in seconds. This can
+ be used to have a relay turn on and off with a certain preset interval.
+  The min pulse time is 1 second and the max time is 65535 seconds which
+ is about 18 hours. Set to zero (default) for no pulse time i.e. the 
+relay will be steady on/off.
+</p>
+
+<p>
+To start a pulse sequence first write the pulse time to this register 
+and then write 2 to the relay status register to start the output. The 
+pulse train is terminated by writing on or off (1 or 0) to the relay 
+status register.
+</p>
+
+</div>
+
+<h5 id="relay_protection_time_registers">Relay Protection time Registers</h5>
+<div class="level5">
+<pre class="code">Register 34(0x22) - Protection time Relay 1 (seconds) MSB. Read/Write
+Register 35(0x23) - Protection time Relay 1 (seconds) LSB. Read/Write
+Register 36(0x24) - Protection time Relay 2 (seconds) MSB. Read/Write
+Register 37(0x25) - Protection time Relay 2 (seconds) LSB. Read/Write
+Register 38(0x26) - Protection time Relay 3 (seconds) MSB. Read/Write
+Register 39(0x27) - Protection time Relay 3 (seconds) LSB. Read/Write
+Register 40(0x28) - Protection time Relay 4 (seconds) MSB. Read/Write
+Register 41(0x29) - Protection time Relay 4 (seconds) LSB. Read/Write
+Register 42(0x2A) - Protection time Relay 5 (seconds) MSB. Read/Write
+Register 43(0x2B) - Protection time Relay 5 (seconds) LSB. Read/Write
+Register 44(0x2C) - Protection time Relay 6 (seconds) MSB. Read/Write
+Register 45(0x2D) - Protection time Relay 6 (seconds) LSB. Read/Write
+Register 46(0x2E) - Protection time Relay 7 (seconds) MSB. Read/Write
+Register 47(0x2F) - Protection time Relay 7 (seconds) LSB. Read/Write
+Register 48(x030) - Protection time Relay 8 (seconds) MSB. Read/Write  
+Register 49(0x31) - Protection time Relay 8 (seconds) LSB. Read/Write</pre>
+
+<p>
+This is the relay protection time. A relay will be inactivated if not written to before this time has elapsed. <br>
+Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours.
+</p>
+
+<p>
+The registers can be as an example be used as a security feature to 
+ensure that an output is deactivated after a preset time even if the 
+controlling device failed to deactivate the relay.
+</p>
+
+</div>
+
+<h5 id="relay_zone_information">Relay Zone information</h5>
+<div class="level5">
+<pre class="code">Register 50(0x32) - Relay 1 Sub Zone
+Register 51(0x32) - Relay 2 Sub Zone
+Register 52(0x32) - Relay 3 Sub Zone
+Register 53(0x32) - Relay 4 Sub Zone
+Register 54(0x32) - Relay 5 Sub Zone
+Register 55(0x32) - Relay 6 Sub Zone
+Register 56(0x32) - Relay 7 Sub Zone
+Register 57(0x32) - Relay 8 Sub Zone</pre>
+
+<p>
+This is a subzone value related to a specific relay. If zero the the 
+module Zone/subzone will be used else the modules zone and the relays 
+sub zone will be used.
+</p>
+
+</div>
+
+<h5 id="registers_for_decision_matrix">Registers for Decision Matrix</h5>
+<div class="level5">
+<pre class="code">Register 72(0x48) - 127(0x7f) - Decision Matrix with seven rows.</pre>
+
+</div>
+<div class="secedit editbutton_section editbutton_22"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Registers] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="4915-11052" type="hidden"><input value="Edit" class="button" title="Registers" type="submit"></div></form></div>
+<h1 class="sectionedit23" id="decision_matrix">Decision Matrix</h1>
+<div class="level1">
+
+<p>
+The module has a decision matrix with seven entries.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_23"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Decision Matrix] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="11053-11139" type="hidden"><input value="Edit" class="button" title="Decision Matrix" type="submit"></div></form></div>
+<h3 class="sectionedit24" id="available_actions">Available Actions</h3>
+<div class="level3">
+<pre class="code">0(0x00) - NOOP, No action.</pre>
+<pre class="code">1(0x01) - Activate relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. 
+          Byte 1 is Zone and byte 2 is zone page and must be equal to register content to trigger action.</pre>
+<pre class="code">2(0x02) - Deactivate relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on.  
+           Byte 1 is Zone and byte 2 is zone page and must be equal to register content to trigger action.</pre>
+<pre class="code">3(0x03) - Pulse  relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. 
+          Byte 1 is Zone and byte 2 is zone page and must be equal to register content to trigger action.</pre>
+<pre class="code">4(0x04) - Reserved.</pre>
+<pre class="code">5(0x05) - Reserved.</pre>
+<pre class="code">6(0x06) - Reserved.</pre>
+<pre class="code">7(0x07) - Reserved.</pre>
+<pre class="code">8(0x08) - Reserved.</pre>
+<pre class="code">9(0x09) - Reserved.</pre>
+<pre class="code">10(0x0a) - Send relay status. The argument is a bit array where bit 0 is relay 1 and so on.</pre>
+<pre class="code">11(0x0b) - Reserved.</pre>
+<pre class="code">12(0x0c) - Reserved.</pre>
+<pre class="code">13(0x0d) - Reserved.</pre>
+<pre class="code">14(0x0e) - Reserved.</pre>
+<pre class="code">15(0x0f) - Reserved.</pre>
+<pre class="code">16(0x10) - Disable relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. 
+           Byte 1 is Zone and byte 2 is zone page and must be equal to register content to trigger action. </pre>
+
+</div>
+<div class="secedit editbutton_section editbutton_24"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Available Actions] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="11140-12441" type="hidden"><input value="Edit" class="button" title="Available Actions" type="submit"></div></form></div>
+<h2 class="sectionedit25" id="alarm_register">Alarm register</h2>
+<div class="level2">
+<div class="table sectionedit26"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Bit </th><th class="col1"> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0"> Bit 0 </td><td class="col1"> Relay 1 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Bit 1 </td><td class="col1"> Relay 2 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Bit 2 </td><td class="col1"> Relay 3 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> Bit 3 </td><td class="col1"> Relay 4 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> Bit 4 </td><td class="col1"> Relay 5 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> Bit 5 </td><td class="col1"> Relay 6 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> Bit 6 </td><td class="col1"> Relay 7 protection timer has caused a relay action. </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> Bit 7 </td><td class="col1"> Relay 8 protection timer has caused a relay action. </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+Read the register to clear alarm bits. 
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_25"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Alarm register] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="12442-13053" type="hidden"><input value="Edit" class="button" title="Alarm register" type="submit"></div></form></div>
+<h2 class="sectionedit27" id="events">Events</h2>
+<div class="level2">
+
+</div>
+<div class="secedit editbutton_section editbutton_27"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Events] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="13054-13073" type="hidden"><input value="Edit" class="button" title="Events" type="submit"></div></form></div>
+<h3 class="sectionedit28" id="on">On</h3>
+<div class="level3">
+
+<p>
+If enabled the event is sent when a relay goes to its active state.
+</p>
+<pre class="code">Class: 0x014 
+Type: 0x03</pre>
+
+<p>
+Package: 
+</p>
+<pre class="code">Byte 0: Index.
+Byte 1: Zone
+Byte 2: Subzone</pre>
+
+<p>
+Index is 0 for relay 1, 1 for relay 2 and so on. Zon and subzone set accordingly. Subzone for relay is used if it's not zero.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_28"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[On] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="13074-13377" type="hidden"><input value="Edit" class="button" title="On" type="submit"></div></form></div>
+<h3 class="sectionedit29" id="off">Off</h3>
+<div class="level3">
+
+<p>
+If enabled the event is sent when a relay goes to its inactive state.
+</p>
+<pre class="code">Class: 0x014 
+Type: 0x04</pre>
+
+<p>
+Package: 
+</p>
+<pre class="code">Byte 0: index.
+Byte 1: Zone
+Byte 2: Subzone</pre>
+
+<p>
+Index is 0 for relay 1, 1 for relay 2 and so on. Zon and subzone set accordingly. Subzone for relay is used if it's not zero. 
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_29"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Off] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="13378-13684" type="hidden"><input value="Edit" class="button" title="Off" type="submit"></div></form></div>
+<h3 class="sectionedit30" id="stopped">Stopped</h3>
+<div class="level3">
+
+<p>
+If enabled the event is sent when a relay goes to its inactive state.
+</p>
+<pre class="code">Class: 0x014 
+Type: 0x18</pre>
+
+<p>
+Package: 
+</p>
+<pre class="code">Byte 0: index.
+Byte 1: Zone
+Byte 2: Subzone</pre>
+
+<p>
+Index is 0 for relay 1, 1 for relay 2 and so on. Zon and subzone set accordingly. Subzone for relay is used if it's not zero. 
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_30"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Stopped] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="13685-13996" type="hidden"><input value="Edit" class="button" title="Stopped" type="submit"></div></form></div>
+<h3 class="sectionedit31" id="started">Started</h3>
+<div class="level3">
+
+<p>
+If enabled the event is sent when a relay goes to its active state.
+</p>
+<pre class="code">Class: 0x014 
+Type: 0x19</pre>
+
+<p>
+Package: 
+</p>
+<pre class="code">Byte 0: index.
+Byte 1: Zone
+Byte 2: Subzone</pre>
+
+<p>
+Index is 0 for relay 1, 1 for relay 2 and so on. Zon and subzone set accordingly. Subzone for relay is used if it's not zero. 
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_31"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Started] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="13997-14304" type="hidden"><input value="Edit" class="button" title="Started" type="submit"></div></form></div>
+<h3 class="sectionedit32" id="alarm">Alarm</h3>
+<div class="level3">
+
+<p>
+If enabled the event is sent when a relay goes to its inactive state after a protection timer have timed out.
+</p>
+<pre class="code">Class: 0x001 
+Type: 0x02</pre>
+
+<p>
+Package: 
+</p>
+<pre class="code">Byte 0: index.
+Byte 1: Zone
+Byte 2: Subzone</pre>
+
+<p>
+Index is 0 for relay 1, 1 for relay 2 and so on.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_32"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Alarm] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="14305-14572" type="hidden"><input value="Edit" class="button" title="Alarm" type="submit"></div></form></div>
+<h2 class="sectionedit33" id="vscp_smart_relay_-_simple_test_program">VSCP Smart Relay - Simple Test program</h2>
+<div class="level2">
+
+<p>
+<a href="http://www.vscp.org/wiki/lib/exe/detail.php/smart_relay_test3.jpg?id=smart_relay_control_-_intelligent_relay_control_module" class="media" title="smart_relay_test3.jpg"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/smart_relay_test3.jpg" class="media" title="smart_relay_test3.jpg" alt="smart_relay_test3.jpg"></a> <br>
+
+</p>
+
+<p>
+<br>
+This is a simple VB test application for the smart relay module. On this
+ screen dump two decision matrix elements has been set. One that 
+activate relay eight when an ON event is received and another that 
+deactivate the relay when an OFF event is received.  Note that Zone and 
+subzone also has to match for the ON/OFF events for this to happen.
+</p>
+
+<p>
+Note that there are some random data in the other decision matrix 
+positions but as long as the enable flag (bit 7 in flags) is not set 
+this does not matter.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_33"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[VSCP Smart Relay - Simple Test program] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="14573-15164" type="hidden"><input value="Edit" class="button" title="VSCP Smart Relay - Simple Test program" type="submit"></div></form></div>
+<h1 class="sectionedit34" id="contact_information">Contact Information</h1>
+<div class="level1">
+
+<p>
+This is open hardware / software that is made by Ake Hedman, eurosource,
+ Sweden. It is free to use for commecial or non commercial use.
+</p>
+
+<p>
+Email: <a href="mailto:vscp@eurosource.se" class="mail" title="vscp@eurosource.se">vscp@eurosource.se</a>
+</p>
+
+<p>
+Company:
+</p>
+<pre class="code">eurosource
+Brattbergavagen 17
+820 50 LOS 
+SWEDEN
+
+info@eurosource.se
+http://www.eurosource.se
+
+Phone: +46 657 413430
+Fax: +46 657 413503</pre>
+
+<p>
+Modules and components are sold at <a href="http://www.dofscandinavia.com/catalog" class="urlextern" title="http://www.dofscandinavia.com/catalog" rel="nofollow">http://www.dofscandinavia.com/catalog</a>
+</p>
+
+<p>
+More info about the VSCP and CANAL protocol can be found at <a href="http://www.vscp.org/" class="urlextern" title="http://www.vscp.org" rel="nofollow">http://www.vscp.org</a>
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_34"><form class="button btn_secedit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="1395897787" type="hidden"><input name="summary" value="[Contact Information] " type="hidden"><input name="target" value="section" type="hidden"><input name="range" value="15165-" type="hidden"><input value="Edit" class="button" title="Contact Information" type="submit"></div></form></div><div class="comment_wrapper" id="comment_wrapper">
+  <h2><a name="discussion__section" id="discussion__section">
+    Discussion
+  </a></h2>
+  <div class="level2 hfeed">
+
+        <div class="comment_form">
+          <form id="discussion__comment_form" method="post" action="/wiki/doku.php" accept-charset="utf-8">
+            <div class="no">
+              <input name="id" value="smart_relay_control_-_intelligent_relay_control_module" type="hidden">
+              <input name="do" value="show" type="hidden">
+              <input name="comment" value="add" type="hidden">
+                      <input name="reply" value="" type="hidden">
+                        <div class="comment_text">
+                  Enter your comment:
+                  <!-- Fix for disable the toolbar when wikisyntaxok is set to false. See discussion's script.jss -->
+                                      <div id="discussion__comment_toolbar_disabled">
+                                  </div>
+                <textarea class="edit" name="text" cols="80" rows="10" id="discussion__comment_text" tabindex="5"></textarea>
+              </div>
+                      <input class="button comment_submit" id="discussion__btn_submit" name="submit" accesskey="s" value="Save" title="Save [S]" tabindex="7" type="submit">
+              <input class="button comment_preview_button" id="discussion__btn_preview" name="preview" accesskey="p" value="Preview" title="Preview [P]" type="button">
+
+        
+              <div class="clearer"></div>
+              <div id="discussion__comment_preview">&nbsp;</div>
+            </div>
+          </form>
+        </div>
+          </div>
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+  <div id="sidebar">
+    <div id="sidebar_content">
+      
+<p>
+<a href="http://www.vscp.org/wiki/doku.php/start" class="wikilink1" title="start">Home</a>
+</p>
+<hr>
+<div class="table">
+<table class="ul">
+	<tbody><tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/vscp/start" class="wikilink1" title="vscp:start">The VSCP protocol</a></li></ul></td>
+	</tr>
+	<tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/vscpd/start" class="wikilink1" title="vscpd:start">The VSCP Daemon</a></li></ul></td>
+	</tr>
+	<tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/vscpworks/start" class="wikilink1" title="vscpworks:start">VSCP Works</a></li></ul></td>
+	</tr>
+	<tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/modules/start" class="wikilink1" title="modules:start">VSCP Hardware Modules</a></li></ul></td>
+	</tr>
+	<tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/coding/start" class="wikilink1" title="coding:start">Programming VSCP</a></li></ul></td>
+	</tr>
+	<tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/howto/start" class="wikilink1" title="howto:start">Getting started</a></li></ul></td>
+	</tr>
+	<tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/docs/start" class="wikilink1" title="docs:start">Press Material</a></li></ul></td>
+	</tr>
+</tbody></table>
+</div>
+<hr>
+<div class="table">
+<table class="ul">
+	<tbody><tr>
+		<td class="page"><ul><li><a href="http://www.vscp.org/wiki/doku.php/wikiwork/wikirules" class="wikilink1" title="wikiwork:wikirules">WIKI Rules for Editors / Access rights</a></li></ul></td>
+	</tr>
+</tbody></table>
+</div>
+<div class="comment_wrapper" id="comment_wrapper">
+  <h2><a name="discussion__section" id="discussion__section">
+    Discussion
+  </a></h2>
+  <div class="level2 hfeed">
+
+        <div class="comment_form">
+          <form id="discussion__comment_form" method="post" action="/wiki/doku.php" accept-charset="utf-8">
+            <div class="no">
+              <input name="id" value="sidebar" type="hidden">
+              <input name="do" value="show" type="hidden">
+              <input name="comment" value="add" type="hidden">
+                      <input name="reply" value="" type="hidden">
+                        <div class="comment_text">
+                  Enter your comment:
+                  <!-- Fix for disable the toolbar when wikisyntaxok is set to false. See discussion's script.jss -->
+                                      <div id="discussion__comment_toolbar_disabled">
+                                  </div>
+                <textarea class="edit" name="text" cols="80" rows="10" id="discussion__comment_text" tabindex="5"></textarea>
+              </div>
+                      <input class="button comment_submit" id="discussion__btn_submit" name="submit" accesskey="s" value="Save" title="Save [S]" tabindex="7" type="submit">
+              <input class="button comment_preview_button" id="discussion__btn_preview" name="preview" accesskey="p" value="Preview" title="Preview [P]" type="button">
+
+        
+              <div class="clearer"></div>
+              <div id="discussion__comment_preview">&nbsp;</div>
+            </div>
+          </form>
+        </div>
+          </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+        Logged in as: <bdi>Ake Hedman</bdi> (<bdi>akhe</bdi>)      </div>
+      <div class="doc">
+        <bdi>smart_relay_control_-_intelligent_relay_control_module.txt</bdi> · Last modified: 2014/03/27 06:23 (external edit)      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+        <form class="button btn_edit" method="post" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="0" type="hidden"><input value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>      </div>
+      <div class="bar-right" id="bar__bottomright">
+        <form class="button btn_subscribe" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="subscribe" type="hidden"><input value="Manage Subscriptions" class="button" title="Manage Subscriptions" type="submit"></div></form>        [unknown button type]        <form class="button btn_admin" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="admin" type="hidden"><input value="Admin" class="button" title="Admin" type="submit"></div></form>        <form class="button btn_profile" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="profile" type="hidden"><input value="Update Profile" class="button" title="Update Profile" type="submit"></div></form>        <form class="button btn_logout" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="logout" type="hidden"><input name="sectok" value="f9edf44052dcefc3bf801455b987061e" type="hidden"><input value="Logout" class="button" title="Logout" type="submit"></div></form>        <form class="button btn_index" method="get" action="/wiki/doku.php/smart_relay_control_-_intelligent_relay_control_module"><div class="no"><input name="do" value="index" type="hidden"><input value="Sitemap" class="button" accesskey="x" title="Sitemap [X]" type="submit"></div></form>        <a class="nolink" href="#dokuwiki__top"><input class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" type="button"></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+  <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/publicdomain/" rel="license" class="urlextern">Public Domain</a></bdi></div>
+</div>
+
+<div class="footerinc">
+
+  <a href="http://www.vscp.org/wiki/feed.php" title="Recent changes RSS feed"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/button-rss.png" alt="Recent changes RSS feed" height="15" width="80"></a>
+
+        <a href="http://creativecommons.org/licenses/publicdomain/" rel="license" title="Public Domain"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/publicdomain.png" alt="" height="15" width="80"></a>
+  
+  <a href="http://www.dokuwiki.org/donate" title="Donate"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/button-donate.gif" alt="Donate" height="15" width="80"></a>
+
+  <a href="http://www.php.net/" title="Powered by PHP"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/button-php.gif" alt="Powered by PHP" height="15" width="80"></a>
+
+  <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/button-xhtml.png" alt="Valid XHTML 1.0" height="15" width="80"></a>
+
+  <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/button-css.png" alt="Valid CSS" height="15" width="80"></a>
+
+  <a href="http://dokuwiki.org/" title="Driven by DokuWiki"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/button-dw.png" alt="Driven by DokuWiki" height="15" width="80"></a>
+
+
+
+</div>
+
+<div class="no"><img src="smart_relay_control_-_intelligent_relay_control_module%20%5Bthe%20VSCP%20&amp;%20Friends%20Wiki%5D_files/indexer.gif" alt="" height="1" width="2"></div>
+
+
+</body></html>

@@ -1,6 +1,6 @@
 Kelvin NTC
 ==========
-2016-06-16 - AKHE Power lines to thin - fixed.
+2015-06-16 - AKHE Power lines to thin - fixed.
 2011-12-20 - AKHE Added termination resistor. Leave unpopulated.
 2011-11-17 - AKHE Added 1uF capacitor on uP pin 6 forPIC18F66K80 compability
 2011-11-15 - AKHE Move L1 so it fits on the board.
