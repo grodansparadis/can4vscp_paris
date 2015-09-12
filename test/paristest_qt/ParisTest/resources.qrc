@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="browser">icons/Jommans-Briefness-Internet-Browser.ico</file>
+        <file alias="mycomputer">icons/Jommans-Briefness-My-Computer.ico</file>
+        <file alias="recycle_empty">icons/Jommans-Briefness-Recycle-Empty.ico</file>
+        <file alias="recycle_full">icons/Jommans-Briefness-Recycle-Full.ico</file>
+        <file alias="server">icons/Icons-Land-Vista-Hardware-Devices-Home-Server.ico</file>
+        <file alias="connect">icons/connect.ico</file>
+        <file alias="disconnect">icons/disconnect.ico</file>
+        <file alias="tools">icons/preferences-system-3.ico</file>
+        <file alias="network-connected">icons/network-ethernet-connected.ico</file>
+        <file alias="network-disconnected">icons/network-ethernet-disconnected.ico</file>
+    </qresource>
+</RCC>

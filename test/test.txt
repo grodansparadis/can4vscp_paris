@@ -1,0 +1,45 @@
+Test procedure for Paris rev A 2012-05-10
+=========================================
+
+Date:_____________________________________
+
+Serial:___________________________________
+
+1.) Test power. Red power LED should light. +5V on expansion pin 12
+
+2.) CAN  Transmit.
+
+3.) CAN  Receiver.
+
+4.) Init Button.
+
+5.) Green Init LED.
+
+6.) Relay 0 - Red LED. +5V on expansion pin 3.
+
+7.) Relay 1 - Red LED. +5V on expansion pin 4.
+
+8.) Relay 2 - Red LED. +5V on expansion pin 5.
+
+9.) Relay 3 - Red LED. +5V on expansion pin 6.
+
+10.) Relay 4 - Red LED. +5V on expansion pin 7.
+
+11.) Relay 5 - Red LED. +5V on expansion pin 8.
+
+12.) Relay 6 - Red LED. +5V on expansion pin 9.
+
+------------------------------------------------------ 
+               Continue if all pass
+------------------------------------------------------
+
+13.) Program firmware.
+
+14.) Program GUID.
+
+15.) Test start.
+
+16.) Clear EEPROM.
+
+17.) Attach label.
+

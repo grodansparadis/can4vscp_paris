@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<registerset>
+<register id='2'>
+<value>0x01</value>
+<description>Relay 0 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+1 - The relay is activated.
+Reading a value from the relay control register is read as a one if the relay is
+activated and a 0 if the relay is deactivated.
+When the pulse activation/deactivating is used the actual relay state is read.
+When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+</registerset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxFrame" name="ID_PARISSIMPLETESTAPPLICATION" subclass="Parissimpletestapplication">
+        <style>wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX</style>
+        <size>400,300</size>
+        <title>Paris simple test application</title>
+        <centered>1</centered>
+    </object>
+</resource>
