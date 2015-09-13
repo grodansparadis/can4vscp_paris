@@ -19101,7 +19101,7 @@ const uint8_t vscp_deviceURL[] = "www.eurosource.se/paris_010.xml";
 
 volatile unsigned long measurement_clock;
 
-uint8_t sendTimer;
+volatile uint8_t sendTimer;
 uint8_t seconds;
 uint8_t minutes;
 uint8_t hours;
@@ -19670,13 +19670,13 @@ return 1;
 # 786
 unsigned char getMinorVersion()
 {
-return 2;
+return 1;
 }
 
 # 795
 unsigned char getSubMinorVersion()
 {
-return 0;
+return 1;
 }
 
 # 806
@@ -20534,7 +20534,7 @@ if ( !( arg & ( 1 << i ) ) ) continue;
 
 
 if ( dmflags & 0x10 ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 50 + i*2) ) {
 
 # 1751
 continue;
@@ -20543,7 +20543,7 @@ continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 51 + i*2) ) {
 
 # 1759
 continue;
@@ -20655,7 +20655,7 @@ if ( !( arg & ( 1 << i ) ) ) continue;
 
 
 if ( dmflags & 0x10 ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 50 + i*2) ) {
 
 # 1873
 continue;
@@ -20664,7 +20664,7 @@ continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 51 + i*2) ) {
 
 # 1881
 continue;
@@ -20734,7 +20734,7 @@ if ( !( arg & ( 1 << i ) ) ) continue;
 
 
 if ( dmflags & 0x10 ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 50 + i*2) ) {
 
 # 1953
 continue;
@@ -20743,7 +20743,7 @@ continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 51 + i*2) ) {
 
 # 1961
 continue;
@@ -20832,7 +20832,7 @@ if (!(arg & (1 << i))) continue;
 
 
 if ( dmflags & 0x10 ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 50 + i*2) ) {
 
 # 2052
 continue;
@@ -20841,7 +20841,7 @@ continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 51 + i*2) ) {
 
 # 2060
 continue;
@@ -20926,7 +20926,7 @@ if ( !( arg & (1 << i) ) ) continue;
 
 
 if ( dmflags & 0x10 ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 50 + i*2) ) {
 
 # 2147
 continue;
@@ -20935,7 +20935,7 @@ continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 51 + i*2) ) {
 
 # 2155
 continue;
@@ -20963,7 +20963,7 @@ if ( !( arg & (1 << i) ) ) continue;
 
 
 if ( dmflags & 0x10 ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 50 + i*2) ) {
 
 # 2185
 continue;
@@ -20972,7 +20972,7 @@ continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 51 + i*2) ) {
 
 # 2193
 continue;
@@ -21094,13 +21094,13 @@ return 1;
 # 2324
 unsigned char vscp_getMinorVersion()
 {
-return 2;
+return 1;
 }
 
 # 2333
 unsigned char vscp_getSubMinorVersion()
 {
-return 0;
+return 1;
 }
 
 # 2344
@@ -21295,8 +21295,8 @@ return 1;
 int8_t sendCANFrame(uint32_t id, uint8_t dlc, uint8_t *pdata)
 {
 uint8_t rv = 0;
-sendTimer = 0;
 
+sendTimer = 0;
 while ( sendTimer < 1000 ) {
 if ( ECANSendMessage( id, pdata, dlc, ECAN_TX_XTD_FRAME ) ) {
 rv = 1;

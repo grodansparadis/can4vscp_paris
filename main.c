@@ -98,8 +98,8 @@ void calculateSetFilterMask( void );
 const uint8_t vscp_deviceURL[] = "www.eurosource.se/paris_010.xml";
 
 volatile unsigned long measurement_clock; // Clock for measurments
+volatile uint8_t sendTimer;  // Timer for CAN send
 
-uint8_t sendTimer;  // Timer for CAN send
 uint8_t seconds;    // counter for seconds
 uint8_t minutes;    // counter for minutes
 uint8_t hours;      // Counter for hours
@@ -1389,7 +1389,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
         eeprom_write( VSCP_EEPROM_END + reg, val );
         rv = eeprom_read( VSCP_EEPROM_END + reg );
 
-        // We let the defaault take care of the MSB's
+        // We let the default take care of the MSB's
         // and give some special treatment to the LSB's
         switch ( reg ) {
 
@@ -1570,7 +1570,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// Send Decsion Matrix Information
+// Send Decision Matrix Information
 //
 
 void sendDMatrixInfo(void)
@@ -1747,7 +1747,7 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
             if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_ZONE + i ) ) {
+                                                        REG_RELAY0_ZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -1755,7 +1755,7 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE + i ) ) {
+                                                        REG_RELAY0_SUBZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -1869,7 +1869,7 @@ void doActionOff( unsigned char dmflags, unsigned char arg )
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
             if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_ZONE + i ) ) {
+                    REG_RELAY0_ZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -1877,7 +1877,7 @@ void doActionOff( unsigned char dmflags, unsigned char arg )
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE + i ) ) {
+                    REG_RELAY0_SUBZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -1949,7 +1949,7 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
             if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_ZONE + i ) ) {
+                    REG_RELAY0_ZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -1957,7 +1957,7 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE + i ) ) {
+                    REG_RELAY0_SUBZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2048,7 +2048,7 @@ void doActionStatus(unsigned char dmflags, unsigned char arg)
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
             if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_ZONE + i ) ) {
+                    REG_RELAY0_ZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2056,7 +2056,7 @@ void doActionStatus(unsigned char dmflags, unsigned char arg)
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE + i ) ) {
+                    REG_RELAY0_SUBZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2143,7 +2143,7 @@ void doActionDisable(unsigned char dmflags, unsigned char arg)
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
             if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_ZONE + i ) ) {
+                    REG_RELAY0_ZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2151,7 +2151,7 @@ void doActionDisable(unsigned char dmflags, unsigned char arg)
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE + i ) ) {
+                    REG_RELAY0_SUBZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2181,7 +2181,7 @@ void doActionToggle( unsigned char dmflags, unsigned char arg )
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
             if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_ZONE + i ) ) {
+                    REG_RELAY0_ZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2189,7 +2189,7 @@ void doActionToggle( unsigned char dmflags, unsigned char arg )
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE + i ) ) {
+                    REG_RELAY0_SUBZONE + i*2 ) ) {
                 continue;
             }
         }
@@ -2629,8 +2629,8 @@ int8_t getVSCPFrame(uint16_t *pvscpclass,
 int8_t sendCANFrame(uint32_t id, uint8_t dlc, uint8_t *pdata)
 {
     uint8_t rv = FALSE;
+    
     sendTimer = 0;
-
     while ( sendTimer < 1000 ) {
         if ( ECANSendMessage( id, pdata, dlc, ECAN_TX_XTD_FRAME ) ) {
             rv = TRUE;

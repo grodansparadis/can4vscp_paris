@@ -314,14 +314,7 @@
        	</valuelist>
 		</reg>
 		
-		<reg page="0" offset="9" >
-			<name lang="en">Reserved</name>
-      	<description lang="en">
-      	This register position is reserved for future use.
-      	</description>
-      	<access>r</access>
-		</reg>													
-
+											
 		<reg page="0" offset="10" >
 			<name lang="en">Relay 0 control register</name>
 			<description lang="en">
@@ -684,66 +677,6 @@
 		
 		<reg page="0" offset="16" >
 			<name lang="en">Relay 6 control register</name>
-			<description lang="en">
-			The relay control bits enable/disable intelligent relay functionality:\n
-			Bit 0 - Enable pulse.\n
-			Bit 1 - If set: Alarm sent when protection timer triggers.\n
-			Bit 2 - Protection timer enable.\n
-			Bit 3 - Send On event when relay goes to active state.\n
-			Bit 4 - Send Off event when relay goes to inactive state.\n
-			Bit 5 - Send Started event when relay goes to active state.\n
-			Bit 6 - Send Stopped event when relay goes to active state.\n
-			Bit 7 - If set to one the relay is enabled.\n
-			</description>
-			<access>rw</access>
-			<bit pos="0" default="false" >
-      	    <name lang="en">Reserved</name>
-      	    <description lang="en">This bit is reserved</description> 
-        	</bit>
-			<bit pos="1" default="false" >
-      	    <name lang="en">Protection alarm</name>
-      	    <description lang="en">If set: Alarm sent when protection timer triggers.</description> 
-        	</bit>
- 			<bit pos="2" default="false" >
-      	    <name lang="en">Protection timer enable</name>
-      	    <description lang="en">
-      	    If set: Protection timer is enabled and will deactivate relay channel when the timer times out.
-      	    </description> 
-        	</bit>  
- 			<bit pos="3" default="false" >
-      	    <name lang="en">On event on activate enable</name>
-      	    <description lang="en">
-      	    If set: An on event will be sent when the relay is turned on.
-      	    </description> 
-        	</bit>  
- 			<bit pos="4" default="false" >
-      	    <name lang="en">Off event on deactivate enable</name>
-      	    <description lang="en">
-      	    If set: An off event will be sent when the relay is turned off.
-      	    </description> 
-        	</bit> 
- 			<bit pos="5" default="false" >
-      	    <name lang="en">Started event on activate enable</name>
-      	    <description lang="en">
-      	    If set: A started event will be sent when the relay is turned on.
-      	    </description> 
-        	</bit>  
- 			<bit pos="6" default="false" >
-      	    <name lang="en">Stopped event on deactivate enable</name>
-      	    <description lang="en">
-      	    If set: A stopped event will be sent when the relay is turned off.
-      	    </description> 
-        	</bit>    
-  			<bit pos="7" default="false" >
-      	    <name lang="en">Enable relay</name>
-      	    <description lang="en">
-      	    Set this bit to make the relay controlable.
-      	    </description> 
-        	</bit>        	  	       	      	     	
-		</reg>
-		
-		<reg page="0" offset="17" >
-			<name lang="en">Relay 7 control register</name>
 			<description lang="en">
 			The relay control bits enable/disable intelligent relay functionality:\n
 			Bit 0 - Enable pulse.\n

@@ -5,7 +5,6 @@
 ../vscp_projdefs.h  \
 ../../vscp_firmware/common/vscp_firmware.h  \
 ../vscp_compiler.h  \
-../../vscp_firmware/pic/common/eeprom.h  \
 ../../vscp_firmware/common/vscp_class.h  \
 ../ECAN.def  \
 ../ecan.h  \

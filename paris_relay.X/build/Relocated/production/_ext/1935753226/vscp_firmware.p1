@@ -1,75 +1,75 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"210 ../../vscp_firmware/common/vscp_firmware.h
+"209 ../../vscp_firmware/common/vscp_firmware.h
 [s S5 `uc 1 `uc 1 `us 1 `uc 1 `uc 1 `uc -> 8 `i ]
 [n S5 _imsg flags priority vscp_class vscp_type oaddr data ]
-"237
+"236
 [s S6 `uc 1 `uc 1 `us 1 `uc 1 `uc -> 8 `i ]
 [n S6 _omsg flags priority vscp_class vscp_type data ]
-"565
+"560
 [v _vscp_readNicknamePermanent `(uc ~T0 @X0 0 ef ]
-"576
-[v _vscp_getSegmentCRC `(uc ~T0 @X0 0 ef ]
 "571
+[v _vscp_getSegmentCRC `(uc ~T0 @X0 0 ef ]
+"566
 [v _vscp_writeNicknamePermanent `(v ~T0 @X0 0 ef1`uc ]
-"581
+"576
 [v _vscp_setSegmentCRC `(v ~T0 @X0 0 ef1`uc ]
-"591
+"586
 [v _vscp_setControlByte `(v ~T0 @X0 0 ef1`uc ]
-"447
+"444
 [v _vscp_sendEvent `(uc ~T0 @X0 0 ef ]
-"366
+"365
 [v _vscp_goActiveState `(v ~T0 @X0 0 ef ]
-"655
+"650
 [v _vscp_getZone `(uc ~T0 @X0 0 ef ]
-"661
+"656
 [v _vscp_getSubzone `(uc ~T0 @X0 0 ef ]
-"410
+"409
 [v _vscp_readStdReg `(uc ~T0 @X0 0 ef1`uc ]
-"612
+"607
 [v _vscp_readAppReg `(uc ~T0 @X0 0 ef1`uc ]
-"504
+"499
 [v _vscp_getMajorVersion `(uc ~T0 @X0 0 ef ]
-"505
+"500
 [v _vscp_getMinorVersion `(uc ~T0 @X0 0 ef ]
-"506
+"501
 [v _vscp_getSubMinorVersion `(uc ~T0 @X0 0 ef ]
-"521
+"516
 [v _vscp_getUserID `(uc ~T0 @X0 0 ef1`uc ]
-"537
+"532
 [v _vscp_getManufacturerId `(uc ~T0 @X0 0 ef1`uc ]
-"543
-[v _vscp_getBootLoaderAlgorithm `(uc ~T0 @X0 0 ef ]
-"548
-[v _vscp_getBufferSize `(uc ~T0 @X0 0 ef ]
-"553
-[v _vscp_getRegisterPagesUsed `(uc ~T0 @X0 0 ef ]
-"667
-[v _vscp_getFamilyCode `(ul ~T0 @X0 0 ef ]
-"673
-[v _vscp_getFamilyType `(ul ~T0 @X0 0 ef ]
-"511
-[v _vscp_getGUID `(uc ~T0 @X0 0 ef1`uc ]
-"559
-[v _vscp_getMDF_URL `(uc ~T0 @X0 0 ef1`uc ]
-"426
-[v _vscp_writeStdReg `(uc ~T0 @X0 0 ef2`uc`uc ]
-"620
-[v _vscp_writeAppReg `(uc ~T0 @X0 0 ef2`uc`uc ]
-"522
-[v _vscp_setUserID `(v ~T0 @X0 0 ef2`uc`uc ]
 "538
+[v _vscp_getBootLoaderAlgorithm `(uc ~T0 @X0 0 ef ]
+"543
+[v _vscp_getBufferSize `(uc ~T0 @X0 0 ef ]
+"548
+[v _vscp_getRegisterPagesUsed `(uc ~T0 @X0 0 ef ]
+"662
+[v _vscp_getFamilyCode `(ul ~T0 @X0 0 ef ]
+"668
+[v _vscp_getFamilyType `(ul ~T0 @X0 0 ef ]
+"506
+[v _vscp_getGUID `(uc ~T0 @X0 0 ef1`uc ]
+"554
+[v _vscp_getMDF_URL `(uc ~T0 @X0 0 ef1`uc ]
+"425
+[v _vscp_writeStdReg `(uc ~T0 @X0 0 ef2`uc`uc ]
+"615
+[v _vscp_writeAppReg `(uc ~T0 @X0 0 ef2`uc`uc ]
+"517
+[v _vscp_setUserID `(v ~T0 @X0 0 ef2`uc`uc ]
+"533
 [v _vscp_setManufacturerId `(v ~T0 @X0 0 ef2`uc`uc ]
-"512
+"507
 [v _vscp_setGUID `(v ~T0 @X0 0 ef2`uc`uc ]
-"681
+"676
 [v _vscp_restoreDefaults `(v ~T0 @X0 0 ef ]
-"649
+"644
 [v _vscp_goBootloaderMode `(v ~T0 @X0 0 ef1`uc ]
-"634
+"629
 [v _vscp_getMatrixInfo `(v ~T0 @X0 0 ef1`*uc ]
-"496
+"493
 [v _sendVSCPFrame `(uc ~T0 @X0 0 ef6`us`uc`uc`uc`uc`*uc ]
-"479
+"476
 [v _getVSCPFrame `(uc ~T0 @X0 0 ef6`*us`*uc`*uc`*uc`*uc`*uc ]
 [; ;string.h: 4: typedef int ptrdiff_t;
 [; ;string.h: 5: typedef unsigned size_t;
@@ -160,108 +160,108 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;common\inttypes.h: 57: typedef unsigned long uint32_t;
 [; ;common\inttypes.h: 61: typedef unsigned short uint16_t;
 [; ;common\inttypes.h: 65: typedef unsigned char uint8_t;
-[; ;vscp_firmware.h: 191: struct _imsg {
-[; ;vscp_firmware.h: 203: uint8_t flags;
-[; ;vscp_firmware.h: 205: uint8_t priority;
-[; ;vscp_firmware.h: 206: uint16_t vscp_class;
-[; ;vscp_firmware.h: 207: uint8_t vscp_type;
-[; ;vscp_firmware.h: 208: uint8_t oaddr;
-[; ;vscp_firmware.h: 209: uint8_t data[8];
-[; ;vscp_firmware.h: 210: };
-[; ;vscp_firmware.h: 218: struct _omsg {
-[; ;vscp_firmware.h: 230: uint8_t flags;
-[; ;vscp_firmware.h: 232: uint8_t priority;
-[; ;vscp_firmware.h: 233: uint16_t vscp_class;
-[; ;vscp_firmware.h: 234: uint8_t vscp_type;
-[; ;vscp_firmware.h: 236: uint8_t data[8];
-[; ;vscp_firmware.h: 237: };
-[; ;vscp_firmware.h: 284: struct _dmrow {
-[; ;vscp_firmware.h: 285: uint8_t oaddr;
-[; ;vscp_firmware.h: 286: uint8_t flags;
-[; ;vscp_firmware.h: 287: uint8_t class_mask;
-[; ;vscp_firmware.h: 288: uint8_t class_filter;
-[; ;vscp_firmware.h: 289: uint8_t type_mask;
-[; ;vscp_firmware.h: 290: uint8_t type_filter;
-[; ;vscp_firmware.h: 291: uint8_t action;
-[; ;vscp_firmware.h: 292: uint8_t action_param;
-[; ;vscp_firmware.h: 293: };
-[; ;vscp_firmware.h: 298: extern uint8_t vscp_nickname;
-[; ;vscp_firmware.h: 299: extern uint8_t vscp_errorcnt;
-[; ;vscp_firmware.h: 300: extern uint8_t vscp_alarmstatus;
-[; ;vscp_firmware.h: 301: extern uint8_t vscp_node_state;
-[; ;vscp_firmware.h: 302: extern uint8_t vscp_node_substate;
-[; ;vscp_firmware.h: 303: extern uint8_t vscp_initledfunc;
-[; ;vscp_firmware.h: 305: extern struct _imsg vscp_imsg;
-[; ;vscp_firmware.h: 306: extern struct _omsg vscp_omsg;
-[; ;vscp_firmware.h: 307: extern volatile uint16_t vscp_timer;
-[; ;vscp_firmware.h: 308: extern uint8_t vscp_probe_address;
-[; ;vscp_firmware.h: 309: extern volatile uint8_t vscp_initbtncnt;
-[; ;vscp_firmware.h: 310: extern volatile uint8_t vscp_statuscnt;
-[; ;vscp_firmware.h: 311: extern uint16_t vscp_page_select;
-[; ;vscp_firmware.h: 312: extern volatile uint16_t vscp_configtimer;
-[; ;vscp_firmware.h: 314: extern const uint8_t vscp_deviceURL[];
-[; ;vscp_firmware.h: 324: void vscp_init(void);
-[; ;vscp_firmware.h: 330: void vscp_error(void);
-[; ;vscp_firmware.h: 338: void vscp_handleProbeState(void);
-[; ;vscp_firmware.h: 351: void vscp_handlePreActiveState(void);
-[; ;vscp_firmware.h: 358: void vscp_handleProtocolEvent(void);
-[; ;vscp_firmware.h: 366: void vscp_goActiveState(void);
-[; ;vscp_firmware.h: 376: void vscp_sendHeartBeat(uint8_t zone, uint8_t subzone);
-[; ;vscp_firmware.h: 381: void vscp_handleHeartbeat(void);
-[; ;vscp_firmware.h: 386: void vscp_handleSetNickname(void);
-[; ;vscp_firmware.h: 391: void vscp_handleDropNickname(void);
-[; ;vscp_firmware.h: 396: void vscp_newNodeOnline(void);
-[; ;vscp_firmware.h: 403: uint8_t vscp_readRegister(uint8_t reg);
-[; ;vscp_firmware.h: 410: uint8_t vscp_readStdReg(uint8_t reg);
-[; ;vscp_firmware.h: 418: uint8_t vscp_writeRegister(uint8_t reg, uint8_t value);
-[; ;vscp_firmware.h: 426: uint8_t vscp_writeStdReg(uint8_t reg, uint8_t value);
-[; ;vscp_firmware.h: 434: void vscp_doOneSecondWork(void);
-[; ;vscp_firmware.h: 439: int8_t vscp_check_pstorage(void);
-[; ;vscp_firmware.h: 447: int8_t vscp_sendEvent(void);
-[; ;vscp_firmware.h: 453: int8_t vscp_getEvent(void);
-[; ;vscp_firmware.h: 474: int8_t getVSCPFrame(uint16_t *pvscpclass,
-[; ;vscp_firmware.h: 475: uint8_t *pvscptype,
-[; ;vscp_firmware.h: 476: uint8_t *pNodeId,
-[; ;vscp_firmware.h: 477: uint8_t *pPriority,
-[; ;vscp_firmware.h: 478: uint8_t *pSize,
-[; ;vscp_firmware.h: 479: uint8_t *pData);
-[; ;vscp_firmware.h: 491: int8_t sendVSCPFrame( uint16_t vscpclass,
-[; ;vscp_firmware.h: 492: uint8_t vscptype,
-[; ;vscp_firmware.h: 493: uint8_t nodeid,
-[; ;vscp_firmware.h: 494: uint8_t priority,
-[; ;vscp_firmware.h: 495: uint8_t size,
-[; ;vscp_firmware.h: 496: uint8_t *pData );
-[; ;vscp_firmware.h: 504: uint8_t vscp_getMajorVersion( void );
-[; ;vscp_firmware.h: 505: uint8_t vscp_getMinorVersion( void );
-[; ;vscp_firmware.h: 506: uint8_t vscp_getSubMinorVersion( void );
-[; ;vscp_firmware.h: 511: uint8_t vscp_getGUID(uint8_t idx);
-[; ;vscp_firmware.h: 512: void vscp_setGUID(uint8_t idx, uint8_t data);
-[; ;vscp_firmware.h: 521: uint8_t vscp_getUserID(uint8_t idx);
-[; ;vscp_firmware.h: 522: void vscp_setUserID(uint8_t idx, uint8_t data);
-[; ;vscp_firmware.h: 537: uint8_t vscp_getManufacturerId(uint8_t idx);
-[; ;vscp_firmware.h: 538: void vscp_setManufacturerId(uint8_t idx, uint8_t data);
-[; ;vscp_firmware.h: 543: uint8_t vscp_getBootLoaderAlgorithm( void );
-[; ;vscp_firmware.h: 548: uint8_t vscp_getBufferSize(void);
-[; ;vscp_firmware.h: 553: uint8_t vscp_getRegisterPagesUsed(void);
-[; ;vscp_firmware.h: 559: uint8_t vscp_getMDF_URL(uint8_t idx);
-[; ;vscp_firmware.h: 565: uint8_t vscp_readNicknamePermanent(void);
-[; ;vscp_firmware.h: 571: void vscp_writeNicknamePermanent(uint8_t nickname);
-[; ;vscp_firmware.h: 576: uint8_t vscp_getSegmentCRC(void);
-[; ;vscp_firmware.h: 581: void vscp_setSegmentCRC(uint8_t crc);
-[; ;vscp_firmware.h: 586: uint8_t vscp_getControlByte(void);
-[; ;vscp_firmware.h: 591: void vscp_setControlByte(uint8_t ctrl);
-[; ;vscp_firmware.h: 598: uint8_t vscp_getPageSelect(uint8_t idx);
-[; ;vscp_firmware.h: 605: void vscp_setPageSelect(uint8_t idx, uint8_t data);
-[; ;vscp_firmware.h: 612: uint8_t vscp_readAppReg(uint8_t reg);
-[; ;vscp_firmware.h: 620: uint8_t vscp_writeAppReg(uint8_t reg, uint8_t value);
-[; ;vscp_firmware.h: 634: void vscp_getMatrixInfo(char *pData);
-[; ;vscp_firmware.h: 642: void vscp_getEmbeddedMdfInfo(void);
-[; ;vscp_firmware.h: 649: void vscp_goBootloaderMode( uint8_t algorithm );
-[; ;vscp_firmware.h: 655: uint8_t vscp_getZone(void);
-[; ;vscp_firmware.h: 661: uint8_t vscp_getSubzone(void);
-[; ;vscp_firmware.h: 667: uint32_t vscp_getFamilyCode(void);
-[; ;vscp_firmware.h: 673: uint32_t vscp_getFamilyType(void);
-[; ;vscp_firmware.h: 681: void vscp_restoreDefaults(void);
+[; ;vscp_firmware.h: 190: struct _imsg {
+[; ;vscp_firmware.h: 202: uint8_t flags;
+[; ;vscp_firmware.h: 204: uint8_t priority;
+[; ;vscp_firmware.h: 205: uint16_t vscp_class;
+[; ;vscp_firmware.h: 206: uint8_t vscp_type;
+[; ;vscp_firmware.h: 207: uint8_t oaddr;
+[; ;vscp_firmware.h: 208: uint8_t data[8];
+[; ;vscp_firmware.h: 209: };
+[; ;vscp_firmware.h: 217: struct _omsg {
+[; ;vscp_firmware.h: 229: uint8_t flags;
+[; ;vscp_firmware.h: 231: uint8_t priority;
+[; ;vscp_firmware.h: 232: uint16_t vscp_class;
+[; ;vscp_firmware.h: 233: uint8_t vscp_type;
+[; ;vscp_firmware.h: 235: uint8_t data[8];
+[; ;vscp_firmware.h: 236: };
+[; ;vscp_firmware.h: 283: struct _dmrow {
+[; ;vscp_firmware.h: 284: uint8_t oaddr;
+[; ;vscp_firmware.h: 285: uint8_t flags;
+[; ;vscp_firmware.h: 286: uint8_t class_mask;
+[; ;vscp_firmware.h: 287: uint8_t class_filter;
+[; ;vscp_firmware.h: 288: uint8_t type_mask;
+[; ;vscp_firmware.h: 289: uint8_t type_filter;
+[; ;vscp_firmware.h: 290: uint8_t action;
+[; ;vscp_firmware.h: 291: uint8_t action_param;
+[; ;vscp_firmware.h: 292: };
+[; ;vscp_firmware.h: 297: extern uint8_t vscp_nickname;
+[; ;vscp_firmware.h: 298: extern uint8_t vscp_errorcnt;
+[; ;vscp_firmware.h: 299: extern uint8_t vscp_alarmstatus;
+[; ;vscp_firmware.h: 300: extern uint8_t vscp_node_state;
+[; ;vscp_firmware.h: 301: extern uint8_t vscp_node_substate;
+[; ;vscp_firmware.h: 302: extern uint8_t vscp_initledfunc;
+[; ;vscp_firmware.h: 304: extern struct _imsg vscp_imsg;
+[; ;vscp_firmware.h: 305: extern struct _omsg vscp_omsg;
+[; ;vscp_firmware.h: 306: extern volatile uint16_t vscp_timer;
+[; ;vscp_firmware.h: 307: extern uint8_t vscp_probe_address;
+[; ;vscp_firmware.h: 308: extern volatile uint8_t vscp_initbtncnt;
+[; ;vscp_firmware.h: 309: extern volatile uint8_t vscp_statuscnt;
+[; ;vscp_firmware.h: 310: extern uint16_t vscp_page_select;
+[; ;vscp_firmware.h: 311: extern volatile uint16_t vscp_configtimer;
+[; ;vscp_firmware.h: 313: extern const uint8_t vscp_deviceURL[];
+[; ;vscp_firmware.h: 323: void vscp_init(void);
+[; ;vscp_firmware.h: 329: void vscp_error(void);
+[; ;vscp_firmware.h: 337: void vscp_handleProbeState(void);
+[; ;vscp_firmware.h: 350: void vscp_handlePreActiveState(void);
+[; ;vscp_firmware.h: 357: void vscp_handleProtocolEvent(void);
+[; ;vscp_firmware.h: 365: void vscp_goActiveState(void);
+[; ;vscp_firmware.h: 375: void vscp_sendHeartBeat(uint8_t zone, uint8_t subzone);
+[; ;vscp_firmware.h: 380: void vscp_handleHeartbeat(void);
+[; ;vscp_firmware.h: 385: void vscp_handleSetNickname(void);
+[; ;vscp_firmware.h: 390: void vscp_handleDropNickname(void);
+[; ;vscp_firmware.h: 395: void vscp_newNodeOnline(void);
+[; ;vscp_firmware.h: 402: uint8_t vscp_readRegister(uint8_t reg);
+[; ;vscp_firmware.h: 409: uint8_t vscp_readStdReg(uint8_t reg);
+[; ;vscp_firmware.h: 417: uint8_t vscp_writeRegister(uint8_t reg, uint8_t value);
+[; ;vscp_firmware.h: 425: uint8_t vscp_writeStdReg(uint8_t reg, uint8_t value);
+[; ;vscp_firmware.h: 433: void vscp_doOneSecondWork(void);
+[; ;vscp_firmware.h: 438: int8_t vscp_check_pstorage(void);
+[; ;vscp_firmware.h: 444: int8_t vscp_sendEvent(void);
+[; ;vscp_firmware.h: 450: int8_t vscp_getEvent(void);
+[; ;vscp_firmware.h: 471: int8_t getVSCPFrame( uint16_t *pvscpclass,
+[; ;vscp_firmware.h: 472: uint8_t *pvscptype,
+[; ;vscp_firmware.h: 473: uint8_t *pNodeId,
+[; ;vscp_firmware.h: 474: uint8_t *pPriority,
+[; ;vscp_firmware.h: 475: uint8_t *pSize,
+[; ;vscp_firmware.h: 476: uint8_t *pData);
+[; ;vscp_firmware.h: 488: int8_t sendVSCPFrame( uint16_t vscpclass,
+[; ;vscp_firmware.h: 489: uint8_t vscptype,
+[; ;vscp_firmware.h: 490: uint8_t nodeid,
+[; ;vscp_firmware.h: 491: uint8_t priority,
+[; ;vscp_firmware.h: 492: uint8_t size,
+[; ;vscp_firmware.h: 493: uint8_t *pData );
+[; ;vscp_firmware.h: 499: uint8_t vscp_getMajorVersion( void );
+[; ;vscp_firmware.h: 500: uint8_t vscp_getMinorVersion( void );
+[; ;vscp_firmware.h: 501: uint8_t vscp_getSubMinorVersion( void );
+[; ;vscp_firmware.h: 506: uint8_t vscp_getGUID(uint8_t idx);
+[; ;vscp_firmware.h: 507: void vscp_setGUID(uint8_t idx, uint8_t data);
+[; ;vscp_firmware.h: 516: uint8_t vscp_getUserID(uint8_t idx);
+[; ;vscp_firmware.h: 517: void vscp_setUserID(uint8_t idx, uint8_t data);
+[; ;vscp_firmware.h: 532: uint8_t vscp_getManufacturerId(uint8_t idx);
+[; ;vscp_firmware.h: 533: void vscp_setManufacturerId(uint8_t idx, uint8_t data);
+[; ;vscp_firmware.h: 538: uint8_t vscp_getBootLoaderAlgorithm( void );
+[; ;vscp_firmware.h: 543: uint8_t vscp_getBufferSize(void);
+[; ;vscp_firmware.h: 548: uint8_t vscp_getRegisterPagesUsed(void);
+[; ;vscp_firmware.h: 554: uint8_t vscp_getMDF_URL(uint8_t idx);
+[; ;vscp_firmware.h: 560: uint8_t vscp_readNicknamePermanent(void);
+[; ;vscp_firmware.h: 566: void vscp_writeNicknamePermanent(uint8_t nickname);
+[; ;vscp_firmware.h: 571: uint8_t vscp_getSegmentCRC(void);
+[; ;vscp_firmware.h: 576: void vscp_setSegmentCRC(uint8_t crc);
+[; ;vscp_firmware.h: 581: uint8_t vscp_getControlByte(void);
+[; ;vscp_firmware.h: 586: void vscp_setControlByte(uint8_t ctrl);
+[; ;vscp_firmware.h: 593: uint8_t vscp_getPageSelect(uint8_t idx);
+[; ;vscp_firmware.h: 600: void vscp_setPageSelect(uint8_t idx, uint8_t data);
+[; ;vscp_firmware.h: 607: uint8_t vscp_readAppReg(uint8_t reg);
+[; ;vscp_firmware.h: 615: uint8_t vscp_writeAppReg(uint8_t reg, uint8_t value);
+[; ;vscp_firmware.h: 629: void vscp_getMatrixInfo(char *pData);
+[; ;vscp_firmware.h: 637: void vscp_getEmbeddedMdfInfo(void);
+[; ;vscp_firmware.h: 644: void vscp_goBootloaderMode( uint8_t algorithm );
+[; ;vscp_firmware.h: 650: uint8_t vscp_getZone(void);
+[; ;vscp_firmware.h: 656: uint8_t vscp_getSubzone(void);
+[; ;vscp_firmware.h: 662: uint32_t vscp_getFamilyCode(void);
+[; ;vscp_firmware.h: 668: uint32_t vscp_getFamilyType(void);
+[; ;vscp_firmware.h: 676: void vscp_restoreDefaults(void);
 "63 ../../vscp_firmware/common/vscp_firmware.c
 [v _vscp_nickname `uc ~T0 @X0 1 e ]
 [; ;vscp_firmware.c: 63: uint8_t vscp_nickname;
@@ -2060,9 +2060,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;vscp_firmware.c: 997: vscp_omsg.flags = 0x80 + bytes + 1;
 "997
 [e = . _vscp_omsg 0 -> + + -> 128 `i -> _bytes `i -> 1 `i `uc ]
-[; ;vscp_firmware.c: 998: vscp_omsg.priority = 0x03;
+[; ;vscp_firmware.c: 998: vscp_omsg.priority = 0x07;
 "998
-[e = . _vscp_omsg 1 -> -> 3 `i `uc ]
+[e = . _vscp_omsg 1 -> -> 7 `i `uc ]
 [; ;vscp_firmware.c: 999: vscp_omsg.vscp_class = 0;
 "999
 [e = . _vscp_omsg 2 -> -> 0 `i `us ]
@@ -2140,9 +2140,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1022
 }
 [; ;vscp_firmware.c: 1022: }
-[; ;vscp_firmware.c: 1024: vscp_omsg.priority = 0x03;
+[; ;vscp_firmware.c: 1024: vscp_omsg.priority = 0x07;
 "1024
-[e = . _vscp_omsg 1 -> -> 3 `i `uc ]
+[e = . _vscp_omsg 1 -> -> 7 `i `uc ]
 [; ;vscp_firmware.c: 1025: vscp_omsg.vscp_class = 0;
 "1025
 [e = . _vscp_omsg 2 -> -> 0 `i `us ]
@@ -2456,13 +2456,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 "1158
 [v _page_save `us ~T0 @X0 1 a ]
+[v _bytes `us ~T0 @X0 1 a ]
+[; ;vscp_firmware.c: 1158: uint16_t page_save, bytes = 0;
+[e = _bytes -> -> 0 `i `us ]
 "1159
 [v _byte `uc ~T0 @X0 1 a ]
-[; ;vscp_firmware.c: 1158: uint16_t page_save;
-[; ;vscp_firmware.c: 1159: uint8_t byte = 0, bytes = 0;
+[; ;vscp_firmware.c: 1159: uint8_t byte = 0;
 [e = _byte -> -> 0 `i `uc ]
-[v _bytes `uc ~T0 @X0 1 a ]
-[e = _bytes -> -> 0 `i `uc ]
 "1160
 [v _bytes_this_time `uc ~T0 @X0 1 a ]
 [v _cb `uc ~T0 @X0 1 a ]
@@ -2471,34 +2471,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1164
 [e $ ! > & -> . _vscp_imsg 0 `i -> 15 `i -> 3 `i 198  ]
 {
-[; ;vscp_firmware.c: 1167: bytes = vscp_imsg.data[4];
+[; ;vscp_firmware.c: 1167: bytes = (uint16_t)vscp_imsg.data[4];
 "1167
-[e = _bytes *U + &U . _vscp_imsg 5 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux ]
-[; ;vscp_firmware.c: 1169: if ( 0 == bytes ) {
+[e = _bytes -> *U + &U . _vscp_imsg 5 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `us ]
+[; ;vscp_firmware.c: 1169: if (bytes == 0) bytes = 256;
 "1169
-[e $ ! == -> 0 `i -> _bytes `i 199  ]
-{
-[; ;vscp_firmware.c: 1170: bytes = 1;
-"1170
-[e = _bytes -> -> 1 `i `uc ]
-"1171
-}
+[e $ ! == -> _bytes `ui -> -> 0 `i `ui 199  ]
+[e = _bytes -> -> 256 `i `us ]
 [e :U 199 ]
+[; ;vscp_firmware.c: 1171: if (bytes > 256) bytes = 256;
+"1171
+[e $ ! > -> _bytes `ui -> -> 256 `i `ui 200  ]
+[e = _bytes -> -> 256 `i `us ]
+[e :U 200 ]
 "1172
 }
-[; ;vscp_firmware.c: 1171: }
 [; ;vscp_firmware.c: 1172: }
-[e $U 200  ]
+[e $U 201  ]
 "1173
 [e :U 198 ]
 [; ;vscp_firmware.c: 1173: else {
 {
 [; ;vscp_firmware.c: 1174: bytes = 1;
 "1174
-[e = _bytes -> -> 1 `i `uc ]
+[e = _bytes -> -> 1 `i `us ]
 "1175
 }
-[e :U 200 ]
+[e :U 201 ]
 [; ;vscp_firmware.c: 1175: }
 [; ;vscp_firmware.c: 1178: page_save = vscp_page_select;
 "1178
@@ -2506,9 +2505,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;vscp_firmware.c: 1183: vscp_page_select = ((vscp_imsg.data[1] << 8) | vscp_imsg.data[2]);
 "1183
 [e = _vscp_page_select -> | << -> *U + &U . _vscp_imsg 5 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `i -> 8 `i -> *U + &U . _vscp_imsg 5 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `i `us ]
-[; ;vscp_firmware.c: 1186: vscp_omsg.priority = 0x03;
+[; ;vscp_firmware.c: 1186: vscp_omsg.priority = 0x07;
 "1186
-[e = . _vscp_omsg 1 -> -> 3 `i `uc ]
+[e = . _vscp_omsg 1 -> -> 7 `i `uc ]
 [; ;vscp_firmware.c: 1187: vscp_omsg.vscp_class = 0;
 "1187
 [e = . _vscp_omsg 2 -> -> 0 `i `us ]
@@ -2526,11 +2525,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . _vscp_omsg 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _vscp_omsg 4 `ui `ux *U + &U . _vscp_imsg 5 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux ]
 [; ;vscp_firmware.c: 1193: do {
 "1193
-[e :U 203 ]
+[e :U 204 ]
 {
 [; ;vscp_firmware.c: 1195: if ( ( bytes - byte ) >= 4 ) {
 "1195
-[e $ ! >= - -> _bytes `i -> _byte `i -> 4 `i 204  ]
+[e $ ! >= - -> _bytes `ui -> _byte `ui -> -> 4 `i `ui 205  ]
 {
 [; ;vscp_firmware.c: 1196: bytes_this_time = 4;
 "1196
@@ -2538,17 +2537,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1197
 }
 [; ;vscp_firmware.c: 1197: }
-[e $U 205  ]
+[e $U 206  ]
 "1198
-[e :U 204 ]
+[e :U 205 ]
 [; ;vscp_firmware.c: 1198: else {
 {
 [; ;vscp_firmware.c: 1199: bytes_this_time = (bytes - byte);
 "1199
-[e = _bytes_this_time -> - -> _bytes `i -> _byte `i `uc ]
+[e = _bytes_this_time -> - -> _bytes `ui -> _byte `ui `uc ]
 "1200
 }
-[e :U 205 ]
+[e :U 206 ]
 [; ;vscp_firmware.c: 1200: }
 [; ;vscp_firmware.c: 1203: vscp_omsg.flags = 0x80 + 4 + bytes_this_time;
 "1203
@@ -2561,8 +2560,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1208
 {
 [e = _cb -> -> 0 `i `uc ]
-[e $U 209  ]
-[e :U 206 ]
+[e $U 210  ]
+[e :U 207 ]
 {
 [; ;vscp_firmware.c: 1209: vscp_omsg.data[ (4 + cb) ] =
 [; ;vscp_firmware.c: 1210: vscp_readRegister( ( vscp_imsg.data[3] + byte + cb ) );
@@ -2572,9 +2571,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "1208
 [e ++ _cb -> -> 1 `i `uc ]
-[e :U 209 ]
-[e $ < -> _cb `i -> _bytes_this_time `i 206  ]
-[e :U 207 ]
+[e :U 210 ]
+[e $ < -> _cb `i -> _bytes_this_time `i 207  ]
+[e :U 208 ]
 "1211
 }
 [; ;vscp_firmware.c: 1211: }
@@ -2590,8 +2589,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1222
 }
 [; ;vscp_firmware.c: 1222: } while (byte < bytes);
-[e $ < -> _byte `i -> _bytes `i 203  ]
-[e :U 202 ]
+[e $ < -> _byte `ui -> _bytes `ui 204  ]
+[e :U 203 ]
 [; ;vscp_firmware.c: 1225: vscp_page_select = page_save;
 "1225
 [e = _vscp_page_select _page_save ]
@@ -2604,10 +2603,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 125  ]
 [; ;vscp_firmware.c: 1230: case 38:
 "1230
-[e :U 210 ]
+[e :U 211 ]
 [; ;vscp_firmware.c: 1232: if ( vscp_nickname == vscp_imsg.data[ 0 ] ) {
 "1232
-[e $ ! == -> _vscp_nickname `i -> *U + &U . _vscp_imsg 5 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `i 211  ]
+[e $ ! == -> _vscp_nickname `i -> *U + &U . _vscp_imsg 5 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `i 212  ]
 {
 "1234
 [v _i `uc ~T0 @X0 1 a ]
@@ -2627,9 +2626,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _i *U + &U . _vscp_imsg 5 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux ]
 [; ;vscp_firmware.c: 1247: i < (vscp_imsg.data[ 3 ] + ((vscp_imsg.flags & 0x0f) - 4));
 [; ;vscp_firmware.c: 1248: i++) {
-[e $U 215  ]
+[e $U 216  ]
 "1248
-[e :U 212 ]
+[e :U 213 ]
 {
 [; ;vscp_firmware.c: 1249: vscp_omsg.data[ 4 + (i - vscp_imsg.data[ 3 ]) ] =
 [; ;vscp_firmware.c: 1250: vscp_writeRegister(i, vscp_imsg.data[ 4 + (i - vscp_imsg.data[ 3 ]) ]);
@@ -2640,18 +2639,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1248
 [e ++ _i -> -> 1 `i `uc ]
 "1247
-[e :U 215 ]
-[e $ < -> _i `i + -> *U + &U . _vscp_imsg 5 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `i - & -> . _vscp_imsg 0 `i -> 15 `i -> 4 `i 212  ]
-[e :U 213 ]
+[e :U 216 ]
+[e $ < -> _i `i + -> *U + &U . _vscp_imsg 5 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _vscp_imsg 5 `ui `ux `i - & -> . _vscp_imsg 0 `i -> 15 `i -> 4 `i 213  ]
+[e :U 214 ]
 "1251
 }
 [; ;vscp_firmware.c: 1251: }
 [; ;vscp_firmware.c: 1254: vscp_page_select = page_save;
 "1254
 [e = _vscp_page_select _page_save ]
-[; ;vscp_firmware.c: 1256: vscp_omsg.priority = 0x03;
+[; ;vscp_firmware.c: 1256: vscp_omsg.priority = 0x07;
 "1256
-[e = . _vscp_omsg 1 -> -> 3 `i `uc ]
+[e = . _vscp_omsg 1 -> -> 7 `i `uc ]
 [; ;vscp_firmware.c: 1257: vscp_omsg.flags = 0x80 + 4 + ((vscp_imsg.flags & 0x0f) - 4);
 "1257
 [e = . _vscp_omsg 0 -> + + -> 128 `i -> 4 `i - & -> . _vscp_imsg 0 `i -> 15 `i -> 4 `i `uc ]
@@ -2678,14 +2677,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _vscp_sendEvent ..  ]
 "1268
 }
-[e :U 211 ]
+[e :U 212 ]
 [; ;vscp_firmware.c: 1268: }
 [; ;vscp_firmware.c: 1269: break;
 "1269
 [e $U 125  ]
 [; ;vscp_firmware.c: 1272: default:
 "1272
-[e :U 216 ]
+[e :U 217 ]
 [; ;vscp_firmware.c: 1274: break;
 "1274
 [e $U 125  ]
@@ -2710,8 +2709,8 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 31 `i `uc 173
  , $ -> -> 33 `i `uc 194
  , $ -> -> 37 `i `uc 196
- , $ -> -> 38 `i `uc 210
- 216 ]
+ , $ -> -> 38 `i `uc 211
+ 217 ]
 "1276
 [e :U 125 ]
 "1278
@@ -2739,22 +2738,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;vscp_firmware.c: 1295: (vscp_omsg.flags & 0x0f),
 [; ;vscp_firmware.c: 1296: vscp_omsg.data ) ) ) {
 "1296
-[e $ ! ! != -> = _rv ( _sendVSCPFrame (4 , , , , , . _vscp_omsg 2 . _vscp_omsg 3 _vscp_nickname . _vscp_omsg 1 -> & -> . _vscp_omsg 0 `i -> 15 `i `uc &U . _vscp_omsg 4 `i -> -> -> 0 `i `uc `i 218  ]
+[e $ ! ! != -> = _rv ( _sendVSCPFrame (4 , , , , , . _vscp_omsg 2 . _vscp_omsg 3 _vscp_nickname . _vscp_omsg 1 -> & -> . _vscp_omsg 0 `i -> 15 `i `uc &U . _vscp_omsg 4 `i -> -> -> 0 `i `uc `i 219  ]
 {
 [; ;vscp_firmware.c: 1297: vscp_errorcnt++;
 "1297
 [e ++ _vscp_errorcnt -> -> 1 `i `uc ]
 "1298
 }
-[e :U 218 ]
+[e :U 219 ]
 [; ;vscp_firmware.c: 1298: }
 [; ;vscp_firmware.c: 1300: return rv;
 "1300
 [e ) _rv ]
-[e $UE 217  ]
+[e $UE 218  ]
 [; ;vscp_firmware.c: 1301: }
 "1301
-[e :UE 217 ]
+[e :UE 218 ]
 }
 "1308
 [v _vscp_getEvent `(uc ~T0 @X0 1 ef ]
@@ -2768,31 +2767,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;vscp_firmware.c: 1309: int8_t rv;
 [; ;vscp_firmware.c: 1315: if (vscp_imsg.flags & 0x80) return !0;
 "1315
-[e $ ! != & -> . _vscp_imsg 0 `i -> 128 `i -> 0 `i 220  ]
+[e $ ! != & -> . _vscp_imsg 0 `i -> 128 `i -> 0 `i 221  ]
 [e ) -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[e $UE 219  ]
-[e :U 220 ]
-[; ;vscp_firmware.c: 1318: if ((rv = getVSCPFrame(&vscp_imsg.vscp_class,
+[e $UE 220  ]
+[e :U 221 ]
+[; ;vscp_firmware.c: 1318: if ((rv = getVSCPFrame( &vscp_imsg.vscp_class,
 [; ;vscp_firmware.c: 1319: &vscp_imsg.vscp_type,
 [; ;vscp_firmware.c: 1320: &vscp_imsg.oaddr,
 [; ;vscp_firmware.c: 1321: &vscp_imsg.priority,
 [; ;vscp_firmware.c: 1322: &vscp_imsg.flags,
-[; ;vscp_firmware.c: 1323: vscp_imsg.data))) {
+[; ;vscp_firmware.c: 1323: vscp_imsg.data ) ) ) {
 "1323
-[e $ ! != -> = _rv ( _getVSCPFrame (4 , , , , , &U . _vscp_imsg 2 &U . _vscp_imsg 3 &U . _vscp_imsg 4 &U . _vscp_imsg 1 &U . _vscp_imsg 0 &U . _vscp_imsg 5 `i -> -> -> 0 `i `uc `i 221  ]
+[e $ ! != -> = _rv ( _getVSCPFrame (4 , , , , , &U . _vscp_imsg 2 &U . _vscp_imsg 3 &U . _vscp_imsg 4 &U . _vscp_imsg 1 &U . _vscp_imsg 0 &U . _vscp_imsg 5 `i -> -> -> 0 `i `uc `i 222  ]
 {
 [; ;vscp_firmware.c: 1325: vscp_imsg.flags |= 0x80;
 "1325
 [e =| . _vscp_imsg 0 -> -> 128 `i `uc ]
 "1326
 }
-[e :U 221 ]
+[e :U 222 ]
 [; ;vscp_firmware.c: 1326: }
 [; ;vscp_firmware.c: 1328: return rv;
 "1328
 [e ) _rv ]
-[e $UE 219  ]
+[e $UE 220  ]
 [; ;vscp_firmware.c: 1330: }
 "1330
-[e :UE 219 ]
+[e :UE 220 ]
 }

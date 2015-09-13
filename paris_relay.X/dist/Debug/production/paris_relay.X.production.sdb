@@ -427,6 +427,8 @@ ECAN_RX_DBL_BUFFERED 128
 [v _vscp_deviceURL vscp_deviceURL `C[32]uc  1 e 32 0 ]
 "100
 [v _measurement_clock measurement_clock `VEul  1 e 4 0 ]
+"102
+[v _sendTimer sendTimer `VEuc  1 e 1 0 ]
 "103
 [v _seconds seconds `uc  1 e 1 0 ]
 "104
