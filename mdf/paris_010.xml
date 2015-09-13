@@ -4,8 +4,8 @@
 <module>
 	<name>Paris Relay controller</name>
 	<model>B</model>
-	<version>0.1.1</version>
-	<changed>2015-04-22</changed>
+	<version>0.1.2</version>
+	<changed>2015-09-13</changed>
 	<description lang="en">
 		With this VSCP module it is possible to control up to seven relays or similar devices. 
 	</description>
@@ -1239,7 +1239,7 @@
 			<name lang="en">Decision matrix row 1: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1323,7 +1323,7 @@
 		<reg page="0" offset="78" >
 			<name lang="en">Decision matrix row 1: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1341,7 +1341,7 @@
 			<name lang="en">Decision matrix row 2: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1425,7 +1425,7 @@
 		<reg page="0" offset="86" >
 			<name lang="en">Decision matrix row 2: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1443,7 +1443,7 @@
 			<name lang="en">Decision matrix row 3: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1527,7 +1527,7 @@
 		<reg page="0" offset="94" >
 			<name lang="en">Decision matrix row 3: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1545,7 +1545,7 @@
 			<name lang="en">Decision matrix row 4: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1629,7 +1629,7 @@
 		<reg page="0" offset="102" >
 			<name lang="en">Decision matrix row 4: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1647,7 +1647,7 @@
 			<name lang="en">Decision matrix row 5: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1731,7 +1731,7 @@
 		<reg page="0" offset="110" >
 			<name lang="en">Decision matrix row 5: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1749,7 +1749,7 @@
 			<name lang="en">Decision matrix row 6: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1833,7 +1833,7 @@
 		<reg page="0" offset="118" >
 			<name lang="en">Decision matrix row 6: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1851,7 +1851,7 @@
 			<name lang="en">Decision matrix row 7: Oaddr </name>
 			<description lang="en">
 			Row 1 of decision matrix. Originating address. Set to nickname for node that should trigger action. 
-			Oaddr is the originating address. We are only interested in messages from the node given here. 0×00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
+			Oaddr is the originating address. We are only interested in messages from the node given here. 0x00 is segment controller and 0xff is a node without a nickname. If bit 6 of flags is set oaddr will not be checked and events from all nodes will be accepted. 			
 			</description>
 			<access>rw</access>
 		</reg>
@@ -1935,7 +1935,7 @@
 		<reg page="0" offset="126" >
 			<name lang="en">Decision matrix row 7: Action</name>
 			<description lang="en">
-			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0×00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
+			This is the action or operation that should be performed if the filtering is satisfied. Only action code 0x00 is predefined and means No-Operation. All other codes are application specific and typical application defined codes could do measurement, send predefined event etc.		
 			</description>
 			<access>rw</access>
 		</reg>

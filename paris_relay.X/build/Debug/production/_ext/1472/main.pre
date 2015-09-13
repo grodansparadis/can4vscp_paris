@@ -19670,7 +19670,7 @@ return 1;
 # 786
 unsigned char getMinorVersion()
 {
-return 1;
+return 2;
 }
 
 # 795
@@ -20469,38 +20469,21 @@ if ( ( dmflags & 0x40 ) &&
 continue;
 }
 
-
-if ( dmflags & 0x10 ) {
-if ( 255 != vscp_imsg.data[ 1 ] ) {
-if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 0) ) {
-continue;
-}
-}
-}
-
-
-if ( dmflags & 0x08 ) {
-if ( 255 != vscp_imsg.data[ 2 ] ) {
-if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 1) ) {
-continue;
-}
-}
-}
-
+# 1677
 class_filter = ( dmflags & 0x01)*256 +
 Read_b_eep(0x43 + 72 + (8 * i) + 3);
 
-# 1678
+# 1682
 class_mask = ( dmflags & 0x02)*256 +
 Read_b_eep(0x43 + 72 + (8 * i) + 2);
 
-# 1683
+# 1687
 type_filter = Read_b_eep(0x43 + 72 + (8 * i) + 5);
 
-# 1687
+# 1691
 type_mask = Read_b_eep(0x43 + 72 + (8 * i) + 4);
 
-# 1692
+# 1696
 if ( !( ( class_filter ^ vscp_imsg.vscp_class ) & class_mask ) &&
 !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
 
@@ -20537,7 +20520,7 @@ break;
 }
 }
 
-# 1732
+# 1736
 void doActionOn(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20550,10 +20533,19 @@ for (i = 0; i < 8; i++) {
 if ( !( arg & ( 1 << i ) ) ) continue;
 
 
+if ( dmflags & 0x10 ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+
+# 1751
+continue;
+}
+}
+
+
 if ( dmflags & 0x08 ) {
 if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
 
-# 1748
+# 1759
 continue;
 }
 }
@@ -20563,7 +20555,7 @@ val = Read_b_eep(0x43 + 10 + i);
 
 if ( !( val & 0x80 ) ) continue;
 
-switch (i) {
+switch ( i ) {
 
 case 0:
 LATBbits.LATB4 = 1;
@@ -20649,7 +20641,7 @@ SendInformationEvent( i, 20, 25 );
 }
 }
 
-# 1847
+# 1858
 void doActionOff( unsigned char dmflags, unsigned char arg )
 {
 
@@ -20662,10 +20654,19 @@ for ( i = 0; i < 8; i++ ) {
 if ( !( arg & ( 1 << i ) ) ) continue;
 
 
+if ( dmflags & 0x10 ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+
+# 1873
+continue;
+}
+}
+
+
 if ( dmflags & 0x08 ) {
 if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
 
-# 1863
+# 1881
 continue;
 }
 }
@@ -20719,7 +20720,7 @@ SendInformationEvent( i, 20, 24 );
 }
 }
 
-# 1920
+# 1938
 void doActionPulse(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20732,10 +20733,19 @@ for ( i = 0; i < 8; i++ ) {
 if ( !( arg & ( 1 << i ) ) ) continue;
 
 
-if (dmflags & 0x08) {
+if ( dmflags & 0x10 ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+
+# 1953
+continue;
+}
+}
+
+
+if ( dmflags & 0x08 ) {
 if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
 
-# 1936
+# 1961
 continue;
 }
 }
@@ -20807,7 +20817,7 @@ break;
 }
 }
 
-# 2011
+# 2036
 void doActionStatus(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20821,10 +20831,19 @@ for (i = 0; i < 8; i++) {
 if (!(arg & (1 << i))) continue;
 
 
-if (dmflags & 0x08) {
-if (vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+if ( dmflags & 0x10 ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
 
-# 2028
+# 2052
+continue;
+}
+}
+
+
+if ( dmflags & 0x08 ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 2060
 continue;
 }
 }
@@ -20893,7 +20912,7 @@ SendInformationEvent( i, 20, 24 );
 }
 }
 
-# 2100
+# 2132
 void doActionDisable(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20906,10 +20925,19 @@ for ( i = 0; i < 8; i++ ) {
 if ( !( arg & (1 << i) ) ) continue;
 
 
-if ( dmflags & 0x08) {
+if ( dmflags & 0x10 ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+
+# 2147
+continue;
+}
+}
+
+
+if ( dmflags & 0x08 ) {
 if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
 
-# 2116
+# 2155
 continue;
 }
 }
@@ -20920,7 +20948,7 @@ val = Read_b_eep(0x43 + 10 + i);
 
 }
 
-# 2130
+# 2169
 void doActionToggle( unsigned char dmflags, unsigned char arg )
 {
 
@@ -20934,10 +20962,19 @@ for ( i = 0; i < 8; i++ ) {
 if ( !( arg & (1 << i) ) ) continue;
 
 
+if ( dmflags & 0x10 ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 52 + i) ) {
+
+# 2185
+continue;
+}
+}
+
+
 if ( dmflags & 0x08 ) {
 if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
 
-# 2147
+# 2193
 continue;
 }
 }
@@ -21048,103 +21085,103 @@ SendInformationEvent( i, 20, 24 );
 }
 }
 
-# 2269
+# 2315
 unsigned char vscp_getMajorVersion()
 {
 return 1;
 }
 
-# 2278
+# 2324
 unsigned char vscp_getMinorVersion()
 {
-return 1;
+return 2;
 }
 
-# 2287
+# 2333
 unsigned char vscp_getSubMinorVersion()
 {
 return 0;
 }
 
-# 2298
+# 2344
 uint8_t vscp_getGUID(uint8_t idx)
 {
 return Read_b_eep(0x13 + idx);
 }
 
-# 2310
+# 2356
 uint8_t vscp_getMDF_URL(uint8_t idx)
 {
 return vscp_deviceURL[ idx ];
 }
 
-# 2319
+# 2365
 uint8_t vscp_getUserID(uint8_t idx)
 {
 return Read_b_eep(0x06 + idx);
 }
 
-# 2328
+# 2374
 void vscp_setUserID(uint8_t idx, uint8_t data)
 {
 (Busy_eep(), Write_b_eep(idx + 0x06,data));
 }
 
-# 2339
+# 2385
 uint8_t vscp_getManufacturerId(uint8_t idx)
 {
 return Read_b_eep(0x0B + idx);
 }
 
-# 2348
+# 2394
 uint8_t vscp_getBootLoaderAlgorithm(void)
 {
 return 0x01;
 }
 
-# 2357
+# 2403
 uint8_t vscp_getBufferSize(void)
 {
 return 8;
 }
 
-# 2367
+# 2413
 uint8_t vscp_getNickname(void)
 {
 return Read_b_eep(0x01);
 }
 
-# 2376
+# 2422
 void vscp_setNickname(uint8_t nickname)
 {
 (Busy_eep(), Write_b_eep(0x01,nickname));
 }
 
-# 2385
+# 2431
 uint8_t vscp_getSegmentCRC(void)
 {
 return Read_b_eep(0x02);
 }
 
-# 2394
+# 2440
 void vscp_setSegmentCRC(uint8_t crc)
 {
 (Busy_eep(), Write_b_eep(0x02,crc));
 }
 
-# 2403
+# 2449
 void vscp_setControlByte(uint8_t ctrl)
 {
 (Busy_eep(), Write_b_eep(0x03,ctrl));
 }
 
-# 2413
+# 2459
 uint8_t vscp_getControlByte(void)
 {
 return Read_b_eep(0x03);
 }
 
-# 2422
+# 2468
 void vscp_getEmbeddedMdfInfo(void)
 {
 
@@ -21162,7 +21199,7 @@ vscp_omsg.data[ 2 ] = 0;
 vscp_sendEvent();
 }
 
-# 2463
+# 2509
 void vscp_goBootloaderMode( uint8_t algorithm )
 {
 if ( 0x01 != algorithm ) return;
@@ -21175,7 +21212,7 @@ if ( 0x01 != algorithm ) return;
 asm(" reset");
 }
 
-# 2479
+# 2525
 void vscp_getMatrixInfo(char *pData)
 {
 uint8_t i;
@@ -21190,29 +21227,29 @@ vscp_omsg.data[ i ] = 0;
 
 }
 
-# 2497
+# 2543
 uint32_t vscp_getFamilyCode() {
 return 0L;
 }
 
-# 2506
+# 2552
 uint32_t vscp_getFamilyType() {
 return 0;
 }
 
-# 2514
+# 2560
 void vscp_restoreDefaults() {
 init_app_eeprom();
 init_app_ram();
 }
 
-# 2524
+# 2570
 uint8_t vscp_getRegisterPagesUsed( void )
 {
 return 1;
 }
 
-# 2533
+# 2579
 int8_t sendVSCPFrame( uint16_t vscpclass,
 uint8_t vscptype,
 uint8_t nodeid,
@@ -21232,7 +21269,7 @@ return 0;
 return 1;
 }
 
-# 2557
+# 2603
 int8_t getVSCPFrame(uint16_t *pvscpclass,
 uint8_t *pvscptype,
 uint8_t *pNodeId,
@@ -21254,7 +21291,7 @@ return 0;
 return 1;
 }
 
-# 2583
+# 2629
 int8_t sendCANFrame(uint32_t id, uint8_t dlc, uint8_t *pdata)
 {
 uint8_t rv = 0;
@@ -21272,7 +21309,7 @@ vscp_omsg.flags = 0;
 return rv;
 }
 
-# 2604
+# 2650
 int8_t getCANFrame(uint32_t *pid, uint8_t *pdlc, uint8_t *pdata)
 {
 ECAN_RX_MSG_FLAGS flags;
@@ -21296,7 +21333,7 @@ return 1;
 return 0;
 }
 
-# 2634
+# 2680
 void calculateSetFilterMask( void )
 {
 uint8_t i,j;
@@ -21314,7 +21351,7 @@ for ( i=0; i < 7; i++ ) {
 
 if ( Read_b_eep(0x43 + 8*i + 1) & 0x80 ) {
 
-# 2658
+# 2704
 rowmask =
 
 ( (uint32_t)( Read_b_eep(0x43 + 8*i + 1) & 2 ) << 23 ) |
@@ -21356,7 +21393,7 @@ mask &= ~(1<<j);
 }
 }
 
-# 2703
+# 2749
 filter &= rowfilter;
 
 

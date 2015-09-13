@@ -2569,7 +2569,7 @@ void vscp_restoreDefaults() {
 
 uint8_t vscp_getRegisterPagesUsed( void )
 {
-    return 1; // One pae used
+    return 1; // One page used
 }
 
 ///////////////////////////////////////////////////////////////////////////////
