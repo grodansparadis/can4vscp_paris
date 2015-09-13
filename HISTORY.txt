@@ -1,6 +1,8 @@
 Paris Relay module
 ==================
 
+2015-09-13 AKHE - Zone and subzone check now is dune on relay level as they should.
+2015-09-13 AKHE - Changed channel_flags to register_flags
 2015-01-12 AKHE - Fixed register read problem for some registers.
 2015-01-11 AKHE - Fixed missed relay zone/subzone pair (mdf updated)
 2015-01-11 AKHE - Fixed misaligned matrix (was at offset 70 should be 72).

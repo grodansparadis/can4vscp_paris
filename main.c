@@ -1198,7 +1198,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB );
                 }
                 else {
-                    channel_pulse_flags &= 0b11111110; // Disable pulse output
+                    relay_pulse_flags &= 0b11111110; // Disable pulse output
                     RELAY0 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1226,7 +1226,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB);
                 }
                 else {
-                    channel_pulse_flags &= 0b11111101; // Disable pulse output
+                    relay_pulse_flags &= 0b11111101; // Disable pulse output
                     RELAY1 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1254,7 +1254,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY2_PULSE_TIME_LSB);
                 }
                 else {
-                    channel_pulse_flags &= 0b11111011; // Disable pulse output
+                    relay_pulse_flags &= 0b11111011; // Disable pulse output
                     RELAY2 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1282,7 +1282,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY3_PULSE_TIME_LSB);
                 }
                 else {
-                    channel_pulse_flags &= 0b11110111; // Disable pulse output
+                    relay_pulse_flags &= 0b11110111; // Disable pulse output
                     RELAY3 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1310,7 +1310,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY4_PULSE_TIME_LSB);
                 }
                 else {
-                    channel_pulse_flags &= 0b11101111; // Disable pulse output
+                    relay_pulse_flags &= 0b11101111; // Disable pulse output
                     RELAY4 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1338,7 +1338,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY5_PULSE_TIME_LSB);
                 }
                 else {
-                    channel_pulse_flags &= 0b11011111; // Disable pulse output
+                    relay_pulse_flags &= 0b11011111; // Disable pulse output
                     RELAY5 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1366,7 +1366,7 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
                                     eeprom_read( VSCP_EEPROM_END + REG_RELAY6_PULSE_TIME_LSB);
                 }
                 else {
-                    channel_pulse_flags &= 0b10111111; // Disable pulse output
+                    relay_pulse_flags &= 0b10111111; // Disable pulse output
                     RELAY3 = 0; // End with off
                     bOn = FALSE;
                 }
@@ -1652,6 +1652,10 @@ void doDM(void)
                 continue;
             }
 
+            /*  
+            
+              No need for this as each relay has it's own zone/subzone register
+            
             // Check if zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
@@ -1668,7 +1672,7 @@ void doDM(void)
                         continue;
                     }
                 }
-            }
+            }*/
             
             class_filter = ( dmflags & VSCP_DM_FLAG_CLASS_FILTER)*256 +
                     eeprom_read( VSCP_EEPROM_END +
@@ -1740,11 +1744,18 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
         // If the rely should not be handled just move on
         if ( !( arg & ( 1 << i ) ) ) continue;
 
+        // Check if zone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
+            if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_ZONE + i ) ) {
+                continue;
+            }
+        }
+        
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE +
-                    i ) ) {
+                    REG_RELAY1_SUBZONE + i ) ) {
                 continue;
             }
         }
@@ -1754,7 +1765,7 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
         // Do nothing if disabled
         if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
-        switch (i) {
+        switch ( i ) {
 
             case 0:
                 RELAY0 = 1;
@@ -1855,11 +1866,18 @@ void doActionOff( unsigned char dmflags, unsigned char arg )
         // If the rely should not be handled just move on
         if ( !( arg & ( 1 << i ) ) ) continue;
 
+        // Check if zone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
+            if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_ZONE + i ) ) {
+                continue;
+            }
+        }
+        
         // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
-            if ( vscp_imsg.data[ 2 ] != eeprom_read(VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE +
-                    i ) ) {
+            if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_SUBZONE + i ) ) {
                 continue;
             }
         }
@@ -1928,11 +1946,18 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
         // If the rely should not be handled just move on
         if ( !( arg & ( 1 << i ) ) ) continue;
 
-        // Check if subzone should match and if so if it match
-        if (dmflags & VSCP_DM_FLAG_CHECK_SUBZONE) {
+        // Check if zone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
+            if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_ZONE + i ) ) {
+                continue;
+            }
+        }
+        
+        // Check if subzone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE +
-                    i ) ) {
+                    REG_RELAY1_SUBZONE + i ) ) {
                 continue;
             }
         }
@@ -2020,11 +2045,18 @@ void doActionStatus(unsigned char dmflags, unsigned char arg)
         // If the rely should not be handled just move on
         if (!(arg & (1 << i))) continue;
 
-        // Check if subzone should match and if so if it match
-        if (dmflags & VSCP_DM_FLAG_CHECK_SUBZONE) {
-            if (vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE +
-                    i ) ) {
+        // Check if zone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
+            if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_ZONE + i ) ) {
+                continue;
+            }
+        }
+        
+        // Check if subzone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
+            if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_SUBZONE + i ) ) {
                 continue;
             }
         }
@@ -2108,11 +2140,18 @@ void doActionDisable(unsigned char dmflags, unsigned char arg)
         // If the rely should not be handled just move on
         if ( !( arg & (1 << i) ) ) continue;
 
-        // Check if subzone should match and if so if it match
-        if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE) {
+        // Check if zone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
+            if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_ZONE + i ) ) {
+                continue;
+            }
+        }
+        
+        // Check if subzone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE +
-                    i ) ) {
+                    REG_RELAY1_SUBZONE + i ) ) {
                 continue;
             }
         }
@@ -2139,11 +2178,18 @@ void doActionToggle( unsigned char dmflags, unsigned char arg )
         // If the relay should not be handled just move on
         if ( !( arg & (1 << i) ) ) continue;
 
-        // Check if subzone should match and if so if it match
+        // Check if zone should match and if so check if it match
+        if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
+            if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END +
+                    REG_RELAY1_ZONE + i ) ) {
+                continue;
+            }
+        }
+        
+        // Check if subzone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
             if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END +
-                    REG_RELAY1_SUBZONE +
-                    i ) ) {
+                    REG_RELAY1_SUBZONE + i ) ) {
                 continue;
             }
         }

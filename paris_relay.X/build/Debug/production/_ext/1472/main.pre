@@ -18746,22 +18746,6 @@ typedef unsigned short uint16_t;
 
 typedef unsigned char uint8_t;
 
-# 23 "../../vscp_firmware/pic/common\eeprom.h"
-uint8_t readEEPROM( uint16_t address );
-void writeEEPROM( uint16_t address, uint8_t data );
-
-
-uint32_t readULongEEPROM( uint16_t address );
-void writeULongEEPROM( uint16_t address, uint8_t data );
-
-
-
-void readStringEEPROM( uint16_t address,
-uint8_t string[],
-uint8_t final_character );
-void writeStringEEPROM( uint16_t address,
-uint8_t string[] ) ;
-
 # 78 "../ecan.h"
 typedef unsigned char BYTE;
 
@@ -18846,10 +18830,10 @@ void _CANIDToRegs(BYTE* ptr,
 unsigned long val,
 BYTE type );
 
-# 189 "../../vscp_firmware/common\vscp_firmware.h"
+# 190 "../../vscp_firmware/common\vscp_firmware.h"
 struct _imsg {
 
-# 201
+# 202
 uint8_t flags;
 
 uint8_t priority;
@@ -18859,10 +18843,10 @@ uint8_t oaddr;
 uint8_t data[8];
 };
 
-# 214
+# 217
 struct _omsg {
 
-# 226
+# 229
 uint8_t flags;
 
 uint8_t priority;
@@ -18872,7 +18856,7 @@ uint8_t vscp_type;
 uint8_t data[8];
 };
 
-# 280
+# 283
 struct _dmrow {
 uint8_t oaddr;
 uint8_t flags;
@@ -18905,160 +18889,160 @@ extern volatile uint16_t vscp_configtimer;
 
 extern const uint8_t vscp_deviceURL[];
 
-# 320
+# 323
 void vscp_init(void);
 
-# 326
+# 329
 void vscp_error(void);
 
-# 334
+# 337
 void vscp_handleProbeState(void);
 
-# 347
+# 350
 void vscp_handlePreActiveState(void);
 
-# 354
+# 357
 void vscp_handleProtocolEvent(void);
 
-# 362
+# 365
 void vscp_goActiveState(void);
 
-# 372
+# 375
 void vscp_sendHeartBeat(uint8_t zone, uint8_t subzone);
 
-# 377
+# 380
 void vscp_handleHeartbeat(void);
 
-# 382
+# 385
 void vscp_handleSetNickname(void);
 
-# 387
+# 390
 void vscp_handleDropNickname(void);
 
-# 392
+# 395
 void vscp_newNodeOnline(void);
 
-# 399
+# 402
 uint8_t vscp_readRegister(uint8_t reg);
 
-# 406
+# 409
 uint8_t vscp_readStdReg(uint8_t reg);
 
-# 414
+# 417
 uint8_t vscp_writeRegister(uint8_t reg, uint8_t value);
 
-# 422
+# 425
 uint8_t vscp_writeStdReg(uint8_t reg, uint8_t value);
 
-# 430
+# 433
 void vscp_doOneSecondWork(void);
 
-# 435
+# 438
 int8_t vscp_check_pstorage(void);
 
-# 443
+# 444
 int8_t vscp_sendEvent(void);
 
-# 449
+# 450
 int8_t vscp_getEvent(void);
 
-# 470
-int8_t getVSCPFrame(uint16_t *pvscpclass,
+# 471
+int8_t getVSCPFrame( uint16_t *pvscpclass,
 uint8_t *pvscptype,
 uint8_t *pNodeId,
 uint8_t *pPriority,
 uint8_t *pSize,
 uint8_t *pData);
 
-# 487
-int8_t sendVSCPFrame(uint16_t vscpclass,
+# 488
+int8_t sendVSCPFrame( uint16_t vscpclass,
 uint8_t vscptype,
 uint8_t nodeid,
 uint8_t priority,
 uint8_t size,
-uint8_t *pData);
+uint8_t *pData );
 
-# 500
-uint8_t vscp_getMajorVersion(void);
-uint8_t vscp_getMinorVersion(void);
-uint8_t vscp_getSubMinorVersion(void);
+# 499
+uint8_t vscp_getMajorVersion( void );
+uint8_t vscp_getMinorVersion( void );
+uint8_t vscp_getSubMinorVersion( void );
 
-# 507
+# 506
 uint8_t vscp_getGUID(uint8_t idx);
 void vscp_setGUID(uint8_t idx, uint8_t data);
 
-# 517
+# 516
 uint8_t vscp_getUserID(uint8_t idx);
 void vscp_setUserID(uint8_t idx, uint8_t data);
 
-# 533
+# 532
 uint8_t vscp_getManufacturerId(uint8_t idx);
 void vscp_setManufacturerId(uint8_t idx, uint8_t data);
 
-# 539
+# 538
 uint8_t vscp_getBootLoaderAlgorithm( void );
 
-# 544
+# 543
 uint8_t vscp_getBufferSize(void);
 
-# 549
+# 548
 uint8_t vscp_getRegisterPagesUsed(void);
 
-# 555
+# 554
 uint8_t vscp_getMDF_URL(uint8_t idx);
 
-# 561
+# 560
 uint8_t vscp_readNicknamePermanent(void);
 
-# 567
+# 566
 void vscp_writeNicknamePermanent(uint8_t nickname);
 
-# 572
+# 571
 uint8_t vscp_getSegmentCRC(void);
 
-# 577
+# 576
 void vscp_setSegmentCRC(uint8_t crc);
 
-# 582
+# 581
 uint8_t vscp_getControlByte(void);
 
-# 587
+# 586
 void vscp_setControlByte(uint8_t ctrl);
 
-# 594
+# 593
 uint8_t vscp_getPageSelect(uint8_t idx);
 
-# 601
+# 600
 void vscp_setPageSelect(uint8_t idx, uint8_t data);
 
-# 608
+# 607
 uint8_t vscp_readAppReg(uint8_t reg);
 
-# 616
+# 615
 uint8_t vscp_writeAppReg(uint8_t reg, uint8_t value);
 
-# 630
+# 629
 void vscp_getMatrixInfo(char *pData);
 
-# 638
+# 637
 void vscp_getEmbeddedMdfInfo(void);
 
-# 645
+# 644
 void vscp_goBootloaderMode( uint8_t algorithm );
 
-# 651
+# 650
 uint8_t vscp_getZone(void);
 
-# 658
+# 656
 uint8_t vscp_getSubzone(void);
 
-# 664
+# 662
 uint32_t vscp_getFamilyCode(void);
 
-# 670
+# 668
 uint32_t vscp_getFamilyType(void);
 
-# 678
+# 676
 void vscp_restoreDefaults(void);
 
 # 240 "../smartrelay.h"
@@ -19089,7 +19073,7 @@ int8_t sendCANFrame(uint32_t id, uint8_t size, uint8_t *pData);
 int8_t getCANFrame(uint32_t *pid, uint8_t *psize, uint8_t *pData);
 
 
-# 70 "../main.c"
+# 69 "../main.c"
 #pragma config WDT = OFF
 #pragma config OSC = HSPLL
 #pragma config PWRT = ON
@@ -19107,7 +19091,7 @@ int8_t getCANFrame(uint32_t *pid, uint8_t *psize, uint8_t *pData);
 
 #pragma config EBTRB = OFF
 
-# 94
+# 93
 void calculateSetFilterMask( void );
 
 
@@ -19134,7 +19118,7 @@ uint16_t relay_pulse_timer[8];
 
 uint16_t relay_protection_timer[8];
 
-# 133
+# 132
 void interrupt low_priority interrupt_at_low_vector( void )
 {
 
@@ -19146,6 +19130,7 @@ WriteTimer0(0xfb1d);
 vscp_timer++;
 vscp_configtimer++;
 measurement_clock++;
+sendTimer++;
 
 
 if ( PORTCbits.RC0 ) {
@@ -19213,7 +19198,7 @@ if ( ( vscp_initbtncnt > 250 ) &&
 
 
 vscp_nickname = 0xff;
-writeEEPROM( 0x01, 0xff );
+(Busy_eep(), Write_b_eep(0x01,0xff));
 vscp_init();
 
 }
@@ -19277,8 +19262,6 @@ if ( measurement_clock > 1000 ) {
 
 measurement_clock = 0;
 
-sendTimer++;
-
 
 vscp_doOneSecondWork();
 
@@ -19313,7 +19296,7 @@ doWork();
 }
 }
 
-# 319
+# 317
 void init()
 {
 
@@ -19322,19 +19305,19 @@ void init()
 
 init_app_ram();
 
-# 336
+# 334
 TRISA = 0x00;
 PORTA = 0x00;
 
-# 349
+# 347
 TRISB = 0b00001000;
 PORTB = 0x00;
 
-# 360
+# 358
 TRISC = 0b00000001;
 PORTC = 0x00;
 
-# 387
+# 385
 OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11110010 );
 WriteTimer0( 0xfb1d );
 
@@ -19350,7 +19333,7 @@ LATCbits.LATC4 = 0;
 
 ECANInitialize();
 
-# 421
+# 419
 INTCONbits.PEIE = 1;
 
 
@@ -19359,7 +19342,7 @@ INTCONbits.GIE = 1;
 return;
 }
 
-# 433
+# 431
 void init_app_ram( void )
 {
 uint8_t i;
@@ -19381,136 +19364,120 @@ relay_protection_timer[ i ] = 0;
 for ( i=0; i<7; i++ ) {
 
 
-if ( readEEPROM( 0x43 + 10 + i ) &
+if ( Read_b_eep(0x43 + 10 + i) &
 0x01 ) {
 
 relay_pulse_flags |= (1<<i);
 relay_pulse_timer[ i ] =
-readEEPROM( 0x43 + 18 + i ) * 256 +
-readEEPROM( 0x43 + 19 + i );
+Read_b_eep(0x43 + 18 + i) * 256 +
+Read_b_eep(0x43 + 19 + i);
 }
 
 
-if ( readEEPROM(0x43 + 15 + i ) & 0x04) {
+if ( Read_b_eep(0x43 + 15 + i) & 0x04) {
 relay_protection_timer[ i ] =
-readEEPROM(0x43 + 44 + i ) * 256 +
-readEEPROM(0x43 + 45 + i );
+Read_b_eep(0x43 + 44 + i) * 256 +
+Read_b_eep(0x43 + 45 + i);
 }
 
 }
 
 }
 
-# 479
+# 477
 void init_app_eeprom(void)
 {
 unsigned char i, j;
 
-writeEEPROM( 0x43 + 0, 0 );
-writeEEPROM( 0x43 + 1, 0 );
+(Busy_eep(), Write_b_eep(0x43 + 0,0));
+(Busy_eep(), Write_b_eep(0x43 + 1,0));
 
-writeEEPROM( 0x43 + 10,
-0x08 |
-0x10 |
-0x80 );
+(Busy_eep(), Write_b_eep(0x43 + 10,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 11,
-0x08 |
-0x10 |
-0x80 );
+# 489
+(Busy_eep(), Write_b_eep(0x43 + 11,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 12,
-0x08 |
-0x10 |
-0x80 );
+# 494
+(Busy_eep(), Write_b_eep(0x43 + 12,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 13,
-0x08 |
-0x10 |
-0x80 );
+# 499
+(Busy_eep(), Write_b_eep(0x43 + 13,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 14,
-0x08 |
-0x10 |
-0x80 );
+# 504
+(Busy_eep(), Write_b_eep(0x43 + 14,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 15,
-0x08 |
-0x10 |
-0x80 );
+# 509
+(Busy_eep(), Write_b_eep(0x43 + 15,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 16,
-0x08 |
-0x10 |
-0x80 );
+# 514
+(Busy_eep(), Write_b_eep(0x43 + 16,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 17,
-0x08 |
-0x10 |
-0x80 );
+# 519
+(Busy_eep(), Write_b_eep(0x43 + 17,0x08 | 0x10 | 0x80));
 
-writeEEPROM( 0x43 + 18, 0 );
-writeEEPROM( 0x43 + 19, 0 );
-writeEEPROM( 0x43 + 20, 0 );
-writeEEPROM( 0x43 + 21, 0 );
-writeEEPROM( 0x43 + 22, 0 );
-writeEEPROM( 0x43 + 23, 0 );
-writeEEPROM( 0x43 + 24, 0 );
-writeEEPROM( 0x43 + 25, 0 );
-writeEEPROM( 0x43 + 26, 0 );
-writeEEPROM( 0x43 + 27, 0 );
-writeEEPROM( 0x43 + 28, 0 );
-writeEEPROM( 0x43 + 29, 0 );
-writeEEPROM( 0x43 + 30, 0 );
-writeEEPROM( 0x43 + 31, 0 );
-writeEEPROM( 0x43 + 32, 0 );
-writeEEPROM( 0x43 + 33, 0 );
+# 524
+(Busy_eep(), Write_b_eep(0x43 + 18,0));
+(Busy_eep(), Write_b_eep(0x43 + 19,0));
+(Busy_eep(), Write_b_eep(0x43 + 20,0));
+(Busy_eep(), Write_b_eep(0x43 + 21,0));
+(Busy_eep(), Write_b_eep(0x43 + 22,0));
+(Busy_eep(), Write_b_eep(0x43 + 23,0));
+(Busy_eep(), Write_b_eep(0x43 + 24,0));
+(Busy_eep(), Write_b_eep(0x43 + 25,0));
+(Busy_eep(), Write_b_eep(0x43 + 26,0));
+(Busy_eep(), Write_b_eep(0x43 + 27,0));
+(Busy_eep(), Write_b_eep(0x43 + 28,0));
+(Busy_eep(), Write_b_eep(0x43 + 29,0));
+(Busy_eep(), Write_b_eep(0x43 + 30,0));
+(Busy_eep(), Write_b_eep(0x43 + 31,0));
+(Busy_eep(), Write_b_eep(0x43 + 32,0));
+(Busy_eep(), Write_b_eep(0x43 + 33,0));
 
-writeEEPROM( 0x43 + 34, 0 );
-writeEEPROM( 0x43 + 35, 0 );
-writeEEPROM( 0x43 + 36, 0 );
-writeEEPROM( 0x43 + 37, 0 );
-writeEEPROM( 0x43 + 38, 0 );
-writeEEPROM( 0x43 + 39, 0 );
-writeEEPROM( 0x43 + 40, 0 );
-writeEEPROM( 0x43 + 41, 0 );
-writeEEPROM( 0x43 + 42, 0 );
-writeEEPROM( 0x43 + 43, 0 );
-writeEEPROM( 0x43 + 44, 0 );
-writeEEPROM( 0x43 + 45, 0 );
-writeEEPROM( 0x43 + 46, 0 );
-writeEEPROM( 0x43 + 47, 0 );
-writeEEPROM( 0x43 + 48, 0 );
-writeEEPROM( 0x43 + 49, 0 );
+(Busy_eep(), Write_b_eep(0x43 + 34,0));
+(Busy_eep(), Write_b_eep(0x43 + 35,0));
+(Busy_eep(), Write_b_eep(0x43 + 36,0));
+(Busy_eep(), Write_b_eep(0x43 + 37,0));
+(Busy_eep(), Write_b_eep(0x43 + 38,0));
+(Busy_eep(), Write_b_eep(0x43 + 39,0));
+(Busy_eep(), Write_b_eep(0x43 + 40,0));
+(Busy_eep(), Write_b_eep(0x43 + 41,0));
+(Busy_eep(), Write_b_eep(0x43 + 42,0));
+(Busy_eep(), Write_b_eep(0x43 + 43,0));
+(Busy_eep(), Write_b_eep(0x43 + 44,0));
+(Busy_eep(), Write_b_eep(0x43 + 45,0));
+(Busy_eep(), Write_b_eep(0x43 + 46,0));
+(Busy_eep(), Write_b_eep(0x43 + 47,0));
+(Busy_eep(), Write_b_eep(0x43 + 48,0));
+(Busy_eep(), Write_b_eep(0x43 + 49,0));
 
-writeEEPROM( 0x43 + 50, 0 );
-writeEEPROM( 0x43 + 51, 0 );
-writeEEPROM( 0x43 + 52, 0 );
-writeEEPROM( 0x43 + 53, 0 );
-writeEEPROM( 0x43 + 54, 0 );
-writeEEPROM( 0x43 + 55, 0 );
-writeEEPROM( 0x43 + 56, 0 );
-writeEEPROM( 0x43 + 57, 0 );
-writeEEPROM( 0x43 + 58, 0 );
-writeEEPROM( 0x43 + 59, 0 );
-writeEEPROM( 0x43 + 60, 0 );
-writeEEPROM( 0x43 + 61, 0 );
-writeEEPROM( 0x43 + 62, 0 );
-writeEEPROM( 0x43 + 63, 0 );
-writeEEPROM( 0x43 + 64, 0 );
-writeEEPROM( 0x43 + 65, 0 );
+(Busy_eep(), Write_b_eep(0x43 + 50,0));
+(Busy_eep(), Write_b_eep(0x43 + 51,0));
+(Busy_eep(), Write_b_eep(0x43 + 52,0));
+(Busy_eep(), Write_b_eep(0x43 + 53,0));
+(Busy_eep(), Write_b_eep(0x43 + 54,0));
+(Busy_eep(), Write_b_eep(0x43 + 55,0));
+(Busy_eep(), Write_b_eep(0x43 + 56,0));
+(Busy_eep(), Write_b_eep(0x43 + 57,0));
+(Busy_eep(), Write_b_eep(0x43 + 58,0));
+(Busy_eep(), Write_b_eep(0x43 + 59,0));
+(Busy_eep(), Write_b_eep(0x43 + 60,0));
+(Busy_eep(), Write_b_eep(0x43 + 61,0));
+(Busy_eep(), Write_b_eep(0x43 + 62,0));
+(Busy_eep(), Write_b_eep(0x43 + 63,0));
+(Busy_eep(), Write_b_eep(0x43 + 64,0));
+(Busy_eep(), Write_b_eep(0x43 + 65,0));
 
 
 
 for ( i = 0; i < 7; i++ ) {
 for ( j = 0; j < 8; j++ ) {
-writeEEPROM( 0x43 + 72 + i * 8 + j, 0 );
+(Busy_eep(), Write_b_eep(0x43 + 72 + i * 8 + j,0));
 }
 }
 
 }
 
-# 591
+# 589
 void doApplicationOneSecondWork(void)
 {
 
@@ -19521,7 +19488,7 @@ BOOL bOn = 0;
 for ( i = 0; i < 8; i++ ) {
 
 
-ctrlreg = readEEPROM( 0x43 + 10 + i );
+ctrlreg = Read_b_eep(0x43 + 10 + i);
 
 
 if ( !( ctrlreg & 0x80 ) ) continue;
@@ -19534,7 +19501,7 @@ relay_protection_timer[ i ]--;
 
 
 if ( !relay_protection_timer[ i ] &&
-( readEEPROM( 0x43 + 10 + i ) &
+( Read_b_eep(0x43 + 10 + i) &
 0x04 ) ) {
 
 
@@ -19551,8 +19518,8 @@ SendInformationEvent( i, 1,
 else {
 
 relay_protection_timer[ i ] =
-readEEPROM(0x43 + 34 + i ) * 256 +
-readEEPROM(0x43 + 35 + i );
+Read_b_eep(0x43 + 34 + i) * 256 +
+Read_b_eep(0x43 + 35 + i);
 }
 
 
@@ -19641,18 +19608,19 @@ break;
 
 
 relay_pulse_timer[ i ] =
-readEEPROM( 0x43 +
-18 + 2*i ) * 256 +
-readEEPROM( 0x43 +
-19 + 2*i );
+Read_b_eep(0x43 + 18 + 2*i) * 256 +
 
+# 721
+Read_b_eep(0x43 + 19 + 2*i);
+
+# 724
 if ( bOn ) {
 
 
-if ( readEEPROM( 0x43 + 10 + i ) & 0x04 ) {
+if ( Read_b_eep(0x43 + 10 + i) & 0x04 ) {
 relay_protection_timer[ i ] =
-readEEPROM( 0x43 + 34 + 2*i ) * 256 +
-readEEPROM( 0x43 + 35 + 2*i );
+Read_b_eep(0x43 + 34 + 2*i) * 256 +
+Read_b_eep(0x43 + 35 + 2*i);
 }
 
 if ( ctrlreg & 0x08 ) {
@@ -19684,8 +19652,8 @@ SendInformationEvent( i, 20,
 else {
 
 relay_pulse_timer[ 0 ] =
-readEEPROM( 0x43 + 18 + 2*i ) * 256 +
-readEEPROM( 0x43 + 19 + 2*i );
+Read_b_eep(0x43 + 18 + 2*i) * 256 +
+Read_b_eep(0x43 + 19 + 2*i);
 }
 
 }
@@ -19693,73 +19661,73 @@ readEEPROM( 0x43 + 19 + 2*i );
 }
 }
 
-# 779
+# 777
 unsigned char getMajorVersion()
 {
 return 1;
 }
 
-# 788
+# 786
 unsigned char getMinorVersion()
 {
 return 1;
 }
 
-# 797
+# 795
 unsigned char getSubMinorVersion()
 {
 return 0;
 }
 
-# 808
+# 806
 void vscp_setGUID(uint8_t idx, uint8_t data ) {
 if ( idx>15 ) return;
-writeEEPROM(0x13 + idx, data);
+(Busy_eep(), Write_b_eep(0x13 + idx,data));
 }
 
-# 820
+# 818
 void vscp_setManufacturerId( uint8_t idx, uint8_t data ) {
 if ( idx>7 ) return;
-writeEEPROM(0x0B + idx, data);
+(Busy_eep(), Write_b_eep(0x0B + idx,data));
 }
 
-# 830
+# 828
 unsigned char getBootLoaderAlgorithm(void)
 {
 return 0x01;
 }
 
-# 839
+# 837
 unsigned char getBufferSize(void)
 {
 return 8;
 }
 
-# 848
+# 846
 uint8_t vscp_readNicknamePermanent(void)
 {
-return readEEPROM( 0x01 );
+return Read_b_eep(0x01);
 }
 
-# 857
+# 855
 void vscp_writeNicknamePermanent(uint8_t nickname)
 {
-writeEEPROM( 0x01, nickname );
+(Busy_eep(), Write_b_eep(0x01,nickname));
 }
 
-# 866
+# 864
 uint8_t vscp_getZone(void)
 {
-return readEEPROM( 0x43 + 0 );
+return Read_b_eep(0x43 + 0);
 }
 
-# 875
+# 873
 uint8_t vscp_getSubzone(void)
 {
-return readEEPROM( 0x43 + 1 );
+return Read_b_eep(0x43 + 1);
 }
 
-# 886
+# 884
 void doWork(void)
 {
 if ( 0x03 == vscp_node_state ) {
@@ -19767,7 +19735,7 @@ if ( 0x03 == vscp_node_state ) {
 }
 }
 
-# 897
+# 895
 uint8_t vscp_readAppReg(uint8_t reg)
 {
 uint8_t rv;
@@ -19776,11 +19744,11 @@ rv = 0x00;
 
 
 if ( reg == 0x00 ) {
-rv = readEEPROM(0x43 + 0);
+rv = Read_b_eep(0x43 + 0);
 }
 
 else if ( reg == 0x01 ) {
-rv = readEEPROM(0x43 + 1);
+rv = Read_b_eep(0x43 + 1);
 }
 else if ( (reg >= 2) && (reg < 10) ) {
 
@@ -19828,16 +19796,17 @@ break;
 }
 }
 
+
 else if ( ( reg >= 10 ) &&
 (reg < (72 + 7 * 8 ) ) ) {
-rv = readEEPROM( 0x43 + reg );
+rv = Read_b_eep(0x43 + reg);
 }
 
 return rv;
 
 }
 
-# 970
+# 969
 uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 {
 uint8_t rv;
@@ -19848,19 +19817,20 @@ rv = ~val;
 
 
 if ( reg == 0 ) {
-writeEEPROM(0x43 + 0, val);
-rv = readEEPROM(0x43 + 0);
+(Busy_eep(), Write_b_eep(0x43 + 0,val));
+rv = Read_b_eep(0x43 + 0);
 }
 else if ( reg == 1 ) {
 
-writeEEPROM(0x43 + 1, val);
-rv = readEEPROM(0x43 + 1);
+(Busy_eep(), Write_b_eep(0x43 + 1,val));
+rv = Read_b_eep(0x43 + 1);
 }
 
 else if ( (reg >= 2) && (reg <= 9) ) {
 
-if ( readEEPROM( 0x43 +
-10 + reg - 2 ) &
+if ( Read_b_eep(0x43 + 10 + reg - 2) &
+
+# 992
 0x80 ) {
 
 switch ( reg ) {
@@ -19877,10 +19847,10 @@ rv = LATBbits.LATB4;
 bOn = 1;
 
 
-if ( readEEPROM( 0x43 + 10 ) & 0x04 ) {
+if ( Read_b_eep(0x43 + 10) & 0x04 ) {
 relay_protection_timer[ 0 ] =
-readEEPROM( 0x43 + 34 ) * 256 +
-readEEPROM( 0x43 + 35 );
+Read_b_eep(0x43 + 34) * 256 +
+Read_b_eep(0x43 + 35);
 }
 
 }
@@ -19902,10 +19872,10 @@ LATBbits.LATB1 = 1;
 rv = LATBbits.LATB1;
 bOn = 1;
 
-if (readEEPROM(0x43 + 11) & 0x04) {
+if (Read_b_eep(0x43 + 11) & 0x04) {
 relay_protection_timer[ 1 ] =
-readEEPROM(0x43 + 36) * 256 +
-readEEPROM(0x43 + 37);
+Read_b_eep(0x43 + 36) * 256 +
+Read_b_eep(0x43 + 37);
 }
 
 }
@@ -19927,10 +19897,10 @@ LATBbits.LATB0 = 1;
 rv = LATBbits.LATB0;
 bOn = 1;
 
-if ( readEEPROM(0x43 + 12) & 0x04) {
+if ( Read_b_eep(0x43 + 12) & 0x04) {
 relay_protection_timer[ 2 ] =
-readEEPROM(0x43 + 38) * 256 +
-readEEPROM(0x43 + 39);
+Read_b_eep(0x43 + 38) * 256 +
+Read_b_eep(0x43 + 39);
 }
 
 }
@@ -19953,10 +19923,10 @@ LATCbits.LATC7 = 1;
 rv = LATCbits.LATC7;
 bOn = 1;
 
-if (readEEPROM(0x43 + 13) & 0x04) {
+if (Read_b_eep(0x43 + 13) & 0x04) {
 relay_protection_timer[ 3 ] =
-readEEPROM(0x43 + 40) * 256 +
-readEEPROM(0x43 + 41);
+Read_b_eep(0x43 + 40) * 256 +
+Read_b_eep(0x43 + 41);
 }
 
 }
@@ -19979,10 +19949,10 @@ LATCbits.LATC6 = 1;
 rv = LATCbits.LATC6;
 bOn = 1;
 
-if (readEEPROM(0x43 + 14) & 0x04) {
+if (Read_b_eep(0x43 + 14) & 0x04) {
 relay_protection_timer[ 4 ] =
-readEEPROM(0x43 + 42) * 256 +
-readEEPROM(0x43 + 43);
+Read_b_eep(0x43 + 42) * 256 +
+Read_b_eep(0x43 + 43);
 }
 
 }
@@ -20005,10 +19975,10 @@ LATCbits.LATC5 = 1;
 rv = LATCbits.LATC5;
 bOn = 1;
 
-if (readEEPROM(0x43 + 15) & 0x04) {
+if (Read_b_eep(0x43 + 15) & 0x04) {
 relay_protection_timer[ 5 ] =
-readEEPROM(0x43 + 44) * 256 +
-readEEPROM(0x43 + 45);
+Read_b_eep(0x43 + 44) * 256 +
+Read_b_eep(0x43 + 45);
 }
 
 }
@@ -20030,10 +20000,10 @@ LATCbits.LATC4 = 1;
 rv = LATCbits.LATC4;
 bOn = 1;
 
-if (readEEPROM(0x43 + 16) & 0x04) {
+if (Read_b_eep(0x43 + 16) & 0x04) {
 relay_protection_timer[ 6 ] =
-readEEPROM(0x43 + 46) * 256 +
-readEEPROM(0x43 + 47);
+Read_b_eep(0x43 + 46) * 256 +
+Read_b_eep(0x43 + 47);
 }
 
 }
@@ -20056,8 +20026,8 @@ switch( reg ) {
 
 case 10:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20066,21 +20036,26 @@ bOn = 0;
 
 relay_pulse_flags |= 0x01;
 relay_pulse_timer[ 0 ] =
-readEEPROM( 0x43 + 18 ) * 256 +
-readEEPROM( 0x43 + 19 );
+Read_b_eep(0x43 + 18) * 256 +
+Read_b_eep(0x43 + 19);
+}
+else {
+relay_pulse_flags &= 0b11111110;
+LATBbits.LATB4 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 0 ] =
-readEEPROM( 0x43 + 34 ) * 256 +
-readEEPROM( 0x43 + 35 );
+Read_b_eep(0x43 + 34) * 256 +
+Read_b_eep(0x43 + 35);
 }
 break;
 
 case 11:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20089,21 +20064,26 @@ bOn = 0;
 
 relay_pulse_flags |= 0x02;
 relay_pulse_timer[ 1 ] =
-readEEPROM( 0x43 + 18) * 256 +
-readEEPROM( 0x43 + 19);
+Read_b_eep(0x43 + 18) * 256 +
+Read_b_eep(0x43 + 19);
+}
+else {
+relay_pulse_flags &= 0b11111101;
+LATBbits.LATB1 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 1 ] =
-readEEPROM( 0x43 + 34 ) * 256 +
-readEEPROM( 0x43 + 35 );
+Read_b_eep(0x43 + 34) * 256 +
+Read_b_eep(0x43 + 35);
 }
 break;
 
 case 12:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20112,21 +20092,26 @@ bOn = 0;
 
 relay_pulse_flags |= 0x04;
 relay_pulse_timer[ 2 ] =
-readEEPROM( 0x43 + 22) * 256 +
-readEEPROM( 0x43 + 23);
+Read_b_eep(0x43 + 22) * 256 +
+Read_b_eep(0x43 + 23);
+}
+else {
+relay_pulse_flags &= 0b11111011;
+LATBbits.LATB0 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 2 ] =
-readEEPROM( 0x43 + 38 ) * 256 +
-readEEPROM( 0x43 + 39 );
+Read_b_eep(0x43 + 38) * 256 +
+Read_b_eep(0x43 + 39);
 }
 break;
 
 case 13:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20135,21 +20120,26 @@ bOn = 0;
 
 relay_pulse_flags |= 0x08;
 relay_pulse_timer[ 3 ] =
-readEEPROM( 0x43 + 24) * 256 +
-readEEPROM( 0x43 + 25);
+Read_b_eep(0x43 + 24) * 256 +
+Read_b_eep(0x43 + 25);
+}
+else {
+relay_pulse_flags &= 0b11110111;
+LATCbits.LATC7 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 3 ] =
-readEEPROM( 0x43 + 40 ) * 256 +
-readEEPROM( 0x43 + 41 );
+Read_b_eep(0x43 + 40) * 256 +
+Read_b_eep(0x43 + 41);
 }
 break;
 
 case 14:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20158,21 +20148,26 @@ bOn = 0;
 
 relay_pulse_flags |= 0x10;
 relay_pulse_timer[ 4 ] =
-readEEPROM( 0x43 + 26) * 256 +
-readEEPROM( 0x43 + 27);
+Read_b_eep(0x43 + 26) * 256 +
+Read_b_eep(0x43 + 27);
+}
+else {
+relay_pulse_flags &= 0b11101111;
+LATCbits.LATC6 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 4 ] =
-readEEPROM( 0x43 + 42 ) * 256 +
-readEEPROM( 0x43 + 43 );
+Read_b_eep(0x43 + 42) * 256 +
+Read_b_eep(0x43 + 43);
 }
 break;
 
 case 15:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20181,21 +20176,26 @@ bOn = 0;
 
 relay_pulse_flags |= 0x20;
 relay_pulse_timer[ 5 ] =
-readEEPROM( 0x43 + 28) * 256 +
-readEEPROM( 0x43 + 29);
+Read_b_eep(0x43 + 28) * 256 +
+Read_b_eep(0x43 + 29);
+}
+else {
+relay_pulse_flags &= 0b11011111;
+LATCbits.LATC5 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 5 ] =
-readEEPROM( 0x43 + 44 ) * 256 +
-readEEPROM( 0x43 + 45 );
+Read_b_eep(0x43 + 44) * 256 +
+Read_b_eep(0x43 + 45);
 }
 break;
 
 case 16:
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 if ( val & 0x01 ) {
 
@@ -20204,14 +20204,19 @@ bOn = 0;
 
 relay_pulse_flags |= 0x40;
 relay_pulse_timer[ 6 ] =
-readEEPROM( 0x43 + 30) * 256 +
-readEEPROM( 0x43 + 31);
+Read_b_eep(0x43 + 30) * 256 +
+Read_b_eep(0x43 + 31);
+}
+else {
+relay_pulse_flags &= 0b10111111;
+LATCbits.LATC7 = 0;
+bOn = 0;
 }
 
 if ( val & 0x04 ) {
 relay_protection_timer[ 6 ] =
-readEEPROM( 0x43 + 46 ) * 256 +
-readEEPROM( 0x43 + 47 );
+Read_b_eep(0x43 + 46) * 256 +
+Read_b_eep(0x43 + 47);
 }
 break;
 
@@ -20223,8 +20228,8 @@ else if ( (reg >= 18 ) &&
 (reg <= 33 ) ) {
 
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 
 
@@ -20232,50 +20237,50 @@ switch ( reg ) {
 
 case 19:
 relay_pulse_timer[ 0 ] =
-readEEPROM( 0x43 + 18) * 256 +
-readEEPROM( 0x43 + 19);
+Read_b_eep(0x43 + 18) * 256 +
+Read_b_eep(0x43 + 19);
 break;
 
 case 21:
 relay_pulse_timer[ 1 ] =
-readEEPROM( 0x43 + 20) * 256 +
-readEEPROM( 0x43 + 21);
+Read_b_eep(0x43 + 20) * 256 +
+Read_b_eep(0x43 + 21);
 break;
 
 case 23:
 relay_pulse_timer[ 2 ] =
-readEEPROM( 0x43 + 22) * 256 +
-readEEPROM( 0x43 + 23);
+Read_b_eep(0x43 + 22) * 256 +
+Read_b_eep(0x43 + 23);
 break;
 
 case 25:
 relay_pulse_timer[ 3 ] =
-readEEPROM( 0x43 + 24) * 256 +
-readEEPROM( 0x43 + 25);
+Read_b_eep(0x43 + 24) * 256 +
+Read_b_eep(0x43 + 25);
 break;
 
 case 27:
 relay_pulse_timer[ 4 ] =
-readEEPROM( 0x43 + 26) * 256 +
-readEEPROM( 0x43 + 27);
+Read_b_eep(0x43 + 26) * 256 +
+Read_b_eep(0x43 + 27);
 break;
 
 case 29:
 relay_pulse_timer[ 5 ] =
-readEEPROM( 0x43 + 28) * 256 +
-readEEPROM( 0x43 + 29);
+Read_b_eep(0x43 + 28) * 256 +
+Read_b_eep(0x43 + 29);
 break;
 
 case 31:
 relay_pulse_timer[ 6 ] =
-readEEPROM( 0x43 + 30) * 256 +
-readEEPROM( 0x43 + 31);
+Read_b_eep(0x43 + 30) * 256 +
+Read_b_eep(0x43 + 31);
 break;
 
 case 33:
 relay_pulse_timer[ 7 ] =
-readEEPROM( 0x43 + 32) * 256 +
-readEEPROM( 0x43 + 33);
+Read_b_eep(0x43 + 32) * 256 +
+Read_b_eep(0x43 + 33);
 break;
 
 default:
@@ -20288,57 +20293,57 @@ else if ( ( reg >= 34 ) &&
 ( reg <= 49 ) ) {
 
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 switch ( reg ) {
 
 case 35:
 relay_protection_timer[ 0 ] =
-readEEPROM( 0x43 + 34 ) * 256 +
-readEEPROM( 0x43 + 35 );
+Read_b_eep(0x43 + 34) * 256 +
+Read_b_eep(0x43 + 35);
 break;
 
 case 37:
 relay_protection_timer[ 1 ] =
-readEEPROM( 0x43 + 36 ) * 256 +
-readEEPROM( 0x43 + 37 );
+Read_b_eep(0x43 + 36) * 256 +
+Read_b_eep(0x43 + 37);
 break;
 
 case 39:
 relay_protection_timer[ 2 ] =
-readEEPROM( 0x43 + 38 ) * 256 +
-readEEPROM( 0x43 + 39 );
+Read_b_eep(0x43 + 38) * 256 +
+Read_b_eep(0x43 + 39);
 break;
 
 case 41:
 relay_protection_timer[ 3 ] =
-readEEPROM( 0x43 + 40 ) * 256 +
-readEEPROM( 0x43 + 41 );
+Read_b_eep(0x43 + 40) * 256 +
+Read_b_eep(0x43 + 41);
 break;
 
 case 43:
 relay_protection_timer[ 4 ] =
-readEEPROM( 0x43 + 42 ) * 256 +
-readEEPROM( 0x43 + 43 );
+Read_b_eep(0x43 + 42) * 256 +
+Read_b_eep(0x43 + 43);
 break;
 
 case 45:
 relay_protection_timer[ 5 ] =
-readEEPROM( 0x43 + 44 ) * 256 +
-readEEPROM( 0x43 + 45 );
+Read_b_eep(0x43 + 44) * 256 +
+Read_b_eep(0x43 + 45);
 break;
 
 case 47:
 relay_protection_timer[ 6 ] =
-readEEPROM( 0x43 + 46 ) * 256 +
-readEEPROM( 0x43 + 47 );
+Read_b_eep(0x43 + 46) * 256 +
+Read_b_eep(0x43 + 47);
 break;
 
 case 49:
 relay_protection_timer[ 7 ] =
-readEEPROM( 0x43 + 48 ) * 256 +
-readEEPROM( 0x43 + 49 );
+Read_b_eep(0x43 + 48) * 256 +
+Read_b_eep(0x43 + 49);
 break;
 
 default:
@@ -20350,24 +20355,24 @@ break;
 else if ( (reg >= 50 ) && (reg <= 65) ) {
 
 
-writeEEPROM( 0x43 + reg, val );
-rv = readEEPROM( 0x43 + reg );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
+rv = Read_b_eep(0x43 + reg);
 
 }
 else if ( (reg >= 72) &&
 (reg < (72 + 7 * 8)) ) {
-writeEEPROM( 0x43 + reg, val );
+(Busy_eep(), Write_b_eep(0x43 + reg,val));
 calculateSetFilterMask();
-rv = readEEPROM( 0x43 + reg );
+rv = Read_b_eep(0x43 + reg);
 }
 
-# 1497
+# 1531
 if ( bInfoEvent ) {
 
 unsigned char val;
-val = readEEPROM( 0x43 +
-10 + (reg - 2) );
+val = Read_b_eep(0x43 + 10 + (reg - 2));
 
+# 1537
 if ( bOn ) {
 
 if ( val & 0x08 ) {
@@ -20403,7 +20408,7 @@ return rv;
 
 }
 
-# 1542
+# 1576
 void sendDMatrixInfo(void)
 {
 
@@ -20418,17 +20423,17 @@ vscp_omsg.data[ 1 ] = 72;
 vscp_sendEvent();
 }
 
-# 1561
+# 1595
 void SendInformationEvent( unsigned char idx,
 unsigned char eventClass,
 unsigned char eventTypeId )
 {
 uint8_t data[3];
 
-# 1578
+# 1612
 data[ 0 ] = idx;
-data[ 1 ] = readEEPROM( 0x43 + 50 + 2*idx );
-data[ 2 ] = readEEPROM( 0x43 + 51 + 2*idx );
+data[ 1 ] = Read_b_eep(0x43 + 50 + 2*idx);
+data[ 2 ] = Read_b_eep(0x43 + 51 + 2*idx);
 sendVSCPFrame( eventClass,
 eventTypeId,
 vscp_nickname,
@@ -20437,7 +20442,7 @@ vscp_nickname,
 data );
 }
 
-# 1595
+# 1629
 void doDM(void)
 {
 unsigned char i;
@@ -20453,73 +20458,77 @@ if ( 0 == vscp_imsg.vscp_class ) return;
 for (i = 0; i < 7; i++) {
 
 
-dmflags = readEEPROM( 0x43 + 72 + 1 + (8 * i) );
+dmflags = Read_b_eep(0x43 + 72 + 1 + (8 * i));
 
 
 if ( dmflags & 0x80 ) {
 
 
 if ( ( dmflags & 0x40 ) &&
-( vscp_imsg.oaddr != readEEPROM( 0x43 + 72 + (8 * i) ) ) ) {
+( vscp_imsg.oaddr != Read_b_eep(0x43 + 72 + (8 * i)) ) ) {
 continue;
 }
 
 
 if ( dmflags & 0x10 ) {
 if ( 255 != vscp_imsg.data[ 1 ] ) {
-if ( vscp_imsg.data[ 1 ] != readEEPROM( 0x43 + 0 ) ) {
+if ( vscp_imsg.data[ 1 ] != Read_b_eep(0x43 + 0) ) {
+continue;
+}
+}
+}
+
+
+if ( dmflags & 0x08 ) {
+if ( 255 != vscp_imsg.data[ 2 ] ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 1) ) {
 continue;
 }
 }
 }
 
 class_filter = ( dmflags & 0x01)*256 +
-readEEPROM( 0x43 +
-72 +
-(8 * i) +
-3);
-class_mask = ( dmflags & 0x02)*256 +
-readEEPROM( 0x43 +
-72 +
-(8 * i) +
-2);
-type_filter = readEEPROM( 0x43 +
-72 +
-(8 * i) +
-5);
-type_mask = readEEPROM( 0x43 +
-72 +
-(8 * i) +
-4);
+Read_b_eep(0x43 + 72 + (8 * i) + 3);
 
+# 1678
+class_mask = ( dmflags & 0x02)*256 +
+Read_b_eep(0x43 + 72 + (8 * i) + 2);
+
+# 1683
+type_filter = Read_b_eep(0x43 + 72 + (8 * i) + 5);
+
+# 1687
+type_mask = Read_b_eep(0x43 + 72 + (8 * i) + 4);
+
+# 1692
 if ( !( ( class_filter ^ vscp_imsg.vscp_class ) & class_mask ) &&
 !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
 
 
-switch ( readEEPROM( 0x43 + 72 + (8 * i) + 6 ) ) {
+switch ( Read_b_eep(0x43 + 72 + (8 * i) + 6) ) {
 
 case 1:
-doActionOn( dmflags, readEEPROM( 0x43 + 72 + (8 * i) + 7 ) );
+doActionOn( dmflags, Read_b_eep(0x43 + 72 + (8 * i) + 7) );
 break;
 
 case 2:
-doActionOff( dmflags, readEEPROM( 0x43 + 72 + (8 * i) + 7 ) );
+doActionOff( dmflags, Read_b_eep(0x43 + 72 + (8 * i) + 7) );
 break;
 
 case 3:
-doActionPulse( dmflags, readEEPROM( 0x43 + 72 + (8 * i) + 7 ) );
+doActionPulse( dmflags, Read_b_eep(0x43 + 72 + (8 * i) + 7) );
 break;
 
 case 10:
-doActionStatus( dmflags, readEEPROM( 0x43 + 72 + (8 * i) + 7 ) );
+doActionStatus( dmflags, Read_b_eep(0x43 + 72 + (8 * i) + 7) );
 break;
 
 case 16:
-doActionDisable( dmflags, readEEPROM( 0x43 + 72 + (8 * i) + 7 ) );
+doActionDisable( dmflags, Read_b_eep(0x43 + 72 + (8 * i) + 7) );
 break;
 
 case 4:
-doActionToggle( dmflags, readEEPROM( 0x43 + 72 + (8 * i) + 7 ) );
+doActionToggle( dmflags, Read_b_eep(0x43 + 72 + (8 * i) + 7) );
 break;
 
 }
@@ -20528,7 +20537,7 @@ break;
 }
 }
 
-# 1689
+# 1732
 void doActionOn(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20542,14 +20551,14 @@ if ( !( arg & ( 1 << i ) ) ) continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != readEEPROM( 0x43 +
-53 +
-i ) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 1748
 continue;
 }
 }
 
-val = readEEPROM( 0x43 + 10 + i );
+val = Read_b_eep(0x43 + 10 + i);
 
 
 if ( !( val & 0x80 ) ) continue;
@@ -20559,70 +20568,70 @@ switch (i) {
 case 0:
 LATBbits.LATB4 = 1;
 
-if (readEEPROM( 0x43 + 10 ) & 0x04 ) {
+if (Read_b_eep(0x43 + 10) & 0x04 ) {
 relay_protection_timer[ 0 ] =
-readEEPROM( 0x43 + 34 ) * 256 +
-readEEPROM( 0x43 + 35 );
+Read_b_eep(0x43 + 34) * 256 +
+Read_b_eep(0x43 + 35);
 }
 break;
 
 case 1:
 LATBbits.LATB1 = 1;
 
-if (readEEPROM( 0x43 + 11) & 0x04 ) {
+if (Read_b_eep(0x43 + 11) & 0x04 ) {
 relay_protection_timer[ 1 ] =
-readEEPROM( 0x43 + 36 ) * 256 +
-readEEPROM( 0x43 + 37 );
+Read_b_eep(0x43 + 36) * 256 +
+Read_b_eep(0x43 + 37);
 }
 break;
 
 case 2:
 LATBbits.LATB0 = 1;
 
-if (readEEPROM( 0x43 + 12) & 0x04 ) {
+if (Read_b_eep(0x43 + 12) & 0x04 ) {
 relay_protection_timer[ 2 ] =
-readEEPROM( 0x43 + 38 ) * 256 +
-readEEPROM( 0x43 + 39 );
+Read_b_eep(0x43 + 38) * 256 +
+Read_b_eep(0x43 + 39);
 }
 break;
 
 case 3:
 LATCbits.LATC7 = 1;
 
-if ( readEEPROM( 0x43 + 13) & 0x04 ) {
+if ( Read_b_eep(0x43 + 13) & 0x04 ) {
 relay_protection_timer[ 3 ] =
-readEEPROM( 0x43 + 40 ) * 256 +
-readEEPROM( 0x43 + 41 );
+Read_b_eep(0x43 + 40) * 256 +
+Read_b_eep(0x43 + 41);
 }
 break;
 
 case 4:
 LATCbits.LATC6 = 1;
 
-if (readEEPROM( 0x43 + 14) & 0x04 ) {
+if (Read_b_eep(0x43 + 14) & 0x04 ) {
 relay_protection_timer[ 4 ] =
-readEEPROM( 0x43 + 42 ) * 256 +
-readEEPROM( 0x43 + 43 );
+Read_b_eep(0x43 + 42) * 256 +
+Read_b_eep(0x43 + 43);
 }
 break;
 
 case 5:
 LATCbits.LATC5 = 1;
 
-if (readEEPROM( 0x43 + 15) & 0x04) {
+if (Read_b_eep(0x43 + 15) & 0x04) {
 relay_protection_timer[ 5 ] =
-readEEPROM( 0x43 + 44 ) * 256 +
-readEEPROM( 0x43 + 45 );
+Read_b_eep(0x43 + 44) * 256 +
+Read_b_eep(0x43 + 45);
 }
 break;
 
 case 6:
 LATCbits.LATC4 = 1;
 
-if ( readEEPROM( 0x43 + 16) & 0x04) {
+if ( Read_b_eep(0x43 + 16) & 0x04) {
 relay_protection_timer[ 6 ] =
-readEEPROM( 0x43 + 46 ) * 256 +
-readEEPROM( 0x43 + 47 );
+Read_b_eep(0x43 + 46) * 256 +
+Read_b_eep(0x43 + 47);
 }
 break;
 
@@ -20640,7 +20649,7 @@ SendInformationEvent( i, 20, 25 );
 }
 }
 
-# 1804
+# 1847
 void doActionOff( unsigned char dmflags, unsigned char arg )
 {
 
@@ -20654,14 +20663,14 @@ if ( !( arg & ( 1 << i ) ) ) continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != readEEPROM(0x43 +
-53 +
-i ) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 1863
 continue;
 }
 }
 
-val = readEEPROM( 0x43 + 10 + i );
+val = Read_b_eep(0x43 + 10 + i);
 
 
 if ( !( val & 0x80 ) ) continue;
@@ -20710,7 +20719,7 @@ SendInformationEvent( i, 20, 24 );
 }
 }
 
-# 1877
+# 1920
 void doActionPulse(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20724,14 +20733,14 @@ if ( !( arg & ( 1 << i ) ) ) continue;
 
 
 if (dmflags & 0x08) {
-if ( vscp_imsg.data[ 2 ] != readEEPROM( 0x43 +
-53 +
-i ) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 1936
 continue;
 }
 }
 
-val = readEEPROM( 0x43 + 10 + i );
+val = Read_b_eep(0x43 + 10 + i);
 
 
 if ( !( val & 0x80 ) ) continue;
@@ -20742,63 +20751,63 @@ case 0:
 LATBbits.LATB4 = 0;
 relay_pulse_flags |= 0x01;
 relay_pulse_timer[ 0 ] =
-readEEPROM( 0x43 + 18 ) * 256 +
-readEEPROM( 0x43 + 19 );
+Read_b_eep(0x43 + 18) * 256 +
+Read_b_eep(0x43 + 19);
 break;
 
 case 1:
 LATBbits.LATB1 = 0;
 relay_pulse_flags |= 0x02;
 relay_pulse_timer[ 1 ] =
-readEEPROM( 0x43 + 20 ) * 256 +
-readEEPROM( 0x43 + 21 );
+Read_b_eep(0x43 + 20) * 256 +
+Read_b_eep(0x43 + 21);
 break;
 
 case 2:
 LATBbits.LATB0 = 0;
 relay_pulse_flags |= 0x04;
 relay_pulse_timer[ 2 ] =
-readEEPROM( 0x43 + 22 ) * 256 +
-readEEPROM( 0x43 + 23 );
+Read_b_eep(0x43 + 22) * 256 +
+Read_b_eep(0x43 + 23);
 break;
 
 case 3:
 LATCbits.LATC7 = 0;
 relay_pulse_flags |= 0x08;
 relay_pulse_timer[ 3 ] =
-readEEPROM( 0x43 + 24 ) * 256 +
-readEEPROM( 0x43 + 25 );
+Read_b_eep(0x43 + 24) * 256 +
+Read_b_eep(0x43 + 25);
 break;
 
 case 4:
 LATCbits.LATC6 = 0;
 relay_pulse_flags |= 0x10;
 relay_pulse_timer[ 4 ] =
-readEEPROM( 0x43 + 26 ) * 256 +
-readEEPROM( 0x43 + 27 );
+Read_b_eep(0x43 + 26) * 256 +
+Read_b_eep(0x43 + 27);
 break;
 
 case 5:
 LATCbits.LATC5 = 0;
 relay_pulse_flags |= 0x20;
 relay_pulse_timer[ 5 ] =
-readEEPROM( 0x43 + 28 ) * 256 +
-readEEPROM( 0x43 + 29 );
+Read_b_eep(0x43 + 28) * 256 +
+Read_b_eep(0x43 + 29);
 break;
 
 case 6:
 LATCbits.LATC4 = 0;
 relay_pulse_flags |= 0x40;
 relay_pulse_timer[ 6 ] =
-readEEPROM( 0x43 + 30 ) * 256 +
-readEEPROM( 0x43 + 31 );
+Read_b_eep(0x43 + 30) * 256 +
+Read_b_eep(0x43 + 31);
 break;
 
 }
 }
 }
 
-# 1968
+# 2011
 void doActionStatus(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20813,14 +20822,14 @@ if (!(arg & (1 << i))) continue;
 
 
 if (dmflags & 0x08) {
-if (vscp_imsg.data[ 2 ] != readEEPROM( 0x43 +
-53 +
-i ) ) {
+if (vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 2028
 continue;
 }
 }
 
-val = readEEPROM( 0x43 + 10 + i );
+val = Read_b_eep(0x43 + 10 + i);
 
 switch (i) {
 
@@ -20884,7 +20893,7 @@ SendInformationEvent( i, 20, 24 );
 }
 }
 
-# 2057
+# 2100
 void doActionDisable(unsigned char dmflags, unsigned char arg)
 {
 
@@ -20898,20 +20907,20 @@ if ( !( arg & (1 << i) ) ) continue;
 
 
 if ( dmflags & 0x08) {
-if ( vscp_imsg.data[ 2 ] != readEEPROM( 0x43 +
-53 +
-i ) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 2116
 continue;
 }
 }
 
-val = readEEPROM( 0x43 + 10 + i );
-writeEEPROM( 0x43 + 10 + i, val & ~0x80 );
+val = Read_b_eep(0x43 + 10 + i);
+(Busy_eep(), Write_b_eep(0x43 + 10 + i,val & ~0x80));
 }
 
 }
 
-# 2087
+# 2130
 void doActionToggle( unsigned char dmflags, unsigned char arg )
 {
 
@@ -20926,14 +20935,14 @@ if ( !( arg & (1 << i) ) ) continue;
 
 
 if ( dmflags & 0x08 ) {
-if ( vscp_imsg.data[ 2 ] != readEEPROM( 0x43 +
-53 +
-i ) ) {
+if ( vscp_imsg.data[ 2 ] != Read_b_eep(0x43 + 53 + i) ) {
+
+# 2147
 continue;
 }
 }
 
-val = readEEPROM(0x43 + 10 + i);
+val = Read_b_eep(0x43 + 10 + i);
 
 switch ( i ) {
 
@@ -21039,103 +21048,103 @@ SendInformationEvent( i, 20, 24 );
 }
 }
 
-# 2226
+# 2269
 unsigned char vscp_getMajorVersion()
 {
 return 1;
 }
 
-# 2235
+# 2278
 unsigned char vscp_getMinorVersion()
 {
 return 1;
 }
 
-# 2244
+# 2287
 unsigned char vscp_getSubMinorVersion()
 {
 return 0;
 }
 
-# 2255
+# 2298
 uint8_t vscp_getGUID(uint8_t idx)
 {
-return readEEPROM( 0x13 + idx );
+return Read_b_eep(0x13 + idx);
 }
 
-# 2267
+# 2310
 uint8_t vscp_getMDF_URL(uint8_t idx)
 {
 return vscp_deviceURL[ idx ];
 }
 
-# 2276
+# 2319
 uint8_t vscp_getUserID(uint8_t idx)
 {
-return readEEPROM( 0x06 + idx );
+return Read_b_eep(0x06 + idx);
 }
 
-# 2285
+# 2328
 void vscp_setUserID(uint8_t idx, uint8_t data)
 {
-writeEEPROM( idx + 0x06, data );
+(Busy_eep(), Write_b_eep(idx + 0x06,data));
 }
 
-# 2296
+# 2339
 uint8_t vscp_getManufacturerId(uint8_t idx)
 {
-return readEEPROM( 0x0B + idx );
+return Read_b_eep(0x0B + idx);
 }
 
-# 2305
+# 2348
 uint8_t vscp_getBootLoaderAlgorithm(void)
 {
 return 0x01;
 }
 
-# 2314
+# 2357
 uint8_t vscp_getBufferSize(void)
 {
 return 8;
 }
 
-# 2324
+# 2367
 uint8_t vscp_getNickname(void)
 {
-return readEEPROM(0x01);
+return Read_b_eep(0x01);
 }
 
-# 2333
+# 2376
 void vscp_setNickname(uint8_t nickname)
 {
-writeEEPROM(0x01, nickname);
+(Busy_eep(), Write_b_eep(0x01,nickname));
 }
 
-# 2342
+# 2385
 uint8_t vscp_getSegmentCRC(void)
 {
-return readEEPROM( 0x02 );
+return Read_b_eep(0x02);
 }
 
-# 2351
+# 2394
 void vscp_setSegmentCRC(uint8_t crc)
 {
-writeEEPROM( 0x02, crc );
+(Busy_eep(), Write_b_eep(0x02,crc));
 }
 
-# 2360
+# 2403
 void vscp_setControlByte(uint8_t ctrl)
 {
-writeEEPROM(0x03, ctrl);
+(Busy_eep(), Write_b_eep(0x03,ctrl));
 }
 
-# 2370
+# 2413
 uint8_t vscp_getControlByte(void)
 {
-return readEEPROM(0x03);
+return Read_b_eep(0x03);
 }
 
-# 2379
+# 2422
 void vscp_getEmbeddedMdfInfo(void)
 {
 
@@ -21153,20 +21162,20 @@ vscp_omsg.data[ 2 ] = 0;
 vscp_sendEvent();
 }
 
-# 2420
+# 2463
 void vscp_goBootloaderMode( uint8_t algorithm )
 {
 if ( 0x01 != algorithm ) return;
 
 
 
-writeEEPROM(0x00, 0xff);
+(Busy_eep(), Write_b_eep(0x00,0xff));
 
 
 asm(" reset");
 }
 
-# 2436
+# 2479
 void vscp_getMatrixInfo(char *pData)
 {
 uint8_t i;
@@ -21181,29 +21190,29 @@ vscp_omsg.data[ i ] = 0;
 
 }
 
-# 2454
+# 2497
 uint32_t vscp_getFamilyCode() {
 return 0L;
 }
 
-# 2463
+# 2506
 uint32_t vscp_getFamilyType() {
 return 0;
 }
 
-# 2471
+# 2514
 void vscp_restoreDefaults() {
 init_app_eeprom();
 init_app_ram();
 }
 
-# 2481
+# 2524
 uint8_t vscp_getRegisterPagesUsed( void )
 {
 return 1;
 }
 
-# 2490
+# 2533
 int8_t sendVSCPFrame( uint16_t vscpclass,
 uint8_t vscptype,
 uint8_t nodeid,
@@ -21223,7 +21232,7 @@ return 0;
 return 1;
 }
 
-# 2514
+# 2557
 int8_t getVSCPFrame(uint16_t *pvscpclass,
 uint8_t *pvscptype,
 uint8_t *pNodeId,
@@ -21245,13 +21254,13 @@ return 0;
 return 1;
 }
 
-# 2540
+# 2583
 int8_t sendCANFrame(uint32_t id, uint8_t dlc, uint8_t *pdata)
 {
 uint8_t rv = 0;
 sendTimer = 0;
 
-while ( sendTimer < 1 ) {
+while ( sendTimer < 1000 ) {
 if ( ECANSendMessage( id, pdata, dlc, ECAN_TX_XTD_FRAME ) ) {
 rv = 1;
 break;
@@ -21263,7 +21272,7 @@ vscp_omsg.flags = 0;
 return rv;
 }
 
-# 2561
+# 2604
 int8_t getCANFrame(uint32_t *pid, uint8_t *pdlc, uint8_t *pdata)
 {
 ECAN_RX_MSG_FLAGS flags;
@@ -21287,7 +21296,7 @@ return 1;
 return 0;
 }
 
-# 2591
+# 2634
 void calculateSetFilterMask( void )
 {
 uint8_t i,j;
@@ -21303,16 +21312,16 @@ uint32_t filter = 0;
 for ( i=0; i < 7; i++ ) {
 
 
-if ( readEEPROM( 0x43 + 8*i + 1 ) & 0x80 ) {
+if ( Read_b_eep(0x43 + 8*i + 1) & 0x80 ) {
 
-# 2615
+# 2658
 rowmask =
 
-( (uint32_t)( readEEPROM( 0x43 + 8*i + 1 ) & 2 ) << 23 ) |
+( (uint32_t)( Read_b_eep(0x43 + 8*i + 1) & 2 ) << 23 ) |
 
-( (uint32_t)readEEPROM( 0x43 + 8*i + 2 ) << 16 ) |
+( (uint32_t)Read_b_eep(0x43 + 8*i + 2) << 16 ) |
 
-( (uint32_t)readEEPROM( 0x43 + 8*i + 4 ) << 8 ) |
+( (uint32_t)Read_b_eep(0x43 + 8*i + 4) << 8 ) |
 
 0xff;
 ;
@@ -21322,14 +21331,14 @@ rowmask =
 
 rowfilter =
 
-( (uint32_t)( readEEPROM( 0x43 + 8*i + 1 ) & 1 ) << 24 ) |
+( (uint32_t)( Read_b_eep(0x43 + 8*i + 1) & 1 ) << 24 ) |
 
-( (uint32_t)readEEPROM( 0x43 + 8*i + 3 ) << 16 ) |
+( (uint32_t)Read_b_eep(0x43 + 8*i + 3) << 16 ) |
 
-( (uint32_t)readEEPROM( 0x43 + 8*i + 5 ) << 8 ) |
+( (uint32_t)Read_b_eep(0x43 + 8*i + 5) << 8 ) |
 
 
-readEEPROM( 0x43 + 8*i );
+Read_b_eep(0x43 + 8*i);
 
 if ( 0 == i ) filter = rowfilter;
 
@@ -21347,11 +21356,11 @@ mask &= ~(1<<j);
 }
 }
 
-# 2660
+# 2703
 filter &= rowfilter;
 
 
-if ( !readEEPROM( 0x43 + 8*i + 1 ) & 0x40 ) {
+if ( !Read_b_eep(0x43 + 8*i + 1) & 0x40 ) {
 
 
 
@@ -21363,17 +21372,17 @@ if (i) {
 
 for (j = 0; j < 8; j++) {
 if ((lastOID >> i & 1)
-!= (readEEPROM(0x43 + 8 * i) >> i & 1)) {
+!= (Read_b_eep(0x43 + 8 * i) >> i & 1)) {
 mask &= (1 << i);
 }
 }
 
-lastOID = readEEPROM(0x43 + 8 * i);
+lastOID = Read_b_eep(0x43 + 8 * i);
 
 }
 else {
 
-lastOID = readEEPROM(0x43 + 8 * i);
+lastOID = Read_b_eep(0x43 + 8 * i);
 }
 
 }
