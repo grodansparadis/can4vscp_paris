@@ -1,6 +1,7 @@
 Paris Relay module
 ==================
 
+2015-09-13 AKHE - sendtimer now works
 2015-09-13 AKHE - Wrong relay index used for zone/subzone check in DM action executes.
 2015-09-13 AKHE - Relay 7 control register removed and reserved register 9 removed from MDF.
 2015-09-13 AKHE - Zone and subzone check now is dune on relay level as they should.

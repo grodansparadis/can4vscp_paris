@@ -92,8 +92,6 @@
 // for the current decision matrix
 void calculateSetFilterMask( void );
 
-//extern const rom int log_Table[]; // log10 for Hummidity measurement
-
 // The device URL (max 32 characters including null termination)
 const uint8_t vscp_deviceURL[] = "www.eurosource.se/paris_010.xml";
 
@@ -134,7 +132,7 @@ void interrupt low_priority  interrupt_at_low_vector( void )
     // Clock
     if ( INTCONbits.TMR0IF ) { // If a Timer0 Interrupt, Then...
 
-        // Reload value for 1 ms reolution
+        // Reload value for 1 ms. resolution
         WriteTimer0(TIMER0_RELOAD_VALUE);
         
         vscp_timer++;
@@ -142,7 +140,7 @@ void interrupt low_priority  interrupt_at_low_vector( void )
         measurement_clock++;
         sendTimer++;
 
-        // Check for init button
+        // Check for init. button
         if ( INIT_BUTTON ) {
             vscp_initbtncnt = 0;
         } else {
@@ -280,7 +278,7 @@ void main()
             vscp_doOneSecondWork();
 
             // Temperature report timers are only updated if in active
-            // state guid_reset
+            // state GUID_reset
             if ( VSCP_STATE_ACTIVE == vscp_node_state ) {
 
                 // Do VSCP one second jobs
@@ -347,14 +345,14 @@ void init()
     TRISB = 0b00001000;
     PORTB = 0x00;
 
-    // RC0 - Input  - Init button
+    // RC0 - Input  - Init. button
     // RC1 - Output - Status LED - Default off
     // RC2 - Output - Not used.
     // RC3 - Output - Not used.
     // RC4 - Output - Relay 6 (I7).
     // RC5 - Output - Relay 5 (I6).
     // RC6 - Output - Relay 4 (I5).
-    // RC7 - Output - Telay 3 (I4).
+    // RC7 - Output - Relay 3 (I4).
     TRISC = 0b00000001;
     PORTC = 0x00;
 
@@ -432,7 +430,7 @@ void init_app_ram( void )
 {
     uint8_t i;
 
-    measurement_clock = 0;      // start a new meaurement cycle
+    measurement_clock = 0;      // start a new measurement cycle
 
     seconds = 0;
     minutes = 0;
@@ -448,7 +446,7 @@ void init_app_ram( void )
 
     for ( i=0; i<7; i++ ) {
 
-        // Init pulsed relays
+        // Init. pulsed relays
         if ( eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i ) &
                                 RELAY_CONTROLBIT_PULSE ) {
 
@@ -458,7 +456,7 @@ void init_app_ram( void )
                 eeprom_read( VSCP_EEPROM_END + REG_RELAY0_PULSE_TIME_LSB + i );
         }
 
-        // Init protection timers
+        // Init. protection timers
         if ( eeprom_read(VSCP_EEPROM_END + REG_RELAY5_CONTROL + i ) & RELAY_CONTROLBIT_PROTECTION) {
             relay_protection_timer[ i ] =
                 eeprom_read(VSCP_EEPROM_END + REG_RELAY5_PROTECTION_TIME_MSB + i ) * 256 +
