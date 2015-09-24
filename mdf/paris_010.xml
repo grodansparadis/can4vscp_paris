@@ -1039,7 +1039,7 @@
 			<access>rw</access>
 		</reg>
 		
-		<reg page="0" offset="50"bgcolor="0xfff3d4" >
+		<reg page="0" offset="50" bgcolor="0xfff3d4" >
 			<name lang="en">Zone for relay 0</name>
 			<description lang="en">
 			This is a zone related to this specific relay. If zero the the module Zone/subzone will be used else the modules zone and the relays sub zone will be used. 
@@ -1465,7 +1465,7 @@
 			<access>rw</access>
 		</reg>
 		
-		<reg page="0" offset="95"bgcolor="0xCCCCCC" >
+		<reg page="0" offset="95" bgcolor="0xCCCCCC" >
 			<name lang="en">Decision matrix row 3: Action parameter</name>
 			<description lang="en">
 			A numeric action parameter can be set and its meaning is application specific.
@@ -2099,7 +2099,7 @@
    	</abstraction>
    	
 		<abstraction type="short" default="0"  
-							page = "0" offset = "46"bgcolor="0xCCCCFF" >
+							page = "0" offset = "46" bgcolor="0xCCCCFF" >
    		<name lang="en">Relay protection time register relay 6</name>
       	<description lang="en">
       	This is the relay protection time. A relay will be inactivated if 
