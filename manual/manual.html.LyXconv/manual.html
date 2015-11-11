@@ -1,0 +1,287 @@
+/burl@stx null def /BU.S   /burl@stx null def   def /BU.SS   currentpoint
+/burl@lly exch def /burl@llx exch def burl@stx null ne burl@endx burl@llx ne
+BU.FL BU.S if if burl@stx null eq  burl@llx dup /burl@stx exch def /burl@endx
+exch def burl@lly dup /burl@boty exch def /burl@topy exch def   if burl@lly
+burl@boty gt /burl@boty burl@lly def if  def /BU.SE  currentpoint /burl@ury
+exch def dup /burl@urx exch def /burl@endx exch def burl@ury burl@topy
+lt /burl@topy burl@ury def if   def /BU.E   BU.FL   def /BU.FL   burl@stx
+null ne BU.DF if  def /BU.DF  BU.BB [ /H /I /Border [burl@border] /Color
+[burl@bordercolor] /Action « /Subtype /URI /URI BU.L » /Subtype /Link
+BU.B /ANN pdfmark /burl@stx null def   def /BU.BB   burl@stx HyperBor-
+der sub /burl@stx exch def burl@endx HyperBorder add /burl@endx exch def
+burl@boty HyperBorder add /burl@boty exch def burl@topy HyperBorder sub
+/burl@topy exch def def /BU.B /Rect[burl@stx burl@boty burl@endx burl@topy]
+def /eop where  begin /@ldeopburl /eop load def /eop  SDict begin BU.FL end
+@ldeopburl  def end   /eop  SDict begin BU.FL end  def  ifelse
+                                                                  
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Paris</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="manual.tex"> 
+<meta name="date" content="2012-01-10 10:59:00"> 
+<link rel="stylesheet" type="text/css" href="manual.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                  
+
+                                                                  
+
+<h2 class="titleHead">Paris</h2>
+ <div class="author" ><span 
+class="ecrm-1200">Smart VSCP relay controller</span></div><br />
+<div class="date" ><span 
+class="ecrm-1200">Reversion 1.0 - 2012-01-09</span></div>
+                                                                  
+
+                                                                  
+   </div><div 
+class="abstract" 
+>
+<!--l. 42--><p class="indent" >
+                                                                  
+
+                                                                  
+<div class="center" 
+>
+<!--l. 42--><p class="noindent" >
+<!--l. 42--><p class="noindent" ><span 
+class="ecbx-1000">Abstract</span></div>
+<!--l. 43--><p class="noindent" >Paris is a relay module that connects to a CAN4VSCP bus and can control up to seven
+external relays which can be up to 1/2 a kilometer from the controller. The module
+can be attached to a standard DIN Rail or be mounted directly on a wall (ordered
+separately). The module fully adopts to the CAN4VSCP specification and can be
+powered directly over the bus with a 9 - 28VDC power source. It has a rich register
+set for configuration and many information events defined. It also have a decision
+matrix for easy dynamic event handling.
+<!--l. 51--><p class="indent" >
+                                                                  
+
+                                                                  
+   </div>
+<!--l. 56--><p class="indent" >   <img 
+src="manual0x.png" alt="PIC" class="graphics" width="170.71652pt" height="109.81563pt" ><!--tex4ht:graphics  
+name="manual0x.png" src="0C__Users_akhe_Documents_development_hardware_z___elaydriver_manual_images_automation_company.eps"  
+-->
+<!--l. 59--><p class="indent" >   Grodans Paradis AB
+<!--l. 62--><p class="indent" >   Brattbergavägen 17
+<!--l. 65--><p class="indent" >   820 50 LOS
+<!--l. 68--><p class="indent" >   SWEDEN
+<!--l. 71--><p class="indent" >   web: <a 
+href="http://www.auto.grodansparadis.com" >http://www.auto.grodansparadis.com</a>
+<!--l. 74--><p class="indent" >   email: <a 
+href="http://info@grodansparadis.com" >info@grodansparadis.com</a>
+<!--l. 77--><p class="indent" >   phone: +46 8 40011835
+<!--l. 82--><p class="indent" >   Copyright <span 
+class="tcrm-1000">&#x24B8; </span>2011-2012, Grodans Paradis AB, All rights reserved
+<!--l. 88--><p class="indent" >   <img 
+src="manual1x.png" alt="PIC" class="graphics" width="56.9055pt" height="56.90433pt" ><!--tex4ht:graphics  
+name="manual1x.png" src="1C__Users_akhe_Documents_development_hardware_z___vscp_paris_relaydriver_manual_images_pbfree.eps"  
+--> All boards produced by <span 
+class="ecti-1000">Grodans Paradis AB </span>are ROHS
+compliant.
+<!--l. 94--><p class="indent" >   Disclaimer: <span 
+class="tcrm-1000">&#x24B8; </span>2011-2012 Grodans Paradis AB. All rights reserved. Grodans
+Paradis AB®;, logo and combinations thereof, are registered trademarks of Grodans
+Paradis AB. Other terms and product names may be trademarks of others. The
+information in this document is provided in connection with Grodans Paradis AB
+products. No license, express or implied or otherwise, to any intellectual property
+right is granted by this document or in connection with the sale of Grodans Paradis
+AB products. Neither the whole nor any part of the information contained in or the
+product described in this document may be adapted or reproduced in any material
+from except with the prior written permission of the copyright holder. The product
+described in this document is subject to continuous development and improvements.
+All particulars of the product and its use contained in this document are given by
+Grodans Paradis AB in good faith. However all warranties implied or expressed
+including but not limited to implied warranties of merchantability or fitness for
+purpose are excluded. This document is intended only to assist the reader in
+the use of the product. Grodans Paradis AB. shall not be liable for any
+loss or damage arising from the use of any information in this document
+or any error or omission in such information or any incorrect use of the
+product.
+                                                                  
+
+                                                                  
+   <h2 class="likechapterHead"><a 
+ id="x1-1000"></a>Contents</h2> <div class="tableofcontents">
+   <span class="chapterToc" >1 <a 
+href="#x1-40001" id="QQ2-1-4">Paris - smart VSCP relay module</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.1 <a 
+href="#x1-50001.1" id="QQ2-1-5">Most current information</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.2 <a 
+href="#x1-60001.2" id="QQ2-1-6">The raw facts</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.3 <a 
+href="#x1-70001.3" id="QQ2-1-8">Hardware</a></span>
+   </div>
+                                                                  
+
+                                                                  
+   <h2 class="likechapterHead"><a 
+ id="x1-2000"></a>List of Figures</h2><div class="tableofcontents"><span class="lofToc" >1.1&#x00A0;<a 
+href="#x1-70011">Schema for the Paris relay module</a></span><br /><span class="lofToc" >1.2&#x00A0;<a 
+href="#x1-70042">Road map to module</a></span><br />
+   </div>
+                                                                  
+
+                                                                  
+   <h2 class="likechapterHead"><a 
+ id="x1-3000"></a>List of Tables</h2><div class="tableofcontents"><span class="lotToc" >1.1&#x00A0;<a 
+href="#x1-60011">The raw facts</a></span><br />
+   </div>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;1</span><br /><a 
+ id="x1-40001"></a>Paris - smart VSCP relay module</h2>
+<!--l. 126--><p class="noindent" >Paris is a relay module that connects to a CAN4VSCP bus and can control up to
+seven external relays. The module can be attached to a standard DIN Rail or be
+mounted directly on a wall (ordered separately). The module fully adopts to the
+CAN4VSCP specification and can be powered directly over the bus with a
+9-28V DC power source. It has a rich register set for configuration and many
+information events defined. It also have a decision matrix for easy dynamic event
+handling.
+<!--l. 134--><p class="indent" >   VSCP CAN modules are designed to work on a VSCP4CAN bus which use
+ordinary <a 
+ id="dx1-4001"></a>RJ-45 connectors and is powered with 9-28V DC over the same cable. This
+means there is no need for a separate power cable. All that is needed is a CAT5<a 
+ id="dx1-4002"></a> or
+better twisted pair cable. Buss length can be a maximum of 500 meters
+with drops of maximum 24 meters length (up to a total of 120 meters).
+As for all VSCP4CAN modules the communication speed is fixed at 125
+kbps.
+<!--l. 142--><p class="indent" >   All VSCP modules contains information of there own setup, manual,
+hardware version, manufacturer etc. You just ask the module for the information
+you need and you will get it. When they are started up they have a default
+functionality that often is all that is needed to get a working setup. If the module
+have something to report it will send you an event and if it is setup to react
+on a certain type of event it will do it&#8217;s work when you send event(s) to
+it.
+   <h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-50001.1"></a>Most current information</h3>
+<!--l. 156--><p class="noindent" >You can find the most current information about the Paris relay module at
+<a 
+href="http://www.auto.grodansparadis.com/paris/paris.html" >http://www.auto.grodansparadis.com/paris/paris.html</a>. On the site you can also find
+links to the latest firmware and <a 
+ id="dx1-5001"></a>Module Description File (MDF<a 
+ id="dx1-5002"></a>) for the device as well
+as schematics and recipes for its use. This information is of course pointed to from
+the MDF file which you can locate from the module itself reading it&#8217;s standard
+registers.
+<!--l. 165--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-60001.2"></a>The raw facts</h3>
+   <div class="table">
+                                                                  
+
+                                                                  
+<!--l. 168--><p class="indent" >   <a 
+ id="x1-60011"></a><hr class="float"><div class="float" 
+>
+                                                                  
+
+                                                                  
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11"> Parameter                            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11"> Value                                        </td></tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11"> Supply voltage </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11"> 9-28VDC</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11"> PCB Size                              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td11"> 42 mm x 72mm                           </td></tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11"> Power requirements </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11"> 0.1W + relay driver power if used.</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11"> Communication                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-2"  
+class="td11"> VSCP4CAN (CAN), 125kbps         </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11"> Max sink capacity (each relay)  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-2"  
+class="td11"> 500 mA, 50V                              </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td11"> Max relays                            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-2"  
+class="td11"> 7                                              </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td11">                            </td></tr></table></div>
+<br /> <div class="caption" 
+><span class="id">Table&#x00A0;1.1: </span><span  
+class="content">The raw facts</span></div><!--tex4ht:label?: x1-60011 -->
+                                                                  
+
+                                                                  
+   </div><hr class="endfloat" />
+   </div>
+   <h3 class="sectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x1-70001.3"></a>Hardware</h3>
+<!--l. 203--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-70011"></a>
+                                                                  
+
+                                                                  
+<!--l. 206--><p class="noindent" >                                                                                                                                                <img 
+src="manual2x.png" alt="PIC" class="graphics" width="1110.14749pt" height="755.82375pt" ><!--tex4ht:graphics  
+name="manual2x.png" src="2C__Users_akhe_Documents_development_hardware_z___ris_relaydriver_manual_images_latest_schema.eps"  
+-->
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.1: </span><span  
+class="content"><a 
+ id="dx1-7002"></a>Schema for the Paris relay module</span></div><!--tex4ht:label?: x1-70011 -->
+                                                                  
+
+                                                                  
+<!--l. 211--><p class="noindent" ></div><hr class="endfigure">
+                                                                  
+
+                                                                  
+<!--l. 219--><p class="indent" >   Some <a 
+ id="dx1-7003"></a>key positions on the module is outlined in the figure below
+<!--l. 225--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-70042"></a>
+                                                                  
+
+                                                                  
+<!--l. 226--><p class="noindent" ><img 
+src="manual3x.png" alt="PIC" class="graphics" width="284.52756pt" height="302.88094pt" ><!--tex4ht:graphics  
+name="manual3x.png" src="3C__Users_akhe_Documents_development_hardware_z___4vscp_paris_relaydriver_manual_images_board.eps"  
+-->
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.2: </span><span  
+class="content">Road map to module</span></div><!--tex4ht:label?: x1-70042 -->
+                                                                  
+
+

@@ -1,0 +1,8932 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass report
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Paris
+\end_layout
+
+\begin_layout Author
+Smart VSCP relay controller
+\end_layout
+
+\begin_layout Date
+
+\size small
+Reversion 1.4 - 2014-08-08
+\end_layout
+
+\begin_layout Abstract
+Paris is a relay module that connects to a CAN4VSCP bus and can control
+ up to seven external relays which can be up to 1/2 a kilometer from the
+ controller.
+ The module can be attached to a standard DIN Rail or be mounted directly
+ on a wall (ordered separately).
+ The module fully adopts to the CAN4VSCP specification and can be powered
+ directly over the bus with a 9 - 28VDC power source.
+ It has a rich register set for configuration and many information events
+ defined.
+ It also have a decision matrix for easy dynamic event handling.
+ 
+\end_layout
+
+\begin_layout Title
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/automation_company.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Grodans Paradis AB
+\begin_inset Newline newline
+\end_inset
+
+Brattbergavägen 17
+\begin_inset Newline newline
+\end_inset
+
+820 50 LOS
+\begin_inset Newline newline
+\end_inset
+
+SWEDEN
+\begin_inset Newline newline
+\end_inset
+
+phone: +46 (0)8 40011835 
+\end_layout
+
+\begin_layout Author
+web: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.auto.grodansparadis.com"
+
+\end_inset
+
+ email: 
+\begin_inset CommandInset href
+LatexCommand href
+target "info@grodansparadis.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Copyright © 2011-2015, Grodans Paradis AB, All rights reserved
+\end_layout
+
+\begin_layout Title
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/pbfree.png
+	width 2cm
+
+\end_inset
+
+ All boards produced by 
+\emph on
+Grodans Paradis AB
+\emph default
+ are ROHS compliant.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Disclaimer: © 2011-2012 Grodans Paradis AB.
+ All rights reserved.
+ Grodans Paradis AB®, logo and combinations thereof, are registered trademarks
+ of Grodans Paradis AB.
+ Other terms and product names may be trademarks of others.
+ The information in this document is provided in connection with Grodans
+ Paradis AB products.
+ No license, express or implied or otherwise, to any intellectual property
+ right is granted by this document or in connection with the sale of Grodans
+ Paradis AB products.
+ Neither the whole nor any part of the information contained in or the product
+ described in this document may be adapted or reproduced in any material
+ from except with the prior written permission of the copyright holder.
+ The product described in this document is subject to continuous development
+ and improvements.
+ All particulars of the product and its use contained in this document are
+ given by Grodans Paradis AB in good faith.
+ However all warranties implied or expressed including but not limited to
+ implied warranties of merchantability or fitness for purpose are excluded.
+ This document is intended only to assist the reader in the use of the product.
+ Grodans Paradis AB.
+ shall not be liable for any loss or damage arising from the use of any
+ information in this document or any error or omission in such information
+ or any incorrect use of the product.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Paris - smart VSCP relay module
+\end_layout
+
+\begin_layout Standard
+Paris is a relay module that connects to a CAN4VSCP bus and can control
+ up to seven external relays.
+ The module can be attached to a standard DIN Rail or be mounted directly
+ on a wall (ordered separately).
+ The module fully adopts to the CAN4VSCP specification and can be powered
+ directly over the bus with a 9-28V DC power source.
+ It has a rich register set for configuration and many information events
+ defined.
+ It also have a decision matrix for easy dynamic event handling.
+ 
+\end_layout
+
+\begin_layout Standard
+VSCP CAN modules are designed to work on a VSCP4CAN bus which use ordinary
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+
+RJ-45 connectors and is powered with 9-28V DC over the same cable.
+ This means there is no need for a separate power cable.
+ All that is needed is a CAT5
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+ or better twisted pair cable.
+ Buss length can be a maximum of 500 meters with drops of maximum 24 meters
+ length (up to a total of 120 meters).
+ As for all VSCP4CAN modules the communication speed is fixed at 125 kbps.
+ 
+\end_layout
+
+\begin_layout Standard
+All VSCP modules contains information of there own setup, manual, hardware
+ version, manufacturer etc.
+ You just ask the module for the information you need and you will get it.
+ When they are started up they have a default functionality that often is
+ all that is needed to get a working setup.
+ If the module have something to report it will send you an event and if
+ it is setup to react on a certain type of event it will do it's work when
+ you send event(s) to it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Most current information
+\end_layout
+
+\begin_layout Standard
+You can find the most current information about the Paris relay module at
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.auto.grodansparadis.com/paris/paris.html"
+
+\end_inset
+
+.
+ On the site you can also find links to the latest firmware and 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Module Description File
+\end_layout
+
+\end_inset
+
+Module Description File (MDF
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+MDF
+\end_layout
+
+\end_inset
+
+) for the device as well as schematics and recipes for its use.
+ This information is of course pointed to from the MDF file which you can
+ locate from the module itself reading it's standard registers.
+\end_layout
+
+\begin_layout Section
+The raw facts
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Supply voltage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9-28VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PCB Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+42 mm x 72mm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power requirements
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1W + relay driver power if used.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Communication
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VSCP4CAN (CAN), 125kbps
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Max sink capacity (each relay)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500 mA, 50V (total<1A)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Max relays
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The raw facts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hardware
+\end_layout
+
+\end_inset
+
+Hardware
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/latest_schema.png
+	width 12cm
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Schema
+\end_layout
+
+\end_inset
+
+Schema for the Paris relay module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+key positions
+\end_layout
+
+\end_inset
+
+key positions on the module is outlined in the figure below
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/board.jpg
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Road map to module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cable and 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+connectors
+\end_layout
+
+\end_inset
+
+connectors
+\end_layout
+
+\begin_layout Standard
+The unit is powered over the CAN4VSCP bus.
+ The CAN4VSCP normally uses 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+CAT5 or better 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+twisted pair cable
+\end_layout
+
+\end_inset
+
+twisted pair cable.
+ You can use other cables if you which.
+ The important thing is that the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANH
+\end_layout
+
+\end_inset
+
+CANH and CANL
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANL
+\end_layout
+
+\end_inset
+
+ signals uses a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+twisted cable
+\end_layout
+
+\end_inset
+
+twisted cable.
+ For connectors you can use RJ10
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ10
+\end_layout
+
+\end_inset
+
+, RJ11
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ11
+\end_layout
+
+\end_inset
+
+, RJ12
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ12
+\end_layout
+
+\end_inset
+
+ or the most common RJ45
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ45
+\end_layout
+
+\end_inset
+
+ connectors.
+ There are different versions 
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ-XX
+\end_layout
+
+\end_inset
+
+RJ-XX pin-out 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:RJ-XX-pin-out"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pin 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Patch Cable wire color 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+T568B
+\end_layout
+
+\end_inset
+
+T568B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++9-28V DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orange/White 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++9-28V DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orange
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 2 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++9-28V DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Green/White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 3 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CANH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Blue
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 4 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CANL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Blue/White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 5 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Green
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown/White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RJ-45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+RJ-XX pin-out 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+RJ-11/12/45 pin-out
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/rj45.jpg
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ-45 pin out
+\end_layout
+
+\end_inset
+
+RJ-45 pin out
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Always use a pair of wires for CANH/CANL fort best noise immunity.
+ If the EIA/TIA 56B standard is used this condition will be satisfied.
+ This is good as most Ethernet networks already is wired this way.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Cable length
+\end_layout
+
+\end_inset
+
+Cable length
+\end_layout
+
+\begin_layout Standard
+CAN4VSCP always communicate with 125kbps.
+ This means that if you use a good quality cable it can be up to a maximum
+ of 500 meters using AWG24
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+AWG24
+\end_layout
+
+\end_inset
+
+ or similar (CAT5
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+) .
+ Actual length depend on the environment and other parameters.
+ Drops
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Drops
+\end_layout
+
+\end_inset
+
+ with a maximum length of 24 meters can be taken from this cable and the
+ sum of all drops must not exceed a total of 120 meters.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/drops.jpg
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CAN4VSCP bus with drops and terminations
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+terminations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Termination
+\end_layout
+
+\begin_layout Standard
+The CAN4VSCP bus, as all CAN
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAN
+\end_layout
+
+\end_inset
+
+ based networks, should be terminated
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+terminated
+\end_layout
+
+\end_inset
+
+ with a 120 ohms resistor between CANH
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANH
+\end_layout
+
+\end_inset
+
+ and CANL
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CANL
+\end_layout
+
+\end_inset
+
+ at both ends of the cable.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename images/CAN_Termination.gif
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Termination
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Termination
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you use CAT5
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+CAT5
+\end_layout
+
+\end_inset
+
+ this termination
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+termination
+\end_layout
+
+\end_inset
+
+ should be placed between the blue - blue/white cables at both end of your
+ bus.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+On the board there is a jumper for an 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+on-board terminator
+\end_layout
+
+\end_inset
+
+on-board terminator.
+
+\emph default
+ See figure above.
+\end_layout
+
+\begin_layout Subsubsection
+Why are terminators required? 
+\end_layout
+
+\begin_layout Standard
+Terminators
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Terminators
+\end_layout
+
+\end_inset
+
+ are needed to cancel signal echos in the cable.
+ In short you get less noise in the cable if you use them.
+ It is recommended to use them even if at 125 kbit it is possible that your
+ bus will work anyway.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Daisy chain
+\end_layout
+
+\end_inset
+
+Daisy chain connector
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+daisy chain
+\end_layout
+
+\end_inset
+
+daisy chain connector is a pin-header that can be used as an easy way to
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+daisy chain
+\end_layout
+
+\end_inset
+
+daisy chain several modules in a cabinet or similar.
+ You just connect the modules together with a simple cable.
+ The pin-out is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename images/daisychain.jpg
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Daisy chain connector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Use a twisted cable for CANH/CANL and don't have a cable between mocules
+ that is less then 30 centimeters.
+\end_layout
+
+\begin_layout Subsection
+Power
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Power
+\end_layout
+
+\end_inset
+
+ the module
+\end_layout
+
+\begin_layout Standard
+You normally power the module through the RJ45
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RJ45
+\end_layout
+
+\end_inset
+
+ connector over the CAN4VSCP bus.
+ See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:RJ-XX-pin-out"
+
+\end_inset
+
+ for a description of which pins to use for power
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+power
+\end_layout
+
+\end_inset
+
+ and ground.
+ The voltage
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+voltage
+\end_layout
+
+\end_inset
+
+ range is +9VDC - 28VDC.
+ The current
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+current
+\end_layout
+
+\end_inset
+
+ need depend on how many modules you want to power.
+\end_layout
+
+\begin_layout Standard
+An alternative way to power the module is through the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+daisy chain
+\end_layout
+
+\end_inset
+
+daisy chain connector described above.
+ Just connect +9V - 28V to it's pin 1 and ground to pin 4.
+ Needless to say you can't have power supplied by the CAN4VSCP bus at the
+ same time.
+\end_layout
+
+\begin_layout Subsection
+Best practice
+\end_layout
+
+\begin_layout Standard
+Even if it is possible to have cable lengths up to 500 meters it is better
+ to stay at shorter distances to have some margins.
+ Here are some guidelines for a reliable set up
+\end_layout
+
+\begin_layout Itemize
+Total cable length of 300m, stub cables count double their length in that
+ total.
+\end_layout
+
+\begin_layout Itemize
+Nodes count as 6m in that total.
+ 
+\end_layout
+
+\begin_layout Itemize
+Never less than 30cm of cable between nodes, nor between a stub connection
+ and a node.
+ 
+\end_layout
+
+\begin_layout Itemize
+No more than 50 nodes connected.
+\end_layout
+
+\begin_layout Standard
+Following this best practice you will have a setup that will work reliable
+ even in harsh environments.
+\end_layout
+
+\begin_layout Section
+Installing
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Installing
+\end_layout
+
+\end_inset
+
+ the module
+\end_layout
+
+\begin_layout Standard
+Connect the module to the CAN4VSCP bus.
+ The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+red led
+\end_layout
+
+\end_inset
+
+red led on the module should light up indicating that the device is powered.
+ If this is the first time you start up the module the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+green lamp
+\end_layout
+
+\end_inset
+
+green lamp next to the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+initializing button
+\end_layout
+
+\end_inset
+
+initializing button will start to blink.
+ This means that the module is trying to negotiate a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+nickname address
+\end_layout
+
+\end_inset
+
+nickname address with the rest of the modules on the bus.
+ When it found a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+free nickname
+\end_layout
+
+\end_inset
+
+free nickname the green led will light steady.
+ If the green led does not start to blink press the initialization button
+ until it does.
+ Now your module is ready to use.
+\end_layout
+
+\begin_layout Standard
+You have to decide what 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+power source
+\end_layout
+
+\end_inset
+
+power source you should use for your relays.
+ On position 12 of the connectors on the board you can find +5V which can
+ be used for this purpose.
+ If you want to use 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
++5V
+\end_layout
+
+\end_inset
+
++5V install the jumper 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+JP1
+\end_layout
+
+\end_inset
+
+JP1.
+ Often however 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
++5V
+\end_layout
+
+\end_inset
+
++5V is a to low voltage to control relays.
+ You need 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
++12V
+\end_layout
+
+\end_inset
+
++12V or even 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
++24V
+\end_layout
+
+\end_inset
+
++24V.
+ This is OK.
+ With the Paris module it is possible to use up to +50V DC.
+ 
+\series bold
+\bar under
+Before you connect this external voltage make sure that jumper 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+JP1
+\end_layout
+
+\end_inset
+
+JP1 is not installed.
+ 
+\end_layout
+
+\begin_layout Standard
+On position 10/11 you have the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+supply voltage
+\end_layout
+
+\end_inset
+
+supply voltage for the module available.
+ This is +9VDC - 28VDC and can also be used as your relay voltage.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Termination block
+\end_layout
+
+\end_inset
+
+Termination block pin-out
+\end_layout
+
+\begin_layout Standard
+The individual positions for the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+twelve position termination block
+\end_layout
+
+\end_inset
+
+twelve position termination block is numbered from the left (looking into
+ it) as in the figure below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/connector.jpg
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Pin-out
+\end_layout
+
+\end_inset
+
+Pin-out for 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+termination block
+\end_layout
+
+\end_inset
+
+termination block
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Position
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ground
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay power.
+ Connect relay driver voltage here if not using VCC.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relay 7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Module power +9VDC - +28VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Module power +9VDC - +28VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Module VCC = +5VDC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Pin-out
+\end_layout
+
+\end_inset
+
+Pin-out for 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+termination block
+\end_layout
+
+\end_inset
+
+termination block
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ground
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Ground
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
++5V
+\end_layout
+
+\end_inset
+
++5V and the power
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+power
+\end_layout
+
+\end_inset
+
+ for the module is available from the board and the seven relay control
+ positions.
+ If you plan to use relays that can be controlled with +5V just install
+ jumper JP1
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+JP1
+\end_layout
+
+\end_inset
+
+ and connect +5V to the relays.
+ Normally however you need to have a higher voltage such as +12V or +24V
+ to control the the relays.
+ In this case the JP1
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+JP1
+\end_layout
+
+\end_inset
+
+ jumper should be uninstalled.
+ Connect the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+relay voltage
+\end_layout
+
+\end_inset
+
+relay voltage (which can be taken from position 10/11 if a suitable voltage
+ is used to power the module) to your relay and to position 2 of the termination
+ block.
+ By doing this you activate the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+fly-back protection diodes
+\end_layout
+
+\end_inset
+
+fly-back protection diodes which protects the circuits from 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+inductive loads
+\end_layout
+
+\end_inset
+
+inductive loads.
+ If you just have an 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+resistive load
+\end_layout
+
+\end_inset
+
+resistive load you don't have to do this connection but there is no harm
+ if you use it anyway.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename images/relay.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Connection of relay
+\end_layout
+
+\end_inset
+
+Connection of relay
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The power used to power the Paris module is a perfect candidate for the
+ relay voltage.
+ It is available on the terminal block position 10/11.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Updating firmware
+\end_layout
+
+\end_inset
+
+Updating firmware
+\end_layout
+
+\begin_layout Standard
+There is two ways you can use to update the firmware of the module.
+ You can program the device using the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+programming socket
+\end_layout
+
+\end_inset
+
+programming socket on board or you can use 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP Works
+\end_layout
+
+\end_inset
+
+VSCP Works to 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+remotely program
+\end_layout
+
+\end_inset
+
+remotely program the device.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Update firmware
+\end_layout
+
+\end_inset
+
+Update firmware using the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICP connector
+\end_layout
+
+\end_inset
+
+ICP connector
+\end_layout
+
+\begin_layout Standard
+The firmware
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+firmware
+\end_layout
+
+\end_inset
+
+ of a circuit equipped with a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Microchip microprocessor
+\end_layout
+
+\end_inset
+
+Microchip microprocessor usually can be programmed in circuit.
+ That is when it is mounted on a printed circuit board.
+ This is also true for the Paris relay module which have the programming
+ connector on-board (J3).
+ If you have a programmer for Microchip processors (
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Real ICE
+\end_layout
+
+\end_inset
+
+Real ICE
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICD-2
+\end_layout
+
+\end_inset
+
+ICD-2, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ICD-3
+\end_layout
+
+\end_inset
+
+ICD-3, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+PICKIT-2
+\end_layout
+
+\end_inset
+
+PICKIT-2, 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+PICKIT3
+\end_layout
+
+\end_inset
+
+PICKIT3 or other) you can program your own firmware
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+firmware
+\end_layout
+
+\end_inset
+
+ or the latest 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+official firmware
+\end_layout
+
+\end_inset
+
+official firmware into the module using MPLAB
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+MPLAB
+\end_layout
+
+\end_inset
+
+ or similar tools.
+ You can always find a link to the latest firmware on the Paris relay module
+ home page (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.auto.grodansparadis.com/paris/paris.html"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Update firmware
+\end_layout
+
+\end_inset
+
+Update firmware with VSCP Works
+\end_layout
+
+\begin_layout Standard
+When a module is installed in a remote location or if you don't have a Microchip
+ programmer you can program the module using the built in boot-loader
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+boot-loader
+\end_layout
+
+\end_inset
+
+.
+ This can be done with 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP Works
+\end_layout
+
+\end_inset
+
+VSCP Works a program that can be run on the Windows or the Linux platform
+ and can perform and can perform different maintenance
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+maintenance
+\end_layout
+
+\end_inset
+
+, configuration
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+configuration
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+status checks
+\end_layout
+
+\end_inset
+
+status checks of VSCP modules.
+ If you have not installed the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP & Friends package
+\end_layout
+
+\end_inset
+
+VSCP & Friends package it is time to do so now.
+ You can always find the latest version on the VSCP projects download page
+ (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://vscp.org/downloads.php"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+boot loader
+\end_layout
+
+\end_inset
+
+boot loader process using 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP Works
+\end_layout
+
+\end_inset
+
+VSCP Works is described in section 16.4 of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP specification
+\end_layout
+
+\end_inset
+
+VSCP specification.
+ The Paris relay module uses the 
+\emph on
+PIC1
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+PIC1
+\end_layout
+
+\end_inset
+
+
+\emph default
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+boot loader
+\end_layout
+
+\end_inset
+
+boot loader.
+\end_layout
+
+\begin_layout Section
+Configure
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Configure
+\end_layout
+
+\end_inset
+
+ the module?
+\end_layout
+
+\begin_layout Standard
+You configure a VSCP module by writing content into the modules registers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+registers
+\end_layout
+
+\end_inset
+
+.
+ You can do this manually or with the wizard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+wizard
+\end_layout
+
+\end_inset
+
+ available in 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP works
+\end_layout
+
+\end_inset
+
+VSCP works.
+ Using the wizard is absolutely the easiest way to use.
+\end_layout
+
+\begin_layout Subsection
+Zone
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Zone
+\end_layout
+
+\end_inset
+
+/
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+sub-zone
+\end_layout
+
+\end_inset
+
+sub-zone
+\end_layout
+
+\begin_layout Standard
+You should always plan your overall structure.
+ The zone and the sub-zone registers found in the first two register positions
+ can help you here.
+ Think of a zone as a house, floor plan or similar and sub-zone as a room
+ or a location.
+ Note that this is not an address.
+ It's a way to group functionality together.
+ Each relay can belong to it's own sub-zone.
+ Set it in register 50-56.
+\end_layout
+
+\begin_layout Subsection
+Functionality for the relays
+\end_layout
+
+\begin_layout Standard
+As you may expect the main functionality for the Paris relay module is the
+ possibility to turn a relay on or off.
+ Even if this is the main functionality there is some extra functionality
+ available.
+ Each relay have a control byte with flags (bits) which control different
+ functionality for each relay.
+ The bits have the following meaning
+\end_layout
+
+\begin_layout Itemize
+bit 7 - Must be set to one to make it possible to control the relay.
+ Both register writes, pulse and actions are ignored when the bit is set
+ to zero.
+\end_layout
+
+\begin_layout Itemize
+bit 6 - If set a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+STOPPED event
+\end_layout
+
+\end_inset
+
+STOPPED event (CLASS=20, TYPE=24) will be sent when the relay goes to it's
+ inactive state.
+\end_layout
+
+\begin_layout Itemize
+bit 5 - If set a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+STARTED event
+\end_layout
+
+\end_inset
+
+STARTED event (CLASS=20, TYPE=25) will be sent when the relay goes to it's
+ active state.
+\end_layout
+
+\begin_layout Itemize
+bit 4 - If set an 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+OFF event
+\end_layout
+
+\end_inset
+
+OFF event (CLASS=20, TYPE=4) will be sent when the relay goes to it's inactive
+ state.
+\end_layout
+
+\begin_layout Itemize
+bit 3 - If set an 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ON event
+\end_layout
+
+\end_inset
+
+ON event (CLASS=20, TYPE=3) will be sent when the relay goes to it's active
+ state.
+\end_layout
+
+\begin_layout Itemize
+bit 2 - Enables the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+protection timer
+\end_layout
+
+\end_inset
+
+protection timer if set to one.
+ See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Protection-timer"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+bit 1 - Alarm
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm
+\end_layout
+
+\end_inset
+
+ is sent if the protection timer elapses if this bit is set to one.
+\end_layout
+
+\begin_layout Itemize
+bit 0 - 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Pulse output
+\end_layout
+
+\end_inset
+
+Pulse output enabled if set to one.
+ See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Pulsing-outputs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Set/get 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+relay state
+\end_layout
+
+\end_inset
+
+relay state with register read/writes
+\end_layout
+
+\begin_layout Standard
+A relay can be active (on) or inactive(off).
+ In registers 2-8 you can read or write the status
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+relay status
+\end_layout
+
+\end_inset
+
+ for an individual relay.
+ A zero mean the relay is off, and a one that it is on.
+ So writing a one to register 2 of a Paris relay module will turn relay
+ 1 on.
+ A better way is to use the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix of the module to accomplish this.
+\end_layout
+
+\begin_layout Subsection
+Set/get 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+relay state
+\end_layout
+
+\end_inset
+
+relay state using the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix
+\end_layout
+
+\begin_layout Standard
+Normally the decision matrix of the module is the best way to to handle
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+relay state changes
+\end_layout
+
+\end_inset
+
+relay state changes.
+ This much more flexible then to use the register writes directly.
+ This is also why the zone/sub-zone registers should be initialized with
+ meaningful values.
+ The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix of this module can have eight entries.
+ Each entry is a line that look for a specified event on the bus and perform
+ a specific action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+action
+\end_layout
+
+\end_inset
+
+ if this event is found.
+ Typically this can be a ON-event sent to a specific zone/sub-zone.
+ A row in the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix can be setup to turn on one or more relays if this event
+ is detected and if the zone/sub-zone is right.
+\end_layout
+
+\begin_layout Standard
+At first the setup of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix can be hard to grasp.
+ You can read all about it in the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP specification
+\end_layout
+
+\end_inset
+
+VSCP specification section 7.3.
+ Here we will just at a simple example.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix consist of seven bytes.
+ The first byte is the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+originating address
+\end_layout
+
+\end_inset
+
+originating address.
+ You can set a nickname
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+nickname
+\end_layout
+
+\end_inset
+
+ here for the node that is allowed to trigger (perform) a selected action.
+ The control byte have 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+configuration bits
+\end_layout
+
+\end_inset
+
+configuration bits(flags) for how the information should be interpreted.
+ One bit (bit 6) tells if the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+originating address
+\end_layout
+
+\end_inset
+
+originating address should be checked or not.
+ That is if bit 6 is set then the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+originating address
+\end_layout
+
+\end_inset
+
+originating address must be the same as the byte stored in the first byte
+ of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix to trigger the action.
+ Bit 7 must always be set for the row to be compared ton an incoming event.
+ Bit four and five, if set, check if byte 1 and 2 of the incoming event
+ is the same as the zone/sub-zone stored in register3 0/1 of the module.
+ 
+\end_layout
+
+\begin_layout Standard
+Byte 2/3 together with bits 0/1 of the control register is the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class mask
+\end_layout
+
+\end_inset
+
+class mask and filter
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class filter
+\end_layout
+
+\end_inset
+
+.
+ A ninth bit is needed as a class consist of nine bits.
+ Byte 4/5 is the type mask and filter.
+ This is something most newcomers to VSCP have problems with.
+ But is is actually really simple.
+ 
+\end_layout
+
+\begin_layout Standard
+The following table illustrates how this works 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mask bit n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Filter bit n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Incoming event class bit n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept or reject bit n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reject
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reject
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class/type filter
+\end_layout
+
+\end_inset
+
+class/type filter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Think of the mask as having ones at positions that are of interest and the
+ filter telling what the value should be for those bit positions that are
+ of interest.
+\end_layout
+
+\begin_layout Itemize
+So to only accept one class set all mask bits to one and enter the class
+ in filter.
+ 
+\end_layout
+
+\begin_layout Itemize
+To accept all classes set the class mask to 0.
+ In this case filter don't care.
+\end_layout
+
+\begin_layout Itemize
+To accept everything set both masks to zero and the filter to any value
+ you like.
+\end_layout
+
+\begin_layout Standard
+Common cases are 
+\end_layout
+
+\begin_layout Subsubsection
+You want to trigger on a specific event.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Set all bits of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class mask
+\end_layout
+
+\end_inset
+
+class mask to ones (255 plus bit 1 of the control register set to one) and
+ all bits of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+type mask
+\end_layout
+
+\end_inset
+
+type mask to ones (255).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write the class
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class
+\end_layout
+
+\end_inset
+
+ that should trigger the event into the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class filter
+\end_layout
+
+\end_inset
+
+class filter (remember that bit nine goes to bit 0 of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+control byte
+\end_layout
+
+\end_inset
+
+control byte) and the type to the type filter.
+ So if you want to trigger on a 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+TurnOn event
+\end_layout
+
+\end_inset
+
+TurnOn event which have CLASS=30, TYPE=5 you set the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+class filter 
+\end_layout
+
+\end_inset
+
+class filter = 30 (class bit i control byte to zero) and the type filter
+ = 5.
+\end_layout
+
+\begin_layout Enumerate
+Now if the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+originating address
+\end_layout
+
+\end_inset
+
+originating address bit is not set and the row is enabled (bit 7 of the
+ control register is set) and incoming event of the specified type will
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+trigger action
+\end_layout
+
+\end_inset
+
+trigger the action.
+\end_layout
+
+\begin_layout Subsubsection
+You want to trigger on any event you get from a specific module.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Enter the nickname
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+nickname
+\end_layout
+
+\end_inset
+
+ of the module in the first byte of the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Set the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+control byte
+\end_layout
+
+\end_inset
+
+control byte to 192 (bit 6 (check originating address) and bit 7 (enable
+ decision matrix row) set).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Set byte 2-5 (masks and filters) to zero.
+ Actually class and type filters can have any value as long as the masks
+ are zero.
+\end_layout
+
+\begin_layout Enumerate
+Set the appropriate action/action parameter values.
+ For example action=1 and action parameter = 3 (0b00000011) to activate
+ relay 0 and 1 when any event is received from the node.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix makes it very easy to set up systems where one event triggers
+ actions on several modules.
+ It is also easy to adopt your system to new demands.
+ You can add and replace modules without effecting the system functionality.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Pulsing outputs
+\end_layout
+
+\end_inset
+
+Pulsing outputs
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Pulsing-outputs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you want your relay output to be turned on/off with a certain interval
+ the Paris relay module automatically can handle this for you.
+ First set the time the relay should be on/off in register 18-33.
+ There are two registers for each relay and the time is given in seconds.
+ The lower byte holds the most significant byte
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+most significant byte
+\end_layout
+
+\end_inset
+
+ and the higher byte holds the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+least significant byte
+\end_layout
+
+\end_inset
+
+least significant byte.
+ As and example: If you want relay 0 to have an output that is on for five
+ minutes and then off for five minutes and so on you first calculate how
+ many seconds the pulse time is.
+ In this case 5 * 60 = 300 seconds.
+ This is what should go into register 18 and 19.
+ 300/256 = 1 which is what should go into register 18 and the rest (300
+ - 1*256 = 44 ) 44 forms the least significant byte and should go to register
+ 19.
+ To start the pulse output you also have to set bit 0 in the corresponding
+ relay control register to one.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Protection timer
+\end_layout
+
+\end_inset
+
+Protection timer
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Protection-timer"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+protection timer
+\end_layout
+
+\end_inset
+
+protection timer can be convenient to use to protect a system form malfunctions
+ in some of it's components.
+ Suppose you have a relay that controls a pump that fills a tank with some
+ liquid.
+ The pump should then be turned off when a the tanks is full which is indicated
+ by an event from a sensor on the tank.
+ If this sensor is broken or the cable to the module is broken this event
+ will not be received.
+ With the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+protection timer
+\end_layout
+
+\end_inset
+
+protection timer activated the pump will be turned of anyway before things
+ get to bad.
+ It is also possible to send an alarm
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+alarm
+\end_layout
+
+\end_inset
+
+ when this happens to inform the rest of the system.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+protection timers
+\end_layout
+
+\end_inset
+
+protection timers are in registers 34-47 and comes, like the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+pulse registers
+\end_layout
+
+\end_inset
+
+pulse registers, in pairs.
+ The first byte in a pair holds the most significant byte of the timer and
+ the second the least significant byte.
+ Also as for the pulse time the time set is given in seconds.
+ A maximum of 65535 seconds can thus be stored.
+ So the range is one seconds up to around eighteen hours.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+protection timer
+\end_layout
+
+\end_inset
+
+protection timer, if activated, is started when you activate the protected
+ relay.
+ If the relay is active when the timer elapse it will be turned off.
+ If you activate the relay again before the timer has elapsed the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+protection timer
+\end_layout
+
+\end_inset
+
+protection timer will be resettled and start to count down from the preset
+ value again.
+ If you turn of the relay the timer will be inactivated until the relay
+ is activated again.
+ Both relay control through actions and register writes affects the timer.
+\end_layout
+
+\begin_layout Subsection
+Alarm
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The module can send alarm events if the protection timer elapses.
+ When an alarm occurs a bit is set in the alarm register which is located
+ in register position 128.
+ You can always read this register to see if the module have sent out and
+ alarm events.
+ When you read the register the alarm bits will be cleared.
+\end_layout
+
+\begin_layout Section
+Registers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Registers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All VSCP modules have a set of 8-bit registers defined.
+ Some of them (register 128-255) are predefined and the information in them
+ are the same for all VSCP modules.
+ See the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+VSCP specification
+\end_layout
+
+\end_inset
+
+VSCP specification for a description of their content (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sourceforge.net/projects/m2m/files/VSCP%20Specification/"
+
+\end_inset
+
+).
+ The lower 128 register positions are used for module specific registers.
+ It is normally here you find registers with which you configure your module.
+ You can also find registers where you typically can read 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+status information
+\end_layout
+
+\end_inset
+
+status information such as measurement data from the module.
+\end_layout
+
+\begin_layout Standard
+Below is a description of the registers on the Paris smart relay controller.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Zone registers
+\end_layout
+
+\end_inset
+
+Zone registers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 0
+\series default
+(0x00) - Zone.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 1
+\series default
+(0x01) - Sub-zone.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Relay status registers
+\end_layout
+
+\end_inset
+
+Relay status registers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 2
+\series default
+(0x02) - Relay 1 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 3
+\series default
+(0x03) - Relay 2 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 4
+\series default
+(0x04) - Relay 3 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 5
+\series default
+(0x05) - Relay 4 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 6
+\series default
+(0x06) - Relay 5 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 7
+\series default
+(0x07) - Relay 6 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 8
+\series default
+(0x08) - Relay 7 Status register.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 9
+\series default
+(0x09) - Reserved.
+\end_layout
+
+\begin_layout Standard
+Writing a value to the relay control register will activate/deactivate the
+ relay output.
+\end_layout
+
+\begin_layout Itemize
+0 - The relay is inactivated.
+\end_layout
+
+\begin_layout Itemize
+1 - The relay is activated.
+\end_layout
+
+\begin_layout Standard
+Reading a value from the relay control register is read as a one if the
+ relay is activated and a 0 if the relay is deactivated.
+\end_layout
+
+\begin_layout Subsection
+Relay 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+control registers
+\end_layout
+
+\end_inset
+
+control registers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 10
+\series default
+(0x0A) - Relay 1 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 11
+\series default
+(0x0B) - Relay 2 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 12
+\series default
+(0x0C) - Relay 3 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 13
+\series default
+(0x0D) - Relay 4 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 14
+\series default
+(0x0E) - Relay 5 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 15
+\series default
+(0x0F) - Relay 6 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 16
+\series default
+(0x10) - Relay 7 Control Register.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 17
+\series default
+(0x11) - Reserved.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+relay control bits
+\end_layout
+
+\end_inset
+
+relay control bits enable/disable intelligent relay functionality:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 0
+\series default
+ - Enable 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+pulsed output
+\end_layout
+
+\end_inset
+
+pulsed output if set to one.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 1
+\series default
+ - Alarm sent when protection timer triggers (if set).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 2
+\series default
+ - Protection timer enable if set to one.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 3
+\series default
+ - Send On event (CLASS=20, TYPE=3) when relay goes to active state.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 4
+\series default
+ - Send Off event (CLASS=20, TYPE=4) when relay goes to inactive state.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 5
+\series default
+ - Send Started event (CLASS=20, TYPE=25) when relay goes to active state.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 6
+\series default
+ - Send Stopped event (CLASS=20, TYPE=24 )when relay goes to inactive state.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 7
+\series default
+ - If set to one the relay is enabled.
+ If set to zero it is inactivated.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Relay pulse time
+\end_layout
+
+\end_inset
+
+Relay pulse time registers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 18
+\series default
+(0x12) - On/off pulse time Relay 1 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 19
+\series default
+(0x13) - On/off pulse time Relay 1 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 20
+\series default
+(0x14) - On/off pulse time Relay 2 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 21
+\series default
+(0x15) - On/off pulse time Relay 2 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 22
+\series default
+(0x16) - On/off pulse time Relay 3 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 23
+\series default
+(0x17) - On/off pulse time Relay 3 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 24
+\series default
+(0x18) - On/off pulse time Relay 4 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 25
+\series default
+(x019) - On/off pulse time Relay 4 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 26
+\series default
+(0x1A) - On/off pulse time Relay 5 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 27
+\series default
+(0x1B) - On/off pulse time Relay 5 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 28
+\series default
+(0x1C) - On/off pulse time Relay 6 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 29
+\series default
+(0x1D) - On/off pulse time Relay 6 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 30
+\series default
+(0x1E) - On/off pulse time Relay 7 (seconds) MSB.
+ Read/Write.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 31
+\series default
+(0x1F) - On/off pulse time Relay 7 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 32
+\series default
+(0x20) – Reserved.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 33
+\series default
+(0x21) – Reserved.
+\end_layout
+
+\begin_layout Standard
+This is the pulse time for the each relay expressed in seconds.
+ This can be used to have a relay turn on and off with a certain preset
+ interval.
+ The minimum pulse time is 1 second and the maximum time is 65535 seconds
+ which is about 18 hours.
+ Set to zero (default) for no pulse time i.e.
+ the relay will be steady on/off.
+\end_layout
+
+\begin_layout Standard
+To start a pulse sequence bit 0 for the corresponding relay should be set
+ to one.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Relay protection time
+\end_layout
+
+\end_inset
+
+Relay protection time registers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 34
+\series default
+(0x22) - Protection time Relay 1 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 35
+\series default
+(0x23) - Protection time Relay 1 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 36
+\series default
+(0x24) - Protection time Relay 2 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 37
+\series default
+(0x25) - Protection time Relay 2 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 38
+\series default
+(0x26) - Protection time Relay 3 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 39
+\series default
+(0x27) - Protection time Relay 3 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 40
+\series default
+(0x28) - Protection time Relay 4 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 41
+\series default
+(0x29) - Protection time Relay 4 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 42
+\series default
+(0x2A) - Protection time Relay 5 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 43
+\series default
+(0x2B) - Protection time Relay 5 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 44
+\series default
+(0x2C) - Protection time Relay 6 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 45
+\series default
+(0x2D) - Protection time Relay 6 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 46
+\series default
+(0x2E) - Protection time Relay 7 (seconds) MSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 47
+\series default
+(0x2F) - Protection time Relay 7 (seconds) LSB.
+ Read/Write.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 48
+\series default
+(x030) - Reserved.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 49
+\series default
+(0x31) - Reserved.
+\end_layout
+
+\begin_layout Standard
+This is the relay protection time.
+ A relay will be inactivated if not written to before this time has elapsed.
+ Set to zero to disable (default).
+ The max time is 65535 seconds which is about 18 hours.
+\end_layout
+
+\begin_layout Standard
+The registers can for example be used as a security feature to ensure that
+ an output is deactivated after a preset time even if the controlling device
+ failed to deactivate the relay.
+ 
+\end_layout
+
+\begin_layout Standard
+The protection timer is started when the corresponding relay is set to it's
+ active state.
+ This means that if a protection time is set when the relay is already in
+ the active state nothing will happen until the state of the relay is actually
+ set.
+ So the sequence to follow is to set the protection time, enable the protection
+ time in the control register and activate the relay.
+ If you want to change the protection time while started, first write MSB
+ byte and then LSB byte.
+ When the LSB byte is written the actual running timer will be updated with
+ the new value.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Relay zone
+\end_layout
+
+\end_inset
+
+Relay zone information
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 50
+\series default
+(0x32) - Relay 1 Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 51
+\series default
+(0x33) - Relay 1 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 52
+\series default
+(0x34) - Relay 2 Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 53
+\series default
+(0x35) - Relay 2 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 54
+\series default
+(0x36) - Relay 3 Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 55
+\series default
+(0x37) - Relay 3 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 56
+\series default
+(0x38) - Relay 4 Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 57
+\series default
+(0x39) - Relay 4 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 58
+\series default
+(0x3A) - Relay 5 Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 59
+\series default
+(0x3B) - Relay 5 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 60
+\series default
+(0x3C) - Relay 6 Zone.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 61
+\series default
+(0x3D) - Relay 6 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 62
+\series default
+(0x3E) - Relay 7 Zone.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 63
+\series default
+(0x3F) - Relay 7 Sub Zone.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 64
+\series default
+(0x40) - Reserved
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 65
+\series default
+(0x41) - Reserved.
+ 
+\end_layout
+
+\begin_layout Standard
+This is the zone and sub-zone value related to a specific relay.
+ If zero the the module Zone/sub-zone will be used.
+ 
+\end_layout
+
+\begin_layout Subsection
+Registers for 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+decision matrix
+\end_layout
+
+\end_inset
+
+decision matrix
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register 72
+\series default
+(0x48) - 
+\series bold
+127
+\series default
+(0x7f) - Decision Matrix with seven rows.
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Decision matrix
+\end_layout
+
+\end_inset
+
+Decision matrix
+\end_layout
+
+\begin_layout Paragraph
+Level I matrix row
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="8">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte 7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+oaddr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+flags
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+class-mask
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+class-filter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+type-mask
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+type-filter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+action
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+action-parameter
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+oaddr
+\end_layout
+
+\begin_layout Standard
+oaddr is the originating address.
+ We are only interested in events from the node given if it is used.
+ For example we may be interested in events from 0x00 a segment controller
+ and 0xFF is a node without a nickname.
+ If bit 6 of flags is set oaddr will not be checked and events from all
+ nodes will be accepted.
+\end_layout
+
+\begin_layout Subsection
+flag 
+\end_layout
+
+\begin_layout Paragraph
+Flag bit description
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bit #
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enabled if set to 1 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+oaddr should be checked (=1) or not checked (=0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Indicates hard-coded originating address if set to 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Match Zone to trigger DM entry
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Match sub-zone to trigger DM entry 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Class-mask bit 8 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Class-filter bit 8 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The enable bit can be used to disable a decision matrix row while it is
+ edited.
+\end_layout
+
+\begin_layout Standard
+The zone and use sub-zone bits can be activated to have a check on the zone/sub-
+zone information of an event.
+ That is the zone/sub-zone of the machine must match the one of the event
+ to trigger the DM row.
+ Bits 0/1 are the ninth bit of the filter/mask not enable bits.
+\end_layout
+
+\begin_layout Subsection
+class-mask / class-filter
+\end_layout
+
+\begin_layout Standard
+A class that should trigger this decision matrix row is defined in class-mask
+ and class-filter with bit eight for both taken from the flags byte.
+ The best way to do calculations of filters and masks is using the binary
+ system.
+ If you are unused to this system you can use the calculator found on most
+ computer systems.
+ It can convert easily between the different systems.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following table illustrates how this works 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mask bit n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Filter bit n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Incoming event class bit n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept or reject bit n
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reject
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reject
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accept
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Think of the mask as having ones at positions that are of interest and the
+ filter telling what the value should be for those bit positions that are
+ of interest.
+\end_layout
+
+\begin_layout Itemize
+So to only accept one class set all mask bits to one and enter the class
+ in filter.
+ 
+\end_layout
+
+\begin_layout Itemize
+To accept all classes set the mask to 0.
+ In this case filter don't care.
+\end_layout
+
+\begin_layout Subsection
+type-mask / type-filter
+\end_layout
+
+\begin_layout Standard
+A type that should trigger this decision matrix row is defined in type-mask
+ and type-filter with bit eight for both taken from the flags byte.
+\end_layout
+
+\begin_layout Standard
+A similar truth table as for the class-mask/filter is used.
+ 
+\end_layout
+
+\begin_layout Subsection
+action
+\end_layout
+
+\begin_layout Standard
+This is the action or operation that should be performed if the filtering
+ is satisfied.
+ Only action code 0x00 is predefined and means No-Operation.
+ All other codes are application specific and typical application defined
+ codes could do measurement, send predefined event etc.
+ 
+\end_layout
+
+\begin_layout Subsection
+action-parameter
+\end_layout
+
+\begin_layout Standard
+A numeric action can be set and its meaning is application specific.
+\end_layout
+
+\begin_layout Standard
+The number of matrix rows are limited in a micro controller.
+ The control class has an event defined that gets the number of elements
+ in the matrix and the location of the matrix in the register model of the
+ node (Get Decision matrix info, CLASS1.PROTOCOL, Type=33).
+\end_layout
+
+\begin_layout Standard
+The matrix information is read and written with the standard read/write
+ control functions.
+ And is placed in the standard low register range (< 0x80) or in an optional
+ page in this area.
+\end_layout
+
+\begin_layout Standard
+Note that there is no demand that a node implements a decision matrix.
+ If not implemented the Get Decision matrix info just returns a zero size.
+\end_layout
+
+\begin_layout Standard
+A special paged feature is available for the decision matrix to save register
+ space.
+ If the offset for the decision matrix is 0x80 - 8 i.e.
+ Starts at 0x78(120) it is implied that the register position just below
+ 0x77(119) contains a register that is an index to the active DM.
+\end_layout
+
+\begin_layout Standard
+Method CLASS1.PROTOCOL TYPE=32 is used to fetch decision matrix information
+ for a specific node.
+ 
+\end_layout
+
+\begin_layout Subsection
+Some decision matrix examples
+\end_layout
+
+\begin_layout Standard
+Turn off all relays when the event CLASS1.CONTROL(30), TYPE=ALL LAMPS ON/OFF(2)
+ is received.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Decision matrix example 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte #
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+We don't care which node that sends the event.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x82(130)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The row is active.
+ Mask bit 9 for Class is set.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0xff(255)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+All bits in the class part of the filter is of interest.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x1e(30)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLASS1.CONTROL(30).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0xff(255)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+All bits in the type part of the filter is of interest.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x02(2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type = All lamps on/off.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x00(0)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Action=1 Turn off relays specified by argument.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x7f(127)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Argument = All relays.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+To just deactivate some of the relays just change the action argument.
+ To deactivate the first relay and the third relay for example use 5 (=
+ binary 000101).
+ 
+\end_layout
+
+\begin_layout Standard
+If you want the zone and sub-zone to be checked you should enable bit 3
+ and 4 of the flags byte.
+ In binary form this is 10011010 which is 154 in decimal.
+ The zone and sub-zone in byte 1 (second byte) and byte 2 of an event should
+ now be the same as the zone stored in register 0 and 1 for the action to
+ be performed.
+\end_layout
+
+\begin_layout Subsubsection
+Turn on a specific relay when the event CLASS1.CONTROL(30), TYPE=TURN ON(5)
+ is received.
+\end_layout
+
+\begin_layout Standard
+If you are building a control system it is usually better to program the
+ decision matrix to react on sent events instead of writing the registers
+ of a device.
+ You can turn on a specific relay by writing to it's registers.
+ The bad thing with this method is that you are dependent on the node id
+ of the device.
+ Something that might change if you for example must replace a faulty module
+ with a new one in the future.
+ If you instead program the matrix to react on a turn on event sent for
+ a specific zone/sub-zone you can just program this into a replacement module
+ and everything will work as before again.
+ Furthermore it is possible to have many modules that independently react
+ on the event and you can only send out one event to have things happen
+ on several nodes.
+ 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Decision matrix example 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte #
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+We don't care which node that sends the event.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x82(130)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The row is active.
+ Mask bit 9 for Class is set.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0xff(255)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+All bits in the class part of the filter is of interest.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x1e(30)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLASS1.CONTROL(30).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0xff(255)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+All bits in the type part of the filter is of interest.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x05(5)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type = Turn on.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x00(0)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Action=0 Turn on relays specified by argument.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x01(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Argument = Relay 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Change the action parameter if you want to turn on more then one relay.
+ Enable zone/sub-zone check as in the previous example to check for a specific
+ zone/sub-zone before the action is performed.
+\end_layout
+
+\begin_layout Standard
+If you want to perform this action only if the event is sent from a specific
+ node set the node-id for that node in byte 0 and set bit 6 of the flag
+ register so it becomes 0xc2(194).
+ Normally you should avoid this as your system becomes less flexible but
+ in certain situations it may be a good solution.
+ A server (PC or similar) on a buss will always have it's node-id set to
+ 0 and if you only want events from the server to be able to perform actions
+ on nodes this is the solution to use.
+\end_layout
+
+\begin_layout Subsubsection
+Turn on a realy that controls alarmsound when an alarm occurs.
+\end_layout
+
+\begin_layout Standard
+CLASS1.ALARM(1), Type=2 Alarm Occured is sent out by a system when an alarm
+ condition occurs.
+ Suppose we have a siren connected to the Paris module and want it to sound
+ of when the event is sent out.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Decision Matrix example 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte #
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+We don't care which node that sends the event.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x82(130)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The row is active.
+ Mask bit 9 for Class is set.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0xff(255)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+All bits in the class part of the filter is of interest.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x01(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLASS1.ALARM(1).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0xff(255)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+All bits in the type part of the filter is of interest.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x02(2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type = Alarm occured.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x00(0)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Action=0 Turn on relays specified by argument.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x01(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Argument = Relay 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+This can also be a perfect example for when a protection timer can be used.
+ To make sure that the siren is not sounding for ever (if you don't want
+ that) the protection timer will shut it off after a certain time even if
+ no one does that manually.
+ 
+\end_layout
+
+\begin_layout Standard
+For the manual shut off a button connected to a 
+\begin_inset CommandInset href
+LatexCommand href
+name "Bejing module"
+target "http://www.auto.grodansparadis.com/bejing/bejing.html"
+
+\end_inset
+
+ may be programmed to send out CLASS1.CONTROL(30), Type=Turn off(6) and an
+ appropriate matrix entry is programmed to shut it off when the event is
+ received by the Paris module.
+ 
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 0(0x00)
+\end_layout
+
+\begin_layout Standard
+NOOP, No action.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 1(0x01) 
+\end_layout
+
+\begin_layout Standard
+Activate relay(s) given by argument.
+ The argument is a bit array where bit 0 is relay 1 and so on.
+ That is a position with a set bit will activate the corresponding relay.
+ Byte 1 is Zone and byte 2 is sub-zone and must be equal to register content
+ to trigger action.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 2(0x02)
+\end_layout
+
+\begin_layout Standard
+Deactivate relay(s) given by argument.
+ The argument is a bit array where bit 0 is relay 1 and so on.
+ That is a position with a set bit will inactivate the corresponding relay.
+ Byte 1 is Zone and byte 2 is sub-zone and must be equal to register content
+ to trigger action.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 3(0x03)
+\end_layout
+
+\begin_layout Standard
+Pulse relay(s) given by argument.
+ The argument is a bit array where bit 0 is relay 1 and so on.
+ That is a position with a set bit will toggle the corresponding relay.
+ Byte 1 is Zone and byte 2 is sub-zone and must be equal to register content
+ to trigger action.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 4(0x04)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 5(0x05)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 6(0x06)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 7(0x07)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 8(0x08)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 9(0x09) 
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 10(0x0a)
+\end_layout
+
+\begin_layout Standard
+Send relay status.
+ The argument is a bit array where bit 0 is relay 1 and so on.
+ That is a position with a set bit will have a status event sent for the
+ corresponding relay.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 11(0x0b)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 12(0x0c)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 13(0x0d)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 14(0x0e)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 15(0x0f)
+\end_layout
+
+\begin_layout Standard
+Reserved.
+\end_layout
+
+\begin_layout Subsection
+Action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+ = 16(0x10)
+\end_layout
+
+\begin_layout Standard
+Disable relay(s) given by argument.
+ The argument is a bit array where bit 0 is relay 1 and so on.
+ That is a position with a set bit will disable the corresponding relay.
+ Byte 1 is Zone and byte 2 is zone page and must be equal to register content
+ to trigger action.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm register 
+\end_layout
+
+\end_inset
+
+Alarm register 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 0
+\series default
+ - Relay 1 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 1
+\series default
+ - Relay 2 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 2
+\series default
+ - Relay 3 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 3
+\series default
+ - Relay 4 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 4
+\series default
+ - Relay 5 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 5
+\series default
+ - Relay 6 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 6
+\series default
+ - Relay 7 protection timer has caused a relay action.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bit 7 - 
+\series default
+Reserved
+\end_layout
+
+\begin_layout Standard
+Read the register to clear alarm bits.
+ 
+\end_layout
+
+\begin_layout Section
+Events
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Events
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+On Event
+\end_layout
+
+\end_inset
+
+On Event
+\end_layout
+
+\begin_layout Standard
+If enabled the event is sent when a relay goes to its active state.
+\end_layout
+
+\begin_layout Paragraph*
+Class: 0x014 Type: 0x03
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Itemize
+Byte 0: Index.
+ 
+\end_layout
+
+\begin_layout Itemize
+Byte 1: Zone 
+\end_layout
+
+\begin_layout Itemize
+Byte 2: Sub-zone
+\end_layout
+
+\begin_layout Standard
+Index is 0 for relay 1, 1 for relay 2 and so on.
+ zone and sub-zone set accordingly.
+ Sub-zone for relay is used if it's not zero.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Off Event
+\end_layout
+
+\end_inset
+
+Off Event
+\end_layout
+
+\begin_layout Standard
+If enabled the event is sent when a relay goes to its inactive state.
+\end_layout
+
+\begin_layout Paragraph
+Class: 0x014 Type: 0x04
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Itemize
+Byte 0: index.
+ 
+\end_layout
+
+\begin_layout Itemize
+Byte 1: Zone 
+\end_layout
+
+\begin_layout Itemize
+Byte 2: Sub-zone
+\end_layout
+
+\begin_layout Standard
+Index is 0 for relay 1, 1 for relay 2 and so on.
+ Zone and sub-zone set accordingly.
+ Sub-zone for relay is used if it's not zero.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Stopped Event
+\end_layout
+
+\end_inset
+
+Stopped Event
+\end_layout
+
+\begin_layout Standard
+If enabled the event is sent when a relay goes to its inactive state.
+\end_layout
+
+\begin_layout Paragraph*
+Class: 0x014 Type: 0x18
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Itemize
+Byte 0: index.
+ 
+\end_layout
+
+\begin_layout Itemize
+Byte 1: Zone 
+\end_layout
+
+\begin_layout Itemize
+Byte 2: Sub-zone
+\end_layout
+
+\begin_layout Standard
+Index is 0 for relay 1, 1 for relay 2 and so on.
+ Zone and sub-zone set accordingly.
+ Sub-zone for relay is used if it's not zero.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Started Event
+\end_layout
+
+\end_inset
+
+Started Event
+\end_layout
+
+\begin_layout Standard
+If enabled the event is sent when a relay goes to its active state.
+\end_layout
+
+\begin_layout Paragraph
+Class: 0x014 Type: 0x19
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Itemize
+Byte 0: index.
+ 
+\end_layout
+
+\begin_layout Itemize
+Byte 1: Zone 
+\end_layout
+
+\begin_layout Itemize
+Byte 2: Sub-zone
+\end_layout
+
+\begin_layout Standard
+Index is 0 for relay 1, 1 for relay 2 and so on.
+ Zone and sub-zone set accordingly.
+ Sub-zone for relay is used if it's not zero.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm Event
+\end_layout
+
+\end_inset
+
+Alarm Event
+\end_layout
+
+\begin_layout Standard
+If enabled the event is sent when a relay goes to its inactive state after
+ a protection timer have timed out.
+\end_layout
+
+\begin_layout Paragraph
+Class: 0x001 Type: 0x02
+\end_layout
+
+\begin_layout Subsubsection
+Data
+\end_layout
+
+\begin_layout Itemize
+Byte 0: index.
+ 
+\end_layout
+
+\begin_layout Itemize
+Byte 1: Zone 
+\end_layout
+
+\begin_layout Itemize
+Byte 2: Sub-zone
+\end_layout
+
+\begin_layout Standard
+Index is 0 for relay 1, 1 for relay 2 and so on.
+ 
+\end_layout
+
+\begin_layout Section
+Where can I find the 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+source code
+\end_layout
+
+\end_inset
+
+source code?
+\end_layout
+
+\begin_layout Standard
+Most VSCP modules from Grodans Paradis AB is 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Open hardware
+\end_layout
+
+\end_inset
+
+Open hardware/
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Open source
+\end_layout
+
+\end_inset
+
+Open source meaning that both the hardware information as well as the source
+ code is available.
+ This means that you can modify the source code and /or the hardware to
+ your specific needs if you want.
+ 
+\end_layout
+
+\begin_layout Section
+Appendix A - 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Mandatory VSCP registers
+\end_layout
+
+\end_inset
+
+Mandatory VSCP registers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.80
+\backslash
+textwidth}{!}{%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="31" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Address 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Access Mode 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0×00 – 0x7f 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+— 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Device specific.
+ 
+\emph on
+Unimplemented registers should return zero.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128/0×80 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Alarm status register
+\end_layout
+
+\end_inset
+
+Alarm status register content (!= 0 indicates alarm).
+ Condition is reset by a read operation.
+ The bits represent different alarm conditions.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+129/0×81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VSCP Major version number this device is constructed for.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130/0×82 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VSCP Minor version number this device is constructed for.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+131/0×83 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Node control flags 
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start-up control 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start-up control 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r/w control of registers below 0×80.
+ (1 means write enabled) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+132/0×84 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 0 – Client settable node id byte 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+133/0×85 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 1 – Client settable node id byte 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+134/0×86 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 2 – Client settable node id byte 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+135/0×87 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 3 – Client settable node id byte 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+136/0×88 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User ID 4 – Client settable node id byte 4.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+137/0×89 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+138/0x8a 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+139/0x8b 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+140/0x8c 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer device ID byte 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+141/0x8d 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 0.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+142/0x8e 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 1.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+143/0x8f 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 2.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+144/0×90 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manufacturer sub device ID byte 3.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+145/0×91 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nickname id for node if assigned or 0xff if no nickname id assigned.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+146/0×92 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Page select register MSB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+147/0×93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read/Write 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Page Select register LSB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+148/0×94 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firmware major version number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+149/0×95 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firmware minor version number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150/0×96 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firmware sub minor version number.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+151/0×97 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Boot loader algorithm
+\end_layout
+
+\end_inset
+
+Boot loader algorithm used.
+ 0Xff for no boot loader support.
+ Codes for algorithms are specified here VSCP_event_class_000 for Type =
+ 12 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+152/0×98 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer size.
+ The value here gives an indication for clients that want to talk to this
+ node if it can support the larger mid level Level I control events which
+ has the full GUID.
+ If set to 0 the default size should used.
+ That is 8 bytes for Level I and 512-25 for Level II.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+153/0×99 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of register pages used.
+ If not implemented one page is assumed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+154/0x9A-207/0xcf 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+— 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserved for future use.
+ Return zero.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+208/0xd0-223/0xdf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128-bit (16-byte) globally unique ID (GUID
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+GUID
+\end_layout
+
+\end_inset
+
+) identifier for the device.
+ This identifier uniquely identifies the device throughout the world and
+ can give additional information on where driver and driver information
+ can be found for the device.
+ MSB for the identifier is stored first (in 0xd0).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+224/0xe0-255/0xff
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Read Only 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Module Description File
+\end_layout
+
+\end_inset
+
+Module Description File URL.
+ A zero terminates the ASCII string if not exactly 32 bytes long.
+ The URL points to a file that gives further information about where drivers
+ for different environments are located.
+ Can be returned as a zero string for devices with low memory.
+ It is recommended that unimplemented registers read as oxff.
+ For a node with an embedded MDF return a zero string.
+ The CLASS1.PROTOCOL, Type=34/35 can then be used to get the information
+ if available.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+VSCP mandatory registers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
