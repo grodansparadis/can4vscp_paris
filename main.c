@@ -578,6 +578,8 @@ void init_app_eeprom(void)
         }
     }
 
+    // Calculate dynamic filter
+    calculateSetFilterMask();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2684,7 +2686,7 @@ void calculateSetFilterMask( void )
 
     // Reset filter masks
     uint32_t mask = 0xffffffff; // Just id 0x00000000 will come true
-    uint32_t filter = 0;
+    uint32_t filter = 0x00000000;
 
     // Go through all DM rows
     for ( i=0; i < DESCION_MATRIX_ROWS; i++ ) {
@@ -2708,7 +2710,7 @@ void calculateSetFilterMask( void )
                     ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 4 ) << 8 ) |
 					// OID  - handle later
 					0xff;
-                    /*( ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 )*/;   // Hardcoded bit
+                    //( ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 );   // Hardcoded bit
 
             // build the filter
             // ================
@@ -2720,7 +2722,7 @@ void calculateSetFilterMask( void )
                     ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 3 ) << 16 ) |
                     // Type filter
                     ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 5 ) << 8 ) |
-                    // OID Mask cleard if not same OID for all or one or more
+                    // OID Mask cleared if not same OID for all or one or more
                     // rows don't have OID check flag set.
                     eeprom_read( VSCP_EEPROM_END + 8*i );
 
@@ -2786,5 +2788,5 @@ void calculateSetFilterMask( void )
 
     // Return to Normal mode to communicate.
     ECANSetOperationMode( ECAN_OP_MODE_NORMAL );
-
+  
 }

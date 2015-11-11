@@ -1,0 +1,1504 @@
+
+# 1 "../../vscp_firmware/common/vscp_firmware.c"
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\string.h"
+typedef int ptrdiff_t;
+typedef unsigned size_t;
+typedef unsigned short wchar_t;
+
+
+extern int errno;
+
+# 22
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 35
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\stdlib.h"
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+extern void abort(void);
+extern void exit(int);
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 34 "../../vscp_firmware/pic/common\inttypes.h"
+typedef long long int64_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+typedef short int16_t;
+
+
+
+typedef char int8_t;
+
+
+
+
+typedef unsigned long long uint64_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+typedef unsigned char uint8_t;
+
+# 190 "../../vscp_firmware/common/vscp_firmware.h"
+struct _imsg {
+
+# 202
+uint8_t flags;
+
+uint8_t priority;
+uint16_t vscp_class;
+uint8_t vscp_type;
+uint8_t oaddr;
+uint8_t data[8];
+};
+
+# 217
+struct _omsg {
+
+# 229
+uint8_t flags;
+
+uint8_t priority;
+uint16_t vscp_class;
+uint8_t vscp_type;
+
+uint8_t data[8];
+};
+
+# 283
+struct _dmrow {
+uint8_t oaddr;
+uint8_t flags;
+uint8_t class_mask;
+uint8_t class_filter;
+uint8_t type_mask;
+uint8_t type_filter;
+uint8_t action;
+uint8_t action_param;
+};
+
+
+
+
+extern uint8_t vscp_nickname;
+extern uint8_t vscp_errorcnt;
+extern uint8_t vscp_alarmstatus;
+extern uint8_t vscp_node_state;
+extern uint8_t vscp_node_substate;
+extern uint8_t vscp_initledfunc;
+
+extern struct _imsg vscp_imsg;
+extern struct _omsg vscp_omsg;
+extern volatile uint16_t vscp_timer;
+extern uint8_t vscp_probe_address;
+extern volatile uint8_t vscp_initbtncnt;
+extern volatile uint8_t vscp_statuscnt;
+extern uint16_t vscp_page_select;
+extern volatile uint16_t vscp_configtimer;
+
+extern const uint8_t vscp_deviceURL[];
+
+# 323
+void vscp_init(void);
+
+# 329
+void vscp_error(void);
+
+# 337
+void vscp_handleProbeState(void);
+
+# 350
+void vscp_handlePreActiveState(void);
+
+# 357
+void vscp_handleProtocolEvent(void);
+
+# 365
+void vscp_goActiveState(void);
+
+# 375
+void vscp_sendHeartBeat(uint8_t zone, uint8_t subzone);
+
+# 380
+void vscp_handleHeartbeat(void);
+
+# 385
+void vscp_handleSetNickname(void);
+
+# 390
+void vscp_handleDropNickname(void);
+
+# 395
+void vscp_newNodeOnline(void);
+
+# 402
+uint8_t vscp_readRegister(uint8_t reg);
+
+# 409
+uint8_t vscp_readStdReg(uint8_t reg);
+
+# 417
+uint8_t vscp_writeRegister(uint8_t reg, uint8_t value);
+
+# 425
+uint8_t vscp_writeStdReg(uint8_t reg, uint8_t value);
+
+# 433
+void vscp_doOneSecondWork(void);
+
+# 438
+int8_t vscp_check_pstorage(void);
+
+# 444
+int8_t vscp_sendEvent(void);
+
+# 450
+int8_t vscp_getEvent(void);
+
+# 471
+int8_t getVSCPFrame( uint16_t *pvscpclass,
+uint8_t *pvscptype,
+uint8_t *pNodeId,
+uint8_t *pPriority,
+uint8_t *pSize,
+uint8_t *pData);
+
+# 488
+int8_t sendVSCPFrame( uint16_t vscpclass,
+uint8_t vscptype,
+uint8_t nodeid,
+uint8_t priority,
+uint8_t size,
+uint8_t *pData );
+
+# 499
+uint8_t vscp_getMajorVersion( void );
+uint8_t vscp_getMinorVersion( void );
+uint8_t vscp_getSubMinorVersion( void );
+
+# 506
+uint8_t vscp_getGUID(uint8_t idx);
+void vscp_setGUID(uint8_t idx, uint8_t data);
+
+# 516
+uint8_t vscp_getUserID(uint8_t idx);
+void vscp_setUserID(uint8_t idx, uint8_t data);
+
+# 532
+uint8_t vscp_getManufacturerId(uint8_t idx);
+void vscp_setManufacturerId(uint8_t idx, uint8_t data);
+
+# 538
+uint8_t vscp_getBootLoaderAlgorithm( void );
+
+# 543
+uint8_t vscp_getBufferSize(void);
+
+# 548
+uint8_t vscp_getRegisterPagesUsed(void);
+
+# 554
+uint8_t vscp_getMDF_URL(uint8_t idx);
+
+# 560
+uint8_t vscp_readNicknamePermanent(void);
+
+# 566
+void vscp_writeNicknamePermanent(uint8_t nickname);
+
+# 571
+uint8_t vscp_getSegmentCRC(void);
+
+# 576
+void vscp_setSegmentCRC(uint8_t crc);
+
+# 581
+uint8_t vscp_getControlByte(void);
+
+# 586
+void vscp_setControlByte(uint8_t ctrl);
+
+# 593
+uint8_t vscp_getPageSelect(uint8_t idx);
+
+# 600
+void vscp_setPageSelect(uint8_t idx, uint8_t data);
+
+# 607
+uint8_t vscp_readAppReg(uint8_t reg);
+
+# 615
+uint8_t vscp_writeAppReg(uint8_t reg, uint8_t value);
+
+# 629
+void vscp_getMatrixInfo(char *pData);
+
+# 637
+void vscp_getEmbeddedMdfInfo(void);
+
+# 644
+void vscp_goBootloaderMode( uint8_t algorithm );
+
+# 650
+uint8_t vscp_getZone(void);
+
+# 656
+uint8_t vscp_getSubzone(void);
+
+# 662
+uint32_t vscp_getFamilyCode(void);
+
+# 668
+uint32_t vscp_getFamilyType(void);
+
+# 676
+void vscp_restoreDefaults(void);
+
+# 63 "../../vscp_firmware/common/vscp_firmware.c"
+uint8_t vscp_nickname;
+
+uint8_t vscp_errorcnt;
+uint8_t vscp_alarmstatus;
+
+uint8_t vscp_node_state;
+uint8_t vscp_node_substate;
+
+uint8_t vscp_probe_cnt;
+
+
+struct _imsg vscp_imsg;
+
+
+struct _omsg vscp_omsg;
+
+uint8_t vscp_probe_address;
+uint8_t vscp_initledfunc;
+
+volatile uint16_t vscp_timer;
+
+# 89
+volatile uint8_t vscp_initbtncnt;
+
+
+volatile uint8_t vscp_statuscnt;
+
+
+volatile uint16_t vscp_configtimer;
+
+
+
+uint16_t vscp_page_select;
+
+# 106
+uint8_t vscp_guid_reset;
+
+
+uint8_t vscp_second;
+uint8_t vscp_minute;
+uint8_t vscp_hour;
+
+# 118
+void vscp_init(void)
+{
+vscp_initledfunc = 0x02;
+
+
+vscp_nickname = vscp_readNicknamePermanent();
+
+
+if (!vscp_nickname) vscp_nickname = 0xff;
+
+
+vscp_imsg.flags = 0;
+vscp_imsg.priority = 0;
+vscp_imsg.vscp_class = 0;
+vscp_imsg.vscp_type = 0;
+
+
+vscp_omsg.flags = 0;
+vscp_omsg.priority = 0;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 0;
+
+vscp_errorcnt = 0;
+vscp_alarmstatus = 0;
+
+vscp_probe_address = 0;
+
+
+vscp_node_state = 0x00;
+vscp_node_substate = 0x00;
+
+vscp_probe_cnt = 0;
+vscp_page_select = 0;
+
+
+vscp_timer = 0;
+vscp_configtimer = 0;
+vscp_second = 0;
+vscp_minute = 0;
+vscp_hour = 0;
+}
+
+# 167
+int8_t vscp_check_pstorage(void)
+{
+
+
+if ((vscp_getSegmentCRC() & 0xc0) == 0x40) {
+return !0;
+}
+
+
+vscp_writeNicknamePermanent(0xff);
+
+
+vscp_setSegmentCRC(0x00);
+
+
+
+vscp_setControlByte(0xA0);
+
+return 0;
+}
+
+# 192
+void vscp_error(void)
+{
+vscp_initledfunc = 0x00;
+}
+
+# 201
+void vscp_handleProbeState(void)
+{
+switch (vscp_node_substate) {
+
+case 0x00:
+
+if (0xff != vscp_probe_address) {
+
+vscp_omsg.flags = 0x80 + 1;
+vscp_omsg.priority = 0x00;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 2;
+vscp_omsg.data[ 0 ] = vscp_probe_address;
+
+
+vscp_sendEvent();
+
+vscp_node_substate = 0x01;
+vscp_timer = 0;
+
+}
+else {
+
+
+vscp_node_state = 0x04;
+
+
+vscp_omsg.flags = 0x80 + 1;
+vscp_omsg.data[ 0 ] = 0xff;
+vscp_omsg.priority = 0x07;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 3;
+
+
+vscp_sendEvent();
+
+}
+break;
+
+case 0x01:
+
+if (vscp_imsg.flags & 0x80) {
+
+
+if ((0 == vscp_imsg.vscp_class) &&
+(3 == vscp_imsg.vscp_type)) {
+
+
+if (0 == vscp_probe_address) {
+
+
+
+vscp_node_state = 0x02;
+vscp_timer = 0;
+
+}
+else {
+
+
+vscp_probe_address++;
+vscp_node_substate = 0x00;
+vscp_probe_cnt = 0;
+
+}
+}
+}
+else {
+
+if (vscp_timer > 1000) {
+
+vscp_probe_cnt++;
+
+if (vscp_probe_cnt >= 3) {
+
+
+if (0 == vscp_probe_address) {
+
+
+vscp_probe_address++;
+vscp_node_substate = 0x00;
+vscp_timer = 0;
+vscp_probe_cnt = 0;
+
+}
+else {
+
+
+vscp_nickname = vscp_probe_address;
+vscp_node_state = 0x03;
+vscp_node_substate = 0x00;
+vscp_writeNicknamePermanent(vscp_nickname);
+vscp_setSegmentCRC(0x40);
+
+
+vscp_probe_cnt = 0;
+vscp_goActiveState();
+
+}
+}
+else {
+vscp_node_substate = 0x00;
+}
+}
+
+}
+break;
+
+case 0x02:
+break;
+
+default:
+vscp_node_substate = 0x00;
+break;
+}
+
+vscp_imsg.flags = 0;
+
+}
+
+# 324
+void vscp_handlePreActiveState(void)
+{
+
+if ( vscp_imsg.flags & 0x80 ) {
+
+if ((0 == vscp_imsg.vscp_class) &&
+(6 == vscp_imsg.vscp_type) &&
+(0xff == vscp_imsg.data[ 0 ])) {
+
+
+vscp_nickname = vscp_imsg.data[ 1 ];
+vscp_writeNicknamePermanent(vscp_nickname);
+vscp_setSegmentCRC(0x40);
+
+
+vscp_node_state = 0x03;
+}
+}
+else {
+
+if (vscp_timer > 1000) {
+
+vscp_nickname = 0xff;
+vscp_writeNicknamePermanent(0xff);
+vscp_init();
+}
+}
+}
+
+# 357
+void vscp_goActiveState(void)
+{
+vscp_omsg.flags = 0x80 + 1;
+vscp_omsg.priority = 0x00;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 2;
+vscp_omsg.data[ 0 ] = vscp_nickname;
+
+
+vscp_sendEvent();
+
+vscp_initledfunc = 0x01;
+}
+
+# 377
+void vscp_sendHeartBeat(uint8_t zone, uint8_t subzone)
+{
+vscp_omsg.flags = 0x80 + 3;
+vscp_omsg.priority = 0x07;
+vscp_omsg.vscp_class = 20;
+vscp_omsg.vscp_type = 9;
+vscp_omsg.data[ 0 ] = 0;
+vscp_omsg.data[ 1 ] = zone;
+vscp_omsg.data[ 2 ] = subzone;
+
+
+vscp_sendEvent();
+}
+
+# 395
+void vscp_handleHeartbeat(void)
+{
+if ( !vscp_getSegmentCRC() ) {
+if ( ( 5 == (vscp_imsg.flags & 0x0f ) ) &&
+(vscp_getSegmentCRC() != vscp_imsg.data[ 0 ])) {
+
+
+
+vscp_setSegmentCRC(vscp_imsg.data[ 0 ]);
+
+
+vscp_nickname = 0xff;
+vscp_writeNicknamePermanent(0xff);
+vscp_node_state = 0x01;
+}
+}
+else {
+
+vscp_setSegmentCRC(vscp_imsg.data[ 0 ]);
+}
+}
+
+# 421
+void vscp_handleSetNickname(void)
+{
+if ( ( 2 == (vscp_imsg.flags & 0x0f ) ) &&
+(vscp_nickname == vscp_imsg.data[ 0 ])) {
+
+
+vscp_nickname = vscp_imsg.data[ 1 ];
+vscp_writeNicknamePermanent(vscp_nickname);
+vscp_setSegmentCRC(0x40);
+}
+}
+
+# 437
+void vscp_handleDropNickname(void)
+{
+uint8_t bytes = vscp_imsg.flags & 0x0f;
+
+# 445
+if ((bytes >= 1) && (vscp_nickname == vscp_imsg.data[ 0 ])) {
+
+# 477
+if ((bytes == 1) || ((bytes > 1) && (vscp_imsg.data[1] == 0))) {
+
+vscp_nickname = 0xff;
+vscp_writeNicknamePermanent(0xff);
+vscp_init();
+}
+
+# 494
+}
+}
+
+# 501
+void vscp_newNodeOnline(void)
+{
+if ( ( 1 == ( vscp_imsg.flags & 0x0f ) ) &&
+(vscp_nickname == vscp_imsg.data[ 0 ])) {
+
+# 510
+vscp_omsg.flags = 0x80;
+vscp_omsg.priority = 0x00;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 3;
+vscp_sendEvent();
+
+}
+}
+
+# 523
+void vscp_doOneSecondWork(void)
+{
+
+++vscp_second;
+
+if (vscp_second > 59) {
+vscp_second = 0;
+vscp_minute++;
+
+
+if (0x03 == vscp_node_state) {
+vscp_sendHeartBeat(vscp_getZone(),
+vscp_getSubzone());
+}
+}
+
+if (vscp_minute > 59) {
+vscp_minute = 0;
+vscp_hour++;
+}
+
+if (vscp_hour > 23) vscp_hour = 0;
+
+
+
+if (0x03 == vscp_node_state) {
+vscp_guid_reset++;
+if ((vscp_guid_reset & 0x0f) >= 2) {
+vscp_guid_reset = 0;
+}
+}
+}
+
+# 560
+uint8_t vscp_readRegister(uint8_t reg)
+{
+if (reg >= 0x80) {
+return vscp_readStdReg(reg);
+}
+else {
+return vscp_readAppReg(reg);
+}
+}
+
+# 574
+uint8_t vscp_readStdReg(uint8_t reg)
+{
+uint8_t rv = 0;
+
+if (0x80 == reg) {
+
+
+rv = vscp_alarmstatus;
+vscp_alarmstatus = 0x00;
+
+}
+else if (0x81 == reg) {
+
+
+rv = 1;
+
+}
+else if (0x82 == reg) {
+
+
+rv = 5;
+
+}
+else if (0x83 == reg) {
+
+
+rv = 0;
+
+}
+else if (0x94 == reg) {
+
+
+rv = vscp_getMajorVersion();
+
+}
+else if (0x95 == reg) {
+
+
+rv = vscp_getMinorVersion();
+
+}
+else if (0x96 == reg) {
+
+
+rv = vscp_getSubMinorVersion();
+
+}
+else if (reg < 0x89) {
+
+
+rv = vscp_getUserID(reg - 0x84);
+
+}
+else if ((reg > 0x88) &&
+(reg < 0x91)) {
+
+
+rv = vscp_getManufacturerId(reg - 0x89);
+
+}
+else if (0x91 == reg) {
+
+
+rv = vscp_nickname;
+
+}
+else if (0x93 == reg) {
+
+
+rv = (vscp_page_select & 0xff);
+
+}
+
+else if (0x92 == reg) {
+
+
+rv = (vscp_page_select >> 8) & 0xff;
+
+}
+else if (0x97 == reg) {
+
+rv = vscp_getBootLoaderAlgorithm();
+}
+else if (0x98 == reg) {
+
+rv = vscp_getBufferSize();
+}
+else if (0x99 == reg) {
+
+rv = vscp_getRegisterPagesUsed();
+}
+else if ( ( reg >= 0x9A ) &&
+( reg < ( 0x9A + 4 ) ) ) {
+
+uint32_t code = vscp_getFamilyCode();
+uint8_t idx = reg - 0x9A;
+rv = code >> ( ( ( 3 - idx ) * 8 ) & 0xff );
+}
+else if ( ( reg >= 0x9E ) &&
+( reg < ( 0x9E + 4 ) ) ) {
+
+uint32_t code = vscp_getFamilyType();
+uint8_t idx = reg - 0x9E;
+rv = code >> ( ( ( 3 - idx ) * 8 ) & 0xff );
+}
+else if ((reg > (0xD0 - 1)) &&
+(reg < 0xE0)) {
+
+
+rv = vscp_getGUID(reg - 0xD0);
+
+}
+else if ( reg >= 0xE0 ) {
+
+
+rv = vscp_getMDF_URL(reg - 0xE0);
+
+}
+
+return rv;
+}
+
+# 700
+uint8_t vscp_writeRegister(uint8_t reg, uint8_t value)
+{
+if (reg >= 0x80) {
+return vscp_writeStdReg(reg, value);
+}
+else {
+return vscp_writeAppReg(reg, value);
+}
+}
+
+# 714
+uint8_t vscp_writeStdReg(uint8_t reg, uint8_t value)
+{
+uint8_t rv = ~value;
+
+if ((reg > (0x82 + 1)) &&
+(reg < 0x89)) {
+
+
+vscp_setUserID((reg - 0x84), value);
+rv = vscp_getUserID((reg - 0x84));
+
+}
+else if (0x92 == reg) {
+
+
+vscp_page_select = (vscp_page_select & 0xff) | ((uint16_t) value << 8);
+rv = (vscp_page_select >> 8) & 0xff;
+}
+else if (0x93 == reg) {
+
+
+vscp_page_select = (vscp_page_select & 0xff00) | value;
+rv = (vscp_page_select & 0xff);
+}
+
+
+
+
+else if ((reg > 0x88) && (reg < 0x91)) {
+
+if ((0xff != ((vscp_page_select >> 8) & 0xff)) ||
+(0xff != (vscp_page_select & 0xff))) {
+
+rv = ~value;
+}
+else {
+
+vscp_setManufacturerId(reg - 0x89, value);
+rv = vscp_getManufacturerId(reg - 0x89);
+}
+}
+else if ((reg > (0xD0 - 1)) && (reg < 0xE0)) {
+
+if ((0xff != ((vscp_page_select >> 8) & 0xff)) ||
+(0xff != (vscp_page_select & 0xff))) {
+
+rv = ~value;
+}
+else {
+vscp_setGUID(reg - 0xD0, value);
+rv = vscp_getGUID(reg - 0xD0);
+}
+}
+
+else if ( 0xA2 == reg ) {
+if ( 0x55 == value ) {
+vscp_configtimer = 0;
+rv = 0x55;
+}
+else if ( 0xaa == value ) {
+if ( vscp_configtimer < 1000 ) {
+vscp_restoreDefaults();
+rv = 0xaa;
+}
+else {
+rv = 0;
+}
+}
+
+}
+else {
+
+rv = ~value;
+}
+
+return rv;
+}
+
+# 796
+void vscp_handleProtocolEvent(void)
+{
+
+if (0 == vscp_imsg.vscp_class) {
+
+
+switch (vscp_imsg.vscp_type) {
+
+case 1:
+
+vscp_handleHeartbeat();
+break;
+
+case 2:
+
+vscp_newNodeOnline();
+break;
+
+case 6:
+
+vscp_handleSetNickname();
+break;
+
+case 8:
+
+vscp_handleDropNickname();
+break;
+
+case 9:
+
+if ( ( 2 == (vscp_imsg.flags & 0x0f) ) &&
+(vscp_nickname == vscp_imsg.data[ 0 ])) {
+
+if (vscp_imsg.data[ 1 ] < 0x80) {
+
+
+vscp_omsg.data[ 1 ] = vscp_readAppReg(vscp_imsg.data[ 1 ]);
+
+
+vscp_omsg.data[ 0 ] = vscp_imsg.data[ 1 ];
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 2;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 10;
+
+
+vscp_sendEvent();
+}
+else {
+
+
+vscp_omsg.data[ 1 ] =
+vscp_readStdReg(vscp_imsg.data[ 1 ]);
+
+
+vscp_omsg.data[ 0 ] = vscp_imsg.data[ 1 ];
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 2;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 10;
+
+
+vscp_sendEvent();
+}
+}
+break;
+
+case 11:
+
+if ((3 == (vscp_imsg.flags & 0x0f)) &&
+(vscp_nickname == vscp_imsg.data[ 0 ])) {
+
+if (vscp_imsg.data[ 1 ] < 0x80) {
+
+
+vscp_omsg.data[ 1 ] =
+vscp_writeAppReg(vscp_imsg.data[ 1 ], vscp_imsg.data[ 2 ]);
+
+
+vscp_omsg.data[ 0 ] = vscp_imsg.data[ 1 ];
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 2;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 10;
+
+
+vscp_sendEvent();
+
+}
+else {
+
+
+vscp_omsg.data[ 1 ] =
+vscp_writeStdReg(vscp_imsg.data[ 1 ], vscp_imsg.data[ 2 ]);
+
+
+vscp_omsg.data[ 0 ] = vscp_imsg.data[ 1 ];
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 2;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 10;
+
+
+vscp_sendEvent();
+}
+}
+break;
+
+case 12:
+
+if ((vscp_nickname == vscp_imsg.data[ 0 ]) &&
+
+(vscp_getGUID(0) == vscp_imsg.data[ 2 ]) &&
+(vscp_getGUID(3) == vscp_imsg.data[ 3 ]) &&
+(vscp_getGUID(5) == vscp_imsg.data[ 4 ]) &&
+(vscp_getGUID(7) == vscp_imsg.data[ 5 ]) &&
+(((vscp_page_select >> 8) & 0xff) == vscp_imsg.data[ 6 ]) &&
+((vscp_page_select & 0xff) == vscp_imsg.data[ 7 ])) {
+
+vscp_goBootloaderMode( vscp_imsg.data[ 1 ] );
+}
+break;
+
+case 23:
+
+switch (vscp_imsg.data[ 0 ] >> 4) {
+
+case 0:
+if ((vscp_getGUID(0) == vscp_imsg.data[ 1 ]) &&
+(vscp_getGUID(1) == vscp_imsg.data[ 2 ]) &&
+(vscp_getGUID(2) == vscp_imsg.data[ 3 ]) &&
+(vscp_getGUID(3) == vscp_imsg.data[ 4 ])) {
+vscp_guid_reset |= 0x10;
+}
+break;
+
+case 1:
+if ((vscp_getGUID(4) == vscp_imsg.data[ 1 ]) &&
+(vscp_getGUID(5) == vscp_imsg.data[ 2 ]) &&
+(vscp_getGUID(6) == vscp_imsg.data[ 3 ]) &&
+(vscp_getGUID(7) == vscp_imsg.data[ 4 ])) {
+vscp_guid_reset |= 0x20;
+}
+break;
+
+case 2:
+if ((vscp_getGUID(8) == vscp_imsg.data[ 1 ]) &&
+(vscp_getGUID(9) == vscp_imsg.data[ 2 ]) &&
+(vscp_getGUID(10) == vscp_imsg.data[ 3 ]) &&
+(vscp_getGUID(11) == vscp_imsg.data[ 4 ])) {
+vscp_guid_reset |= 0x40;
+}
+break;
+
+case 3:
+if ((vscp_getGUID(12) == vscp_imsg.data[ 1 ]) &&
+(vscp_getGUID(13) == vscp_imsg.data[ 2 ]) &&
+(vscp_getGUID(14) == vscp_imsg.data[ 3 ]) &&
+(vscp_getGUID(15) == vscp_imsg.data[ 4 ])) {
+vscp_guid_reset |= 0x80;
+}
+break;
+
+default:
+vscp_guid_reset = 0;
+break;
+}
+
+if (0xf0 == (vscp_guid_reset & 0xf0)) {
+
+vscp_init();
+}
+break;
+
+case 24:
+
+if (vscp_nickname == vscp_imsg.data[ 0 ]) {
+
+uint8_t i;
+uint8_t pos = 0;
+uint8_t offset = vscp_imsg.data[ 1 ];
+uint8_t len = vscp_imsg.data[ 2 ];
+
+for (i = 0; i < len; i++) {
+vscp_omsg.data[ (i % 7) + 1 ] = vscp_readRegister(offset + i);
+
+if ( (i % 7) == 6 || i == (len - 1) ) {
+
+uint8_t bytes;
+
+if ( ( i % 7 ) == 6 ) {
+bytes = 7;
+}
+else {
+bytes = ( i % 7 ) + 1;
+}
+
+vscp_omsg.flags = 0x80 + bytes + 1;
+vscp_omsg.priority = 0x07;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 26;
+vscp_omsg.data[ 0 ] = pos;
+
+
+vscp_sendEvent();
+pos++;
+}
+}
+}
+break;
+
+case 25:
+
+if (vscp_nickname == vscp_imsg.data[ 0 ]) {
+uint8_t i;
+uint8_t pos = vscp_imsg.data[ 1 ];
+uint8_t len = (vscp_imsg.flags - 2) & 0x07;
+
+for (i = 0; i < len; i++) {
+
+vscp_writeRegister(pos + i, vscp_imsg.data[ 2 + i ]);
+vscp_omsg.data[ 1 + i ] = vscp_readRegister(pos + i);
+}
+
+vscp_omsg.priority = 0x07;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 26;
+vscp_omsg.data[ 0 ] = 0;
+vscp_omsg.flags = 0x80 + len + 1;
+
+
+vscp_sendEvent();
+
+}
+break;
+
+case 29:
+
+if (vscp_nickname == vscp_imsg.data[ 0 ]) {
+
+vscp_omsg.data[ 1 ] = vscp_writeAppReg(
+vscp_imsg.data[ 1 ],
+vscp_readAppReg(vscp_imsg.data[ 1 ]) + 1);
+
+vscp_omsg.data[ 0 ] = vscp_imsg.data[ 1 ];
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 2;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 10;
+
+
+vscp_sendEvent();
+}
+break;
+
+case 30:
+
+if (vscp_nickname == vscp_imsg.data[ 0 ]) {
+
+vscp_omsg.data[ 1 ] = vscp_writeAppReg(
+vscp_imsg.data[ 1 ],
+vscp_readAppReg(vscp_imsg.data[ 1 ]) - 1);
+
+vscp_omsg.data[ 0 ] = vscp_imsg.data[ 1 ];
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 2;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 10;
+
+
+vscp_sendEvent();
+}
+break;
+
+case 31:
+
+if ((vscp_nickname == vscp_imsg.data[ 0 ]) ||
+(0xff == vscp_imsg.data[ 0 ])) {
+
+uint8_t i, j, k = 0;
+
+
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 8;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 32;
+
+for (i = 0; i < 3; i++)
+{
+vscp_omsg.data[0] = i;
+
+for (j = 1; j < 8; j++) {
+vscp_omsg.data[j] = vscp_getGUID(15 - k++);
+if (k > 16)
+break;
+}
+
+if (k > 16)
+break;
+
+vscp_sendEvent();
+}
+
+for (j = 0; j < 5; j++)
+{
+if (vscp_getMDF_URL(j) > 0)
+vscp_omsg.data[3 + j] = vscp_getMDF_URL(j);
+else
+vscp_omsg.data[3 + j] = 0;
+}
+
+vscp_sendEvent();
+
+k = 5;
+for (i = 3; i < 7; i++)
+{
+vscp_omsg.data[0] = i;
+
+for (j = 1; j < 8; j++) {
+vscp_omsg.data[j] = vscp_getMDF_URL(k++);
+}
+vscp_sendEvent();
+}
+
+}
+break;
+
+
+case 33:
+
+if (vscp_nickname == vscp_imsg.data[ 0 ]) {
+
+vscp_omsg.priority = 0x03;
+vscp_omsg.flags = 0x80 + 7;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 34;
+
+vscp_getMatrixInfo((char *) vscp_omsg.data);
+
+
+vscp_sendEvent();
+}
+break;
+
+# 1154
+case 37:
+
+if ( vscp_nickname == vscp_imsg.data[0] ) {
+
+uint16_t page_save, bytes = 0;
+uint8_t byte = 0;
+uint8_t bytes_this_time, cb;
+
+
+
+if ( ( vscp_imsg.flags & 0x0f) > 3 ) {
+
+
+bytes = (uint16_t)vscp_imsg.data[4];
+
+if (bytes == 0) bytes = 256;
+
+if (bytes > 256) bytes = 256;
+}
+else {
+bytes = 1;
+}
+
+
+page_save = vscp_page_select;
+
+
+
+
+vscp_page_select = ((vscp_imsg.data[1] << 8) | vscp_imsg.data[2]);
+
+
+vscp_omsg.priority = 0x07;
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 39;
+vscp_omsg.data[0] = 0;
+vscp_omsg.data[1] = vscp_imsg.data[1];
+vscp_omsg.data[2] = vscp_imsg.data[2];
+
+do {
+
+if ( ( bytes - byte ) >= 4 ) {
+bytes_this_time = 4;
+}
+else {
+bytes_this_time = (bytes - byte);
+}
+
+
+vscp_omsg.flags = 0x80 + 4 + bytes_this_time;
+vscp_omsg.data[3] =
+vscp_imsg.data[3] + byte;
+
+
+for ( cb = 0; cb < bytes_this_time; cb++ ) {
+vscp_omsg.data[ (4 + cb) ] =
+vscp_readRegister( ( vscp_imsg.data[3] + byte + cb ) );
+}
+
+
+vscp_sendEvent();
+
+
+byte += bytes_this_time;
+
+
+vscp_omsg.data[0] += 1;
+
+} while (byte < bytes);
+
+
+vscp_page_select = page_save;
+
+}
+break;
+
+case 38:
+
+if ( vscp_nickname == vscp_imsg.data[ 0 ] ) {
+
+uint8_t i;
+uint16_t page_save;
+
+
+page_save = vscp_page_select;
+
+
+
+vscp_page_select = (vscp_imsg.data[1] << 8) | vscp_imsg.data[2];
+
+for (i = vscp_imsg.data[ 3 ];
+
+
+i < (vscp_imsg.data[ 3 ] + ((vscp_imsg.flags & 0x0f) - 4));
+i++) {
+vscp_omsg.data[ 4 + (i - vscp_imsg.data[ 3 ]) ] =
+vscp_writeRegister(i, vscp_imsg.data[ 4 + (i - vscp_imsg.data[ 3 ]) ]);
+}
+
+
+vscp_page_select = page_save;
+
+vscp_omsg.priority = 0x07;
+vscp_omsg.flags = 0x80 + 4 + ((vscp_imsg.flags & 0x0f) - 4);
+vscp_omsg.vscp_class = 0;
+vscp_omsg.vscp_type = 39;
+vscp_omsg.data[0] = 0;
+vscp_omsg.data[1] = vscp_imsg.data[1];
+vscp_omsg.data[2] = vscp_imsg.data[2];
+vscp_omsg.data[3] = vscp_imsg.data[3];
+
+
+vscp_sendEvent();
+
+}
+break;
+
+
+default:
+
+break;
+
+}
+
+}
+
+}
+
+# 1287
+int8_t vscp_sendEvent(void)
+{
+int8_t rv;
+
+if ( !(rv = sendVSCPFrame( vscp_omsg.vscp_class,
+vscp_omsg.vscp_type,
+vscp_nickname,
+vscp_omsg.priority,
+(vscp_omsg.flags & 0x0f),
+vscp_omsg.data ) ) ) {
+vscp_errorcnt++;
+}
+
+return rv;
+}
+
+# 1307
+int8_t vscp_getEvent(void)
+{
+int8_t rv;
+
+# 1315
+if (vscp_imsg.flags & 0x80) return !0;
+
+
+if ((rv = getVSCPFrame( &vscp_imsg.vscp_class,
+&vscp_imsg.vscp_type,
+&vscp_imsg.oaddr,
+&vscp_imsg.priority,
+&vscp_imsg.flags,
+vscp_imsg.data ) ) ) {
+
+vscp_imsg.flags |= 0x80;
+}
+
+return rv;
+
+}

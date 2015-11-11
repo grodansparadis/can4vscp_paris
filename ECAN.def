@@ -382,4 +382,5 @@
 //
 // RXM1 Value
 #define ECAN_RXM1_VAL 0x01FFFF00L
+//#define ECAN_RXM1_VAL 0x00000000L     // Allow everything
 #endif

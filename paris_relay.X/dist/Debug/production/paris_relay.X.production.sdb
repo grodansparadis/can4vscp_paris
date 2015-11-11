@@ -125,15 +125,15 @@ ECAN_RX_DBL_BUFFERED 128
 [v __RegsToCANID _RegsToCANID `(v  1 e 0 0 ]
 "1207
 [v __ECANPointBuffer _ECANPointBuffer `(*.39uc  1 s 2 _ECANPointBuffer ]
-"133 C:\Users\grodansparadis\development\can4vscp_paris/main.c
+"131 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _interrupt_at_low_vector interrupt_at_low_vector `IIL(v  1 e 0 0 ]
-"190
+"188
 [v _main main `(v  1 e 0 0 ]
-"318
+"316
 [v _init init `(v  1 e 0 0 ]
-"432
+"430
 [v _init_app_ram init_app_ram `(v  1 e 0 0 ]
-"478
+"476
 [v _init_app_eeprom init_app_eeprom `(v  1 e 0 0 ]
 "590
 [v _doApplicationOneSecondWork doApplicationOneSecondWork `(v  1 e 0 0 ]
@@ -423,23 +423,23 @@ ECAN_RX_DBL_BUFFERED 128
 "56 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [u S806 . 1 `uc 1 Val 1 0 `S797 1 bits 1 0 ]
 [v __ECANRxFilterHitInfo _ECANRxFilterHitInfo `S806  1 e 1 0 ]
-"98 C:\Users\grodansparadis\development\can4vscp_paris/main.c
+"96 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_deviceURL vscp_deviceURL `C[32]uc  1 e 32 0 ]
-"100
+"98
 [v _measurement_clock measurement_clock `VEul  1 e 4 0 ]
-"102
+"99
 [v _sendTimer sendTimer `VEuc  1 e 1 0 ]
-"103
+"101
 [v _seconds seconds `uc  1 e 1 0 ]
-"104
+"102
 [v _minutes minutes `uc  1 e 1 0 ]
-"105
+"103
 [v _hours hours `uc  1 e 1 0 ]
-"109
+"107
 [v _relay_pulse_flags relay_pulse_flags `uc  1 e 1 0 ]
-"113
+"111
 [v _relay_pulse_timer relay_pulse_timer `[8]us  1 e 16 0 ]
-"117
+"115
 [v _relay_protection_timer relay_protection_timer `[8]us  1 e 16 0 ]
 "5134 C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f2580.h
 [v _RXFCON0 RXFCON0 `VEuc  1 e 1 @3540 ]
@@ -817,10 +817,10 @@ ECAN_RX_DBL_BUFFERED 128
 [v _RXM0EXIDM RXM0EXIDM `VEb  1 e 0 @30923 ]
 "38004
 [v _RXM1EXIDEN RXM1EXIDEN `VEb  1 e 0 @30955 ]
-"190 C:\Users\grodansparadis\development\can4vscp_paris/main.c
+"188 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _main main `(v  1 e 0 0 ]
 {
-"311
+"309
 } 0
 "885
 [v _doWork doWork `(v  1 e 0 0 ]
@@ -1026,12 +1026,12 @@ ECAN_RX_DBL_BUFFERED 128
 "715
 [v _vscp_writeStdReg vscp_writeStdReg `(uc  1 e 1 0 ]
 {
-[v vscp_writeStdReg@reg reg `uc  1 a 1 21 ]
+[v vscp_writeStdReg@reg reg `uc  1 a 1 77 ]
 "716
-[v vscp_writeStdReg@rv rv `uc  1 a 1 20 ]
+[v vscp_writeStdReg@rv rv `uc  1 a 1 76 ]
 "715
-[v vscp_writeStdReg@reg reg `uc  1 a 1 21 ]
-[v vscp_writeStdReg@value value `uc  1 p 1 15 ]
+[v vscp_writeStdReg@reg reg `uc  1 a 1 77 ]
+[v vscp_writeStdReg@value value `uc  1 p 1 71 ]
 "790
 } 0
 "2560 C:\Users\grodansparadis\development\can4vscp_paris/main.c
@@ -1039,12 +1039,12 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "2563
 } 0
-"478
+"476
 [v _init_app_eeprom init_app_eeprom `(v  1 e 0 0 ]
 {
-"479
-[v init_app_eeprom@j j `uc  1 a 1 14 ]
-[v init_app_eeprom@i i `uc  1 a 1 13 ]
+"477
+[v init_app_eeprom@j j `uc  1 a 1 70 ]
+[v init_app_eeprom@i i `uc  1 a 1 69 ]
 "583
 } 0
 "2375
@@ -1088,6 +1088,18 @@ ECAN_RX_DBL_BUFFERED 128
 [v vscp_writeAppReg@val val `uc  1 p 1 80 ]
 "1570
 } 0
+"1598
+[v _SendInformationEvent SendInformationEvent `(v  1 e 0 0 ]
+{
+[v SendInformationEvent@idx idx `uc  1 a 1 79 ]
+"1599
+[v SendInformationEvent@data data `[3]uc  1 a 3 76 ]
+"1598
+[v SendInformationEvent@idx idx `uc  1 a 1 79 ]
+[v SendInformationEvent@eventClass eventClass `uc  1 p 1 20 ]
+[v SendInformationEvent@eventTypeId eventTypeId `uc  1 p 1 21 ]
+"1621
+} 0
 "2681
 [v _calculateSetFilterMask calculateSetFilterMask `(v  1 e 0 0 ]
 {
@@ -1105,18 +1117,6 @@ ECAN_RX_DBL_BUFFERED 128
 "2683
 [v calculateSetFilterMask@lastOID lastOID `uc  1 a 1 52 ]
 "2792
-} 0
-"1598
-[v _SendInformationEvent SendInformationEvent `(v  1 e 0 0 ]
-{
-[v SendInformationEvent@idx idx `uc  1 a 1 79 ]
-"1599
-[v SendInformationEvent@data data `[3]uc  1 a 3 76 ]
-"1598
-[v SendInformationEvent@idx idx `uc  1 a 1 79 ]
-[v SendInformationEvent@eventClass eventClass `uc  1 p 1 20 ]
-[v SendInformationEvent@eventTypeId eventTypeId `uc  1 p 1 21 ]
-"1621
 } 0
 "561 C:\Users\grodansparadis\development/vscp_firmware/common/vscp_firmware.c
 [v _vscp_readRegister vscp_readRegister `(uc  1 e 1 0 ]
@@ -1508,10 +1508,10 @@ ECAN_RX_DBL_BUFFERED 128
 {
 "15
 } 0
-"318 C:\Users\grodansparadis\development\can4vscp_paris/main.c
+"316 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _init init `(v  1 e 0 0 ]
 {
-"425
+"423
 } 0
 "168 C:\Users\grodansparadis\development\can4vscp_paris/ECAN.c
 [v _ECANInitialize ECANInitialize `(v  1 e 0 0 ]
@@ -1532,12 +1532,12 @@ ECAN_RX_DBL_BUFFERED 128
 [v OpenTimer0@config config `uc  1 a 1 7 ]
 "31
 } 0
-"432 C:\Users\grodansparadis\development\can4vscp_paris/main.c
+"430 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _init_app_ram init_app_ram `(v  1 e 0 0 ]
 {
-"433
+"431
 [v init_app_ram@i i `uc  1 a 1 11 ]
-"470
+"468
 } 0
 "17 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
 [v _WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
@@ -1549,12 +1549,6 @@ ECAN_RX_DBL_BUFFERED 128
 [v WriteTimer0@timer0 timer0 `ui  1 p 2 7 ]
 "24
 } 0
-"24 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\read_B.c
-[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
-{
-[v Read_b_eep@badd badd `ui  1 p 2 7 ]
-"32
-} 0
 "896 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _vscp_readAppReg vscp_readAppReg `(uc  1 e 1 0 ]
 {
@@ -1565,10 +1559,16 @@ ECAN_RX_DBL_BUFFERED 128
 [v vscp_readAppReg@reg reg `uc  1 a 1 10 ]
 "963
 } 0
-"133
+"24 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\read_B.c
+[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
+{
+[v Read_b_eep@badd badd `ui  1 p 2 7 ]
+"32
+} 0
+"131 C:\Users\grodansparadis\development\can4vscp_paris/main.c
 [v _interrupt_at_low_vector interrupt_at_low_vector `IIL(v  1 e 0 0 ]
 {
-"182
+"180
 } 0
 "17 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
 [v i1_WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]

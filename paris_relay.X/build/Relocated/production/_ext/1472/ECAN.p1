@@ -15087,7 +15087,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;ECAN.c: 171: ECANSetOperationMode(ECAN_OP_MODE_CONFIG);
 "171
-[e ( _ECANSetOperationMode (1 -> . `E16337 5 `E16337 ]
+[e ( _ECANSetOperationMode (1 . `E16337 5 ]
 [; ;ECAN.c: 175: BRGCON1 = ((1-1) << 6) | (10-1);
 "175
 [e = _BRGCON1 -> | << - -> 1 `i -> 1 `i -> 6 `i - -> 10 `i -> 1 `i `uc ]
@@ -15198,12 +15198,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ECAN.c: 482: RXM0EXIDM = 1;
 "482
 [e = _RXM0EXIDM -> -> 1 `i `b ]
-[; ;ECAN.c: 489: RXM1SIDH = (long)0x01FFFF00L >> 21L; RXM1SIDL = (((long)0x01FFFF00L >> 13L) & 0xe0) | ((long)(0x01FFFF00L) & 0x03L); RXM1EIDH = (long)0x01FFFF00L >> 8L; RXM1EIDL = 0x01FFFF00L;;
+[; ;ECAN.c: 489: RXM1SIDH = (long)0x00000000L >> 21L; RXM1SIDL = (((long)0x00000000L >> 13L) & 0xe0) | ((long)(0x00000000L) & 0x03L); RXM1EIDH = (long)0x00000000L >> 8L; RXM1EIDL = 0x00000000L;;
 "489
-[e = _RXM1SIDH -> >> -> 33554176 `l -> 21 `l `uc ]
-[e = _RXM1SIDL -> | & >> -> 33554176 `l -> 13 `l -> -> 224 `i `l & -> 33554176 `l -> 3 `l `uc ]
-[e = _RXM1EIDH -> >> -> 33554176 `l -> 8 `l `uc ]
-[e = _RXM1EIDL -> -> 33554176 `l `uc ]
+[e = _RXM1SIDH -> >> -> 0 `l -> 21 `l `uc ]
+[e = _RXM1SIDL -> | & >> -> 0 `l -> 13 `l -> -> 224 `i `l & -> 0 `l -> 3 `l `uc ]
+[e = _RXM1EIDH -> >> -> 0 `l -> 8 `l `uc ]
+[e = _RXM1EIDL -> -> 0 `l `uc ]
 [; ;ECAN.c: 490: RXM1EXIDEN = 1;
 "490
 [e = _RXM1EXIDEN -> -> 1 `i `b ]
@@ -15407,7 +15407,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 2125 ]
 [; ;ECAN.c: 755: return TRUE;
 "755
-[e ) -> . `E15660 1 `E15660 ]
+[e ) . `E15660 1 ]
 [e $UE 2107  ]
 "756
 }
@@ -15426,7 +15426,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ECAN.c: 757: }
 [; ;ECAN.c: 760: return FALSE;
 "760
-[e ) -> . `E15660 0 `E15660 ]
+[e ) . `E15660 0 ]
 [e $UE 2107  ]
 [; ;ECAN.c: 761: }
 "761
@@ -15488,7 +15488,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;ECAN.c: 832: *msgFlags |= ECAN_RX_OVERFLOW;
 "832
-[e =| *U _msgFlags -> . `E16324 0 `E16324 ]
+[e =| *U _msgFlags . `E16324 0 ]
 [; ;ECAN.c: 833: RXB0OVFL = 0;
 "833
 [e = _RXB0OVFL -> -> 0 `i `b ]
@@ -15524,7 +15524,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;ECAN.c: 849: *msgFlags |= ECAN_RX_OVERFLOW;
 "849
-[e =| *U _msgFlags -> . `E16324 0 `E16324 ]
+[e =| *U _msgFlags . `E16324 0 ]
 [; ;ECAN.c: 850: RXB1OVFL = 0;
 "850
 [e = _RXB1OVFL -> -> 0 `i `b ]
@@ -15540,7 +15540,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! < -> . __ECANRxFilterHitInfo 0 `i -> 2 `i 2133  ]
 [; ;ECAN.c: 856: *msgFlags |= ECAN_RX_DBL_BUFFERED;
 "856
-[e =| *U _msgFlags -> . `E16324 4 `E16324 ]
+[e =| *U _msgFlags . `E16324 4 ]
 [e :U 2133 ]
 [; ;ECAN.c: 859: ptr = (BYTE*)&RXB1CON;
 "859
@@ -15554,7 +15554,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ECAN.c: 861: else
 [; ;ECAN.c: 862: return FALSE;
 "862
-[e ) -> . `E15660 0 `E15660 ]
+[e ) . `E15660 0 ]
 [e $UE 2126  ]
 [e :U 2134 ]
 [e :U 2130 ]
@@ -15640,7 +15640,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ECAN.c: 900: else
 [; ;ECAN.c: 901: return FALSE;
 "901
-[e ) -> . `E15660 0 `E15660 ]
+[e ) . `E15660 0 ]
 [e $UE 2126  ]
 [e :U 2153 ]
 [e :U 2151 ]
@@ -15681,7 +15681,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ECAN.c: 921: }
 [; ;ECAN.c: 923: return FALSE;
 "923
-[e ) -> . `E15660 0 `E15660 ]
+[e ) . `E15660 0 ]
 [e $UE 2126  ]
 "924
 }
@@ -15705,7 +15705,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;ECAN.c: 936: *msgFlags |= ECAN_RX_OVERFLOW;
 "936
-[e =| *U _msgFlags -> . `E16324 0 `E16324 ]
+[e =| *U _msgFlags . `E16324 0 ]
 [; ;ECAN.c: 937: RXB1OVFL = 0;
 "937
 [e = _RXB1OVFL -> -> 0 `i `b ]
@@ -15733,7 +15733,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _temp 1 6 `i -> -> -> 0 `i `uc `i 2158  ]
 [; ;ECAN.c: 951: *msgFlags |= ECAN_RX_RTR_FRAME;
 "951
-[e =| *U _msgFlags -> . `E16324 3 `E16324 ]
+[e =| *U _msgFlags . `E16324 3 ]
 [e :U 2158 ]
 [; ;ECAN.c: 954: temp.Val = *(ptr+2);
 "954
@@ -15746,7 +15746,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;ECAN.c: 957: *msgFlags |= ECAN_RX_XTD_FRAME;
 "957
-[e =| *U _msgFlags -> . `E16324 2 `E16324 ]
+[e =| *U _msgFlags . `E16324 2 ]
 [; ;ECAN.c: 958: temp.Val = 1;
 "958
 [e = . _temp 0 -> -> 1 `i `uc ]
@@ -15794,7 +15794,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;ECAN.c: 974: *msgFlags |= ECAN_RX_INVALID_MSG;
 "974
-[e =| *U _msgFlags -> . `E16324 1 `E16324 ]
+[e =| *U _msgFlags . `E16324 1 ]
 [; ;ECAN.c: 975: IRXIF = 0;
 "975
 [e = _IRXIF -> -> 0 `i `b ]
@@ -15814,7 +15814,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 2166 ]
 [; ;ECAN.c: 990: return TRUE;
 "990
-[e ) -> . `E15660 1 `E15660 ]
+[e ) . `E15660 1 ]
 [e $UE 2126  ]
 [; ;ECAN.c: 991: }
 "991
