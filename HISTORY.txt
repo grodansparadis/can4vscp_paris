@@ -1,8 +1,8 @@
 Paris Relay module
 ==================
 
-2015-11-12 AKHE - Version 1.1.2
-2015-11-12 AKHE - Fixed (???) problem with dynamic dfilter/mask settings.
+2015-11-13 AKHE - Version 1.1.2
+2015-11-12 AKHE - Fixed problem with dynamic filter/mask settings.
 2015-09-13 AKHE - Sendtimer now works
 2015-09-13 AKHE - Wrong relay index used for zone/subzone check in DM action executes.
 2015-09-13 AKHE - Relay 7 control register removed and reserved register 9 removed from MDF.
