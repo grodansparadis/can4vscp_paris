@@ -1,15 +1,17 @@
-<h1>Kelvin NTC</h1>
+<h1>Paris Relay module</h1>
 
-<img src="http://www.frogshop.se/image/cache/data/grodan/kelvinntc10k/kelvin12-500x500.png" />
+<img src="http://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=600&tok=8478ad&media=paris1_800.png" />
 
-Readme file for the Kelvin NTC project. This project is also the base for a VSCP implemention
-on a Microchip 18F PIC device.
+This is one of two reference modules for the VSCP project. It is a 
+module that can control up to seven relays. 
 
-Version 0.04 2015-08-16
+Product page for the module is <a href="http://www.grodansparadis.com/paris/paris.html">here</a>. 
 
-Kelvin NTC is described <a href="http://www.grodansparadis.com/paris/paris.html">here</a> and can be 
-bought <a href="http://www.frogshop.se/index.php?route=product/product&path=59&product_id=105">here</a>
+The module can be bought from the 
+<a href="http://www.frogshop.se/index.php?route=product/product&product_id=50">FrogShop</a> 
+with international delivery.
 
+<hr>
 
 <h3>Steps you should go through to adopt this file for your own VSCP project.</h3>
 
@@ -36,7 +38,7 @@ In addition to this you may use different pins for the INIT button (RC0 today) a
 status LED (RC1) today. Changes affect the main interrupt vector.
 
 VSCP (Very Simple Control Protocol) 
-http://www.vscp.org
+<a href="http://www.vscp.org">http://www.vscp.org</a>
 
-akhe@grodansparadis.com
+<a mailto="akhe@grodansparadis.com">akhe@grodansparadis.com</a>
 

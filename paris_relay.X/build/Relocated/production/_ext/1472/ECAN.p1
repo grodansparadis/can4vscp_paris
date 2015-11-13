@@ -15198,12 +15198,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ECAN.c: 482: RXM0EXIDM = 1;
 "482
 [e = _RXM0EXIDM -> -> 1 `i `b ]
-[; ;ECAN.c: 489: RXM1SIDH = (long)0x00000000L >> 21L; RXM1SIDL = (((long)0x00000000L >> 13L) & 0xe0) | ((long)(0x00000000L) & 0x03L); RXM1EIDH = (long)0x00000000L >> 8L; RXM1EIDL = 0x00000000L;;
+[; ;ECAN.c: 489: RXM1SIDH = (long)0x01FFFF00L >> 21L; RXM1SIDL = (((long)0x01FFFF00L >> 13L) & 0xe0) | ((long)(0x01FFFF00L) & 0x03L); RXM1EIDH = (long)0x01FFFF00L >> 8L; RXM1EIDL = 0x01FFFF00L;;
 "489
-[e = _RXM1SIDH -> >> -> 0 `l -> 21 `l `uc ]
-[e = _RXM1SIDL -> | & >> -> 0 `l -> 13 `l -> -> 224 `i `l & -> 0 `l -> 3 `l `uc ]
-[e = _RXM1EIDH -> >> -> 0 `l -> 8 `l `uc ]
-[e = _RXM1EIDL -> -> 0 `l `uc ]
+[e = _RXM1SIDH -> >> -> 33554176 `l -> 21 `l `uc ]
+[e = _RXM1SIDL -> | & >> -> 33554176 `l -> 13 `l -> -> 224 `i `l & -> 33554176 `l -> 3 `l `uc ]
+[e = _RXM1EIDH -> >> -> 33554176 `l -> 8 `l `uc ]
+[e = _RXM1EIDL -> -> 33554176 `l `uc ]
 [; ;ECAN.c: 490: RXM1EXIDEN = 1;
 "490
 [e = _RXM1EXIDEN -> -> 1 `i `b ]

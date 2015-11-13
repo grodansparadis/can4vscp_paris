@@ -1,10 +1,40 @@
-Kelvin NTC
-==========
-2015-06-16 - AKHE Power lines to thin - fixed.
-2011-12-20 - AKHE Added termination resistor. Leave unpopulated.
+Paris
+=====
+
+2015-04-2+ - AKHE VCAP not to VCC anymore.
+2014-06-16 - AKHE Power lines to thin. Fixed!
+2014-04-11 - AKHE Fixed VCAP voltage so it is set to VCC.
+2014-04-11 - AKHE Rev C
+
+2011-12-20 - AKHE Changed GND point for relay status LED's
+2011-12-06 - AKHE Added termination resistor. Leave unpopulated.
+2011-12-06 - AKHE Added power to termination block pin 10/11
 2011-11-17 - AKHE Added 1uF capacitor on uP pin 6 forPIC18F66K80 compability
 2011-11-15 - AKHE Move L1 so it fits on the board.
-2011-11-10 - AKHE Packages for D1/D2 updatet to SOD123 from SMDB
+2011-11-15 - AKHE Toplayer was not set to GND.
+2011-11-10 - AKHE 2011-11-10 - AKHE Packages for D1/D2 updatet to SOD123 from SMDB
 2011-11-10 - AKHE CANH should be on pin 4 of RJ-45
-2011-11-10 - AKHE Rev B
 2011-11-02 - AKHE Kontaktlist uppdaterad. Hål var 0.9 och för trånga. Nu 1.2 istället.
+
+2011-11-02 - AKHE Rev B
+
+Rev A
+
+0.0.4
+=====
+
+ 060813 - Added jumber between CD+ on IC4 and VCC
+ 060813 - Changed Orientation on LED to make it possible to bend it to the right.
+ 
+0.0.5
+=====
+  Changed to switching power supply. 
+ 
+0.0.6
+=====
+  110912 - Use open encapsulation. Changed from RS-232 to terminal block. Changed to smd crystal.
+  
+0.0.7
+=====
+  110915 - Power connection on RJ-45 reversed. Corrected. Power should be on 1/2/3 and ground on 6/7/8
+  

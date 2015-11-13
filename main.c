@@ -198,9 +198,12 @@ void main()
                             // are initialized from EEPROM
 
     }
+    
+    // Init. filter for DM
+    calculateSetFilterMask();
 
     vscp_init();    // Initialize the VSCP functionality
-
+        
     while ( 1 ) {   // Loop Forever
 
         ClrWdt();   // Feed the dog
@@ -215,6 +218,8 @@ void main()
             
         }
 
+        
+        
         // Check for a valid  event
         vscp_imsg.flags = 0;
         vscp_getEvent();
@@ -2692,7 +2697,7 @@ void calculateSetFilterMask( void )
     for ( i=0; i < DESCION_MATRIX_ROWS; i++ ) {
 
         // No need to check not active DM rows
-        if ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x80 ) {
+        if ( eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_FLAGS ) & VSCP_DM_FLAG_ENABLED ) {
 
             // build the mask
             // ==============
@@ -2703,25 +2708,27 @@ void calculateSetFilterMask( void )
 
             rowmask =
                     // Bit 9 of class mask
-                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 2 ) << 23 ) |
+                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_FLAGS ) & VSCP_DM_FLAG_CLASS_MASK ) << 23 ) |
                     // Rest of class mask
-                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 2 ) << 16 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_CLASSMASK ) << 16 ) |
                     // Type mask
-                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 4 ) << 8 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_TYPEMASK ) << 8 ) |
+                    // Hardcoded bit
+                    //( ( eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_FLAGS ) & VSCP_DM_FLAG_HARDCODED ) << 20 ) |   
 					// OID  - handle later
 					0xff;
-                    //( ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 );   // Hardcoded bit
+                    
 
             // build the filter
             // ================
 
             rowfilter =
                     // Bit 9 of class filter
-                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 1 ) << 24 ) |
+                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_FLAGS ) & VSCP_DM_FLAG_CLASS_FILTER ) << 24 ) |
                     // Rest of class filter
-                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 3 ) << 16 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_CLASSFILTER ) << 16 ) |
                     // Type filter
-                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 5 ) << 8 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_TYPEFILTER ) << 8 ) |
                     // OID Mask cleared if not same OID for all or one or more
                     // rows don't have OID check flag set.
                     eeprom_read( VSCP_EEPROM_END + 8*i );
@@ -2749,29 +2756,29 @@ void calculateSetFilterMask( void )
             filter &= rowfilter;
 
             // Not check OID?
-            if ( !eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x40 ) {
+            if ( !eeprom_read( VSCP_EEPROM_END + 8*i + VSCP_DM_POS_FLAGS ) & VSCP_DM_FLAG_CHECK_OADDR ) {
                 // No should not be checked for this position
                 // This mean that we can't filter on a specific OID
                 // so mask must be a don't care
                 mask &= ~0xff;
             }
 
-            if (i) {
+            if ( i ) {
                 // If the current OID is different than the previous
                 // we accept all
                 for (j = 0; j < 8; j++) {
                     if ((lastOID >> i & 1)
-                            != (eeprom_read(VSCP_EEPROM_END + 8 * i) >> i & 1)) {
+                            != (eeprom_read(VSCP_EEPROM_END + 8*i ) >> i & 1)) {
                         mask &= (1 << i);
                     }
                 }
 
-                lastOID = eeprom_read(VSCP_EEPROM_END + 8 * i);
+                lastOID = eeprom_read(VSCP_EEPROM_END + 8*i );
 
             } 
             else {
                 // First round we just store the OID
-                lastOID = eeprom_read(VSCP_EEPROM_END + 8 * i);
+                lastOID = eeprom_read(VSCP_EEPROM_END + 8*i );
             }
 
         }
