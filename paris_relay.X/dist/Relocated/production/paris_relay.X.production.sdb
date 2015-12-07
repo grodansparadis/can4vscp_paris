@@ -428,7 +428,7 @@ ECAN_RX_DBL_BUFFERED 128
 "98
 [v _measurement_clock measurement_clock `VEul  1 e 4 0 ]
 "99
-[v _sendTimer sendTimer `VEuc  1 e 1 0 ]
+[v _sendTimer sendTimer `VEus  1 e 2 0 ]
 "101
 [v _seconds seconds `uc  1 e 1 0 ]
 "102
@@ -1292,6 +1292,9 @@ ECAN_RX_DBL_BUFFERED 128
 "2635
 [v _sendCANFrame sendCANFrame `(uc  1 e 1 0 ]
 {
+"2636
+[v sendCANFrame@rv rv `uc  1 a 1 61 ]
+"2635
 [v sendCANFrame@id id `ul  1 p 4 54 ]
 [v sendCANFrame@dlc dlc `uc  1 p 1 58 ]
 [v sendCANFrame@pdata pdata `*.39uc  1 p 2 59 ]

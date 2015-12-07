@@ -15271,8 +15271,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _measurement_clock `Vul ~T0 @X0 1 e ]
 [; ;main.c: 98: volatile unsigned long measurement_clock;
 "99
-[v _sendTimer `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 99: volatile uint8_t sendTimer;
+[v _sendTimer `Vus ~T0 @X0 1 e ]
+[; ;main.c: 99: volatile uint16_t sendTimer;
 "101
 [v _seconds `uc ~T0 @X0 1 e ]
 [; ;main.c: 101: uint8_t seconds;
@@ -15317,7 +15317,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _measurement_clock -> -> -> 1 `i `l `ul ]
 [; ;main.c: 141: sendTimer++;
 "141
-[e ++ _sendTimer -> -> 1 `i `uc ]
+[e ++ _sendTimer -> -> 1 `i `us ]
 [; ;main.c: 144: if ( PORTCbits.RC0 ) {
 "144
 [e $ ! != -> . . _PORTCbits 0 0 `i -> -> -> 0 `i `Vuc `i 2111  ]
@@ -20422,7 +20422,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _rv -> -> 0 `i `uc ]
 [; ;main.c: 2638: sendTimer = 0;
 "2638
-[e = _sendTimer -> -> 0 `i `uc ]
+[e = _sendTimer -> -> 0 `i `us ]
 [; ;main.c: 2639: while ( sendTimer < 1000 ) {
 "2639
 [e $U 2538  ]
@@ -20445,7 +20445,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 2538 ]
 "2639
-[e $ < -> _sendTimer `i -> 1000 `i 2539  ]
+[e $ < -> _sendTimer `ui -> -> 1000 `i `ui 2539  ]
 [e :U 2540 ]
 [; ;main.c: 2643: }
 [; ;main.c: 2644: }

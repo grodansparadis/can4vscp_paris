@@ -1,6 +1,7 @@
 Paris Relay module
 ==================
 
+2015-11-26 AKHE - Status action now looks at relay enable bit.
 2015-11-13 AKHE - Version 1.1.2
 2015-11-12 AKHE - Fixed problem with dynamic filter/mask settings.
 2015-09-13 AKHE - Sendtimer now works

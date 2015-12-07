@@ -19098,7 +19098,7 @@ void calculateSetFilterMask( void );
 const uint8_t vscp_deviceURL[] = "www.eurosource.se/paris_010.xml";
 
 volatile unsigned long measurement_clock;
-volatile uint8_t sendTimer;
+volatile uint16_t sendTimer;
 
 uint8_t seconds;
 uint8_t minutes;

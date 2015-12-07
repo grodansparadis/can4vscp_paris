@@ -96,7 +96,7 @@ void calculateSetFilterMask( void );
 const uint8_t vscp_deviceURL[] = "www.eurosource.se/paris_010.xml";
 
 volatile unsigned long measurement_clock; // Clock for measurments
-volatile uint8_t sendTimer;  // Timer for CAN send
+volatile uint16_t sendTimer;  // Timer for CAN send
 
 uint8_t seconds;    // counter for seconds
 uint8_t minutes;    // counter for minutes
@@ -1748,6 +1748,11 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
 
         // If the rely should not be handled just move on
         if ( !( arg & ( 1 << i ) ) ) continue;
+        
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+
+        // Do nothing if disabled
+        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
@@ -1764,11 +1769,6 @@ void doActionOn(unsigned char dmflags, unsigned char arg)
                 continue;
             }
         }
-
-        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
-
-        // Do nothing if disabled
-        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         switch ( i ) {
 
@@ -1870,6 +1870,11 @@ void doActionOff( unsigned char dmflags, unsigned char arg )
 
         // If the rely should not be handled just move on
         if ( !( arg & ( 1 << i ) ) ) continue;
+        
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+
+        // Do nothing if disabled
+        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
@@ -1886,11 +1891,6 @@ void doActionOff( unsigned char dmflags, unsigned char arg )
                 continue;
             }
         }
-
-        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
-
-        // Do nothing if disabled
-        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         switch ( i ) {
 
@@ -1950,6 +1950,11 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
 
         // If the rely should not be handled just move on
         if ( !( arg & ( 1 << i ) ) ) continue;
+        
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+
+        // Do nothing if disabled
+        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
@@ -1966,11 +1971,6 @@ void doActionPulse(unsigned char dmflags, unsigned char arg)
                 continue;
             }
         }
-
-        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
-
-        // Do nothing if disabled
-        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         switch (i) {
 
@@ -2049,6 +2049,11 @@ void doActionStatus(unsigned char dmflags, unsigned char arg)
 
         // If the rely should not be handled just move on
         if (!(arg & (1 << i))) continue;
+        
+        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
+
+        // Do nothing if disabled
+        if ( !( val & RELAY_CONTROLBIT_ENABLED ) ) continue;
 
         // Check if zone should match and if so check if it match
         if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
@@ -2065,8 +2070,6 @@ void doActionStatus(unsigned char dmflags, unsigned char arg)
                 continue;
             }
         }
-
-        val = eeprom_read( VSCP_EEPROM_END + REG_RELAY0_CONTROL + i );
 
         switch (i) {
 
