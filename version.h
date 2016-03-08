@@ -2,33 +2,25 @@
  * 	VSCP (Very Simple Control Protocol) 
  * 	http://www.vscp.org
  *
- * 	2005-03-16
- * 	akhe@eurosource.se
+ *  Paris Smart Relay Module
+ *  ========================
  *
- *  Copyright (C) 1995-2015 Ake Hedman, Grodans Paradis AB
- *  <akhe@grodansparadis.com>
+ *  Copyright (C)1995-2016 Ake Hedman, Grodans Paradis AB
+ *                          http://www.grodansparadis.com
+ *                          <akhe@grodansparadis.com>
  *
- * This software is provided 'as-is', without any express or implied
- * warranty.  In no event will the authors be held liable for any damages
- * arising from the use of this software.
- *
- * Permission is granted to anyone to use this software for any purpose,
- * including commercial applications, and to alter it and redistribute it
- * freely, subject to the following restrictions:
- *
- * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software. If you use this software
- *    in a product, an acknowledgment in the product documentation would be
- *    appreciated but is not required.
- * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.
- * 3. This notice may not be removed or altered from any source distribution.
+ *  This work is licensed under the Creative Common 
+ *  Attribution-NonCommercial-ShareAlike 3.0 Unported license. The full
+ *  license is available in the top folder of this project (LICENSE) or here
+ *  http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+ *  It is also available in a human readable form here 
+ *  http://creativecommons.org/licenses/by-nc-sa/3.0/
  * 
  *	This file is part of VSCP - Very Simple Control Protocol 	
  *	http://www.vscp.org
  *
  * ******************************************************************************
-*/
+ */
 
 #ifndef KELVIN_SMART_VERSION_H
 #define KELVIN_SMART_VERSION_H
@@ -37,7 +29,7 @@
 
 #define FIRMWARE_MAJOR_VERSION		1
 #define FIRMWARE_MINOR_VERSION		1
-#define FIRMWARE_SUB_MINOR_VERSION	2
+#define FIRMWARE_SUB_MINOR_VERSION	3
 
 
 // * * * History * * *

@@ -10,7 +10,6 @@
       <itemPath>../smartrelay.h</itemPath>
       <itemPath>../ECAN.h</itemPath>
       <itemPath>../ECAN.def</itemPath>
-      <itemPath>../../../../../vscp_firmware/pic/common/eeprom.h</itemPath>
       <itemPath>../../../../../vscp_software/src/vscp/common/vscp_class.h</itemPath>
       <itemPath>../../../../../vscp_software/src/vscp/common/vscp_type.h</itemPath>
       <itemPath>../version.h</itemPath>
