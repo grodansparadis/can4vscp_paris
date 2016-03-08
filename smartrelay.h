@@ -188,38 +188,39 @@
 
 #define VSCP_EEPROM_NICKNAME                0x01	// Persistant nickname id storage
 #define VSCP_EEPROM_SEGMENT_CRC             0x02	// Persistant segment crc storage
-#define VSCP_EEPROM_CONTROL                 0x03	// Persistant control byte
+#define VSCP_EEPROM_CONTROL1                0x03	// Persistant control byte
+#define VSCP_EEPROM_CONTROL2                0x04	// Persistant control byte
 
-//#define EEPROM_ZONE                       0x04	// Zone node belongs to
-//#define EEPROM_SUBZONE                    0x05	// Subzone node belongs to
+//#define EEPROM_ZONE                       0x05	// Zone node belongs to
+//#define EEPROM_SUBZONE                    0x06	// Subzone node belongs to
 
-#define VSCP_EEPROM_REG_USERID              0x06
-#define VSCP_EEPROM_REG_USERID1             0x07
-#define VSCP_EEPROM_REG_USERID2             0x08
-#define VSCP_EEPROM_REG_USERID3             0x09
-#define VSCP_EEPROM_REG_USERID4             0x0A
+#define VSCP_EEPROM_REG_USERID              0x07
+#define VSCP_EEPROM_REG_USERID1             0x08
+#define VSCP_EEPROM_REG_USERID2             0x09
+#define VSCP_EEPROM_REG_USERID3             0x0A
+#define VSCP_EEPROM_REG_USERID4             0x0B
 
 // The following can be stored in flash or eeprom
 
-#define VSCP_EEPROM_REG_MANUFACTUR_ID0      0x0B
-#define VSCP_EEPROM_REG_MANUFACTUR_ID1      0x0C
-#define VSCP_EEPROM_REG_MANUFACTUR_ID2      0x0D
-#define VSCP_EEPROM_REG_MANUFACTUR_ID3      0x0E
+#define VSCP_EEPROM_REG_MANUFACTUR_ID0      0x0C
+#define VSCP_EEPROM_REG_MANUFACTUR_ID1      0x0D
+#define VSCP_EEPROM_REG_MANUFACTUR_ID2      0x0E
+#define VSCP_EEPROM_REG_MANUFACTUR_ID3      0x0F
 
-#define VSCP_EEPROM_REG_MANUFACTUR_SUBID0   0x0F
-#define VSCP_EEPROM_REG_MANUFACTUR_SUBID1   0x10
-#define VSCP_EEPROM_REG_MANUFACTUR_SUBID2   0x11
-#define VSCP_EEPROM_REG_MANUFACTUR_SUBID3   0x12
+#define VSCP_EEPROM_REG_MANUFACTUR_SUBID0   0x10
+#define VSCP_EEPROM_REG_MANUFACTUR_SUBID1   0x11
+#define VSCP_EEPROM_REG_MANUFACTUR_SUBID2   0x12
+#define VSCP_EEPROM_REG_MANUFACTUR_SUBID3   0x13
 
 // The following can be stored in program ROM (recommended) or in EEPROM
 
-#define VSCP_EEPROM_REG_GUID                0x13	// Start of GUID MSB
+#define VSCP_EEPROM_REG_GUID                0x14	// Start of GUID MSB
 // 		0x13 - 0x22
 
-#define VSCP_EEPROM_REG_DEVICE_URL          0x23	// Start of Device URL storage
+#define VSCP_EEPROM_REG_DEVICE_URL          0x24	// Start of Device URL storage
 // 		0x23 - 0x42
 
-#define VSCP_EEPROM_END                     0x43	// marks end of VSCP EEPROM usage
+#define VSCP_EEPROM_END                     0x44	// marks end of VSCP EEPROM usage
 //   (next free position)
 
 // --------------------------------------------------------------------------------

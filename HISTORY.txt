@@ -1,6 +1,7 @@
 Paris Relay module
 ==================
 
+2016-03-08 AKHE - Adopted to 1.6 firmware. Adopted for PIC18F26K80.
 2015-11-26 AKHE - Status action now looks at relay enable bit.
 2015-11-13 AKHE - Version 1.1.2
 2015-11-12 AKHE - Fixed problem with dynamic filter/mask settings.
