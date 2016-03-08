@@ -1,0 +1,88 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<registerset>
+<register offset='2' page='0'>
+<value>0x00</value>
+<description>Relay 0 status register
+Writing a value to the relay control register will activate/deactivate the relay
+ output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+<register offset='3' page='0'>
+<value>0x00</value>
+<description>Relay 1 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+<register offset='4' page='0'>
+<value>0x00</value>
+<description>Relay 2 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+<register offset='5' page='0'>
+<value>0x00</value>
+<description>Relay 3 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+<register offset='6' page='0'>
+<value>0x00</value>
+<description>Relay 4 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+<register offset='7' page='0'>
+<value>0x00</value>
+<description>Relay 5 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+<register offset='8' page='0'>
+<value>0x00</value>
+<description>Relay 6 status register
+Writing a value to the relay control register will activate/deactivate the relay
+output.
+ 0 - The relay is inactivated.
+ 1 - The relay is activated.
+ Reading a value from the relay control register is read as a one if the relay is
+ activated and a 0 if the relay is deactivated.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ When the pulse activation/deactivating is used the actual relay state is read.
+ </description>
+</register>
+</registerset>
