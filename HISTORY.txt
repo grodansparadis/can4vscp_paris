@@ -1,8 +1,10 @@
 Paris Relay module
 ==================
 
-2016-03-23 AKHE - Version 1.1.4
-2016-03-23 AKHE - Version 1.1.3
+2016-03-23 AKHE - Version 1.1.5-------------------------------------------------
+2016-03-23 AKHE - Adopted to VSCP firmware 1.6.1
+2016-03-23 AKHE - Version 1.1.4-------------------------------------------------
+2016-03-23 AKHE - Version 1.1.3-------------------------------------------------
 2016-03-23 AKHE - Fixed bug in control byte write routine.
 2016-03-08 AKHE - Adopted to 1.6 firmware. Adopted for PIC18F26K80.
 2015-11-26 AKHE - Status action now looks at relay enable bit.
