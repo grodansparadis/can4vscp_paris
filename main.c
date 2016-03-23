@@ -2466,7 +2466,7 @@ void vscp_setNickname(uint8_t nickname)
 //  setVSCPControlByte
 //
 
-void vscp_setControlByte( uint8_t ctrl, uint8_t idx )
+void vscp_setControlByte( uint8_t idx, uint8_t ctrl )
 {
     if ( idx > 1 ) return;
     eeprom_write( VSCP_EEPROM_CONTROL1 + idx, ctrl );

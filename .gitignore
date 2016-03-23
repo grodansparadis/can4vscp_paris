@@ -115,3 +115,16 @@
 /eagle/*.s#5
 /paris_relay.X/build/Debug_26K80/
 /paris_relay.X/dist/Debug_26K80/
+/paris_relay.X/build/Relocated_2580/production/_ext/1472/*.p1
+/paris_relay.X/build/Relocated_2580/production/_ext/1472/*.d
+/paris_relay.X/build/Relocated_2580/production/_ext/1472/*.pre
+/paris_relay.X/build/Relocated_2580/production/_ext/1935753226/*.p1
+/paris_relay.X/build/Relocated_2580/production/_ext/1935753226/*.d
+/paris_relay.X/build/Relocated_2580/production/_ext/1935753226/*.pre
+/paris_relay.X/dist/Relocated_2580/production/*.cmf
+/paris_relay.X/dist/Relocated_2580/production/*.hxl
+/paris_relay.X/dist/Relocated_2580/production/*.lst
+/paris_relay.X/dist/Relocated_2580/production/*.map
+/paris_relay.X/dist/Relocated_2580/production/*.rlf
+/paris_relay.X/dist/Relocated_2580/production/*.sdb
+/paris_relay.X/dist/Relocated_2580/production/*.sym
