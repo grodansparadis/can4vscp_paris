@@ -26,6 +26,7 @@
 // Possible values are ECAN_INIT_NORMAL, ECAN_INIT_CONFIGURATION, ECAN_INIT_LOOPBACK, ECAN_INIT_DISABLE
 #define ECAN_INIT_MODE ECAN_INIT_NORMAL
 //
+// http://www.port.de/en/bit-timing.html
 // Use http://www.port.de/cgi-bin/tq.cgi?ctype=Pic18&CLK=20&sample_point=87.5
 // Note: Oscillator frequency 20 MHz even if 40MHz
 //
