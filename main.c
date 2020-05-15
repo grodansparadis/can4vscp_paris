@@ -5,7 +5,7 @@
  *  Paris Smart Relay Module
  *  ========================
  *
- *  Copyright (C)1995-2016 Ake Hedman, Grodans Paradis AB
+ *  Copyright (C)1995-2020 Ake Hedman, Grodans Paradis AB
  *                          http://www.grodansparadis.com
  *                          <akhe@grodansparadis.com>
  *
@@ -31,7 +31,7 @@
 #include <delays.h>
 #include <inttypes.h>
 #include <ECAN.h>
-#include <vscp_firmware.h>
+#include <vscp-firmware.h>
 #include <vscp_class.h>
 #include <vscp_type.h>
 #include "smartrelay.h"
@@ -238,8 +238,8 @@ void main()
 
         ClrWdt();   // Feed the dog
 
-        if ( ( vscp_initbtncnt > 250 ) &&
-                ( VSCP_STATE_INIT != vscp_node_state ) ) {
+        if ( ( vscp_initbtncnt > 2500 ) &&
+             ( VSCP_STATE_INIT != vscp_node_state ) ) {
 
             // Init. button pressed
             vscp_nickname = VSCP_ADDRESS_FREE;
@@ -308,6 +308,7 @@ void main()
         if ( measurement_clock > 1000 ) {
 
             measurement_clock = 0;
+            seconds++;
  
             // Do VSCP one second jobs
             vscp_doOneSecondWork();

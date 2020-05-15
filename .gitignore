@@ -132,4 +132,8 @@
 /paris_relay.X/dist/Relocated_2580/production/*.rlf
 /paris_relay.X/dist/Relocated_2580/production/*.sdb
 /paris_relay.X/dist/Relocated_2580/production/*.sym
->>>>>>> 1b863185f301b088f58cab01e81aa48fab34fde0
+
+paris_relay.X/build/Debug_2580/
+paris_relay.X/build/Relocated_26K80/
+paris_relay.X/dist/
+

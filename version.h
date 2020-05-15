@@ -5,7 +5,7 @@
  *  Paris Smart Relay Module
  *  ========================
  *
- *  Copyright (C)1995-2016 Ake Hedman, Grodans Paradis AB
+ *  Copyright (C)1995-2020 Ake Hedman, Grodans Paradis AB
  *                          http://www.grodansparadis.com
  *                          <akhe@grodansparadis.com>
  *
@@ -29,7 +29,7 @@
 
 #define FIRMWARE_MAJOR_VERSION		1
 #define FIRMWARE_MINOR_VERSION		1
-#define FIRMWARE_SUB_MINOR_VERSION	5
+#define FIRMWARE_SUB_MINOR_VERSION	6
 
 
 // * * * History * * *
