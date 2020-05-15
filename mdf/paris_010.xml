@@ -5,7 +5,7 @@
 	<name>Paris Relay controller</name>
 	<model>B</model>
 	<version>1.1.2</version>
-	<changed>2015-11-12</changed>
+	<changed>2020-05-15</changed>
 	<description lang="en">
 		With this VSCP module it is possible to control up to seven relays or similar devices. 
 	</description>
@@ -16,7 +16,7 @@
 		<address>
 			<street>Brattbergavägen 17</street>
 			<city>Los</city>
-			<postcode>82050</postcode>
+			<postcode>82770</postcode>
 			<country>Sweden</country>
 		</address>
 		<telephone>
@@ -49,37 +49,71 @@
 	</picture>
 	
 	<!-- Firmware for the device -->
-    <firmware path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.2/paris_relay_1_1_2.hex" 
+	
+	<files>
+	
+	<firmware target="pic18f2580"
+                path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.6/paris_relay_pic18f2580_1_1_6_relocated.hex" 
+		format="intelhex8"
+		date="2020-05-15"
+		version_major="1"
+		version_minor="1"
+		version_subminor="6">
+		<description lang="en" >
+			Firmware for the CAN4VSCP Paris relay module with PIC18f2580 processor.
+		</description> 
+	</firmware>
+	
+	<firmware target="pic18f26K80"
+                path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.6/paris_relay_pic18f26k80_1_1_6_relocated.hex" 
+		format="intelhex8"
+		date="2020-05-15"
+		version_major="1"
+		version_minor="1"
+		version_subminor="6">
+		<description lang="en" >
+			Firmware for the CAN4VSCP Paris relay module with PIC18f26K80 processor.
+		</description> 
+	</firmware>
+	
+       <firmware target="pic18f2580"
+                path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.2/paris_relay_1_1_2.hex" 
 		format="intelhex8"
 		date="2015-11-12"
 		version_major="1"
 		version_minor="1"
 		version_subminor="2">
 		<description lang="en" >
-			Firmware for the CAN4VSCP Paris relay module.
+			Firmware for the CAN4VSCP Paris relay module with PIC18f2580 processor.
 		</description> 
 	</firmware>
-    <firmware path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.1/paris_relay_1_1_1.hex" 
+	
+        <firmware target="pic18f2580"
+                path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.1/paris_relay_1_1_1.hex" 
 		format="intelhex8"
 		date="2015-09-13"
 		version_major="1"
 		version_minor="1"
 		version_subminor="1">
 		<description lang="en" >
-			Firmware for the CAN4VSCP Paris relay module.
+			Firmware for the CAN4VSCP Paris relay module with PIC18f2580 processo.
 		</description> 
 	</firmware>
-    <firmware path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.0/paris_relay_1_1_0.hex" 
+	
+       <firmware target="pic18f2580"
+                path="https://github.com/grodansparadis/can4vscp_paris/releases/download/v1.1.0/paris_relay_1_1_0.hex" 
 		format="intelhex8"
 		date="2015-03-20"
 		version_major="1"
 		version_minor="1"
 		version_subminor="0">
 		<description lang="en" >
-			Firmware for the CAN4VSCP Paris relay module.
+			Firmware for the CAN4VSCP Paris relay module with PIC18f2580 processo.
 		</description> 
 	</firmware>
-	<firmware path="http://www.auto.grodansparadis.com/kelvin/firmware_paris_1_0_0.hex" 
+	
+	<firmware target="pic18f2580"
+	        path="http://www.auto.grodansparadis.com/kelvin/firmware_paris_1_0_0.hex" 
 		format="intelhex8"
 		size="32000"
 		date="2012-01-01"
@@ -87,9 +121,11 @@
 		version_minor="0"
 		version_subminor="0">
 		<description lang="en" >
-			Firmware version 1.0.0 for the Paris relay module.
+			Firmware version 1.0.0 for the Paris relay module with PIC18f2580 processo.
 		</description> 
 	</firmware>
+	
+	</files>
 
 	<!-- Full documentation for the device -->
 	<manual path="http://www.grodansparadis.com/paris/manual" 	
