@@ -1,4 +1,4 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<?xml version = "1.0" encoding = "UTF-8" ?>
 <!-- Ake Hedman, Grodans Paradis AB -->
 <vscp>
 <module>
@@ -2256,8 +2256,8 @@
       	   </description>
       	   
       	   <bit pos="0" default="false">
-      			<name lang="en">Relay 1</name>
-      		   <description lang="en">Set to one to select relay 1</description> 
+      			<name lang="en">Relay 0</name>
+      		   <description lang="en">Set to one to select relay 0</description> 
       		</bit>
       		<bit pos="1" default="false">
       			<name lang="en">Relay 1</name>
@@ -2303,8 +2303,8 @@
       	   </description>
       	   
       	   <bit pos="0" default="false">
-      			<name lang="en">Relay 1</name>
-      		   <description lang="en">Set to one to select relay 1</description> 
+      			<name lang="en">Relay 0</name>
+      		   <description lang="en">Set to one to select relay 0</description> 
       		</bit>
       		<bit pos="1" default="false">
       			<name lang="en">Relay 1</name>
@@ -2353,8 +2353,8 @@
       	   </description>
       	   
       	   <bit pos="0" default="false">
-      			<name lang="en">Relay 1</name>
-      		   <description lang="en">Set to one to select relay 1</description> 
+      			<name lang="en">Relay 0</name>
+      		   <description lang="en">Set to one to select relay 0</description> 
       		</bit>
       		<bit pos="1" default="false">
       			<name lang="en">Relay 1</name>
@@ -2402,8 +2402,8 @@
       	   </description>
       	   
       	   <bit pos="0" default="false">
-      			<name lang="en">Relay 1</name>
-      		   <description lang="en">Set to one to select relay 1</description> 
+      			<name lang="en">Relay 0</name>
+      		   <description lang="en">Set to one to select relay 0</description> 
       		</bit>
       		<bit pos="1" default="false">
       			<name lang="en">Relay 1</name>
@@ -2451,8 +2451,8 @@
       	   </description>
       	   
       	   <bit pos="0" default="false">
-      			<name lang="en">Relay 1</name>
-      		   <description lang="en">Set to one to select relay 1</description> 
+      			<name lang="en">Relay 0</name>
+      		   <description lang="en">Set to one to select relay 0</description> 
       		</bit>
       		<bit pos="1" default="false">
       			<name lang="en">Relay 1</name>
@@ -2500,8 +2500,8 @@
       	   </description>
       	   
       	   <bit pos="0" default="false">
-      			<name lang="en">Relay 1</name>
-      		   <description lang="en">Set to one to select relay 1</description> 
+      			<name lang="en">Relay 0</name>
+      		   <description lang="en">Set to one to select relay 0</description> 
       		</bit>
       		<bit pos="1" default="false">
       			<name lang="en">Relay 1</name>
