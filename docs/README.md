@@ -1,13 +1,13 @@
 
-## Manual for the Accra module
+## Manual for the Paris module
 
 **Document version:** ${/var/document-version} - ${/var/creation-time}
 [HISTORY](./history.md)
 
 
-![Accra](/images/accra3.png)
+![Paris](/images/paris10.png)
 
-Accra is a module that have four counter channels that each can count
+Paris is a module that have four counter channels that each can count
 pulses and measure frequency. Each channel can have alarms set for going
 over a counter level or when counting down to zero and for a frequency
 that goes outside of a specified frequency window.
@@ -20,7 +20,11 @@ out on the VSCP bus.
 The module comes with a GUID and is programmed with a bootloader and
 VSCP module functionality that works right out of the box.
 
-
+  * [Repository for the module](https://github.com/grodansparadis/can4vscp_paris)
+  * This manual is available [here](https://grodansparadis.github.io/can4vscp_paris/)
+  * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp_paris/blob/master/eagle/paris_revb_sch.png)
+  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp_paris/tree/master/firmware)
+  * [MDF for the module](https://github.com/grodansparadis/can4vscp_paris/tree/master/mdf)
 
 ## VSCP
 

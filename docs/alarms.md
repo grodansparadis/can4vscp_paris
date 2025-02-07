@@ -2,14 +2,14 @@
 
 | Bit | Description       |
 | --- | ----------------- |
-| 0   | Alarm counter 0   |
-| 1   | Alarm counter 1   |
-| 2   | Alarm counter 2   |
-| 3   | Alarm counter 3   |
-| 4   | Alarm frequency 0 |
-| 5   | Alarm frequency 1 |
-| 6   | Alarm frequency 2 |
-| 7   | Alarm frequency 3 |
+| 0 | Relay 1 protection timer elapsed. |
+| 1 | Relay 2 protection timer elapsed. |
+| 2 | Relay 3 protection timer elapsed. |
+| 3 | Relay 4 protection timer elapsed. |
+| 4 | Relay 5 protection timer elapsed. |
+| 5 | Relay 6 protection timer elapsed. |
+| 6 | Relay 7 protection timer elapsed. |
+| 7 | Reserved.  |
 
 Remember that alarm bits are cleared when read.
 

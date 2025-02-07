@@ -2,7 +2,7 @@
 
 ![VSCP logo](./images/logo_400.png)
 
-# Manual for the Accra module
+# Manual for the Paris module
 
 Scroll down to view docs.
 
