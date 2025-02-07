@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "paris-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/paris-eagle-import.kicad_sym")(options "")(descr ""))
+)

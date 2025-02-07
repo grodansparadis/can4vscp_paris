@@ -1,0 +1,177 @@
+
+<h1 class="sectionedit1" id="decision_matrix">Decision Matrix</h1>
+<div class="level1">
+
+<p>
+The full functionality of the decision matrix is explained <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix"  rel="nofollow">in the specification</a>. 
+</p>
+
+<p>
+Beijing have a decision matrix consisting of eight entries. This matrix can be used to control the I/O channels. Possible actions are listed in the table below.
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Action </th><th class="col1"> Action code </th><th class="col2"> Parameter </th><th class="col3">Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>NOOP</strong>  </td><td class="col1 centeralign">  0  </td><td class="col2 centeralign">  Not used  </td><td class="col3"> No operation. Will do absolutely nothing. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>SET</strong>  </td><td class="col1 centeralign">  1  </td><td class="col2 centeralign">  Channel (0-9)  </td><td class="col3"> Set output of I/O channel high.<br/>
+<br/>
+Set the output of the I/O channel given by the argument to its high state. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>CLR</strong>  </td><td class="col1 centeralign">  2  </td><td class="col2 centeralign">  Channel (0-9)  </td><td class="col3"> Set output of I/O channel low.<br/>
+<br/>
+Set the output of the I/O channel given by the argument to its low state.<br/>
+The argument is an integer where 0 is output 0 and so on and can be in the range 0-9. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>PULSEON</strong>  </td><td class="col1 centeralign">  3  </td><td class="col2 centeralign">  Channel (0-9)  </td><td class="col3"> Turn on pulse on output I/O channel<br/>
+<br/>
+Turn on pulse output on the output I/O channel given by the argument. The argument is an the range 0-9. Does not have any meaning for a channel set as input. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <strong>PULSEOFF</strong>  </td><td class="col1 centeralign">  4  </td><td class="col2 centeralign">  Channel (0-9)  </td><td class="col3"> Turn off pulse on output I/O channel<br/>
+<br/>
+Turn off pulse output on the output I/O channel given by the argument. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9. Does not have any meaning for a channel set as input. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <strong>TOGGLE</strong>  </td><td class="col1 centeralign">  5  </td><td class="col2 centeralign">  Channel (0-9)  </td><td class="col3"> Toggle output for channel<br/>
+<br/>
+Toggle output four output I/O channel given by argument. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9. Does not have any meaning for a channel set as input. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  <strong>STATUS</strong>  </td><td class="col1 centeralign">  6  </td><td class="col2 centeralign">  Channel (0-9)  </td><td class="col3"> Send status for I/O channel.<br/>
+<br/>
+Send status for an I/O channel given by the argument. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9.<br/>
+For a channel set as output the status is the output applied and for a channel set as input the actual input state. </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  <strong>STATUSALL</strong>  </td><td class="col1 centeralign">  7  </td><td class="col2 centeralign">  Not used  </td><td class="col3"> Send status for all I/O channels.<br/>
+<br/>
+Send status for all I/O channels starting with channel 0 and then taking each channel up to channel 9. </td>
+	</tr>
+</table></div>
+<!-- EDIT2 TABLE [343-2276] -->
+</div>
+<!-- EDIT1 SECTION "Decision Matrix" [1-2277] -->
+<h2 class="sectionedit3" id="example">Example</h2>
+<div class="level2">
+
+<p>
+You want to activate output on channel 3 when a <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.control#type_5_0x05_turnon" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.control#type_5_0x05_turnon"  rel="nofollow">CLASS1.CONTROL, TurnOn, Type=5 event</a> is received.  
+</p>
+
+<p>
+A matrix row consist of
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Byte </th><th class="col1"> Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 0 </td><td class="col1"> oaddr </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 1 </td><td class="col1"> flags </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 2 </td><td class="col1"> class-mask </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 3 </td><td class="col1"> class-filter </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 4 </td><td class="col1"> type-mask </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> 5 </td><td class="col1"> type-filter </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> 6 </td><td class="col1"> Action code </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> 7 </td><td class="col1"> Action parameter </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [2509-2682] -->
+<p>
+So for example if you populate the row with the following values
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Byte </th><th class="col1"> Value </th><th class="col2"> Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  0  </td><td class="col1 centeralign">  <strong>0x00</strong>  </td><td class="col2"> oaddr </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  1  </td><td class="col1 centeralign">  <strong>0x80</strong>  </td><td class="col2"> flags </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  2  </td><td class="col1 centeralign">  <strong>0xff</strong>  </td><td class="col2"> class-mask </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  3  </td><td class="col1 centeralign">  <strong>0x1e</strong>  </td><td class="col2"> class-filter </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  4  </td><td class="col1 centeralign">  <strong>0xff</strong>  </td><td class="col2"> type-mask </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  5  </td><td class="col1 centeralign">  <strong>0x05</strong>  </td><td class="col2"> type-filter </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  6  </td><td class="col1 centeralign">  <strong>0x01</strong>  </td><td class="col2"> Action code </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  7  </td><td class="col1 centeralign">  <strong>0x02</strong>  </td><td class="col2"> Action parameter </td>
+	</tr>
+</table></div>
+<!-- EDIT5 TABLE [2751-3052] --><ul>
+<li class="level1"><div class="li"> <strong>oaddr</strong> set to zero as i is not used.</div>
+</li>
+<li class="level1"><div class="li">  <strong>flags</strong> have one bit set. Enable row. We could have set bit 4 Match Zone to  test zone also trigger DM.</div>
+</li>
+<li class="level1"><div class="li"> <strong>class-mask</strong> is set to 0xff as we have just one event we will trigger on.</div>
+</li>
+<li class="level1"><div class="li"> <strong>class-filter</strong> is set to CLASS1.CONTROL.</div>
+</li>
+<li class="level1"><div class="li"> <strong>type-mask</strong> is set to 0xff as we have just one event we will trigger on.</div>
+</li>
+<li class="level1"><div class="li"> <strong>type-filter</strong> is set to 5 which is TurnOn.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Action code</strong> i set to the SET action.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Action parameter</strong>  2 is channel 2 so this channel will be set high if configured as an output.</div>
+</li>
+</ul>
+
+<p>
+If you double click a decision matrix row a dialog comes up which help you to set the values.
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=decisionmatrix&amp;media=grodan_logo.png" class="media" title="grodan_logo.png"><img src="/beijing/manual/lib/exe/fetch.php?w=100&amp;tok=9032da&amp;media=grodan_logo.png" class="mediacenter" alt="" width="100" /></a>
+<br/>
+
+<strong>Grodans Paradis AB</strong> Brattbergavägen 17 820 50 LOS SWEDEN 
+<strong>email:</strong> <a href="mailto:&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;</a> <strong>phone:</strong> +46 (0)8 40011835 
+<strong>web:</strong><a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">http://www.grodansparadis.com</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Example" [2278-] -->

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="https://www.grodansparadis.com/paris/manual/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="https://www.grodansparadis.com/paris/manual/feed.php">
+        <title>Paris Manual</title>
+        <description></description>
+        <link>https://www.grodansparadis.com/paris/manual/</link>
+        <image rdf:resource="https://www.grodansparadis.com/paris/manual/lib/tpl/simple_sidebar/images/favicon.ico" />
+       <dc:date>2023-05-02T12:53:31+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=recipes&amp;rev=1460037920&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=registers&amp;rev=1448228039&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=change_log_1&amp;rev=1447277254&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=faq&amp;rev=1447277238&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=events&amp;rev=1447277223&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix&amp;rev=1447277205&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=alarms&amp;rev=1447277190&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=function&amp;rev=1447277161&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?id=replacing_the_firmware&amp;rev=1447277138&amp;do=diff"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot8.png&amp;ns=&amp;rev=1447172826&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot7.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot4.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot6.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot5.png&amp;ns=&amp;rev=1447172824&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot3.png&amp;ns=&amp;rev=1447172823&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot2.png&amp;ns=&amp;rev=1447172822&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="https://www.grodansparadis.com/paris/manual/doku.php?image=boot1.png&amp;ns=&amp;rev=1447172823&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="https://www.grodansparadis.com/paris/manual/lib/tpl/simple_sidebar/images/favicon.ico">
+        <title>Paris Manual</title>
+        <link>https://www.grodansparadis.com/paris/manual/</link>
+        <url>https://www.grodansparadis.com/paris/manual/lib/tpl/simple_sidebar/images/favicon.ico</url>
+    </image>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=recipes&amp;rev=1460037920&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-04-07T16:05:20+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>recipes</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=recipes&amp;rev=1460037920&amp;do=diff</link>
+        <description>Recipes
+
+	*  The story about an old Fridge: &lt;http://grodansparadis.com/wordpress/?p=1384&gt;
+
+
+
+
+----------</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=registers&amp;rev=1448228039&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-22T22:33:59+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>registers - [Registers for decision matrix] </title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=registers&amp;rev=1448228039&amp;do=diff</link>
+        <description>Registers
+
+All VSCP modules have a set of 8-bit registers defined. Some of them (register 128-255) are predefined and the information in them are the same for all VSCP modules. See the VSCP specification for a description of their content. 
+
+The lower 128 register positions are used for module specific registers. It is normally here you find registers with which you configure your module. You can also find registers where you typically can read status information such as measurement data from th…</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=change_log_1&amp;rev=1447277254&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:27:34+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>change_log_1</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=change_log_1&amp;rev=1447277254&amp;do=diff</link>
+        <description>Change Log for Paris
+
+For current changes see HISTORY 
+
+2015-11-11 AKHE - Started this change log.
+
+
+
+
+----------</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=faq&amp;rev=1447277238&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:27:18+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>faq</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=faq&amp;rev=1447277238&amp;do=diff</link>
+        <description>faq - Frequently Asked Questions
+
+Not many of those yet!
+
+
+
+
+----------</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=events&amp;rev=1447277223&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:27:03+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>events</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=events&amp;rev=1447277223&amp;do=diff</link>
+        <description>Events
+
+Here the events sent by the module is described.
+ Event  Description   CLASS1.INFORMATION (20) Type=3, On   If enabled the event is sent when a relay goes to its active state. Index is 0 for relay 1, 1 for relay 2 and so on. zone and sub-zone set accordingly. Sub-zone for relay is used if it&#039;s not zero.</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix&amp;rev=1447277205&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:26:45+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>decisionmatrix</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix&amp;rev=1447277205&amp;do=diff</link>
+        <description>Decision Matrix
+
+The full functionality of the decision matrix is explained in the specification. 
+
+Paris have a decision matrix consisting of eight entries. This matrix can be used to control the relays. Possible actions are listed in the table below.
+ Action  Action code</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=alarms&amp;rev=1447277190&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:26:30+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>alarms</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=alarms&amp;rev=1447277190&amp;do=diff</link>
+        <description>Alarms
+ Bit Description  0  Relay 1 protection timer elapsed.  1  Relay 2 protection timer elapsed.  2  Relay 3 protection timer elapsed.  3  Relay 4 protection timer elapsed.  4  Relay 5 protection timer elapsed.  5  Relay 6 protection timer elapsed.</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=function&amp;rev=1447277161&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:26:01+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>function</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=function&amp;rev=1447277161&amp;do=diff</link>
+        <description>Functional Description
+
+Configure the module
+
+You configure a VSCP module by writing content into the modules registers.
+You can do this manually or with the wizard available in VSCP works. Using
+the wizard is absolutely the easiest way to set up functionality.</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?id=replacing_the_firmware&amp;rev=1447277138&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:25:38+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>replacing_the_firmware</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?id=replacing_the_firmware&amp;rev=1447277138&amp;do=diff</link>
+        <description>Updating the firmware
+
+New firmware is released from time to time for all our modules. We expect this to be true also for the Paris module as it is an active project. The process of updating the firmware of the module is a simple one. Just follow the steps outlined in the</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot8.png&amp;ns=&amp;rev=1447172826&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:06+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot8.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot8.png&amp;ns=&amp;rev=1447172826&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106740&amp;amp;tok=43ae1b&amp;amp;media=boot8.png&quot; alt=&quot;boot8.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot7.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:05+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot7.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot7.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106742&amp;amp;tok=b35cb8&amp;amp;media=boot7.png&quot; alt=&quot;boot7.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot4.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:05+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot4.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot4.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106740&amp;amp;tok=2045e7&amp;amp;media=boot4.png&quot; alt=&quot;boot4.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot6.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:05+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot6.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot6.png&amp;ns=&amp;rev=1447172825&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106740&amp;amp;tok=e111a3&amp;amp;media=boot6.png&quot; alt=&quot;boot6.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot5.png&amp;ns=&amp;rev=1447172824&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:04+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot5.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot5.png&amp;ns=&amp;rev=1447172824&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106748&amp;amp;tok=b9f414&amp;amp;media=boot5.png&quot; alt=&quot;boot5.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot3.png&amp;ns=&amp;rev=1447172823&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:03+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot3.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot3.png&amp;ns=&amp;rev=1447172823&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106743&amp;amp;tok=f017c6&amp;amp;media=boot3.png&quot; alt=&quot;boot3.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot2.png&amp;ns=&amp;rev=1447172822&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:02+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot2.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot2.png&amp;ns=&amp;rev=1447172822&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106740&amp;amp;tok=85e2f0&amp;amp;media=boot2.png&quot; alt=&quot;boot2.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="https://www.grodansparadis.com/paris/manual/doku.php?image=boot1.png&amp;ns=&amp;rev=1447172823&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-10T17:27:03+00:00</dc:date>
+        <dc:creator>admin (admin@undisclosed.example.com)</dc:creator>
+        <title>boot1.png - created</title>
+        <link>https://www.grodansparadis.com/paris/manual/doku.php?image=boot1.png&amp;ns=&amp;rev=1447172823&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;https://www.grodansparadis.com/paris/manual/lib/exe/fetch.php?w=500&amp;h=299&amp;t=1518106740&amp;amp;tok=a7521d&amp;amp;media=boot1.png&quot; alt=&quot;boot1.png&quot; /&gt;</description>
+    </item>
+</rdf:RDF>

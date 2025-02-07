@@ -1,0 +1,7 @@
+base     simple_sidebar
+author   Myron Turner
+email    turnermm03@shaw.ca
+date     2014-12-12
+name     Simple Sidebar Template
+desc     Template with Sidebar, based on old default template
+url      https://www.dokuwiki.org/template:simple_sidebar

@@ -1,0 +1,8 @@
+a:19:{i:0;a:3:{i:0;s:14:"document_start";i:1;a:0:{}i:2;i:0;}i:1;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:32:"faq - Frequently Asked Questions";i:1;i:1;i:2;i:1;}i:2;i:1;}i:2;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:1;}i:2;i:1;}i:3;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:1;}i:4;a:3:{i:0;s:13:"emphasis_open";i:1;a:0:{}i:2;i:49;}i:5;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:22:"Not many of those yet!";}i:2;i:51;}i:6;a:3:{i:0;s:14:"emphasis_close";i:1;a:0:{}i:2;i:73;}i:7;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:75;}i:8;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:75;}i:9;a:3:{i:0;s:9:"linebreak";i:1;a:0:{}i:2;i:78;}i:10;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:81;}i:11;a:3:{i:0;s:2:"hr";i:1;a:0:{}i:2;i:81;}i:12;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:81;}i:13;a:3:{i:0;s:13:"internalmedia";i:1;a:7:{i:0;s:16:":grodan_logo.png";i:1;s:0:"";i:2;s:6:"center";i:3;s:3:"100";i:4;N;i:5;s:5:"cache";i:6;s:7:"details";}i:2;i:88;}i:14;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:1:"
+";}i:2;i:115;}i:15;a:3:{i:0;s:4:"html";i:1;a:1:{i:0;s:307:"
+<center>
+<b>Paradise of the Frog AB</b> Brattbergavägen 17, 820 50 LOS, SWEDEN<br />
+<b>email:</b> <a href="info@grodansparadis.com">info@paradiseofthefrog.com</a> <b>phone:</b> +46 (0)8 40011835<br />
+<b>web:</b> <a href="http://www.grodansparadis.com">http://www.paradiseofthefrog.com</a><br>
+</center>
+";}i:2;i:122;}i:16;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:436;}i:17;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:438;}i:18;a:3:{i:0;s:12:"document_end";i:1;a:0:{}i:2;i:438;}}

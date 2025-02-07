@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.vscp.org/docs/vscpworks/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.vscp.org/docs/vscpworks/feed.php">
+        <title>VSCP Works</title>
+        <description></description>
+        <link>http://www.vscp.org/docs/vscpworks/</link>
+        <image rdf:resource="http://www.vscp.org/docs/vscpworks/lib/tpl/usabletemplate/images/favicon.ico" />
+       <dc:date>2015-03-02T09:33:48+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=data_coding&amp;rev=1410113146&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=decision_matrix&amp;rev=1410113146&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=globally_unique_identifiers&amp;rev=1410113146&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=introduction&amp;rev=1421877405&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=level_i_events&amp;rev=1410113147&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_events&amp;rev=1410113146&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_specifics&amp;rev=1410113146&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=module_description_file&amp;rev=1410113147&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=physical_level_lower_level_protocols&amp;rev=1410113147&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=register_abstraction_model&amp;rev=1410113147&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=start&amp;rev=1421877205&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1410113150&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_level_i_specifics&amp;rev=1410113148&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_multicast&amp;rev=1410113149&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.vscp.org/docs/vscpworks/lib/tpl/usabletemplate/images/favicon.ico">
+        <title>VSCP Works</title>
+        <link>http://www.vscp.org/docs/vscpworks/</link>
+        <url>http://www.vscp.org/docs/vscpworks/lib/tpl/usabletemplate/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=data_coding&amp;rev=1410113146&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:46+01:00</dc:date>
+        <title>data_coding</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=data_coding&amp;rev=1410113146&amp;do=diff</link>
+        <description>Data coding</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=decision_matrix&amp;rev=1410113146&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:46+01:00</dc:date>
+        <title>decision_matrix</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=decision_matrix&amp;rev=1410113146&amp;do=diff</link>
+        <description>Decision Matrix</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=globally_unique_identifiers&amp;rev=1410113146&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:46+01:00</dc:date>
+        <title>globally_unique_identifiers</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=globally_unique_identifiers&amp;rev=1410113146&amp;do=diff</link>
+        <description>Globally Unique Identifiers</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=introduction&amp;rev=1421877405&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-01-21T22:56:45+01:00</dc:date>
+        <title>introduction</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=introduction&amp;rev=1421877405&amp;do=diff</link>
+        <description>Introduction
+
+VSCP Works is a graphical toolbox for VSCP developers and users that is available for Linux and Windows. It can be used to update code in nodes locally connected and nodes that sit at a location on the other side of the earth. It can be used to view events sent by a node, to configure a node using a high end interface and to simulate a node. New functionality will be added to VSCP Works as needs arise.</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=level_i_events&amp;rev=1410113147&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:47+01:00</dc:date>
+        <title>level_i_events</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=level_i_events&amp;rev=1410113147&amp;do=diff</link>
+        <description>Level I Events</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_events&amp;rev=1410113146&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:46+01:00</dc:date>
+        <title>level_ii_events</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_events&amp;rev=1410113146&amp;do=diff</link>
+        <description>Level II Events</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_specifics&amp;rev=1410113146&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:46+01:00</dc:date>
+        <title>level_ii_specifics</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_specifics&amp;rev=1410113146&amp;do=diff</link>
+        <description>VSCP Level II Specifics</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=module_description_file&amp;rev=1410113147&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:47+01:00</dc:date>
+        <title>module_description_file</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=module_description_file&amp;rev=1410113147&amp;do=diff</link>
+        <description>Module Description File</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=physical_level_lower_level_protocols&amp;rev=1410113147&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:47+01:00</dc:date>
+        <title>physical_level_lower_level_protocols</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=physical_level_lower_level_protocols&amp;rev=1410113147&amp;do=diff</link>
+        <description>Physical Level/Lower level protocols</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=register_abstraction_model&amp;rev=1410113147&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:47+01:00</dc:date>
+        <title>register_abstraction_model</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=register_abstraction_model&amp;rev=1410113147&amp;do=diff</link>
+        <description>Register Abstraction Model</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=start&amp;rev=1421877205&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-01-21T22:53:25+01:00</dc:date>
+        <title>start</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=start&amp;rev=1421877205&amp;do=diff</link>
+        <description>VSCP Works
+
+Document reversion: 1.0.0  2015-01-21
+
+Copyright © 2000-2015 Åke Hedman, Grodans Paradis AB, &lt;akhe@grodansparadis.com&gt; 
+
+	*  Introduction
+	*  Getting Started
+
+VSCP Works has not yet been transferred from the the document to a proper web format. Until it is documentation can be found here</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1410113150&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:50+01:00</dc:date>
+        <title>vscp_boot_loader_algorithm</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1410113150&amp;do=diff</link>
+        <description>VSCP boot loader algorithm</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_level_i_specifics&amp;rev=1410113148&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:48+01:00</dc:date>
+        <title>vscp_level_i_specifics</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_level_i_specifics&amp;rev=1410113148&amp;do=diff</link>
+        <description>VSCP Level I Specifics</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_multicast&amp;rev=1410113149&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-09-07T20:05:49+01:00</dc:date>
+        <title>vscp_multicast</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_multicast&amp;rev=1410113149&amp;do=diff</link>
+        <description>VSCP Multicast</description>
+    </item>
+</rdf:RDF>

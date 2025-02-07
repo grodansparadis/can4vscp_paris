@@ -1,0 +1,9 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1434461873;s:8:"modified";i:1447277080;}s:7:"creator";s:10:"Ake Hedman";s:4:"user";s:5:"admin";s:11:"last_change";b:0;s:11:"contributor";a:1:{s:5:"admin";s:10:"Ake Hedman";}s:5:"title";s:15:"Getting started";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:15:"getting_started";s:5:"title";s:15:"Getting started";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:367:"Getting started
+
+You need
+
+	*  RJ-45 patch cables or similar.
+	*  A stable +9V - +28V DC power source.
+	*  A host computer with a serial or USB interface.
+
+The Paris module is powered from the CAN4VSCP bus. This article have information on how the bus is powered and set up. Follow it for a reliable setup. Don't forget the 120 ohm terminators at each end of the bus.";}s:8:"relation";a:2:{s:5:"media";a:1:{s:15:"grodan_logo.png";b:1;}s:10:"firstimage";s:15:"grodan_logo.png";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1434461873;s:8:"modified";i:1447277080;}s:7:"creator";s:10:"Ake Hedman";s:4:"user";s:5:"admin";s:11:"last_change";b:0;s:11:"contributor";a:1:{s:5:"admin";s:10:"Ake Hedman";}}}

@@ -1,0 +1,45 @@
+<TABLE cellspacing=4>
+<tr><td class="menu_title" align='left'>Manual</td>
+<tr><td><a href="doku.php?id=start" class="menu_item">Startpage</a></td></tr>
+<tr><td><a href="doku.php?id=introduction" class="menu_item">Introduction</a></td></tr>
+<tr><td><a href="doku.php?id=getting_started" class="menu_item">Getting started</a></td></tr>
+<tr><td><a href="doku.php?id=hardware" class="menu_item">Hardware</a> </td></tr>
+<tr><td><a href="doku.php?id=can4vscp_cabling" class="menu_item">CAN4VSCP Cabling</a> </td></tr>
+<tr><td><a href="doku.php?id=replacing_the_firmware" class="menu_item">Updating firmware</a></td></tr>
+<tr><td><a href="doku.php?id=function" class="menu_item">Functional descrip.</a></td></tr>
+<tr><td><a href="doku.php?id=registers" class="menu_item">Registers</a></td></tr>
+<tr><td><a href="doku.php?id=alarms" class="menu_item">Alarms</a></td></tr>
+<tr><td><a href="doku.php?id=decisionmatrix" class="menu_item">Decision Matrix</a></td></tr>
+<tr><td><a href="doku.php?id=events" class="menu_item">Events</a></td></tr>
+<tr><td><a href="doku.php?id=recipes" class="menu_item">Recipes</a></td></tr>
+<tr><td><a href="doku.php?id=faq" class="menu_item">Faq</a></td></tr>
+
+
+<tr><td>&nbsp;</td> 
+<tr><td class="menu_title" align='left'>Project</td>
+<tr><td><a href="http://www.grodansparadis.com/paris/paris.html" class="menu_item">Project page</a></td></tr>
+<tr><td><a href="doku.php?id=change_log_1" class="menu_item">change log</a></td></tr>
+
+<tr><td>&nbsp;</td> 
+<tr><td class="menu_title" align='left'>Buy</td>
+<tr><td><a href="http://www.frogshop.se/index.php?route=product/product&product_id=50" class="menu_item">Paris</a> </td></tr>
+<tr><td>&nbsp;</td> 
+<tr><td class="menu_title" align='left'>Related docs.</td>
+<tr><td><a href="http://www.vscp.org/docs/vscpspec/doku.php?id=start" class="menu_item">VSCP Specification</a> </td></tr>
+<tr><td><a href="http://www.vscp.org/docs/vscpd/doku.php?id=start" class="menu_item">VSCP Daemon</a> </td></tr>
+<tr><td><a href="http://www.vscp.org/docs/vscphelper/doku.php?id=start" class="menu_item">VSCP Helper lib</a> </td></tr>
+<tr><td><a href="http://www.vscp.org/docs/vscpfirmware/doku.php?id=start" class="menu_item">VSCP Firmware</a> </td></tr>
+
+<tr><td>&nbsp;</td> 
+<tr><td class="menu_title" align='left'>Contact</td>
+<tr><td>
+  
+ <?php
+    $addr = _hide_email("info@grodansparadis.com");
+    $name = 'Contact'; 
+    $email = "<a href=\"mailto:$addr\" class=\"menu_item\" style=\"font-weight:bold;\">$name</a>";   
+    echo "&nbsp;$email";
+ ?>
+</td>
+</TABLE>
+

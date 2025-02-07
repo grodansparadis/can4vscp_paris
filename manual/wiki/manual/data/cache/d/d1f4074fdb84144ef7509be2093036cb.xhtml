@@ -1,0 +1,98 @@
+
+<h1 class="sectionedit1" id="decision_matrix">Decision Matrix</h1>
+<div class="level1">
+
+<p>
+The full functionality of the decision matrix is explained <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix" rel="ugc nofollow">in the specification</a>. 
+</p>
+
+<p>
+Paris have a decision matrix consisting of eight entries. This matrix can be used to control the relays. Possible actions are listed in the table below.
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Action </th><th class="col1"> Action code </th><th class="col2"> Parameter </th><th class="col3">Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>NOOP</strong>  </td><td class="col1 centeralign">  0 (0x00)  </td><td class="col2 centeralign">  Not used  </td><td class="col3"> No operation. Will do absolutely nothing. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>ACTIVATE</strong>  </td><td class="col1 centeralign">  1 (0x01)  </td><td class="col2 centeralign">  Relays to activate (bit array)  </td><td class="col3"> Activate relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. That is a position with a set bit will activate the corresponding relay. Byte 1 is Zone and byte 2 is sub-zone and must be equal to register content to trigger action. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>DEACTICATE</strong>  </td><td class="col1 centeralign">  2 (0x02)  </td><td class="col2"> Relays to deactivate (bit array) </td><td class="col3"> Deactivate relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. That is a position with a set bit will inactivate the corresponding relay. Byte 1 is Zone and byte 2 is sub-zone and must be equal to register content to trigger action. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>PULSEON</strong>  </td><td class="col1 centeralign">  3 (0x03)  </td><td class="col2 rightalign">  Relays to pulse (bit array) </td><td class="col3"> Pulse relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. That is a position with a set bit will toggle the corresponding relay. Byte 1 is Zone and byte 2 is sub-zone and must be equal to register content to trigger action. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  4 (0x04)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  5 (0x05)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  6 (0x06)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  7 (0x07)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  8 (0x08)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  9 (0x09)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 centeralign">  <strong>STATUS</strong>  </td><td class="col1 centeralign">  10 (0x0a)  </td><td class="col2 centeralign">  Relays to send status for (bit array)  </td><td class="col3"> Send relay status. The argument is a bit array where bit 0 is relay 1 and so on. That is a position with a set bit will have a status event sent for the corresponding relay.</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  11 (0x0b)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  12 (0x0c)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  13 (0x0d)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  14 (0x0e)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0 centeralign">  -  </td><td class="col1 centeralign">  15 (0x0f)  </td><td class="col2 centeralign">  -  </td><td class="col3"> Reserved. </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 centeralign">  <strong>DISABLE</strong>  </td><td class="col1 centeralign">  16 (0x10)  </td><td class="col2 centeralign">  Relays to disable (bit array)  </td><td class="col3"> Disable relay(s) given by argument. The argument is a bit array where bit 0 is relay 1 and so on. That is a position with a set bit will disable the corresponding relay. Byte 1 is Zone and byte 2 is zone page and must be equal to register content to trigger action. </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;335-2489&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Decision Matrix&quot;,&quot;hid&quot;:&quot;decision_matrix&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-2491&quot;} -->
+<h2 class="sectionedit3" id="example">Example</h2>
+<div class="level2">
+
+<p>
+<em>tbd</em>
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+<a href="/paris/manual/lib/exe/detail.php?id=decisionmatrix&amp;media=grodan_logo.png" class="media" title="grodan_logo.png"><img src="/paris/manual/lib/exe/fetch.php?w=100&amp;tok=9032da&amp;media=grodan_logo.png" class="mediacenter" alt="" width="100" /></a>
+
+<center>
+<b>Paradise of the Frog AB</b> Brattbergavägen 17, 820 50 LOS, SWEDEN<br />
+<b>email:</b> <a href="info@grodansparadis.com">info@paradiseofthefrog.com</a> <b>phone:</b> +46 (0)8 40011835<br />
+<b>web:</b> <a href="http://www.grodansparadis.com">http://www.paradiseofthefrog.com</a><br>
+</center>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Example&quot;,&quot;hid&quot;:&quot;example&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;2492-&quot;} -->

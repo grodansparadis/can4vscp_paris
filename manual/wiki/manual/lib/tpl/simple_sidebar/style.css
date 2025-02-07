@@ -1,0 +1,87 @@
+/* Settings Optimized for 1024 pixel secreen width  */
+
+/** Side Bar width and page width are controlled by the width attribute of div.right_page,
+ /*  which is set to 80%. Setting it to  a greater percentage of the overall width makes the
+ /*  side bar smaller and decreasing it makes the sidebar bigger.  Text which is greater
+ /*  than the width of the sidebar will run over into the main page.  
+*/
+div#top_bar {    
+        padding: 0.2em 0.53em 0 0;
+        width: __top_bar_width__;        
+        background-color: white;
+        margin: auto;
+        padding-left: 8px;
+        padding-right:8px;
+}
+
+
+div#bar__bottom {    
+        padding: 0.2em 0.53em 0 0;
+        width:  __bottom_bar_width__;
+        padding-left: 8px;
+        padding-right:8px;
+        float:right;
+}
+div#footer { clear: right; 
+             padding-top: .5em; padding-left: 12em;    }
+
+body {
+     /* uncomment following line to revert to smaller font size */
+     /*   font: 9pt bold Verdana,"Lucida Grande",Lucida,Helvetica,Arial,sans-serif;color:#333333;  */
+         overflow: scroll;  
+    }
+
+
+div#wrapper {
+    margin:auto; ; background-color:#ffffff;
+    padding:0.2em 0.53em 0 0; width: __page_width__ ;
+ 
+    }
+
+#toggler { 
+   padding-top: 0px; 
+   padding-bottom: 0px; 
+   padding-left: .5em;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-left: 16px;
+} 
+
+div.left_sidebar  {
+    float:left;  padding:0.2em 0.5em 1em 2em;  display:block
+   
+    }
+div.left_sidebar.ssb_admin  {    
+    display:none;
+}
+div.right_page {
+    float:right;  padding:0px; border-left:1px solid #ccc; width: __right_width__ ;
+  
+    }
+div.right_page.ssb_admin {
+      padding:0px; border-left:1px solid #ccc; width: 101%;  
+
+    }
+.menu_item { font-size: 9pt; font-weight: bold;}
+.menu_title { font-size: 10pt; font-weight: bold; 
+              color: #436976;  background-color:#DEE7EC;
+              line-height: 150%;
+            }
+
+div.meta { text-align: right; }
+
+div.dokuwiki div.tags {
+  border-top: 2px dotted __border__;
+  font-size: 95%;
+  text-align: right;
+  clear: both;
+}
+
+div.dokuwiki div.tags span {
+  background: transparent url(images/tag.gif) 0px 1px no-repeat;
+  padding: 1px 0px 1px 16px;
+}
+
+#bar__bottom.ssb_admin { margin-left: 0px;  width: 980px;}
+
+#personal_ssb	{ overflow: auto;  width:  __personal_sbar__width; }

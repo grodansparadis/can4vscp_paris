@@ -1,0 +1,103 @@
+
+<h1 class="sectionedit1" id="updating_the_firmware">Updating the firmware</h1>
+<div class="level1">
+
+<p>
+New firmware is released from time to time for all our modules. We expect this to be true also for the Odessa module as it is an active project. The process of updating the firmware of the module is a simple one. Just follow the steps outlined in the <a href="http://www.vscp.org/docs/vscpworks/doku.php?id=start" class="urlextern" title="http://www.vscp.org/docs/vscpworks/doku.php?id=start"  rel="nofollow">VSCP Works documentation</a>.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Updating the firmware" [1-373] -->
+<h2 class="sectionedit2" id="where_is_the_source_for_the_firmware">Where is the source for the firmware?</h2>
+<div class="level2">
+
+<p>
+You can find the latest source for the firmware <a href="https://github.com/grodansparadis/can4vscp_beijing/tree/master/firmware" class="urlextern" title="https://github.com/grodansparadis/can4vscp_beijing/tree/master/firmware"  rel="nofollow">here</a>. <strong>You should use the relocated version of the firmware.</strong>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Where is the source for the firmware?" [374-614] -->
+<h2 class="sectionedit3" id="step_by_step_update_process">Step by step update process</h2>
+<div class="level2">
+
+<p>
+Enter the bootloader in the menu
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot1.png" class="media" title="boot1.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=0de6ef&amp;media=boot1.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+Select the interface the device is on
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot2.png" class="media" title="boot2.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=d8922c&amp;media=boot2.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot3.png" class="media" title="boot3.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=edd74b&amp;media=boot3.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+Select the nickname for the device to update firmware on. Make sure this is the correct id.  If this is the first time you update a node and only the bootloader is present use <strong>0xfe</strong>
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot4.png" class="media" title="boot4.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=0bbe10&amp;media=boot4.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+On a node with working firmware the bootloader will be discovered automatically. If not select the algorithm (Microchip pic 1) for the device,
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot5.png" class="media" title="boot5.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=79fb20&amp;media=boot5.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+Load the firmware file using “local file”. <strong>You should use the relocated version of the firmware.</strong>
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot6.png" class="media" title="boot6.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=ca42c4&amp;media=boot6.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+Program the device
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot7.png" class="media" title="boot7.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=5848b2&amp;media=boot7.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=boot8.png" class="media" title="boot8.png"><img src="/beijing/manual/lib/exe/fetch.php?w=500&amp;tok=8dd695&amp;media=boot8.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+Due to a bug in VSCP Works restart VSCP works after the bootloader process is ready. 
+</p>
+
+<p>
+Your device should now be available with the same id as you entered previously.
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+<a href="/beijing/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=grodan_logo.png" class="media" title="grodan_logo.png"><img src="/beijing/manual/lib/exe/fetch.php?w=100&amp;tok=9032da&amp;media=grodan_logo.png" class="mediacenter" alt="" width="100" /></a>
+<br/>
+
+<strong>Grodans Paradis AB</strong> Brattbergavägen 17 820 50 LOS SWEDEN 
+<strong>email:</strong> <a href="mailto:&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;</a> <strong>phone:</strong> +46 (0)8 40011835 
+<strong>web:</strong><a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">http://www.grodansparadis.com</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Step by step update process" [615-] -->

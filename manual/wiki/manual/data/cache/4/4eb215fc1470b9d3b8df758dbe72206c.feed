@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.grodansparadis.com/paris/manual/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.grodansparadis.com/paris/manual/feed.php">
+        <title>Paris Manual /</title>
+        <description></description>
+        <link>http://www.grodansparadis.com/paris/manual/</link>
+        <image rdf:resource="http://www.grodansparadis.com/paris/manual/lib/tpl/simple_sidebar/images/favicon.ico" />
+       <dc:date>2016-03-21T12:13:33+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=alarms&amp;rev=1447277190&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=can4vscp_cabling&amp;rev=1447277122&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=change_log_1&amp;rev=1447277254&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=data_coding&amp;rev=1447238296&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=decision_matrix&amp;rev=1447238297&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix&amp;rev=1447277205&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=events&amp;rev=1447277223&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=faq&amp;rev=1447277238&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=function&amp;rev=1447277161&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=getting_started&amp;rev=1447277080&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=globally_unique_identifiers&amp;rev=1447238297&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=hardware&amp;rev=1447277099&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=introduction&amp;rev=1447277066&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=level_i_events&amp;rev=1447238298&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=level_ii_events&amp;rev=1447238298&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=level_ii_specifics&amp;rev=1447238298&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=module_description_file&amp;rev=1447238298&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=physical_level_lower_level_protocols&amp;rev=1447238298&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=recipes&amp;rev=1453803781&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=register_abstraction_model&amp;rev=1447238299&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=registers&amp;rev=1448228039&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=replacing_the_firmware&amp;rev=1447277138&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=start&amp;rev=1447277042&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1447238299&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_level_i_specifics&amp;rev=1447238299&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_multicast&amp;rev=1447238299&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.grodansparadis.com/paris/manual/lib/tpl/simple_sidebar/images/favicon.ico">
+        <title>Paris Manual</title>
+        <link>http://www.grodansparadis.com/paris/manual/</link>
+        <url>http://www.grodansparadis.com/paris/manual/lib/tpl/simple_sidebar/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=alarms&amp;rev=1447277190&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:26:30+01:00</dc:date>
+        <title>alarms</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=alarms&amp;rev=1447277190&amp;do=diff</link>
+        <description>Alarms
+ Bit Description  0  Relay 1 protection timer elapsed.  1  Relay 2 protection timer elapsed.  2  Relay 3 protection timer elapsed.  3  Relay 4 protection timer elapsed.  4  Relay 5 protection timer elapsed.  5  Relay 6 protection timer elapsed.</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=can4vscp_cabling&amp;rev=1447277122&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:25:22+01:00</dc:date>
+        <title>can4vscp_cabling</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=can4vscp_cabling&amp;rev=1447277122&amp;do=diff</link>
+        <description>CAN4VSCP Cabling
+
+Cable length
+
+CAN4VSCP always communicate with 125kbps. This means that if you use a good quality cable it can be up to a maximum of 500 meters using AWG24AWG24 or similar (CAT5) . Actual length depend on the environment and other parameters. Drops with a maximum length of 24 meters can be taken from this cable and the sum of all drops must not exceed a total of 120 meters.</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=change_log_1&amp;rev=1447277254&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:27:34+01:00</dc:date>
+        <title>change_log_1</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=change_log_1&amp;rev=1447277254&amp;do=diff</link>
+        <description>Change Log for Paris
+
+For current changes see HISTORY 
+
+2015-11-11 AKHE - Started this change log.
+
+
+
+
+----------</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=data_coding&amp;rev=1447238296&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:16+01:00</dc:date>
+        <title>data_coding</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=data_coding&amp;rev=1447238296&amp;do=diff</link>
+        <description>Data coding</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=decision_matrix&amp;rev=1447238297&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:17+01:00</dc:date>
+        <title>decision_matrix</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=decision_matrix&amp;rev=1447238297&amp;do=diff</link>
+        <description>Decision Matrix</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix&amp;rev=1447277205&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:26:45+01:00</dc:date>
+        <title>decisionmatrix</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix&amp;rev=1447277205&amp;do=diff</link>
+        <description>Decision Matrix
+
+The full functionality of the decision matrix is explained in the specification. 
+
+Paris have a decision matrix consisting of eight entries. This matrix can be used to control the relays. Possible actions are listed in the table below.
+ Action  Action code</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=events&amp;rev=1447277223&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:27:03+01:00</dc:date>
+        <title>events</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=events&amp;rev=1447277223&amp;do=diff</link>
+        <description>Events
+
+Here the events sent by the module is described.
+ Event  Description   CLASS1.INFORMATION (20) Type=3, On   If enabled the event is sent when a relay goes to its active state. Index is 0 for relay 1, 1 for relay 2 and so on. zone and sub-zone set accordingly. Sub-zone for relay is used if it's not zero.</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=faq&amp;rev=1447277238&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:27:18+01:00</dc:date>
+        <title>faq</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=faq&amp;rev=1447277238&amp;do=diff</link>
+        <description>faq - Frequently Asked Questions
+
+Not many of those yet!
+
+
+
+
+----------</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=function&amp;rev=1447277161&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:26:01+01:00</dc:date>
+        <title>function</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=function&amp;rev=1447277161&amp;do=diff</link>
+        <description>Functional Description
+
+Configure the module
+
+You configure a VSCP module by writing content into the modules registers.
+You can do this manually or with the wizard available in VSCP works. Using
+the wizard is absolutely the easiest way to set up functionality.</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=getting_started&amp;rev=1447277080&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:24:40+01:00</dc:date>
+        <title>getting_started</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=getting_started&amp;rev=1447277080&amp;do=diff</link>
+        <description>Getting started
+
+You need
+
+	*  RJ-45 patch cables or similar.
+	*  A stable +9V - +28V DC power source.
+	*  A host computer with a serial or USB interface.
+
+The Paris module is powered from the CAN4VSCP bus. This article have information on how the bus is powered and set up. Follow it for a reliable setup. Don't forget the 120 ohm terminators at each end of the bus.</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=globally_unique_identifiers&amp;rev=1447238297&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:17+01:00</dc:date>
+        <title>globally_unique_identifiers</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=globally_unique_identifiers&amp;rev=1447238297&amp;do=diff</link>
+        <description>Globally Unique Identifiers</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=hardware&amp;rev=1447277099&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:24:59+01:00</dc:date>
+        <title>hardware</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=hardware&amp;rev=1447277099&amp;do=diff</link>
+        <description>Hardware
+
+Most current information
+
+You can find the most current information about the Beijing module at 
+&lt;http://www.grodansparadis.com/paris/paris.html&gt;. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
+
+Installing the module
+
+Connect the module to the CAN4VSCP bus. The red LED on the module should light up indicating that the device is powered. If this is the first time you start up the module the green lamp next to the initializing button …</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=introduction&amp;rev=1447277066&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:24:26+01:00</dc:date>
+        <title>introduction</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=introduction&amp;rev=1447277066&amp;do=diff</link>
+        <description>Introduction
+
+[ Beijing ]
+
+Paris is a relay module that connects to a CAN4VSCP bus and can control
+up to seven external relays. The module can be attached to a standard DIN
+Rail or be mounted directly on a wall. The module fully adopts to the CAN4VSCP specification and can be powered directly over the bus with a 9-28V DC power source. It has a rich register set for configuration and many information events defined. It also have a decision matrix for easy dynamic event handling.</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=level_i_events&amp;rev=1447238298&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:18+01:00</dc:date>
+        <title>level_i_events</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=level_i_events&amp;rev=1447238298&amp;do=diff</link>
+        <description>Level I Events</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=level_ii_events&amp;rev=1447238298&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:18+01:00</dc:date>
+        <title>level_ii_events</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=level_ii_events&amp;rev=1447238298&amp;do=diff</link>
+        <description>Level II Events</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=level_ii_specifics&amp;rev=1447238298&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:18+01:00</dc:date>
+        <title>level_ii_specifics</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=level_ii_specifics&amp;rev=1447238298&amp;do=diff</link>
+        <description>VSCP Level II Specifics</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=module_description_file&amp;rev=1447238298&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:18+01:00</dc:date>
+        <title>module_description_file</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=module_description_file&amp;rev=1447238298&amp;do=diff</link>
+        <description>Module Description File</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=physical_level_lower_level_protocols&amp;rev=1447238298&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:18+01:00</dc:date>
+        <title>physical_level_lower_level_protocols</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=physical_level_lower_level_protocols&amp;rev=1447238298&amp;do=diff</link>
+        <description>Physical Level/Lower level protocols</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=recipes&amp;rev=1453803781&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2016-01-26T11:23:01+01:00</dc:date>
+        <title>recipes</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=recipes&amp;rev=1453803781&amp;do=diff</link>
+        <description>Recipes
+
+The story about an old Fridge: &lt;http://grodansparadis.com/wordpress/?p=1384&gt;
+
+
+
+
+----------</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=register_abstraction_model&amp;rev=1447238299&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:19+01:00</dc:date>
+        <title>register_abstraction_model</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=register_abstraction_model&amp;rev=1447238299&amp;do=diff</link>
+        <description>Register Abstraction Model</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=registers&amp;rev=1448228039&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-22T22:33:59+01:00</dc:date>
+        <title>registers</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=registers&amp;rev=1448228039&amp;do=diff</link>
+        <description>Registers
+
+All VSCP modules have a set of 8-bit registers defined. Some of them (register 128-255) are predefined and the information in them are the same for all VSCP modules. See the VSCP specification for a description of their content. 
+
+The lower 128 register positions are used for module specific registers. It is normally here you find registers with which you configure your module. You can also find registers where you typically can read status information such as measurement data from th…</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=replacing_the_firmware&amp;rev=1447277138&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:25:38+01:00</dc:date>
+        <title>replacing_the_firmware</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=replacing_the_firmware&amp;rev=1447277138&amp;do=diff</link>
+        <description>Updating the firmware
+
+New firmware is released from time to time for all our modules. We expect this to be true also for the Paris module as it is an active project. The process of updating the firmware of the module is a simple one. Just follow the steps outlined in the</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=start&amp;rev=1447277042&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T22:24:02+01:00</dc:date>
+        <title>start</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=start&amp;rev=1447277042&amp;do=diff</link>
+        <description>CAN4VSCP Paris module
+
+Document reversion: 1.1.0  2015-11-12 
+
+Copyright © 2000-2015 Paradise of the Frog AB, &lt;contact&gt;
+
+[ Paris ]
+
+This documentation is for the Paris module. The module is available for international purchase from the FrogShop.
+
+	*  Introduction
+	*  Getting Started
+	*  Hardware
+	*  CAN4VSCP cabling
+	*  Updating the firmware
+	*  Registers
+	*  Decision Matrix
+	*  faq
+
+Disclaimer: © 2011-2015 Grodans Paradis AB. All rights reserved. Grodans Paradis AB®, logo and combinations there…</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1447238299&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:19+01:00</dc:date>
+        <title>vscp_boot_loader_algorithm</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1447238299&amp;do=diff</link>
+        <description>VSCP boot loader algorithm</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_level_i_specifics&amp;rev=1447238299&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:19+01:00</dc:date>
+        <title>vscp_level_i_specifics</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_level_i_specifics&amp;rev=1447238299&amp;do=diff</link>
+        <description>VSCP Level I Specifics</description>
+    </item>
+    <item rdf:about="http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_multicast&amp;rev=1447238299&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-11-11T11:38:19+01:00</dc:date>
+        <title>vscp_multicast</title>
+        <link>http://www.grodansparadis.com/paris/manual/doku.php?id=vscp_multicast&amp;rev=1447238299&amp;do=diff</link>
+        <description>VSCP Multicast</description>
+    </item>
+</rdf:RDF>

@@ -1,0 +1,26 @@
+====== Alarms ======
+
+^ Bit ^Description ^
+| 0 | Relay 1 protection timer elapsed. |
+| 1 | Relay 2 protection timer elapsed. |
+| 2 | Relay 3 protection timer elapsed. |
+| 3 | Relay 4 protection timer elapsed. |
+| 4 | Relay 5 protection timer elapsed. |
+| 5 | Relay 6 protection timer elapsed. |
+| 6 | Relay 7 protection timer elapsed. |
+| 7 | Reserved.  |
+
+Remember that alarm bits are cleared when read.
+
+
+\\ 
+---- 
+{{ :grodan_logo.png?100 |}}
+<html>
+<center>
+<b>Paradise of the Frog AB</b> Brattbergavägen 17, 820 50 LOS, SWEDEN<br />
+<b>email:</b> <a href="info@grodansparadis.com">info@paradiseofthefrog.com</a> <b>phone:</b> +46 (0)8 40011835<br />
+<b>web:</b> <a href="http://www.grodansparadis.com">http://www.paradiseofthefrog.com</a><br>
+</center>
+</html>
+

@@ -1,0 +1,70 @@
+
+<h1 class="sectionedit1" id="events">Events</h1>
+<div class="level1">
+
+<p>
+Here the events sent by the module is described.
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Event </th><th class="col1"> Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_3_0x03_on" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_3_0x03_on"  rel="nofollow">CLASS1.INFORMATION (20) Type=3, On</a>  </td><td class="col1"> An I/O channel has been set to its ON position. For an output this means that it has been set high. For a channel set as an input it means the channel input turned high. The channel is checked every second for a change.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_4_0x04_off" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_4_0x04_off"  rel="nofollow">CLASS1.INFORMATION (20) Type=4, Off</a>  </td><td class="col1"> An I/O channel has been set to its OFF position. For an output this means that it has been set low. For a channel set as an input it means the channel input turned low. The channel is checked every second for a change. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.control#type_5_0x05_turnon" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.control#type_5_0x05_turnon"  rel="nofollow">CLASS1.CONTROL (30) Type=5, TurnOn</a>  </td><td class="col1"> An I/O channel has been set to its ON position. The channel is checked every second for a change. This is only valid for a channel configured as input. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.control#type_6_0x06_turnoff" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.control#type_6_0x06_turnoff"  rel="nofollow">CLASS1.CONTROL (30) Type=6, TurnOff</a>  </td><td class="col1"> An I/O channel has been set to its OFF position. The channel is checked every second for a change. This is only valid for a channel configured as input. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.data#type_1_0x01_i_o_value" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.data#type_1_0x01_i_o_value"  rel="nofollow">CLASS1.DATA (15) Type=1, I/O Value</a>  </td><td class="col1"> Input/Output data steam event sent on regular intervals if activated.<br/>
+<br/>
+<strong><em class="u">Byte 0</em></strong><br/>
+<strong>Bit 7</strong> - Reserved.<br/>
+<strong>Bit 6</strong> - Reserved.<br/>
+<strong>Bit 5</strong> - Reserved.<br/>
+<strong>Bit 4</strong> - Reserved.<br/>
+<strong>Bit 3</strong> - Reserved.<br/>
+<strong>Bit 2</strong> - Reserved.<br/>
+<strong>Bit 1</strong> - Channel 9.<br/>
+<strong>Bit 0</strong> - Channel 8.<br/>
+<br/>
+<strong><em class="u">Byte 1</em></strong><br/>
+<strong>Bit 7</strong> - Channel 7.<br/>
+<strong>Bit 6</strong> - Channel 6.<br/>
+<strong>Bit 5</strong> - Channel 5.<br/>
+<strong>Bit 4</strong> - Channel 4.<br/>
+<strong>Bit 3</strong> - Channel 3.<br/>
+<strong>Bit 2</strong> - Channel 2.<br/>
+<strong>Bit 1</strong> - Channel 1.<br/>
+<strong>Bit 0</strong> - Channel 0.<br/>
+ </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.alarm&amp;#type_2_0x02_alarm_occurred" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.alarm&amp;#type_2_0x02_alarm_occurred"  rel="nofollow">CLASS1.ALARM (1) Type=1, Alarm occurred</a>  </td><td class="col1"> If an alarm is armed this event is sent when it occurs and the corresponding alarm bit is set in the alarm register.<br/>
+<br/>
+<strong>Byte 0</strong> - Channel 0-9<br/>
+<strong>Byte 1</strong> - Zone for module.<br/>
+<strong>Byte 2</strong> - Sub zone for channel or sub zone for module if channel sub zone is zero.<br/>
+ </td>
+	</tr>
+</table></div>
+<!-- EDIT2 TABLE [74-2395] -->
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+Copyright © 2000-2015 <a href="mailto:&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">Contact</a>, <a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">Paradise of the Frog / Grodans Paradis AB</a>
+</p>
+
+</div>

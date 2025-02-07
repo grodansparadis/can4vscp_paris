@@ -1,0 +1,20 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1408385598;s:8:"modified";i:1447277042;}s:7:"creator";s:10:"Ake Hedman";s:4:"user";s:5:"admin";s:11:"last_change";b:0;s:11:"contributor";a:1:{s:5:"admin";s:10:"Ake Hedman";}s:5:"title";s:21:"CAN4VSCP Paris module";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:21:"can4vscp_paris_module";s:5:"title";s:21:"CAN4VSCP Paris module";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:506:"CAN4VSCP Paris module
+
+Document reversion: 1.1.0  2015-11-12 
+
+Copyright © 2000-2015 Paradise of the Frog AB, <contact>
+
+[ Paris ]
+
+This documentation is for the Paris module. The module is available for international purchase from the FrogShop.
+
+	*  Introduction
+	*  Getting Started
+	*  Hardware
+	*  CAN4VSCP cabling
+	*  Updating the firmware
+	*  Registers
+	*  Decision Matrix
+	*  faq
+
+Disclaimer: © 2011-2015 Grodans Paradis AB. All rights reserved. Grodans Paradis AB®, logo and combinations there…";}s:8:"relation";a:3:{s:5:"media";a:3:{s:14:"paris1_800.png";b:1;s:8:"rohs.png";b:1;s:15:"grodan_logo.png";b:1;}s:10:"references";a:8:{s:12:"introduction";b:1;s:15:"getting_started";b:1;s:8:"hardware";b:1;s:16:"can4vscp_cabling";b:1;s:22:"replacing_the_firmware";b:1;s:9:"registers";b:1;s:14:"decisionmatrix";b:1;s:3:"faq";b:1;}s:10:"firstimage";s:14:"paris1_800.png";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1408385598;s:8:"modified";i:1447277042;}s:7:"creator";s:10:"Ake Hedman";s:4:"user";s:5:"admin";s:11:"last_change";b:0;s:11:"contributor";a:1:{s:5:"admin";s:10:"Ake Hedman";}}}

@@ -4,15 +4,15 @@
 <module>
 	<name>Paris Relay controller</name>
 	<model>B</model>
-	<version>1.1.2</version>
-	<changed>2020-05-15</changed>
+	<version>1.1.3</version>
+	<changed>2022-03-25</changed>
 	<description lang="en">
 		With this VSCP module it is possible to control up to seven relays or similar devices. 
 	</description>
 	<infourl>http://www.grodansparadis.com/paris/paris.html</infourl>
 	<buffersize>8</buffersize>
 	<manufacturer>
-		<name>Paradise of the Frog AB</name>
+		<name>Grodans Paradis AB</name>
 		<address>
 			<street>Brattbergavägen 17</street>
 			<city>Los</city>

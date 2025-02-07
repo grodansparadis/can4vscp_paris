@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.vscp.org/docs/vscpworks/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.vscp.org/docs/vscpworks/feed.php">
+        <title>VSCP Works</title>
+        <description></description>
+        <link>http://www.vscp.org/docs/vscpworks/</link>
+        <image rdf:resource="http://www.vscp.org/docs/vscpworks/lib/tpl/usabletemplate/images/favicon.ico" />
+       <dc:date>2015-03-02T09:33:46+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=introduction&amp;rev=1421877405&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=start&amp;rev=1421877205&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_events&amp;rev=1408390076&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=level_i_events&amp;rev=1408390050&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_multicast&amp;rev=1408389403&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1408389334&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.vscp.org/docs/vscpworks/lib/tpl/usabletemplate/images/favicon.ico">
+        <title>VSCP Works</title>
+        <link>http://www.vscp.org/docs/vscpworks/</link>
+        <url>http://www.vscp.org/docs/vscpworks/lib/tpl/usabletemplate/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=introduction&amp;rev=1421877405&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-01-21T22:56:45+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>introduction</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=introduction&amp;rev=1421877405&amp;do=diff</link>
+        <description>Introduction
+
+VSCP Works is a graphical toolbox for VSCP developers and users that is available for Linux and Windows. It can be used to update code in nodes locally connected and nodes that sit at a location on the other side of the earth. It can be used to view events sent by a node, to configure a node using a high end interface and to simulate a node. New functionality will be added to VSCP Works as needs arise.</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=start&amp;rev=1421877205&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2015-01-21T22:53:25+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>start</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=start&amp;rev=1421877205&amp;do=diff</link>
+        <description>VSCP Works
+
+Document reversion: 1.0.0  2015-01-21
+
+Copyright © 2000-2015 Åke Hedman, Grodans Paradis AB, &lt;akhe@grodansparadis.com&gt; 
+
+	*  Introduction
+	*  Getting Started
+
+VSCP Works has not yet been transferred from the the document to a proper web format. Until it is documentation can be found here</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_events&amp;rev=1408390076&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-08-18T21:27:56+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>level_ii_events - created</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=level_ii_events&amp;rev=1408390076&amp;do=diff</link>
+        <description>Level II Events</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=level_i_events&amp;rev=1408390050&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-08-18T21:27:30+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>level_i_events - created</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=level_i_events&amp;rev=1408390050&amp;do=diff</link>
+        <description>Level I Events</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_multicast&amp;rev=1408389403&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-08-18T21:16:43+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>vscp_multicast - created</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_multicast&amp;rev=1408389403&amp;do=diff</link>
+        <description>VSCP Multicast</description>
+    </item>
+    <item rdf:about="http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1408389334&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-08-18T21:15:34+01:00</dc:date>
+        <dc:creator>admin</dc:creator>
+        <title>vscp_boot_loader_algorithm - created</title>
+        <link>http://www.vscp.org/docs/vscpworks/doku.php?id=vscp_boot_loader_algorithm&amp;rev=1408389334&amp;do=diff</link>
+        <description>VSCP boot loader algorithm</description>
+    </item>
+</rdf:RDF>

@@ -1,0 +1,239 @@
+
+<h1 class="sectionedit1" id="functional_description">Functional Description</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Functional Description&quot;,&quot;hid&quot;:&quot;functional_description&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-40&quot;} -->
+<h2 class="sectionedit2" id="configure_the_module">Configure the module</h2>
+<div class="level2">
+
+<p>
+You configure a VSCP module by writing content into the modules registers.
+You can do this manually or with the wizard available in <a href="http://www.vscp.org/docs/vscpworks/doku.php?id=start" class="urlextern" title="http://www.vscp.org/docs/vscpworks/doku.php?id=start" rel="ugc nofollow">VSCP works</a>. Using
+the wizard is absolutely the easiest way to set up functionality.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configure the module&quot;,&quot;hid&quot;:&quot;configure_the_module&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;41-348&quot;} -->
+<h2 class="sectionedit3" id="zone_sub-zone">Zone/sub-zone</h2>
+<div class="level2">
+
+<p>
+You should always plan your overall structure. The zone and the sub-zone
+registers found in the first two register positions can help you here. Think of
+a zone as a (logical) house,floor plan or similar and sub-zone as a room or a location.
+</p>
+
+<p>
+Note that this is not an address. It&#039;s a way to group functionality together.
+</p>
+
+<p>
+Each relay can belong to it&#039;s own sub-zone or to a common sub-zone. Set it in register 50-56.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Zone\/sub-zone&quot;,&quot;hid&quot;:&quot;zone_sub-zone&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;349-790&quot;} -->
+<h2 class="sectionedit4" id="functionality_for_the_relays">Functionality for the relays</h2>
+<div class="level2">
+
+<p>
+As you may expect the main functionality for the Paris relay module is the
+possibility to turn a relay on or off. Even if this is the main functionality there
+is some extra functionality available. Each relay have a control byte with flag
+(bits) which control different functionality for each relay. The bits have the
+following meaning
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>bit 7</strong> - Must be set to one to make it possible to control the relay. Both register writes, pulse and actions are ignored when the bit is set to zero.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 6</strong> - If set a <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_24_0x18_stop" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_24_0x18_stop" rel="ugc nofollow">STOP event (CLASS=20, TYPE=24)</a> will be sent when the relay goes to it&#039;s inactive state.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 5</strong> - If set a <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_25_0x19_start" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_25_0x19_start" rel="ugc nofollow">START event (CLASS=20, TYPE=25)</a> will be sent when the relay goes to it&#039;s active state.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 4</strong> - If set an <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_4_0x04_off" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_4_0x04_off" rel="ugc nofollow">OFF event (CLASS=20, TYPE=4)</a> will be sent when the relay goes to it&#039;s inactive state.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 3</strong> - If set an <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_3_0x03_on" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=class1.information#type_3_0x03_on" rel="ugc nofollow">ON event (CLASS=20, TYPE=3)</a> will be sent when the relay goes to it&#039;s active state.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 2</strong> - Enables the protection timer if set to one.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 1</strong> - Alarm is sent if the protection timer elapses if this bit is set to one.</div>
+</li>
+<li class="level1"><div class="li"> <strong>bit 0</strong> - Pulse output enabled if set to one.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Functionality for the relays&quot;,&quot;hid&quot;:&quot;functionality_for_the_relays&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;791-2319&quot;} -->
+<h2 class="sectionedit5" id="set_get_relay_state_with_register_read_writes">Set/get relay state with register read/writes</h2>
+<div class="level2">
+
+<p>
+A relay can be active (on) or inactive(off). In registers 2-8 you can read or write
+the status for an individual relay. A zero mean the relay is off, and a one that
+it is on. So writing a one to register 2 of a Paris relay module will turn relay
+1 on. A better way however is to use the <a href="http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix" class="urlextern" title="http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix" rel="ugc nofollow">decision matrix</a> of the module to accomplish this.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Set\/get relay state with register read\/writes&quot;,&quot;hid&quot;:&quot;set_get_relay_state_with_register_read_writes&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2320-2789&quot;} -->
+<h2 class="sectionedit6" id="set_get_relay_state_using_the_decision_matrix">Set/get relay state using the decision matrix</h2>
+<div class="level2">
+
+<p>
+Normally the <a href="http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix" class="urlextern" title="http://www.grodansparadis.com/paris/manual/doku.php?id=decisionmatrix" rel="ugc nofollow">decision matrix</a> of the module is the best way to to handle relay state changes. This much more flexible then to use the register writes directly. This is also why the zone/sub-zone registers should be initialized with meaningful values. The decision matrix of this module can have eight entries. Each entry is a line that look for a specified event on the bus and perform a specific action if this event is found. Typically this can be a ON-event sent to a specific zone/sub-zone. 
+</p>
+
+<p>
+A row in the decision matrix can be setup to turn on/off one or more relays if this event is detected and if the zone/sub-zone is the one expected. At first the setup of the decision matrix can be hard to grasp. You can read all about it in the <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix" rel="ugc nofollow">VSCP specification</a>. Here we will just at a simple example.
+</p>
+
+<p>
+The decision matrix consist of eight bytes. The first byte is the originating
+address. You can set a nickname here for the node that is allowed to trigger
+(perform) a selected action. The control byte have configuration bits(flags) for
+how the information should be interpreted. One bit (bit 6) tells if the originating
+address should be checked or not. That is if bit 6 is set then the originating
+address must be the same as the byte stored in the first byte of the decision
+matrix to trigger the action. Bit 7 must always be set for the row to be compared
+ton an incoming event. Bit four and five, if set, check if byte 1 and 2 of the
+incoming event is the same as the zone/sub-zone stored in register3 0/1 of the
+module. 
+</p>
+
+<p>
+Byte 2/3 together with bits 0/1 of the control register is the class mask and filter. A ninth bit is needed as a VSCP class consist of nine bits. 
+</p>
+
+<p>
+Byte 4/5 is the type mask and filter. This is something most newcomers to VSCP have problems with. But is is actually really simple. The following table illustrates how this works
+</p>
+<div class="table sectionedit7"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Mask bit n </th><th class="col1"> Filter bit n </th><th class="col2"> Incoming event class bit n </th><th class="col3"> Accept or reject bit n </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 0 </td><td class="col1"> x </td><td class="col2"> x </td><td class="col3"> Accept </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 1 </td><td class="col1"> 0 </td><td class="col2"> 0 </td><td class="col3"> Accept </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 1 </td><td class="col1"> 0 </td><td class="col2"> 1 </td><td class="col3"> Reject </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 1 </td><td class="col1"> 1 </td><td class="col2"> 0 </td><td class="col3"> Reject </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 1 </td><td class="col1"> 1 </td><td class="col2"> 1 </td><td class="col3"> Accept </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:7,&quot;range&quot;:&quot;4845-5043&quot;} -->
+<p>
+Think of the mask as having ones at positions that are of interest and the filter telling what the value should be for those bit positions that are of interest.
+</p>
+<ul>
+<li class="level1"><div class="li"> So the most common case, to only accept one class, set all mask bits to one and enter the class in the filter.</div>
+</li>
+<li class="level1"><div class="li"> To accept all classes set the class mask to 0. In this case the filter value does not care.</div>
+</li>
+<li class="level1"><div class="li"> To accept everything set both masks to zero and the filter to any value you like.</div>
+</li>
+</ul>
+
+<p>
+Common cases are
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Set\/get relay state using the decision matrix&quot;,&quot;hid&quot;:&quot;set_get_relay_state_using_the_decision_matrix&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2790-5522&quot;} -->
+<h3 class="sectionedit8" id="you_want_to_trigger_on_a_specific_event">You want to trigger on a specific event.</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Set all bits of the class mask to ones (255 plus bit 1 of the control register set to one) and all bits of the type mask to ones (255).</div>
+</li>
+<li class="level1"><div class="li"> Write the class that should trigger the event into the class filter (remember that bit nine goes to bit 0 of the control byte) and the type to the type filter. So if you want to trigger on a <a href="http://www.vscp.org/docs/vscpspe /doku.php?id=class1.control#type_5_0x05_turnon" class="urlextern" title="http://www.vscp.org/docs/vscpspe /doku.php?id=class1.control#type_5_0x05_turnon" rel="ugc nofollow">TurnOn event</a> which have CLASS=30, TYPE=5 you set the class filter = 30 (class bit i control byte to zero) and the type filter = 5.</div>
+</li>
+<li class="level1"><div class="li"> Now if the originating address bit is not set and the row is enabled (bit 7 of the control register</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;You want to trigger on a specific event.&quot;,&quot;hid&quot;:&quot;you_want_to_trigger_on_a_specific_event&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;5523-6229&quot;} -->
+<h3 class="sectionedit9" id="you_want_to_trigger_on_any_event_you_get_from_a_specific_module">You want to trigger on any event you get from a specific module.</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Enter the nickname of the module in the first byte of the decision matrix.</div>
+</li>
+<li class="level1"><div class="li"> Set the control byte to 192 (bit 6 (check originating address) and bit 7 (enable decision matrix row) set).</div>
+</li>
+<li class="level1"><div class="li"> Set byte 2-5 (masks and filters) to zero. Actually class and type filters can have any value as long as the masks are zero.</div>
+</li>
+<li class="level1"><div class="li"> Set the appropriate action/action parameter values. For example action=1 and action parameter = 3 (0b00000011) to activate relay 0 and 1 when any event is received from the node.</div>
+</li>
+</ol>
+
+<p>
+The decision matrix makes it very easy to set up systems where one event triggers actions on several modules. It is also easy to adopt your system to new demands. You can add and replace modules without affecting the system functionality.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;You want to trigger on any event you get from a specific module.&quot;,&quot;hid&quot;:&quot;you_want_to_trigger_on_any_event_you_get_from_a_specific_module&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;6230-7047&quot;} -->
+<h3 class="sectionedit10" id="pulsing_outputs">Pulsing outputs</h3>
+<div class="level3">
+
+<p>
+If you want your relay output to be turned on/off with a certain interval the Paris relay module automatically can handle this for you. First set the time the relay should be on/off in register 18-33. There are two registers for each relay and the time is given in seconds. The lower byte holds the most significant byte and the higher byte holds the least significant byte. 
+</p>
+
+<p>
+As and example: If you want relay 0 to have an output that is on for five minutes and then off for five minutes and so on you first calculate how many seconds the pulse time is. In this case 5 * 60 = 300 seconds. This is what should go into register 18 and 19. 300/256 = 1 which is what should go into register 18 and the rest (300 - 1*256 = 44 ) 44 forms the least signicant byte and should go to register 19. To start the pulse output you also have to set bit 0 in the corresponding relay control register to one.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Pulsing outputs&quot;,&quot;hid&quot;:&quot;pulsing_outputs&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;7048-7969&quot;} -->
+<h3 class="sectionedit11" id="protection_timer">Protection timer</h3>
+<div class="level3">
+
+<p>
+A protection timer can be convenient to use to protect a system form malfunctions in some of it&#039;s components. Suppose you have a relay that controls a pump that fills a tank with some liquid. The pump should then be turned off when a the tanks is full which is indicated by an event from a sensor on the tank. If this sensor is broken or the cable to the module is broken this event will never be received. With the protection timer activated the pump will be turned of anyway before things get to bad. It is also possible to send an alarm when this happens to inform the rest of the system. 
+</p>
+
+<p>
+The protection timers are in registers 34-47 and comes, like the pulse registers, in pairs. The first byte in a pair holds the most significant byte of the timer and the second the least significant byte. Also as for the pulse time the time set is given in seconds. A maximum of 65535 seconds can thus be stored. So the range is one seconds up to around eighteen hours.
+</p>
+
+<p>
+The protection timer, if activated, is started when you activate the protected relay. If the relay is active when the timer elapse it will be turned off. If you activate the relay again before the timer has elapsed the protection timer will be resettled and start to count down from the preset value again. If you turn of the relay the timer will be inactivated until the relay is activated again. Both relay control through actions and register writes affects the timer.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Protection timer&quot;,&quot;hid&quot;:&quot;protection_timer&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;7970-9435&quot;} -->
+<h3 class="sectionedit12" id="alarm">Alarm</h3>
+<div class="level3">
+
+<p>
+The module can send alarm events if the protection timer elapses. When an alarm occurs a bit is set in the alarm register which is located in register position 128. You can always read this register to see if the module have sent out and alarm events. When you read the register the alarm bits will be cleared.
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+<a href="/paris/manual/lib/exe/detail.php?id=function&amp;media=grodan_logo.png" class="media" title="grodan_logo.png"><img src="/paris/manual/lib/exe/fetch.php?w=100&amp;tok=9032da&amp;media=grodan_logo.png" class="mediacenter" alt="" width="100" /></a>
+
+<center>
+<b>Paradise of the Frog AB</b> Brattbergavägen 17, 820 50 LOS, SWEDEN<br />
+<b>email:</b> <a href="info@grodansparadis.com">info@paradiseofthefrog.com</a> <b>phone:</b> +46 (0)8 40011835<br />
+<b>web:</b> <a href="http://www.grodansparadis.com">http://www.paradiseofthefrog.com</a><br>
+</center>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Alarm&quot;,&quot;hid&quot;:&quot;alarm&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;9436-&quot;} -->

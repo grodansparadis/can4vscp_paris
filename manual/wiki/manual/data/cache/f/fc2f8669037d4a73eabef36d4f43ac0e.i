@@ -1,0 +1,9 @@
+a:21:{i:0;a:3:{i:0;s:14:"document_start";i:1;a:0:{}i:2;i:0;}i:1;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:20:"Change Log for Paris";i:1;i:1;i:2;i:1;}i:2;i:1;}i:2;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:1;}i:2;i:1;}i:3;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:1;}i:4;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:24:"For current changes see ";}i:2;i:37;}i:5;a:3:{i:0;s:12:"externallink";i:1;a:2:{i:0;s:72:"https://github.com/grodansparadis/can4vscp_paris/blob/master/HISTORY.txt";i:1;s:7:"HISTORY";}i:2;i:61;}i:6;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:1:" ";}i:2;i:145;}i:7;a:3:{i:0;s:9:"linebreak";i:1;a:0:{}i:2;i:146;}i:8;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:43:"
+2015-11-11 AKHE - Started this change log.";}i:2;i:148;}i:9;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:191;}i:10;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:191;}i:11;a:3:{i:0;s:9:"linebreak";i:1;a:0:{}i:2;i:193;}i:12;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:196;}i:13;a:3:{i:0;s:2:"hr";i:1;a:0:{}i:2;i:196;}i:14;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:196;}i:15;a:3:{i:0;s:13:"internalmedia";i:1;a:7:{i:0;s:16:":grodan_logo.png";i:1;s:0:"";i:2;s:6:"center";i:3;s:3:"100";i:4;N;i:5;s:5:"cache";i:6;s:7:"details";}i:2;i:203;}i:16;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:1:"
+";}i:2;i:230;}i:17;a:3:{i:0;s:4:"html";i:1;a:1:{i:0;s:307:"
+<center>
+<b>Paradise of the Frog AB</b> Brattbergavägen 17, 820 50 LOS, SWEDEN<br />
+<b>email:</b> <a href="info@grodansparadis.com">info@paradiseofthefrog.com</a> <b>phone:</b> +46 (0)8 40011835<br />
+<b>web:</b> <a href="http://www.grodansparadis.com">http://www.paradiseofthefrog.com</a><br>
+</center>
+";}i:2;i:237;}i:18;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:551;}i:19;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:553;}i:20;a:3:{i:0;s:12:"document_end";i:1;a:0:{}i:2;i:553;}}
