@@ -1,5 +1,6 @@
 * [Introduction](./README.md)
 * [Getting Started](./getting-started.md)
+* [Functionality](./function.md)
 * [Hardware](./hardware.md)
 * [Setup](./connecting.md)
 * [Updating the firmware](./replacing-the-firmware.md)
