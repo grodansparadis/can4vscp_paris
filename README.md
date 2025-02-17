@@ -10,9 +10,7 @@ The full documentation for the module can be found [here](http://grodansparadis.
 
 ![](images/paris1_800.png)
 
-This is one of two reference modules for the VSCP project on Microchip hardware togehter with the [Kelvin NTC10K module](https://github.com/grodansparadis/can4vscp_kelvin_ntc10k)
-
-
+In the repository you find the development files for the Kelvin NTC10K module. The project is also the base for a VSCP implemention on a Microchip 18F PIC device together with the [Kelvin NTC10K module](https://github.com/grodansparadis/can4vscp_kelvin_ntc10k)
 
 ## Abstract
 
