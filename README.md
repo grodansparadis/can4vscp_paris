@@ -10,7 +10,7 @@ The full documentation for the module can be found [here](http://grodansparadis.
 
 ![](images/paris1_800.png)
 
-This is one of two reference modules for the VSCP project. It is a module that can control up to seven relays.
+This is one of two reference modules for the VSCP project on Microchip hardware togehter with the [Kelvin NTC10K module](https://github.com/grodansparadis/can4vscp_kelvin_ntc10k)
 
 
 
