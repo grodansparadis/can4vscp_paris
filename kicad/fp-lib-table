@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "paris_relay_rev_C")(type "KiCad")(uri "$(KIPRJMOD)/paris_relay_rev_C.pretty")(options "")(descr ""))
+)
