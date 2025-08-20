@@ -16,7 +16,6 @@
                 <sourceRootElem>../</sourceRootElem>
                 <sourceRootElem>../../vscp-firmware/common</sourceRootElem>
                 <sourceRootElem>../../vscp-firmware/pic/common</sourceRootElem>
-                <sourceRootElem>../../vscp-firmware/common</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
