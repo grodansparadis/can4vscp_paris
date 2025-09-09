@@ -43,7 +43,7 @@ All VSCP modules contains information of there own setup, manual, hardware versi
   * Binary release files is available [here](https://github.com/grodansparadis/can4vscp_paris/releases)
 
 ### MDF - Module Description File(s)
-  * [MDF file version: 1.1.3 Release date: 2022-03-25](http://www.eurosource.se/paris010.xml)
+  * [MDF file version: 1.1.3 Release date: 2022-03-25](http://www.eurosource.se/paris_010.xml)
   * [MDF file version: 0.0.2 Release date: 2009-10-07](http://www.eurosource.se/paris_001.xml)
 
 ### Support
