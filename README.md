@@ -1,4 +1,4 @@
-![](./images/opensourcehw-100x82.png)
+![](./docs/images/opensourcehw-100x82.png)
 
 -----
 
