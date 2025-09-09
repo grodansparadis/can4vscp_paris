@@ -1,17 +1,15 @@
-# Accra - General counter module
+# Paris - Relay module
 
 **Document reversion**: 1.0.0 2015-07-07
 
-Copyright © 2000-2020 Åke Hedman, [Grodans Paradis
+Copyright © 2000-2025 Åke Hedman, [Grodans Paradis
 AB](http://www.grodansparadis.com),
 \<[akhe@grodansparadis.com](akhe@grodansparadis.com)\>
 
-![Accra](/accra6.png)
+![Paris](/paris10.png)
 
-This documentation is for the [Accra
-module](http://www.grodansparadis.com/accra/accra.html). The module is
-available for international purchase from the
-[FrogShop](http://www.frogshop.se).
+This documentation is for the [Paris
+module](http://www.grodansparadis.com/accra/accra.html).
 
   - [Introduction](Introduction)
   - [Getting Started](Getting%20Started)

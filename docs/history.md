@@ -1,4 +1,4 @@
-# Change Log for Accra
+# Change Log for Paris
 
 Change log for the module is at
 [here](https://github.com/grodansparadis/can4vscp_paris/blob/master/HISTORY.txt)
