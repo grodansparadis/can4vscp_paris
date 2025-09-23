@@ -38,7 +38,7 @@ The specification for the VSCP protocol is [here](https://docs.vscp.org)
 
 VSCP documentation for various parts can be found [here](https://docs.vscp.org/).
 
-If you use VSCP please consider contributing resources or time to the project ([https://vscp.org/support.php](https://vscp.org/support.php)).
+If you use VSCP please consider contributing resources or time to the project ([https://github.com/sponsors/grodansparadis](https://github.com/sponsors/grodansparadis)).
 
 ## Buy a module
 
