@@ -28,7 +28,7 @@ Schematics: Rev B (click picture to enlarge)
 
 ===== Components =====
 
-{{:3_home_akhe_vscp_hardware_can4vscp_paris_relaydriver_manual_images_board.jpg?700|}}
+{{:3_home_akhe_vscp_hardware_can4vscp-paris_relaydriver_manual_images_board.jpg?700|}}
 
 The **power LED** (red) will light when the board is powered.
 
@@ -74,7 +74,7 @@ anyway.
 The power used to power the Paris module is a perfect candidate for the
 relay voltage. It is available on the terminal block position 10/11.
 
-{{:8_home_akhe_vscp_hardware_can4vscp_paris_relaydriver_manual_images_connector.jpg}}
+{{:8_home_akhe_vscp_hardware_can4vscp-paris_relaydriver_manual_images_connector.jpg}}
 
 ^ Pin ^ Description ^ 
 | 1 | Ground (GND) | 
@@ -97,7 +97,7 @@ relay voltage. It is available on the terminal block position 10/11.
 ==== Connecting relays ====
 
 
-{{:9_home_akhe_vscp_hardware_can4vscp_paris_relaydriver_manual_images_relay.jpg?700|}}
+{{:9_home_akhe_vscp_hardware_can4vscp-paris_relaydriver_manual_images_relay.jpg?700|}}
 
 ==== RJ-XX pin-out ====
 

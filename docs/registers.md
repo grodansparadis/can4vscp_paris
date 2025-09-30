@@ -100,9 +100,7 @@ be used to have a relay turn on and off with a certain preset interval.
 The minimum pulse time is 1 second and the maximum time is 65535 seconds
 which is about 18 hours.
 
-Set to zero (default) for no pulse time i.e. the relay will be steady
-on/off.To start a pulse sequence bit 0 for the corresponding relay
-should be set to one.
+Set to zero (default) for no pulse time i.e. the relay will be steady on/off.To start a pulse sequence bit 0 for the corresponding relay should be set to one.
 
 ## Relay protection time registers
 

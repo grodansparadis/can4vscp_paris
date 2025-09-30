@@ -1,6 +1,6 @@
 ====== Change Log for Paris ======
 
-For current changes see [[https://github.com/grodansparadis/can4vscp_paris/blob/master/HISTORY.txt|HISTORY]] \\
+For current changes see [[https://github.com/grodansparadis/can4vscp-paris/blob/master/HISTORY.txt|HISTORY]] \\
 2015-11-11 AKHE - Started this change log.
 
 \\ 

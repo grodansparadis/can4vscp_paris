@@ -20,11 +20,11 @@ out on the VSCP bus.
 The module comes with a GUID and is programmed with a bootloader and
 VSCP module functionality that works right out of the box.
 
-  * [Repository for the module](https://github.com/grodansparadis/can4vscp_paris)
-  * This manual is available [here](https://grodansparadis.github.io/can4vscp_paris/)
-  * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp_paris/tree/master/eagle)
-  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp_paris/tree/master/firmware)
-  * [MDF for the module](https://github.com/grodansparadis/can4vscp_paris/tree/master/mdf)
+  * [Repository for the module](https://github.com/grodansparadis/can4vscp-paris)
+  * This manual is available [here](https://grodansparadis.github.io/can4vscp-paris/)
+  * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp-paris/tree/master/eagle)
+  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp-paris/tree/master/firmware)
+  * [MDF for the module](https://github.com/grodansparadis/can4vscp-paris/tree/master/mdf)
 
 ## VSCP
 

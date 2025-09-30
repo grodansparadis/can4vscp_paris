@@ -1,6 +1,6 @@
 EAGLE AutoRouter Statistics:
 
-Job           : C:/Users/grodansparadis/development/vscp_hardware/can4vscp/can4vscp_paris_relaydriver/eagle/smd/paris_relay_rev_C.brd
+Job           : C:/Users/grodansparadis/development/vscp_hardware/can4vscp/can4vscp-paris_relaydriver/eagle/smd/paris_relay_rev_C.brd
 
 Start at      : 21:19:08 (2015-04-20)
 End at        : 21:19:08 (2015-04-20)

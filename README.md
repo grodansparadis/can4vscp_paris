@@ -6,11 +6,11 @@
 
 This module is part of the VSCP project. It is free to use, modify and sell. The only thing we kindly ask is that improvements and extensions are contributed back to the project (at your will). This to make the project better for everyone. All design files is licensed under the MIT license.
 
-The full documentation for the module can be found [here](http://grodansparadis.github.io/can4vscp_paris/#/).
+The full documentation for the module can be found [here](http://grodansparadis.github.io/can4vscp-paris/docs/).
 
 ![](docs/images/paris1_800.png)
 
-In the repository you find the development files for the Kelvin NTC10K module. The project is also the base for a VSCP implemention on a Microchip 18F PIC device together with the [Kelvin NTC10K module](https://github.com/grodansparadis/can4vscp_kelvin_ntc10k)
+In the repository you find the development files for the Kelvin NTC10K module. The project is also the base for a VSCP implementation on a Microchip 18F PIC device together with the [Kelvin NTC10K module](https://github.com/grodansparadis/can4vscp-kelvin-ntc10k)
 
 ## Abstract
 
@@ -28,7 +28,7 @@ All VSCP modules contains information of there own setup, manual, hardware versi
 ## Project files
 
 ### User manual
-  * [User Manual](https://grodansparadis.github.io/can4vscp_paris/#)
+  * [User Manual](https://grodansparadis.github.io/can4vscp-paris/#)
 
 ### Schematic, PCB, 3D files etc
   * [Schematics reversion B](./eagle/paris_revb_sch.png)
@@ -40,7 +40,7 @@ All VSCP modules contains information of there own setup, manual, hardware versi
 
  The firmware is developed in [MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) using the [XC8 compiler](https://www.microchip.com/mplab/compilers).
 
-  * Binary release files is available [here](https://github.com/grodansparadis/can4vscp_paris/releases)
+  * Binary release files is available [here](https://github.com/grodansparadis/can4vscp-paris/releases)
 
 ### MDF - Module Description File(s)
   * [MDF file version: 1.1.3 Release date: 2022-03-25](http://www.eurosource.se/paris_010.xml)

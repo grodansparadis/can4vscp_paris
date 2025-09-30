@@ -8,7 +8,7 @@ documentation](https://grodansparadis.github.io/vscp-works-qt/#/bootload_window)
 ## Where is the firmware?
 
 Firmware is available in the Github repository
-<https://github.com/grodansparadis/can4vscp_paris/releases> and the [MDF of the module](https://github.com/grodansparadis/can4vscp_paris/tree/master/mdf) contains a list of available firmware files and a pointer to there location. This file is loaded by the firmware updating software of VSCP Works+ and you can select the file you need from there.
+<https://github.com/grodansparadis/can4vscp-paris/releases> and the [MDF of the module](https://github.com/grodansparadis/can4vscp-paris/tree/master/mdf) contains a list of available firmware files and a pointer to there location. This file is loaded by the firmware updating software of VSCP Works+ and you can select the file you need from there.
 
 ### Device firmware code
 The standard registers of a module contains a register that holds the firmware code for the module. This is a 16-bit value that can be read by the VSCP firmware update software. The value is a code for the specific hardware the board uses. Typically hardware has been changed and processors have been updated to later versions as time goes. The VSCP firmware update software can use this code to find the correct firmware for the module. It is **VERY** important that the correct firmware is used for the module. If the wrong firmware is used the module will not work as expected and may even be damaged. So make sure this code is the same as the code in the firmware file you use.
@@ -18,7 +18,7 @@ Older firmware files may not have this code in the standard registers as it is a
 ## Where is the source for the firmware?
 
 You can find the latest source for the firmware
-[here](https://github.com/grodansparadis/can4vscp_paris).
+[here](https://github.com/grodansparadis/can4vscp-paris).
 
 ## Replacing/updating the bootloader on the module
 

@@ -29,7 +29,7 @@ Schematics: Rev B
 
 ## Components
 
-![](./images/3_home_akhe_vscp_hardware_can4vscp_paris_relaydriver_manual_images_board.jpg)
+![](./images/3_home_akhe_vscp_hardware_can4vscp-paris_relaydriver_manual_images_board.jpg)
 
 The **power LED** (red) will light when the board is powered.
 
@@ -62,7 +62,7 @@ controlled with +5V just install jumper JP1 and connect +5V to the relays. Norma
 
 The power used to power the Paris module is a perfect candidate for the relay voltage. It is available on the terminal block position 10/11.
 
-![](./images/8_home_akhe_vscp_hardware_can4vscp_paris_relaydriver_manual_images_connector.jpg)
+![](./images/8_home_akhe_vscp_hardware_can4vscp-paris_relaydriver_manual_images_connector.jpg)
 
 | Pin | Description |
 | --- | ----------- |
@@ -85,7 +85,7 @@ The power used to power the Paris module is a perfect candidate for the relay vo
 
 ### Connecting relays
 
-![](./images/9_home_akhe_vscp_hardware_can4vscp_paris_relaydriver_manual_images_relay.jpg)
+![](./images/9_home_akhe_vscp_hardware_can4vscp-paris_relaydriver_manual_images_relay.jpg)
 
 ### RJ-XX pin-out
 

@@ -1,7 +1,7 @@
 # Change Log for Paris
 
 Change log for the module is at
-[here](https://github.com/grodansparadis/can4vscp_paris/blob/master/HISTORY.txt)
+[here](https://github.com/grodansparadis/can4vscp-paris/blob/master/HISTORY.txt)
 
 | Date   | Author | Comment |
 |--------|-------|---------|
